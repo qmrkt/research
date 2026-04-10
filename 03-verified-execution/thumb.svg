@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="144" height="144">
+  <rect width="72" height="72" rx="0" fill="#f0f2f8"/>
+
+  <!-- 3x4 trust grid (resolution class x execution assurance) -->
+  <!-- Row 1: unauthenticated -->
+  <rect x="18" y="16" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.35"/>
+  <rect x="31" y="16" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.30"/>
+  <rect x="44" y="16" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.25"/>
+
+  <!-- Row 2: signed runner -->
+  <rect x="18" y="27" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.55"/>
+  <rect x="31" y="27" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.45"/>
+  <rect x="44" y="27" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.35"/>
+
+  <!-- Row 3: tee attested -->
+  <rect x="18" y="38" width="10" height="8" rx="1.5" fill="#365f9c" opacity="0.7"/>
+  <rect x="31" y="38" width="10" height="8" rx="1.5" fill="#365f9c" opacity="0.55"/>
+  <rect x="44" y="38" width="10" height="8" rx="1.5" fill="#a0aab9" opacity="0.45"/>
+
+  <!-- Row 4: threshold tee -->
+  <rect x="18" y="49" width="10" height="8" rx="1.5" fill="#365f9c"/>
+  <rect x="31" y="49" width="10" height="8" rx="1.5" fill="#365f9c" opacity="0.75"/>
+  <rect x="44" y="49" width="10" height="8" rx="1.5" fill="#c26a2d" opacity="0.7"/>
+</svg>
