@@ -1,0 +1,4 @@
+pool_size,num_participants,bond_structure,bond_rate,flat_bond,bounty_fraction,challenge_window_hours,attention_coefficient,adjudicator_accuracy,challenger_mix,stake_distribution,proposer_type,false_resolution_rate,challenge_rate,mean_verification_coverage,mean_bond_locked,mean_time_to_finalization,proposer_deterrence,welfare_loss,num_episodes
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,0.3,0.9,stake_proportional,uniform,strategic,0.999,0.001,0.152,750.75,24.024,0.0,1498500.0,1000
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,strategic,0.99,0.009009009009009009,0.465,756.75,24.216,0.0010000000000000009,1485000.0,1000
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,3.0,0.9,stake_proportional,uniform,strategic,0.258,0.044444444444444446,0.345,759.0,24.288,0.73,387000.0,1000

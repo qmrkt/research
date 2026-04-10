@@ -1,0 +1,10 @@
+scenario_name,description,quote_divergence,nav_per_deposit_divergence,price_entry_divergence,slippage_pass
+cancellation_refund_path,"Cancellation path with active LP cohort, refunds, and post-refund LP residual claims.",0.0004584137568960801975524418113,0.0003130938320147387561301628,8.090907413266354503657389948E-7,True
+early_vs_late_same_delta_b,Earlier and later LP cohorts both add the same delta-b under different market states.,0.0004519362937948271981428539087,0.0010842896092769601494389952,0.000001091925925439251479172753729,True
+long_tail_late_lp,Long-tail market with many outcomes and one late LP entry.,0.0003619780695386808663559983934,0.000034857485713217576905006,0.000004339100716738769441715082241,True
+neutral_late_lp,Near-neutral market with one late LP joining after balanced trading.,0.0002599711876990581152712635281,0.000205913850600372051010523,0.000001674266821179051124960972167,True
+repeated_lp_entries,"Multiple LP cohorts join during active trading, including after an intermediate sell.",0.0002013439513466017426627833711,0.0070889888739605357983655066,0.000001903997667157303409927798321,True
+same_block_trade_reordering,Same-block reordering stress test around LP entry and adjacent trades.,0.0004165642835833683861458343439,0.0001559256053108139540476697,0.000001062325799853698419227876468,True
+same_final_claims_different_timing,"Same final claims and LP size, but different LP entry timing for fairness/path-dependence comparison.",0.0003090019717314717198869919452,0.0005073352644054296722666148,8.090907413266354503657389948E-7,True
+skewed_late_lp,Skewed market where an LP joins after one-sided order flow develops.,0.0001601739538605713640244830268,0.0001736423658812895501370287,0.000001543816269511953114647468438,True
+zero_flow_nav_invariance,"Zero-flow LP entry sanity check: no trades after entry, used for NAV invariance validation.",0.0002782871923430726563511758764,8.203891661850115120157E-7,7.309178807925100511373116376E-7,True

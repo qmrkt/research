@@ -1,0 +1,4 @@
+name,scheme,linear_lambda,result_count,price_continuity_pass_rate,slippage_pass_rate,solvency_pass_rate,mean_fairness_gap_nav_per_deposit,max_abs_fairness_gap_nav_per_deposit,positive_fairness_rows,negative_fairness_rows,near_zero_fairness_rows,mean_divergence_max_nav_per_deposit_diff_vs_reference,invariant_failure_count
+linear_lambda_0020,linear_lambda,0.020,340,1,1,1,0.03848783875572365904047665409,0.2024992876114914472650003524,270,70,46,7.147058823529411764705882353E-29,0
+linear_lambda_0025,linear_lambda,0.025,340,1,1,1,0.02267138148336782542275468296,0.1983976234235545761904366513,244,96,76,7.647058823529411764705882353E-29,0
+linear_lambda_0030,linear_lambda,0.030,340,1,1,1,0.007489918654086985220024509726,0.1945524037998228715518311886,226,114,72,7.794117647058823529411764706E-29,0

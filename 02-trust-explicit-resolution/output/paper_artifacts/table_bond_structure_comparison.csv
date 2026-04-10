@@ -1,0 +1,7 @@
+bond_structure,bond_rate,false_resolution_rate,challenge_rate,mean_bond_locked,deterrence
+flat,0.1,0.6826,0.3478,13.48,0.0000
+pool_proportional,0.1,0.6778,0.3418,667.70,0.0188
+linear_escalation,0.1,0.6876,0.3433,335.80,0.0004
+exponential_escalation,0.1,0.6826,0.3478,202.17,0.0000
+pool_proportional,0.15,0.6714,0.3272,982.20,0.0538
+capped_pool_proportional,0.15,0.6778,0.3418,667.70,0.0188

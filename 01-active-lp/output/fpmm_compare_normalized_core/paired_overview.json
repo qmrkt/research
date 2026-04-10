@@ -1,0 +1,18 @@
+{
+  "active_lp_beats_fpmm_on_abs_gap_count": 29,
+  "active_lp_linear_lambda": "0.150",
+  "active_lp_residual_weight_scheme": "linear_lambda_normalized",
+  "fpmm_beats_active_lp_on_abs_gap_count": 15,
+  "max_abs_fpmm_minus_active_lp_gap": "1.329152423823553130943590730",
+  "mean_fpmm_minus_active_lp_gap": "0.1858631986894626574339778753",
+  "mechanism_max_abs_fairness_gap": {
+    "fpmm_pool_share": "0.9962473197442573067850386437",
+    "reference_parallel_lmsr_reserve_residual": "0.3364714645046705262225710062"
+  },
+  "mechanism_mean_fairness_gap": {
+    "fpmm_pool_share": "0.1615459693525421458533767761",
+    "reference_parallel_lmsr_reserve_residual": "-0.02431722933692051158060109918"
+  },
+  "paired_scenario_count": 44,
+  "result_count": 88
+}

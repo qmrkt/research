@@ -1,0 +1,17 @@
+pool_size,num_participants,bond_structure,bond_rate,flat_bond,bounty_fraction,challenge_window_hours,attention_coefficient,adjudicator_accuracy,challenger_mix,stake_distribution,proposer_type,false_resolution_rate,challenge_rate,mean_verification_coverage,mean_bond_locked,mean_time_to_finalization,proposer_deterrence,welfare_loss,num_episodes
+50,10,pool_proportional,0.05,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,10.0,24.0,1.0,0,1000
+50,10,pool_proportional,0.1,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,10.0,24.0,1.0,0,1000
+50,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,10.0,24.0,1.0,0,1000
+50,10,pool_proportional,0.2,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,10.0,24.0,1.0,0,1000
+500,10,pool_proportional,0.05,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,25.0,24.0,1.0,0,1000
+500,10,pool_proportional,0.1,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,50.0,24.0,1.0,0,1000
+500,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,75.0,24.0,1.0,0,1000
+500,10,pool_proportional,0.2,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,100.0,24.0,1.0,0,1000
+5000,10,pool_proportional,0.05,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,250.0,24.0,1.0,0,1000
+5000,10,pool_proportional,0.1,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,500.0,24.0,1.0,0,1000
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,750.0,24.0,1.0,0,1000
+5000,10,pool_proportional,0.2,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,1000.0,24.0,1.0,0,1000
+50000,10,pool_proportional,0.05,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,2500.0,24.0,1.0,0,1000
+50000,10,pool_proportional,0.1,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,5000.0,24.0,1.0,0,1000
+50000,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,7500.0,24.0,1.0,0,1000
+50000,10,pool_proportional,0.2,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,honest,0.0,0.0,0.0,10000.0,24.0,1.0,0,1000

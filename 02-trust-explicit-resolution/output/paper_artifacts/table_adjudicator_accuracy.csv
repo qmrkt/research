@@ -1,0 +1,11 @@
+adjudicator_accuracy,challenger_mix,false_resolution_rate,challenge_rate,deterrence
+0.7,all_attentive,0.0000,0.0000,1.0000
+0.7,majority_lazy,0.5870,0.0315,0.3960
+0.8,all_attentive,0.0000,0.0000,1.0000
+0.8,majority_lazy,0.5570,0.0176,0.4330
+0.9,all_attentive,0.0000,0.0000,1.0000
+0.9,majority_lazy,0.5290,0.0186,0.4610
+0.95,all_attentive,0.0000,0.0000,1.0000
+0.95,majority_lazy,0.5230,0.0169,0.4680
+1.0,all_attentive,0.0000,0.0000,1.0000
+1.0,majority_lazy,0.5130,0.0191,0.4770

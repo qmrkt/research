@@ -1,0 +1,11 @@
+{
+  "current_protocol_default_linear_lambda": "0.150",
+  "current_protocol_default_name": "linear_lambda_normalized_0150000",
+  "current_protocol_default_scheme": "linear_lambda_normalized",
+  "figure_scope": "first_stage_event_step_calibration",
+  "highlight_linear_lambda": "0.03250",
+  "highlight_mean_fairness_gap_nav_per_deposit": "0.0001235167396626046046868101897",
+  "highlight_name": "linear_lambda_003250",
+  "point_count": 15,
+  "source_count": 5
+}

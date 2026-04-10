@@ -1,0 +1,13 @@
+challenge_window_hours,challenger_mix,false_resolution_rate,mean_time_to_finalization,challenge_rate
+12.0,all_attentive,0.0052,12.17,0.6000
+12.0,majority_lazy,0.8158,16.97,0.2073
+12.0,stake_proportional,0.9108,14.44,0.1018
+24.0,all_attentive,0.0032,24.04,0.3750
+24.0,majority_lazy,0.6714,31.43,0.3272
+24.0,stake_proportional,0.8350,28.42,0.1842
+48.0,all_attentive,0.0020,48.00,0.0000
+48.0,majority_lazy,0.4522,54.82,0.4035
+48.0,stake_proportional,0.6868,56.35,0.3483
+72.0,all_attentive,0.0020,72.00,0.0000
+72.0,majority_lazy,0.3414,77.50,0.4174
+72.0,stake_proportional,0.5702,82.50,0.4539

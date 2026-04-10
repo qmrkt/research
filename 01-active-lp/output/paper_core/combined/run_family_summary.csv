@@ -1,0 +1,3 @@
+run_family,result_count,price_continuity_pass_rate,slippage_pass_rate,solvency_pass_rate,mean_max_price_change,max_max_price_change,invariant_failures
+deterministic,9,1,1,1,1.342380814452447987823048748E-29,3.709404702152548257295422586E-29,0
+monte_carlo,256,1,1,1,2.760034512852836599935081473E-29,1.331354052328818386740688393E-28,0

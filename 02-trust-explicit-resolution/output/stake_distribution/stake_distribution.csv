@@ -1,0 +1,10 @@
+pool_size,num_participants,bond_structure,bond_rate,flat_bond,bounty_fraction,challenge_window_hours,attention_coefficient,adjudicator_accuracy,challenger_mix,stake_distribution,proposer_type,false_resolution_rate,challenge_rate,mean_verification_coverage,mean_bond_locked,mean_time_to_finalization,proposer_deterrence,welfare_loss,num_episodes
+5000,5,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,strategic,0.953,0.022564102564102566,0.424,766.5,24.528,0.025000000000000022,1429500.0,1000
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,strategic,0.99,0.009009009009009009,0.465,756.75,24.216,0.0010000000000000009,1485000.0,1000
+5000,30,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,uniform,strategic,0.995,0.005,0.492,753.75,24.12,0.0,1492500.0,1000
+5000,5,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,concentrated,strategic,0.897,0.02826086956521739,0.347,769.5,24.624,0.07999999999999996,1345500.0,1000
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,concentrated,strategic,0.918,0.0202991452991453,0.384,764.25,24.456,0.06399999999999995,1377000.0,1000
+5000,30,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,concentrated,strategic,0.911,0.016198704103671708,0.406,761.25,24.36,0.07399999999999995,1366500.0,1000
+5000,5,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,power_law,strategic,0.949,0.01962809917355372,0.409,764.25,24.456,0.03200000000000003,1423500.0,1000
+5000,10,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,power_law,strategic,0.979,0.008105369807497468,0.439,756.0,24.192,0.013000000000000012,1468500.0,1000
+5000,30,pool_proportional,0.15,10.0,0.0,24.0,1.0,0.9,stake_proportional,power_law,strategic,0.99,0.01,0.44,757.5,24.24,0.0,1485000.0,1000

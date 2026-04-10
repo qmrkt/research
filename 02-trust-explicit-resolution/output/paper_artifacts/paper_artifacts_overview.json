@@ -1,0 +1,32 @@
+{
+  "bond_scaling": {
+    "num_configs": 28,
+    "min_false_resolution_rate": 0.5922,
+    "max_false_resolution_rate": 0.6876,
+    "mean_false_resolution_rate": 0.6530499999999998
+  },
+  "bond_structure": {
+    "num_configs": 6,
+    "min_false_resolution_rate": 0.6714,
+    "max_false_resolution_rate": 0.6876,
+    "mean_false_resolution_rate": 0.6799666666666667
+  },
+  "lazy_verifier": {
+    "num_configs": 20,
+    "min_false_resolution_rate": 0.66,
+    "max_false_resolution_rate": 1.0,
+    "mean_false_resolution_rate": 0.8605699999999998
+  },
+  "verification_bounty": {
+    "num_configs": 20,
+    "min_false_resolution_rate": 0.1426,
+    "max_false_resolution_rate": 0.9122,
+    "mean_false_resolution_rate": 0.59309
+  },
+  "challenge_window": {
+    "num_configs": 12,
+    "min_false_resolution_rate": 0.002,
+    "max_false_resolution_rate": 0.9108,
+    "mean_false_resolution_rate": 0.4413333333333333
+  }
+}

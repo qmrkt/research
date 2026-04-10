@@ -1,0 +1,5 @@
+rule,mean_fairness_gap_nav_per_deposit,max_abs_fairness_gap_nav_per_deposit,invariant_failure_count,interpretation
+flat_reserve,0.1073685395664202688810010917,0.2220624424556946975641150482,0,late-LP favoring baseline
+linear_time_weighted,-0.6661000820801531580119949843,1.364474562074663320104205924,0,overcorrects toward early LPs
+affine_calibrated_0.03250,0.0001235167396626046046868101897,0.2074573402207744474909737779,0,"useful in-sample crossover, but too clock-sensitive to keep as the default"
+affine_normalized_0.150,-0.006767417693685025675248916087,0.1394217631497283756757480897,0,current paper and protocol default

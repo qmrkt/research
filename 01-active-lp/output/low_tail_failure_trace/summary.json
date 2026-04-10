@@ -1,0 +1,9 @@
+{
+  "failure_event_index": 6,
+  "layer_c_min_margin": "-189.455091",
+  "layer_c_reserve_margin_min": "0",
+  "num_outcomes": 64,
+  "reference_min_margin": "-189.4643089366839479782500539",
+  "reference_reserve_margin_min": "0",
+  "scenario_name": "layer_c_low_tail_mc_0013"
+}

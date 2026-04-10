@@ -1,0 +1,13 @@
+{
+  "invariant_failure_count": 0,
+  "max_abs_fairness_gap_nav_per_deposit": "0.1013818647304912334936279088",
+  "max_price_change": "1.726236382983195709702754400E-28",
+  "mean_fairness_gap_nav_per_deposit": "0.01896440078566262010652304892",
+  "price_continuity_pass_rate": "1",
+  "result_count": 96,
+  "run_families": [
+    "adversarial"
+  ],
+  "slippage_pass_rate": "1",
+  "solvency_pass_rate": "1"
+}

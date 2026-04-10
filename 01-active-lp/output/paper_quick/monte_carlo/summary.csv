@@ -1,0 +1,65 @@
+run_family,scenario_name,description,mechanism,num_outcomes,fee_bps,protocol_fee_bps,event_count,path_labels,max_price_change,all_prices_within_tolerance,all_buy_quotes_improved,lp_fairness_rows,solvency_passed,path_terminal_states,path_max_price_diff,path_max_funds_diff,invariant_failures
+monte_carlo,paper_quick_mc_0000,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,150,25,16,primary,9E-80,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0001,Randomized active-LP cancellation path.,reference_parallel_lmsr,5,200,25,14,primary,3E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0002,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,100,25,18,primary,8.525866546480199814809935659E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0003,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,50,25,14,primary,4E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0004,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,200,50,18,primary,3.468254383721979684021025898E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0005,Randomized active-LP cancellation path.,reference_parallel_lmsr,5,50,50,18,primary,2E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0006,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,50,50,14,primary,7E-80,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0007,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,100,0,12,primary,1E-81,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0008,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,100,25,18,primary,2.616487197296902194837044602E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0009,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,200,50,14,primary,4E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0010,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,150,0,10,primary,2E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0011,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,100,0,17,primary,2.425292012351642770663578643E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0012,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,150,0,18,primary,4E-80,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0013,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,100,25,12,primary,2.154767367225002263492051066E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0014,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,50,25,16,primary,5.073612492438174177480633589E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0015,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,100,25,19,primary,2E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0016,Randomized active-LP cancellation path.,reference_parallel_lmsr,5,150,25,26,primary,3.272884609945784148153611250E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0017,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,100,0,15,primary,4.319167951609193197377750730E-30,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0018,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,150,0,14,primary,4.945444236103916683781738663E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0019,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,50,25,11,primary,0E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0020,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,150,25,16,primary,2E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0021,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,50,0,16,primary,2.180996379656106709756197610E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0022,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,200,0,11,primary,4.168915745593958724516994581E-29,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0023,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,100,25,20,primary,1.0E-79,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0024,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,100,0,17,primary,1.834965266386825952751592221E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0025,Randomized active-LP cancellation path.,reference_parallel_lmsr,3,150,0,15,primary,5E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0026,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,100,25,16,primary,4.978767037804659893839552559E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0027,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,100,25,14,primary,1.0E-79,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0028,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,200,25,12,primary,0.000,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0029,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,50,50,17,primary,1.771685969106177454263616479E-29,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0030,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,200,50,18,primary,2.034855245460639685790510096E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0031,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,150,50,16,primary,2.342585904988792323830606241E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0032,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,200,0,17,primary,4.603659221350474337524546826E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0033,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,150,50,16,primary,1.469881021973383927007994115E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0034,Randomized active-LP cancellation path.,reference_parallel_lmsr,5,100,0,24,primary,1.894970869560399459792728364E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0035,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,200,25,14,primary,0E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0036,Randomized active-LP cancellation path.,reference_parallel_lmsr,5,200,50,20,primary,0.0,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0037,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,150,25,16,primary,3.356642983446872063513457278E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0038,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,100,50,13,primary,4E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0039,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,150,50,20,primary,4.652438973324767975508992382E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0040,Randomized active-LP cancellation path.,reference_parallel_lmsr,3,50,0,22,primary,2.040388172464356590876957936E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0041,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,100,0,14,primary,0E-80,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0042,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,200,0,13,primary,8.522805003992087450089431562E-30,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0043,Randomized active-LP cancellation path.,reference_parallel_lmsr,8,100,25,15,primary,0.000,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0044,Randomized active-LP cancellation path.,reference_parallel_lmsr,12,100,25,21,primary,1.702435095732125020696858863E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0045,Randomized active-LP cancellation path.,reference_parallel_lmsr,5,100,25,20,primary,2E-80,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0046,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,150,25,18,primary,1.862288617266847945859359876E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0047,Randomized active-LP cancellation path.,reference_parallel_lmsr,12,200,50,19,primary,0E-81,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0048,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,150,50,14,primary,2.111763248859997044479297655E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0049,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,200,0,18,primary,3E-80,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0050,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,200,25,18,primary,8.002100055802891919539174941E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0051,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,100,25,15,primary,1.926320838095646268586749204E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0052,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,100,0,18,primary,9.754174130917635996789025846E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0053,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,200,25,14,primary,3.004054319826697507619408534E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0054,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,150,0,14,primary,1.195538836588731818278194372E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0055,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,150,50,19,primary,5.525995395978915371777816584E-30,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0056,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,200,50,14,primary,5.213166634432254702617660785E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0057,Randomized active-LP resolved market path.,reference_parallel_lmsr,3,50,25,13,primary,0E-80,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0058,Randomized active-LP resolved market path.,reference_parallel_lmsr,12,200,0,20,primary,1.900578383191211146147948425E-29,True,True,4,True,1,0,0,0
+monte_carlo,paper_quick_mc_0059,Randomized active-LP cancellation path.,reference_parallel_lmsr,8,200,0,17,primary,1.270741679648258272159493802E-29,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0060,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,100,0,12,primary,1.307725584591726582289072450E-29,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0061,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,150,50,19,primary,1.777611194797731775516278982E-29,True,True,3,True,1,0,0,0
+monte_carlo,paper_quick_mc_0062,Randomized active-LP resolved market path.,reference_parallel_lmsr,5,150,50,13,primary,3.529041320593844927864318659E-29,True,True,2,True,1,0,0,0
+monte_carlo,paper_quick_mc_0063,Randomized active-LP resolved market path.,reference_parallel_lmsr,8,200,25,16,primary,2.137016373864004328422180472E-29,True,True,4,True,1,0,0,0

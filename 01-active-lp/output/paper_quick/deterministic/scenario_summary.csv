@@ -1,0 +1,10 @@
+run_family,scenario_name,mechanism,price_continuity_pass,max_price_change,slippage_pass,solvency_pass,path_terminal_states,path_max_price_diff,path_max_funds_diff,fairness_gap_nav_per_deposit,invariant_failures
+deterministic,neutral_late_lp,reference_parallel_lmsr,True,2E-80,True,True,1,0,0,0.0134255004284903866736110067,0
+deterministic,skewed_late_lp,reference_parallel_lmsr,True,2.373209603267881507115591096E-29,True,True,1,0,0,0.1139392829117664504807242379,0
+deterministic,long_tail_late_lp,reference_parallel_lmsr,True,3.374692031740994479984785479E-29,True,True,1,0,0,0.0211738279275841992730247060,0
+deterministic,early_vs_late_same_delta_b,reference_parallel_lmsr,True,2.624120992910607646011639570E-29,True,True,1,0,0,0.0208632596755901026139658264,0
+deterministic,same_final_claims_different_timing,reference_parallel_lmsr,True,1E-80,True,True,2,0,0.00003325045902808599741449,0.0400594700638785947641349721,0
+deterministic,cancellation_refund_path,reference_parallel_lmsr,True,2E-80,True,True,1,0,0,-0.0191069784755991348061986554,0
+deterministic,repeated_lp_entries,reference_parallel_lmsr,True,3.709404702152548257295422586E-29,True,True,1,0,0,0.0079725121970881734901486649,0
+deterministic,zero_flow_nav_invariance,reference_parallel_lmsr,True,1E-80,True,True,1,0,0,0.0000857418094000871563931488,0
+deterministic,same_block_trade_reordering,reference_parallel_lmsr,True,2E-80,True,True,2,0,0.00002464681597011885414892,0.0189009676447594154980598792,0

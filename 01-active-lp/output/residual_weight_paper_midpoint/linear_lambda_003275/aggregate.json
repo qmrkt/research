@@ -1,0 +1,19 @@
+{
+  "invariant_failure_count": 0,
+  "max_abs_fairness_gap_nav_per_deposit": "0.2091210462207410614484854729",
+  "max_divergence_max_nav_per_deposit_diff_vs_reference": "2E-27",
+  "max_divergence_max_quote_diff_vs_reference": "1.730469054563071479492020994E-26",
+  "max_price_change": "1.726236382983195709702754400E-28",
+  "mean_divergence_max_nav_per_deposit_diff_vs_reference": "7.588235294117647058823529412E-29",
+  "mean_divergence_max_quote_diff_vs_reference": "4.734706486157641424049560435E-27",
+  "mean_fairness_gap_nav_per_deposit": "-0.0006051910414658413031006701532",
+  "price_continuity_pass_rate": "1",
+  "result_count": 340,
+  "run_families": [
+    "adversarial",
+    "deterministic",
+    "monte_carlo"
+  ],
+  "slippage_pass_rate": "1",
+  "solvency_pass_rate": "1"
+}

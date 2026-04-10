@@ -1,0 +1,2 @@
+run_family,result_count,price_continuity_pass_rate,slippage_pass_rate,solvency_pass_rate,mean_max_price_change,max_max_price_change,invariant_failures
+adversarial,96,1,1,1,1.518426317498983505029124568E-29,1.726236382983195709702754400E-28,0
