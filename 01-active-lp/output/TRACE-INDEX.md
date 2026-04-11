@@ -5,6 +5,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ## How To Use This Index
 
+- Paths below are relative to this `output/` directory.
 - Use the directory path as the canonical citation target in paper drafts and internal notes.
 - Prefer `report.md` for quick interpretation.
 - Prefer `manifest.json` and `results.jsonl` when the paper needs reproducible run inputs and raw rows.
@@ -14,7 +15,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Layer B Compare Quick
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_b_compare_quick`
+- Directory: `layer_b_compare_quick`
 - Purpose: first direct comparison of the exact parallel benchmark against the compressed global-state candidate
 - Headline:
   - price continuity pass rate `1`
@@ -24,14 +25,14 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Layer B Compare Core
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_b_compare_core`
+- Directory: `layer_b_compare_core`
 - Purpose: heavier comparison pack for the same Layer A vs Layer B question
 - Headline:
   - high-precision Layer B remains effectively exact versus the reference benchmark
 
 ### FPMM Compare Normalized Core
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/fpmm_compare_normalized_core`
+- Directory: `fpmm_compare_normalized_core`
 - Purpose: matched resolved-only head-to-head between the normalized-default active-LP mechanism and a Gnosis-style FPMM pool-share baseline
 - Headline:
   - the comparison now uses the held-out normalized default `linear_lambda_normalized_0150000`
@@ -42,7 +43,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Layer C Compare Target
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_compare_target`
+- Directory: `layer_c_compare_target`
 - Purpose: main fixed-point regime comparison against the high-precision reference
 - Headline:
   - mechanically stable
@@ -50,14 +51,14 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Layer C Sell Heavy Compare
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_sell_heavy_compare`
+- Directory: `layer_c_sell_heavy_compare`
 - Purpose: stress Layer C under sell-heavy and accounting-sensitive paths
 - Headline:
   - fixed-point drift is larger than the target pack but still bounded
 
 ### Layer C Low Tail Compare
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_low_tail_compare`
+- Directory: `layer_c_low_tail_compare`
 - Purpose: extreme low-probability / many-outcome stress pack
 - Headline:
   - exposed sponsor-solvency issues in the strong cohort-isolation framing
@@ -65,21 +66,21 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Layer C Parameter Sweep Core
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_parameter_sweep_core`
+- Directory: `layer_c_parameter_sweep_core`
 - Purpose: sweep `p_min` and safety-margin settings in the normal regime
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_parameter_sweep_core/parameter_summary.csv`
+- Key file: `layer_c_parameter_sweep_core/parameter_summary.csv`
 
 ### Layer C Parameter Sweep Stress
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_parameter_sweep_stress`
+- Directory: `layer_c_parameter_sweep_stress`
 - Purpose: sweep `p_min` and safety-margin settings in harder stress regimes
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/layer_c_parameter_sweep_stress/parameter_summary.csv`
+- Key file: `layer_c_parameter_sweep_stress/parameter_summary.csv`
 
 ## Fairness Exploration Before Reserve Reform
 
 ### Paper Quick
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_quick`
+- Directory: `paper_quick`
 - Purpose: first integrated deterministic + Monte Carlo campaign for the active-LP model
 - Headline:
   - mechanism looked viable
@@ -87,7 +88,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Paper Core
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_core`
+- Directory: `paper_core`
 - Purpose: heavier integrated campaign before reserve-based residual redesign
 - Headline:
   - mechanics remained strong
@@ -95,7 +96,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Adversarial Default
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/adversarial_default`
+- Directory: `adversarial_default`
 - Purpose: targeted adversarial search for fairness tails
 - Headline:
   - strongest evidence that entry timing matters economically even when mechanics stay clean
@@ -104,7 +105,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Reserve Residual Quick
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/reserve_residual_quick`
+- Directory: `reserve_residual_quick`
 - Purpose: validate reserve-based residual release and claim-order safety
 - Headline:
   - simple reserve release is claim-order safe
@@ -112,7 +113,7 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Time Weighted Reserve Quick
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/time_weighted_reserve_quick`
+- Directory: `time_weighted_reserve_quick`
 - Purpose: test fully linear time-weighted residual release
 - Headline:
   - linear time weighting overcorrects sharply in favor of earlier LPs
@@ -121,31 +122,31 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Residual Weight Sweep Core
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_sweep_core`
+- Directory: `residual_weight_sweep_core`
 - Purpose: coarse sweep across flat, linear, concave, and affine time-weight rules
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_sweep_core/parameter_summary.csv`
+- Key file: `residual_weight_sweep_core/parameter_summary.csv`
 - Headline:
   - the fairness-neutral region is near a mild affine premium, not strong linear weighting
 
 ### Residual Weight Sweep Fine
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_sweep_fine`
+- Directory: `residual_weight_sweep_fine`
 - Purpose: first affine refinement around the coarse-sweep crossover
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_sweep_fine/parameter_summary.csv`
+- Key file: `residual_weight_sweep_fine/parameter_summary.csv`
 
 ### Residual Weight Sweep Tune
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_sweep_tune`
+- Directory: `residual_weight_sweep_tune`
 - Purpose: second affine refinement around the apparent zero-crossing
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_sweep_tune/parameter_summary.csv`
+- Key file: `residual_weight_sweep_tune/parameter_summary.csv`
 - Headline:
   - quick-pack crossover appears near `linear_lambda ≈ 0.025`
 
 ### Residual Weight Paper Candidates
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_candidates`
+- Directory: `residual_weight_paper_candidates`
 - Purpose: heavier paper-oriented comparison of the most plausible affine weights
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_candidates/parameter_summary.csv`
+- Key file: `residual_weight_paper_candidates/parameter_summary.csv`
 - Parameters:
   - `linear_lambda_0020`
   - `linear_lambda_0025`
@@ -157,9 +158,9 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Residual Weight Paper Tight
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_tight`
+- Directory: `residual_weight_paper_tight`
 - Purpose: tighter calibration around the heavier-run winner
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_tight/parameter_summary.csv`
+- Key file: `residual_weight_paper_tight/parameter_summary.csv`
 - Parameters:
   - `linear_lambda_0031`
   - `linear_lambda_0032`
@@ -172,9 +173,9 @@ Each entry points to a concrete output directory with manifests, raw results, an
 
 ### Residual Weight Paper Midpoint
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_midpoint`
+- Directory: `residual_weight_paper_midpoint`
 - Purpose: midpoint calibration inside the tight paper bracket
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_midpoint/parameter_summary.csv`
+- Key file: `residual_weight_paper_midpoint/parameter_summary.csv`
 - Parameters:
   - `linear_lambda_003225`
   - `linear_lambda_003250`
@@ -185,52 +186,22 @@ Each entry points to a concrete output directory with manifests, raw results, an
 - `linear_lambda_003250` produces mean fairness gap about `+0.00012`
 - this is the closest current result to entry-time neutrality on the paper-style calibration pack
 
-### Residual Weight Train Event Clock
+### Residual Weight Train/Test Sweeps (not included)
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_train_event_clock`
-- Purpose: held-out calibration upgrade, event-step clock family, train split
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_train_event_clock/parameter_summary.csv`
-- Headline:
-  - best train winner is `linear_lambda_0025000`
-  - even the best event-step candidate remains strongly duration-sensitive
+The four held-out calibration sweep directories (train/test x event-clock/normalized) total 219 MB of raw results and are omitted from this repository. Key findings are summarized here for reference:
 
-### Residual Weight Test Event Clock
+- **Event-step family**: best train winner is `linear_lambda_0025000`, but even the best held-out event-step candidate remains strongly duration-sensitive (held-out mean fairness gap about `-0.18466`, duration-bucket max about `0.53009`).
+- **Normalized family**: best train winner is `linear_lambda_normalized_0150000`. Held-out mean fairness gap near zero at about `-0.00677`, mean absolute gap about `0.03936`, duration-bucket max about `0.02227`. This is the current protocol-facing residual-weight default.
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_test_event_clock`
-- Purpose: held-out calibration upgrade, event-step clock family, test split
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_test_event_clock/parameter_summary.csv`
-- Headline:
-  - best held-out event-step row still has mean fairness gap about `-0.18466`
-  - mean absolute fairness gap about `0.21311`
-  - duration-bucket max absolute mean gap about `0.53009`
-
-### Residual Weight Train Normalized
-
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_train_normalized`
-- Purpose: held-out calibration upgrade, normalized lifetime-exposure family, train split
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_train_normalized/parameter_summary.csv`
-- Headline:
-  - best train winner is `linear_lambda_normalized_0150000`
-  - normalized candidates remain mechanically clean while substantially reducing duration drift
-
-### Residual Weight Test Normalized
-
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_test_normalized`
-- Purpose: held-out calibration upgrade, normalized lifetime-exposure family, test split
-- Key file: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_test_normalized/parameter_summary.csv`
-- Headline:
-  - held-out winner `linear_lambda_normalized_0150000` keeps mean fairness gap near zero at about `-0.00677`
-  - mean absolute fairness gap is about `0.03936`
-  - duration-bucket max absolute mean gap is about `0.02227`
-  - this is the current best protocol-facing residual-weight default
+The full sweep data can be regenerated using the simulation code in this repository.
 
 ### Residual Weight Boundary Validation
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_boundary_validation`
+- Directory: `residual_weight_boundary_validation`
 - Purpose: compare the historical event-step default against the selected normalized default on the high-skew boundary packs
 - Key files:
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_boundary_validation/boundary_summary.csv`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_boundary_validation/high_skew/linear_lambda_normalized_0150000/high_skew_threshold_summary.csv`
+  - `residual_weight_boundary_validation/boundary_summary.csv`
+  - `residual_weight_boundary_validation/high_skew/linear_lambda_normalized_0150000/high_skew_threshold_summary.csv`
 - Headline:
   - the normalized default preserves the high-skew late-entry gate
   - above entry-time max probability `0.8`, mean late-minus-early gap is about `-0.24449`
@@ -242,28 +213,28 @@ Each entry points to a concrete output directory with manifests, raw results, an
 For each figure or table in the paper, cite both:
 
 - the narrative source directory, such as:
-  `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_candidates/linear_lambda_0030`
+  `residual_weight_paper_candidates/linear_lambda_0030`
 - and the specific machine-readable file used to build the figure, such as:
-  `/Users/andrei/Projects26/question/contracts/research/active_lp/output/residual_weight_paper_candidates/parameter_summary.csv`
+  `residual_weight_paper_candidates/parameter_summary.csv`
 
 ## Derived Paper Artifacts
 
 ### Paper Artifacts
 
-- Directory: `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts`
+- Directory: `paper_artifacts`
 - Purpose: paper-facing derived artifacts built from the traced sweep outputs
 - Key files:
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/residual_weight_calibration.svg`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/residual_weight_calibration_points.csv`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/paper_artifacts_overview.json`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/residual_rule_comparison.svg`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/layer_c_regime_comparison.svg`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/low_tail_failure_trace.svg`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/paper_tables.md`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/table_layer_b_equivalence.csv`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/table_residual_rule_comparison.csv`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/table_layer_c_regime_comparison.csv`
-  - `/Users/andrei/Projects26/question/contracts/research/active_lp/output/paper_artifacts/table_low_tail_failure_trace.csv`
+  - `paper_artifacts/residual_weight_calibration.svg`
+  - `paper_artifacts/residual_weight_calibration_points.csv`
+  - `paper_artifacts/paper_artifacts_overview.json`
+  - `paper_artifacts/residual_rule_comparison.svg`
+  - `paper_artifacts/layer_c_regime_comparison.svg`
+  - `paper_artifacts/low_tail_failure_trace.svg`
+  - `paper_artifacts/paper_tables.md`
+  - `paper_artifacts/table_layer_b_equivalence.csv`
+  - `paper_artifacts/table_residual_rule_comparison.csv`
+  - `paper_artifacts/table_layer_c_regime_comparison.csv`
+  - `paper_artifacts/table_low_tail_failure_trace.csv`
 - Headline:
   - contains the current paper-facing calibration figure
   - preserves the original event-step calibration figure that highlights `linear_lambda_003250`

@@ -10,6 +10,22 @@ if TYPE_CHECKING:
     from research.resolution_trust.types import Participant, SimConfig
 
 
+COMPOSITION_FALSE_SUBMISSION_PROB = {
+    "none": 1.0,
+    "single_source_corrupt": 1.0,
+    "three_source_one_corrupt": 0.20,
+    "three_source_two_corrupt": 0.80,
+}
+COMPOSITION_HONEST_COUNTERS = {
+    "none": 0,
+    "single_source_corrupt": 0,
+    "three_source_one_corrupt": 2,
+    "three_source_two_corrupt": 1,
+}
+COMPOSITION_BASE_DETECTION = 0.35
+COMPOSITION_DETECTION_PER_COUNTER = 0.30
+
+
 def generate_participants(config: SimConfig, rng: random.Random) -> list[Participant]:
     """Generate market participants with positions and attention probabilities."""
     from research.resolution_trust.types import (
@@ -78,6 +94,22 @@ def generate_participants(config: SimConfig, rng: random.Random) -> list[Partici
         ))
 
     return participants
+
+
+def composition_false_submission_probability(config: SimConfig) -> float:
+    """Probability that a corrupted source topology yields a false submit path."""
+    return COMPOSITION_FALSE_SUBMISSION_PROB[config.composition_scenario.value]
+
+
+def composition_detection_probability(config: SimConfig) -> float:
+    """
+    Probability that a checker can diagnose a false trace once they inspect it.
+
+    Honest counter-sources leave contradictory artifacts in the published trace.
+    More honest counter-sources make the false path easier to challenge.
+    """
+    honest_counters = COMPOSITION_HONEST_COUNTERS[config.composition_scenario.value]
+    return min(1.0, COMPOSITION_BASE_DETECTION + honest_counters * COMPOSITION_DETECTION_PER_COUNTER)
 
 
 def _poisson_check_prob(window_hours: float, rate_per_hour: float) -> float:
@@ -151,6 +183,8 @@ def estimate_challenge_probability(
     participants: list[Participant],
 ) -> float:
     """Estimate the probability that a false proposal is challenged."""
+    detection_prob = composition_detection_probability(config)
+
     # Estimate challenge probability from participant attention.
     # Only participants who would lose under the false outcome (winners under true)
     # have incentive to challenge.
@@ -159,7 +193,7 @@ def estimate_challenge_probability(
         if p.index == proposer.index:
             continue
         if p.is_winner_under_true and p.attention_prob > 0:
-            p_no_challenge *= (1.0 - p.attention_prob)
+            p_no_challenge *= (1.0 - p.attention_prob * detection_prob)
 
     p_challenge = 1.0 - p_no_challenge
 
@@ -176,7 +210,7 @@ def estimate_challenge_probability(
         # At bounty=10 USDC: modest boost. At bounty=100: significant.
         # At bounty=1000: near-maximum.
         external_check_prob = min(0.4, 0.05 * math.log1p(bounty_value / 10.0))
-        p_challenge = min(1.0, p_challenge + external_check_prob * (1.0 - p_challenge))
+        p_challenge = min(1.0, p_challenge + external_check_prob * detection_prob * (1.0 - p_challenge))
 
     return p_challenge
 
@@ -202,15 +236,17 @@ def proposer_action(
         return "truthful" if truthful_payoff >= 0.0 else "abstain"
 
     p_challenge = estimate_challenge_probability(config, proposer, participants)
+    p_false_submit = composition_false_submission_probability(config)
     accepted_payoff = mev + config.proposer_fee - config.proposer_submission_cost
     corrected_payoff = -config.proposer_bond - config.proposer_submission_cost
-    false_payoff = (
+    materialized_false_payoff = (
         (1.0 - p_challenge) * accepted_payoff
         + p_challenge * (
             (1.0 - config.adjudicator_accuracy) * accepted_payoff
             + config.adjudicator_accuracy * corrected_payoff
         )
     )
+    false_payoff = p_false_submit * materialized_false_payoff + (1.0 - p_false_submit) * truthful_payoff
 
     if false_payoff > truthful_payoff and false_payoff > 0.0:
         return "false"

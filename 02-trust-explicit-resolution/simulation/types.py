@@ -44,6 +44,13 @@ class ProposerBudgetProfile(Enum):
     SPECIALIZED = "specialized"
 
 
+class CompositionScenario(Enum):
+    NONE = "none"
+    SINGLE_SOURCE_CORRUPT = "single_source_corrupt"
+    THREE_SOURCE_ONE_CORRUPT = "three_source_one_corrupt"
+    THREE_SOURCE_TWO_CORRUPT = "three_source_two_corrupt"
+
+
 @dataclass(frozen=True)
 class SimConfig:
     """Full configuration for one simulation run."""
@@ -80,6 +87,9 @@ class SimConfig:
     proposer_fee: float = 0.0  # success-conditioned proposer compensation
     proposer_work_cost: float = 0.0  # fixed operational cost per submitted proposal
     proposer_capital_cost_apy: float = 0.0  # annualized opportunity cost on locked bond
+
+    # Blueprint composition / source corruption
+    composition_scenario: CompositionScenario = CompositionScenario.NONE
 
     # Participant mix
     challenger_mix: ChallengerMix = ChallengerMix.STAKE_PROPORTIONAL

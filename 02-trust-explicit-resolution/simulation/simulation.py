@@ -6,6 +6,8 @@ import random
 
 from research.resolution_trust.agents import (
     challenger_decides,
+    composition_detection_probability,
+    composition_false_submission_probability,
     estimate_proposer_mev,
     generate_participants,
     participant_checks,
@@ -52,6 +54,24 @@ def run_episode(config: SimConfig, rng: random.Random) -> EpisodeResult:
     action = proposer_actions[proposer.index]
     proposal_is_false = action == "false"
 
+    if proposal_is_false and rng.random() > composition_false_submission_probability(config):
+        # Composition blocked the false path and forced a clean truthful resolution.
+        return EpisodeResult(
+            proposal_is_false=False,
+            challenged=False,
+            proposal_submitted=True,
+            adjudicator_correct=True,
+            resolution_correct=True,
+            eligible_proposers=eligible_count,
+            willing_proposers=willing_count,
+            num_verifiers=0,
+            proposer_payoff=config.proposer_fee - config.proposer_submission_cost,
+            challenger_payoff=0.0,
+            total_bond_locked=config.proposer_bond,
+            time_to_finalization_hours=config.challenge_window_hours,
+            bounty_paid=0.0,
+        )
+
     if not proposal_is_false:
         # Honest proposal: always correct, minimal lockup
         return EpisodeResult(
@@ -73,12 +93,13 @@ def run_episode(config: SimConfig, rng: random.Random) -> EpisodeResult:
     # Step 2: False proposal submitted. Check if anyone challenges.
     challengers = []
     num_verifiers = 0
+    detection_prob = composition_detection_probability(config)
     for p in participants:
         if p.index == proposer.index:
             continue
         if participant_checks(p, rng):
             num_verifiers += 1
-            if challenger_decides(p, config):
+            if rng.random() <= detection_prob and challenger_decides(p, config):
                 challengers.append(p)
 
     # Verification bounty attracts additional non-stake verifiers.
@@ -92,9 +113,9 @@ def run_episode(config: SimConfig, rng: random.Random) -> EpisodeResult:
         external_check_prob = min(0.4, 0.05 * math.log1p(bounty_value / 10.0))
         if rng.random() < external_check_prob:
             num_verifiers += 1
-            # External verifier detects the false proposal
-            challengers.append(None)  # sentinel for external challenger
-            bounty_paid = bounty_value
+            if rng.random() <= detection_prob:
+                challengers.append(None)  # sentinel for external challenger
+                bounty_paid = bounty_value
 
     challenged = len(challengers) > 0
 

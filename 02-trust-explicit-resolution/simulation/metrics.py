@@ -27,6 +27,7 @@ class AggregatedMetrics:
     proposer_fee: float
     proposer_work_cost: float
     proposer_capital_cost_apy: float
+    composition_scenario: str
     bounty_fraction: float
     challenge_window_hours: float
     attention_coefficient: float
@@ -37,7 +38,13 @@ class AggregatedMetrics:
 
     # Results
     false_resolution_rate: float
+    false_resolution_rate_se: float
+    false_resolution_rate_ci_low: float
+    false_resolution_rate_ci_high: float
     challenge_rate: float
+    challenge_rate_se: float
+    challenge_rate_ci_low: float
+    challenge_rate_ci_high: float
     mean_verification_coverage: float
     mean_bond_locked: float
     mean_time_to_finalization: float
@@ -52,8 +59,23 @@ class AggregatedMetrics:
     num_episodes: int
 
 
+def _binomial_summary(successes: int, trials: int) -> tuple[float, float, float]:
+    if trials <= 0:
+        return (0.0, 0.0, 0.0)
+    rate = successes / trials
+    se = (rate * (1.0 - rate) / trials) ** 0.5
+    margin = 1.96 * se
+    return (se, max(0.0, rate - margin), min(1.0, rate + margin))
+
+
 def aggregate(result: SimResult) -> AggregatedMetrics:
     c = result.config
+    submitted = [e for e in result.episodes if e.proposal_submitted]
+    false_submitted = [e for e in submitted if not e.resolution_correct]
+    false_eps = [e for e in submitted if e.proposal_is_false]
+    challenged_false = [e for e in false_eps if e.challenged]
+    false_se, false_ci_low, false_ci_high = _binomial_summary(len(false_submitted), len(submitted))
+    challenge_se, challenge_ci_low, challenge_ci_high = _binomial_summary(len(challenged_false), len(false_eps))
     return AggregatedMetrics(
         pool_size=c.pool_size,
         num_participants=c.num_participants,
@@ -67,6 +89,7 @@ def aggregate(result: SimResult) -> AggregatedMetrics:
         proposer_fee=c.proposer_fee,
         proposer_work_cost=c.proposer_work_cost,
         proposer_capital_cost_apy=c.proposer_capital_cost_apy,
+        composition_scenario=c.composition_scenario.value,
         bounty_fraction=c.bounty_fraction,
         challenge_window_hours=c.challenge_window_hours,
         attention_coefficient=c.attention_coefficient,
@@ -75,7 +98,13 @@ def aggregate(result: SimResult) -> AggregatedMetrics:
         stake_distribution=c.stake_distribution.value,
         proposer_type=c.proposer_type.value,
         false_resolution_rate=result.false_resolution_rate,
+        false_resolution_rate_se=false_se,
+        false_resolution_rate_ci_low=false_ci_low,
+        false_resolution_rate_ci_high=false_ci_high,
         challenge_rate=result.challenge_rate,
+        challenge_rate_se=challenge_se,
+        challenge_rate_ci_low=challenge_ci_low,
+        challenge_rate_ci_high=challenge_ci_high,
         mean_verification_coverage=result.mean_verification_coverage,
         mean_bond_locked=result.mean_bond_locked,
         mean_time_to_finalization=result.mean_time_to_finalization,

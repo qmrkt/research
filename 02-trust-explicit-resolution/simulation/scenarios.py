@@ -5,6 +5,7 @@ from __future__ import annotations
 from research.resolution_trust.types import (
     BondStructure,
     ChallengerMix,
+    CompositionScenario,
     ProposerBudgetProfile,
     ProposerMEVModel,
     ProposerType,
@@ -276,21 +277,25 @@ def honest_majority_baseline() -> list[SimConfig]:
 
 
 def composition_resilience() -> list[SimConfig]:
-    """Test multi-source vs single-source blueprint resilience."""
-    # This is modeled indirectly: multi-source blueprints have higher
-    # effective attention (participants cross-check independently),
-    # which maps to higher alpha.
+    """Test explicit source-corruption scenarios for composed blueprints."""
     configs = []
-    for alpha in [0.3, 1.0, 3.0]:
+    base = dict(
+        pool_size=5_000,
+        num_participants=10,
+        bond_structure=BondStructure.POOL_PROPORTIONAL,
+        bond_rate=0.15,
+        challenger_mix=ChallengerMix.MAJORITY_LAZY,
+        proposer_type=ProposerType.STRATEGIC,
+        adjudicator_accuracy=0.9,
+    )
+    for scenario in (
+        CompositionScenario.SINGLE_SOURCE_CORRUPT,
+        CompositionScenario.THREE_SOURCE_ONE_CORRUPT,
+        CompositionScenario.THREE_SOURCE_TWO_CORRUPT,
+    ):
         configs.append(SimConfig(
-            pool_size=5_000,
-            num_participants=10,
-            bond_structure=BondStructure.POOL_PROPORTIONAL,
-            bond_rate=0.15,
-            attention_coefficient=alpha,
-            challenger_mix=ChallengerMix.STAKE_PROPORTIONAL,
-            proposer_type=ProposerType.STRATEGIC,
-            adjudicator_accuracy=0.9,
+            **base,
+            composition_scenario=scenario,
         ))
     return configs
 

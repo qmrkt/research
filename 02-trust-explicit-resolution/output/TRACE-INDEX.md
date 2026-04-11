@@ -28,7 +28,7 @@ This directory contains the traceable outputs behind the trust-explicit resoluti
   - Honest-proposer baseline.
 - `composition/`
   - `composition.csv`
-  - Composition proxy experiment. Current version models composition indirectly through higher effective verification attention rather than explicit node-level source corruption.
+  - Explicit source-corruption experiment comparing compromised single-source and three-source blueprints.
 - `stake_distribution/`
   - `stake_distribution.csv`
   - Stake-concentration sensitivity pack.
@@ -54,4 +54,4 @@ This directory contains the traceable outputs behind the trust-explicit resoluti
 - Use `bond_scaling` and `bond_structure` for the proposer-bond argument.
 - Use `lazy_verifier`, `verification_bounty`, and `challenge_window` for the verification-coverage argument.
 - Use `adjudicator_accuracy` to support the claim that challenge probability dominates adjudicator accuracy.
-- Treat `composition` as directional proxy evidence rather than a full explicit source-corruption model.
+- Treat `composition` as the direct source-corruption baseline for the paper's composition argument.

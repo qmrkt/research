@@ -701,17 +701,11 @@ def run_calibration_upgrade(
     if upgrade_config.high_skew_adversarial_limit is not None:
         high_skew_adv = high_skew_adv[: upgrade_config.high_skew_adversarial_limit]
 
-    low_tail_mc, low_tail_adv = _boundary_low_tail_bundles(
-        monte_carlo_trials=upgrade_config.low_tail_monte_carlo_trials,
-        adversarial_limit=upgrade_config.low_tail_adversarial_limit,
-    )
-
     provisional_event_clock = _event_clock_parameter_set(CURRENT_PROVISIONAL_EVENT_CLOCK)
     boundary_rows: list[dict[str, object]] = []
     boundary_outputs: dict[str, Path] = {}
     for family_name, monte_carlo_bundles, adversarial_bundles in (
         ("high_skew", high_skew_mc, high_skew_adv),
-        ("low_tail", low_tail_mc, low_tail_adv),
     ):
         for parameter_set in (provisional_event_clock, selected_normalized_param):
             family_dir = boundary_dir / family_name / parameter_set.name

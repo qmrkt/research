@@ -18,5 +18,3 @@
 
 - `high_skew` / `linear_lambda_0032500`: mean_gap=-0.06821281892309485285031446375, mean_abs_gap=0.0759769651318296318387895094, invariant_failures=0
 - `high_skew` / `linear_lambda_normalized_0150000`: mean_gap=-0.1100579215296421365144080753, mean_abs_gap=0.1112026950147825128497271032, invariant_failures=0
-- `low_tail` / `linear_lambda_0032500`: mean_gap=-0.06821281892309485285031446375, mean_abs_gap=0.0759769651318296318387895094, invariant_failures=0
-- `low_tail` / `linear_lambda_normalized_0150000`: mean_gap=-0.1100579215296421365144080753, mean_abs_gap=0.1112026950147825128497271032, invariant_failures=0

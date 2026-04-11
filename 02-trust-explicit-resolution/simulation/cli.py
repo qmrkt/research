@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from research.resolution_trust.figures import write_overview_json, write_paper_tables
 from research.resolution_trust.metrics import print_summary, write_results_csv, write_results_json
 from research.resolution_trust.scenarios import SCENARIO_FAMILIES, all_scenarios
 from research.resolution_trust.simulation import run_parameter_sweep
@@ -30,7 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_OUTPUT_DIR,
         help="Output directory.",
     )
-    run.add_argument("--episodes", type=int, default=1000, help="Episodes per config.")
+    run.add_argument("--episodes", type=int, default=5000, help="Episodes per config.")
 
     # Run all scenario families
     run_all = subparsers.add_parser("run-all", help="Run all scenario families")
@@ -40,7 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_OUTPUT_DIR,
         help="Output directory.",
     )
-    run_all.add_argument("--episodes", type=int, default=1000, help="Episodes per config.")
+    run_all.add_argument("--episodes", type=int, default=5000, help="Episodes per config.")
 
     # Generate paper artifacts
     artifacts = subparsers.add_parser("paper-artifacts", help="Run all and generate paper tables")
@@ -50,7 +49,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_OUTPUT_DIR,
         help="Output directory.",
     )
-    artifacts.add_argument("--episodes", type=int, default=1000, help="Episodes per config.")
+    artifacts.add_argument("--episodes", type=int, default=5000, help="Episodes per config.")
 
     # List available families
     subparsers.add_parser("list", help="List available scenario families")
@@ -101,6 +100,7 @@ def main(argv: list[str] | None = None) -> None:
             write_results_csv(results, out_dir / f"{name}.csv")
 
         if args.command == "paper-artifacts":
+            from research.resolution_trust.figures import write_overview_json, write_paper_tables
             write_paper_tables(all_results)
             write_overview_json(all_results)
 
