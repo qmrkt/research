@@ -1,5 +1,7 @@
 Every protocol decision starts here.
 
+## Implemented
+
 <table>
 <tr>
 <td width="120"><img src="01-active-lp/thumb.png" width="108" alt=""></td>
@@ -15,6 +17,11 @@ Every protocol decision starts here.
 <sub>Most prediction markets resolve outcomes opaquely. This paper commits each market to an executable resolution blueprint at creation, producing challengeable evidence traces, with dispute economics where bonds scale with pool value and verification coverage matters more than adjudicator quality.</sub>
 </td>
 </tr>
+</table>
+
+## Drafts
+
+<table>
 <tr>
 <td width="120"><img src="03-verified-execution/thumb.svg" width="108" alt=""></td>
 <td>
