@@ -39,3 +39,10 @@ For a high-level overview, see [the whitepaper](whitepaper.pdf).
 </td>
 </tr>
 </table>
+
+## Licensing
+
+- Unless otherwise noted, software and code in this repository are licensed under the Apache License 2.0. See [LICENSE](LICENSE).
+- Paper materials are licensed separately in their respective paper directories.
+- In particular, the paper text, figures, thumbnails, diagrams, and generated PDFs in `01-active-lp/`, `02-trust-explicit-resolution/`, `03-verified-execution/`, and `04-general-intelligence-benchmark/` are licensed under CC BY 4.0 unless otherwise noted.
+- Third-party materials, if any, remain under their original licenses.
