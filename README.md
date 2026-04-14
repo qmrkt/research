@@ -1,5 +1,7 @@
 Every protocol decision starts here.
 
+For a high-level overview, see [the whitepaper](whitepaper.pdf).
+
 ## Implemented
 
 <table>
