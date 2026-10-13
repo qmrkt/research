@@ -1,0 +1,107 @@
+\section{Threshold Execution and Trust Domains}
+\label{sec:threshold}
+
+A threshold certificate contains the common result, the fixed request/committee epoch, and at least $k$ eligible distinct identities' individually authenticated receipts. Each receipt binds its own run evidence to that same result. Validation checks request, snapshot, policy, result projection, signer eligibility, registration epoch, and validity. Merely collecting $k$ signatures on unrelated roots does not establish agreement.
+
+For a fixed committee $V$ of size $n$, let at most $f$ members be Byzantine. An honest signer verifies the required local relation and votes at most once per request. It can retransmit its vote; it cannot change its vote after seeing another result. The authoritative request and signature context prevent cross-market or cross-epoch reuse.
+
+\begin{proposition}[Authenticity, conflicting certificates, and liveness]
+For an unconstrained $k$-of-$n$ committee:
+\begin{enumerate}
+\item If $k>f$, every accepted certificate contains an honest signer. If honest signers only endorse valid computations, no invalid computation can be certified.
+\item If $2k>n+f$, two certificates for different result digests cannot both exist under the one-vote rule.
+\item If all honest signers obtain the same valid result, messages are eventually delivered within the protocol's timing assumptions, and $k\leq n-f$, Byzantine withholding alone cannot prevent collection of a certificate.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The first statement follows because $k$ signers cannot all lie in a set of size at most $f$. For the second, any two size-at-least-$k$ signer sets intersect in at least $2k-n>f$ identities, hence contain an honest common signer, which cannot endorse both digests. For the third, the $n-f$ honest signers themselves supply a quorum. Their equal-result premise and eventual delivery are necessary; a coordinator that alone controls submission can still censor it unless an alternate submission path exists.
+\end{proof}
+
+The bounds distinguish different promises. A 3-of-5 committee with one faulty member includes an honest signer, but does not satisfy $2k>n+f$. If two groups of honest signers legitimately obtain different stochastic outputs, the faulty signer can help each group form a different certificate. An authoritative contract can reject a second settlement, but that does not make the two underlying certificates mutually consistent. A fixed result relation and a conflict-resistant threshold are separate requirements.
+
+\subsection{Diversity must be enforced by the quorum rule}
+
+Three Nitro signers and two signers from another vendor do not force a 3-of-5 certificate to cross vendor boundaries. Nor do five different hardware labels protect a registry controlled by one compromised registrar. The dependency graph is part of the policy: operators, vendors, registrars, builds, provider accounts, and data sources can each be shared.
+
+Let $\mathcal Q$ be the family of permitted signer sets after threshold and domain constraints. For any allowed faulty set $F$, the actual conditions are
+\begin{align}
+&Q\not\subseteq F &&\text{for every }Q\in\mathcal Q,\label{eq:honestquorum}\\
+&(Q_1\cap Q_2)\not\subseteq F &&\text{for all }Q_1,Q_2\in\mathcal Q,\label{eq:intersection}\\
+&\exists Q\in\mathcal Q:\ Q\subseteq V\setminus F &&\text{for liveness}.\label{eq:liveness}
+\end{align}
+The same three proofs apply with these set conditions. Requiring multiple vendors may improve the first condition while harming the third if a required vendor is unavailable. Domain labels must be authenticated by the registration policy; an operator cannot create independence merely by naming new keys.
+
+For a declared family of compromise actions $a$ with costs $c_a$ and affected signer sets $C_a$, define the minimum certificate-forgery cost
+\[
+C^*=\min_{A}\left\{\sum_{a\in A}c_a:
+\exists Q\in\mathcal Q,\quad Q\subseteq\bigcup_{a\in A}C_a\right\}.
+\]
+This is a weighted covering problem, not an independent-failure calculation. One registrar action may cover every apparent hardware domain. The experiments enumerate these policies and disclose their assigned costs; the numbers illustrate structural dependencies and are not market estimates of the price of compromising a vendor.
+
+\section{Authorized Attempts and Selection Integrity}
+\label{sec:selection}
+
+Attestation makes a result credible as an invocation. It does not make a selected invocation representative. A host can ask a stochastic judge the same question repeatedly and reveal only a favorable answer. Every revealed execution can be entirely genuine.
+
+\begin{proposition}[Repeated execution advantage]
+If each independent permitted or hidden invocation has favorable-result probability $p$, a host allowed to choose among $m$ invocations can obtain at least one favorable result with probability
+\[
+1-(1-p)^m.
+\]
+Without independence, if each invocation's conditional favorable probability given all previous observations is at most $p$, the same expression is an upper bound; the weaker marginal bound alone gives only $\min(1,mp)$ by the union bound.
+\end{proposition}
+\begin{proof}
+Under independence, all $m$ fail with probability $(1-p)^m$. Under the stated conditional bound, the chance of another failure conditional on the previous failures is at least $1-p$; multiply the successive bounds. Under marginal bounds alone, use the union bound on the favorable events.
+\end{proof}
+
+At $p=0.1$, thirty independent trials produce a favorable result with probability $1-0.9^{30}\simeq95.76\%$. A unique run ID, authentic signature, or fresh enclave key does not change this calculation. Restarting a valid program can be the attack.
+
+\subsection{An authoritative attempt policy}
+
+The request fixes its attempt slots, their assignment, publication deadlines, and aggregation rule before results are known. Starting a slot is a ledger transition. A completed receipt consumes it; an aborted or expired slot remains visible as a failure. An aborted slot does not authorize another draw; any replacement rule is committed before outcomes are observed. A child execution request identifies each authorized slot; committee one-vote semantics apply to that identity.
+
+A fixed set of stochastic samples can be aggregated only under the declared complete-input policy. The coordinator cannot choose a favorable subset and label it the ensemble. Missing required results lead to cancellation or the predeclared fallback. The acceptance rule also needs to address re-execution \emph{within} a slot: a ledger can limit accepted receipts without observing every private enclave launch.
+
+The strong reference remedy is deterministic re-execution. The request pins source snapshot, model or computation version, exact decoding/numerical semantics, and a seed chosen without adversarial grinding after the request is fixed. Repeated evaluation of that complete function produces the same result. An API's advisory seed field is insufficient when its serving system remains nondeterministic or its identity is unverified. Hardware rollback then causes repeated work, not new samples, provided all committed inputs and semantics are enforced.
+
+\begin{proposition}[No restart sampling for a fixed computation]
+For a fixed authorized request $q$, snapshot $x$, program/model semantics $F$, and seed $s$, suppose every accepted receipt verifies the result $F(q,x,s)$. Restarting any number of times cannot increase the set of acceptable outcomes for that request.
+\end{proposition}
+\begin{proof}
+Every acceptable receipt has the same deterministic result $F(q,x,s)$. Repetition changes run evidence but not that value. Any different accepted result violates the local computation or binding assumption.
+\end{proof}
+
+The theorem needs the seed and snapshot to be fixed without result-dependent selection. If the proposer can create many nominally equivalent requests, choose a snapshot after observing outcomes, or grind request identifiers used as randomness, it has moved the sampling attack to an earlier stage. The market permits one authoritative resolution request per epoch; replacement, randomness release, and snapshot selection have their own committed rules.
+
+\subsection{The selective-abort boundary}
+
+Even one genuinely one-shot draw can be withheld. Suppose the favorable probability is $p$, every favorable result is published, and an unfavorable result is published with probability $r$. Then
+\[
+\Pr(\mathrm{finalize})=p+(1-p)r,\qquad
+\Pr(\mathrm{favorable}\mid\mathrm{finalize})=
+\frac{p}{p+(1-p)r}.
+\]
+At $r=0$, every finalized result is favorable while only a fraction $p$ of requests finalize. Recording the missing attempts makes the manipulation observable, but does not magically debias the distribution conditional on success.
+
+\begin{proposition}[Absolute integrity versus conditional selection]
+Suppose an authorized one-shot computation has favorable probability $p$ and the adversary may only suppress its result. Then $\Pr(\mathrm{favorable}\land\mathrm{finalize})\leq p$. If finalization probability is at least $\lambda>0$, then
+\[
+\Pr(\mathrm{favorable}\mid\mathrm{finalize})\leq
+\min\{1,p/\lambda\}.
+\]
+Both bounds can be attained by selective suppression.
+\end{proposition}
+\begin{proof}
+A finalized favorable outcome is a subset of the authorized favorable event. Divide its probability by the finalization probability. For $\lambda\leq p$, publish only a suitable subset of favorable results; for $\lambda>p$, publish all favorable results and enough unfavorable results to reach $\lambda$.
+\end{proof}
+
+This is a useful design boundary. Deterministic restarts and authoritative slots remove repeated-draw advantage; they do not remove denial of service. Replication with an available honest quorum can restore publication under the liveness premises. Funded completion, penalties for attributable aborts, and independent submission paths can change the economics. None justifies reporting only finalized outcomes and calling the resulting sample unbiased.
+
+\begin{proposition}[Replicated completion removes host selection]
+Fix an authorized request $q$, snapshot $x$, and deterministic semantics $F$ before a public seed $S$ is drawn from its declared distribution and irreversibly bound to the request. For $n$ assigned replicas, assume at most $f$ identities are faulty during the request and $f<k\leq n-f$. For every seed in the distribution's support and every admissible adversarial schedule, suppose honest replicas obtain the committed inputs, complete $Y=F(q,x,S)$, and their valid receipts, required evidence, and finalization transactions are included within the prescribed bounds. A policy accepting any valid $k$-replica completion, with no missing-slot or host-cancellation veto outside that quorum, completes with $Y$. The host can neither replace the result nor select which authorized outcomes complete.
+\end{proposition}
+\begin{proof}
+Every accepted certificate contains an honest signer, so its result is $Y$. At least $k$ honest replicas supply the certificate and evidence without Byzantine cooperation. The uniform inclusion premise and absence of an outside veto establish completion for every authorized seed and admissible schedule. Conditioning on completion therefore leaves the prescribed distribution of $F(q,x,S)$ unchanged.
+\end{proof}
+
+This is a concrete extension to build: threshold completion of replicas of one fixed computation, rather than cancellation whenever any required stochastic sample is missing. The current attempt experiment implements the latter policy and the deterministic restart construction; it does not experimentally establish this extension's hardware, availability, or unbiased-randomness premises.

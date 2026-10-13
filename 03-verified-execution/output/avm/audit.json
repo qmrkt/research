@@ -1,0 +1,45 @@
+{
+  "all_index_checks": 168,
+  "confirmed_groups": 42,
+  "cost_ranges": [
+    {
+      "count": 4,
+      "maximum": 386,
+      "method": "member",
+      "minimum": 384
+    },
+    {
+      "count": 4,
+      "maximum": 2347,
+      "method": "signed",
+      "minimum": 2345
+    },
+    {
+      "count": 16,
+      "maximum": 544,
+      "method": "member",
+      "minimum": 540
+    },
+    {
+      "count": 16,
+      "maximum": 2505,
+      "method": "signed",
+      "minimum": 2501
+    },
+    {
+      "count": 64,
+      "maximum": 702,
+      "method": "member",
+      "minimum": 696
+    },
+    {
+      "count": 64,
+      "maximum": 2663,
+      "method": "signed",
+      "minimum": 2657
+    }
+  ],
+  "negative_cases_rejected": 45,
+  "raw_responses_verified": 518,
+  "source_hashes_verified": 5
+}

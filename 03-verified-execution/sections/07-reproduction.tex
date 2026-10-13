@@ -1,0 +1,27 @@
+\section{Reproduction and Acceptance Boundaries}
+
+The source and public evidence are in the \href{https://github.com/qmrkt/research}{research repository}, directory \path{03-verified-execution}. \path{PROTOCOL.md} specifies exact objects, encodings, tree rules, and the bounded semantic/publication profile. \path{QUORUM.md} specifies committee, dependency, and attempt policies. \path{REPRODUCIBILITY.md} maps claims to saved artifacts and commands. The final revision manifest records file hashes. Earlier paper PDFs remain recoverable in Git history.
+
+The installed Python research package uses the standard library; the independent commitment verifier uses Node.js. The clean-wheel check installs outside the checkout and runs all three papers' tests without injecting source paths. Optional matplotlib regenerates the selection figure from saved observations and the proved conditional-selection bounds. The AVM harness has separately pinned compiler/SDK requirements and creates a fresh disposable private ledger; it neither resets a product network nor spends live-network funds.
+
+\begin{table}[h]
+\centering\small
+\caption{What each executable check establishes. Passing one row does not imply the properties in later rows.}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\linewidth}{p{0.25\linewidth}YY}
+\toprule
+Check & Accepted fact & Remaining check\\
+\midrule
+Canonical encoding & One permitted byte representation & Exact schema and semantic validity\\
+Merkle opening & Bytes at a bound count/index/context & Whether those bytes describe valid execution\\
+Complete replay & Correct bounded computation on fixed authenticated inputs & Historical invocation and source truth\\
+Publication gate & All required bytes disclosed before the checking window & Attentive checking and semantic acceptance\\
+Runner receipt & Authorized key endorsed bound evidence/result & Approved program and key custody\\
+Attestation appraisal & Declared hardware evidence meets an appraisal policy & Correct code, source truth, and persistent attempt control\\
+Quorum certificate & Enough eligible distinct identities endorse one result & Fault assumptions, dependency diversity, and availability\\
+Attempt completion & Required public slots follow the declared policy & Hidden resampling unless fixed execution prevents it\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Hash, commitment, and signature security are assumptions of the proofs, not claims inferred from a finite number of tests. Conformance vectors preserve honest controls and attacks that correctly remain possible: authentic false inputs, shared-dependency compromise, hidden stochastic restarts, selective abort, and unchecked semantic fraud in the optimistic publication profile. Those cases identify the next required layer instead of disappearing from the results.

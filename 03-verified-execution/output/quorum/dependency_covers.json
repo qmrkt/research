@@ -1,0 +1,85 @@
+[
+  {
+    "accepted_sets": 16,
+    "cost_interpretation": "illustrative units, not measured compromise costs",
+    "domain_requirement": 1,
+    "minimum_attack": {
+      "attacks": [
+        "vendor-a"
+      ],
+      "compromised": [
+        "r0",
+        "r1",
+        "r2"
+      ],
+      "cost": 10,
+      "possible": true
+    },
+    "minimum_intersection": 1,
+    "shared_registrar_attack": false
+  },
+  {
+    "accepted_sets": 16,
+    "cost_interpretation": "illustrative units, not measured compromise costs",
+    "domain_requirement": 1,
+    "minimum_attack": {
+      "attacks": [
+        "shared-registrar"
+      ],
+      "compromised": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "cost": 1,
+      "possible": true
+    },
+    "minimum_intersection": 1,
+    "shared_registrar_attack": true
+  },
+  {
+    "accepted_sets": 15,
+    "cost_interpretation": "illustrative units, not measured compromise costs",
+    "domain_requirement": 2,
+    "minimum_attack": {
+      "attacks": [
+        "vendor-a",
+        "vendor-b"
+      ],
+      "compromised": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "cost": 20,
+      "possible": true
+    },
+    "minimum_intersection": 1,
+    "shared_registrar_attack": false
+  },
+  {
+    "accepted_sets": 15,
+    "cost_interpretation": "illustrative units, not measured compromise costs",
+    "domain_requirement": 2,
+    "minimum_attack": {
+      "attacks": [
+        "shared-registrar"
+      ],
+      "compromised": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "cost": 1,
+      "possible": true
+    },
+    "minimum_intersection": 1,
+    "shared_registrar_attack": true
+  }
+]

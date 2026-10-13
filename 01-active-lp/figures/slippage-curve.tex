@@ -1,0 +1,79 @@
+\definecolor{curvebefore}{HTML}{355B8C}
+\definecolor{curveafter}{HTML}{4A6FA5}
+\definecolor{fillbetween}{HTML}{7C93BD}
+\definecolor{accentwarm}{HTML}{C9714A}
+
+\begin{tikzpicture}
+\begin{axis}[
+  width=12cm,
+  height=7.5cm,
+  xlabel={Trade size (shares bought)},
+  ylabel={Marginal price},
+  xmin=0, xmax=3.2,
+  ymin=0.48, ymax=0.92,
+  axis lines=left,
+  every axis x label/.style={at={(axis description cs:0.5,-0.07)}, anchor=north, font=\small},
+  every axis y label/.style={at={(axis description cs:-0.08,0.5)}, anchor=south, rotate=90, font=\small},
+  tick label style={font=\footnotesize},
+  legend style={
+    at={(0.04,0.96)},
+    anchor=north west,
+    font=\footnotesize,
+    draw=none,
+    fill=white,
+    fill opacity=0.78,
+    text opacity=1,
+    row sep=2pt,
+  },
+  clip=true,
+  every tick/.style={gray!60},
+  grid=major,
+  grid style={gray!15},
+  xtick={0,0.5,1.0,1.5,2.0,2.5,3.0},
+  ytick={0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9},
+]
+
+% Shaded region between curves up to probe size: execution-cost reduction
+\addplot[
+  fill=fillbetween,
+  fill opacity=0.12,
+  draw=none,
+  domain=0:2.0,
+  samples=80,
+] {1/(1+exp(-x/1.5))} \closedcycle;
+
+\addplot[
+  fill=white,
+  draw=none,
+  domain=0:2.0,
+  samples=80,
+] {1/(1+exp(-x/3.0))} \closedcycle;
+
+% Before LP entry: B = 1.5
+\addplot[
+  curvebefore,
+  thick,
+  domain=0:3.1,
+  samples=100,
+] {1/(1+exp(-x/1.5))};
+\addlegendentry{Before LP entry}
+
+% After LP entry: B = 3.0
+\addplot[
+  curveafter,
+  thick,
+  domain=0:3.1,
+  samples=100,
+] {1/(1+exp(-x/3.0))};
+\addlegendentry{After LP entry}
+
+% Vertical dashed line at trade size = 2.0
+\draw[accentwarm!45, dashed, thin] (axis cs:2.0,0.48) -- (axis cs:2.0,0.82);
+
+% Brace and label for slippage difference
+\draw[{Stealth[length=2.5pt]}-{Stealth[length=2.5pt]}, accentwarm!75!black, thin]
+  (axis cs:2.0,{1/(1+exp(-2.0/3.0))}) -- (axis cs:2.0,{1/(1+exp(-2.0/1.5))});
+\node[font=\scriptsize, accentwarm!75!black, anchor=west] at (axis cs:2.1,0.735) {slippage gap};
+
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,50 @@
+{
+  "adaptive_decisions.jsonl": {
+    "bytes": 1291853,
+    "sha256": "3e50fa5bde335c08a766a460b176b0191d20fc601c7c72ffcd17e9eb4365342f"
+  },
+  "adaptive_rows.csv": {
+    "bytes": 102551,
+    "sha256": "b0c9602c546dbfd02707a1716214b05e9bf7b318cc56d580d54db79cdd9f6015"
+  },
+  "cohort_rows.jsonl": {
+    "bytes": 10864188,
+    "sha256": "82198a92aed573a1e8a082772290766f58976fdf55048e75926e1fb7a047ecd9"
+  },
+  "config.json": {
+    "bytes": 2732,
+    "sha256": "29e892ed47d278297dacfe313e0ae27d5fc0637973b2e6ed8f84d608c183c7e7"
+  },
+  "historical_rows.csv": {
+    "bytes": 3714886,
+    "sha256": "7d9913c4f18a29f94703aa5f8520cf2d42371a9552936f05c9c4de3dbb5fe684"
+  },
+  "holdout_rows.csv": {
+    "bytes": 1260262,
+    "sha256": "41024518e9e3a353dbdaeb83a8553494f9d0729d5f3b149482d0eba0f34b85e7"
+  },
+  "paths.jsonl": {
+    "bytes": 964098,
+    "sha256": "13ba3d00a24f0f0274d2e287bb3f847bc9d745dd4aea41ca9be69b3d928d9a42"
+  },
+  "provenance.json": {
+    "bytes": 1461,
+    "sha256": "d81cb9acff90b14cd1c0f988791ff86308fdcb6d0eb4cf644b99582ba0b136f8"
+  },
+  "rejections.jsonl": {
+    "bytes": 2785,
+    "sha256": "a3059fd409afa824a3ef0bd9be2c8088efedd02b0b8fc402167d57f2f96c9f0f"
+  },
+  "report.md": {
+    "bytes": 9061,
+    "sha256": "2c184aa6b964ff3b96146a318b6a8d89bd300c940a4c1de70599601a00eaf0f2"
+  },
+  "stress_rows.csv": {
+    "bytes": 1058876,
+    "sha256": "269542a2767095a01fcf4d6175d0bd95a87ff4602bd4707005c413d5fb2ab491"
+  },
+  "summary.json": {
+    "bytes": 43004,
+    "sha256": "ec21bd0823e5bb25dd392d5ed35989f7bd53f231e7ba0d62e69ce9f0edf8c8a9"
+  }
+}

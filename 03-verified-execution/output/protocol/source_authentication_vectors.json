@@ -1,0 +1,258 @@
+[
+  {
+    "accepted": true,
+    "accepted_wrong": false,
+    "id": "1-sources-authentic-truth",
+    "majority_value": false,
+    "mode": "authentic-truth",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": false
+        },
+        "signature": "2acb7808516d26da3ab8e844a56ab4947fe0f8d1c076114d059ceb650daefe7dd13d0f66936a3aa70d55bfe981c77e9673aca117c0addb4c32e9cc3b02bce4b9ce92bd42fb43ba86f7ab8c5ffa66df1542ccc9334989ff373ca70c6613251fb565bdd8e3d00def9de74c19f26ddcd9afbec5aab9230e7e85f18fc3585bb7b3b3286051c3048e53122f318ac0f56aa10a125d44ad8a2ca1075fb51ffcf4452dcbb8008b8aae51d4b70b4946f04b28c17cc5105c0f588a495b7ffb1a3c3ef7d80bcad4f9902578ef0e8fa401ac015bf4b9c5ad1327aa39f54e9124944dd204d03bf774f322cb266331b4577eb40b20adf4e859f493689821f7fedd122b935a61bf"
+      }
+    ],
+    "signature_validity": [
+      true
+    ],
+    "source_authentication_required": true,
+    "source_count": 1,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": true,
+    "accepted_wrong": true,
+    "id": "1-sources-unauthenticated-host-forgery",
+    "majority_value": true,
+    "mode": "unauthenticated-host-forgery",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "2acb7808516d26da3ab8e844a56ab4947fe0f8d1c076114d059ceb650daefe7dd13d0f66936a3aa70d55bfe981c77e9673aca117c0addb4c32e9cc3b02bce4b9ce92bd42fb43ba86f7ab8c5ffa66df1542ccc9334989ff373ca70c6613251fb565bdd8e3d00def9de74c19f26ddcd9afbec5aab9230e7e85f18fc3585bb7b3b3286051c3048e53122f318ac0f56aa10a125d44ad8a2ca1075fb51ffcf4452dcbb8008b8aae51d4b70b4946f04b28c17cc5105c0f588a495b7ffb1a3c3ef7d80bcad4f9902578ef0e8fa401ac015bf4b9c5ad1327aa39f54e9124944dd204d03bf774f322cb266331b4577eb40b20adf4e859f493689821f7fedd122b935a61bf"
+      }
+    ],
+    "signature_validity": [
+      false
+    ],
+    "source_authentication_required": false,
+    "source_count": 1,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": false,
+    "accepted_wrong": false,
+    "id": "1-sources-authenticated-host-forgery",
+    "majority_value": true,
+    "mode": "authenticated-host-forgery",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "2acb7808516d26da3ab8e844a56ab4947fe0f8d1c076114d059ceb650daefe7dd13d0f66936a3aa70d55bfe981c77e9673aca117c0addb4c32e9cc3b02bce4b9ce92bd42fb43ba86f7ab8c5ffa66df1542ccc9334989ff373ca70c6613251fb565bdd8e3d00def9de74c19f26ddcd9afbec5aab9230e7e85f18fc3585bb7b3b3286051c3048e53122f318ac0f56aa10a125d44ad8a2ca1075fb51ffcf4452dcbb8008b8aae51d4b70b4946f04b28c17cc5105c0f588a495b7ffb1a3c3ef7d80bcad4f9902578ef0e8fa401ac015bf4b9c5ad1327aa39f54e9124944dd204d03bf774f322cb266331b4577eb40b20adf4e859f493689821f7fedd122b935a61bf"
+      }
+    ],
+    "signature_validity": [
+      false
+    ],
+    "source_authentication_required": true,
+    "source_count": 1,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": true,
+    "accepted_wrong": true,
+    "id": "1-sources-authentic-common-source-error",
+    "majority_value": true,
+    "mode": "authentic-common-source-error",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "94a7de4be3d7af741a6dd3d6f8dafdd91756f66ef9dfad89bda7b30f9f1291510f1af6590295da25c84e835ad16ae895dc455756714fdb8d33ffd2b792d80ab114362aabaed9ca54e6af38d857fbd54e966c762e79cceaf2c6d11866dbc4e1fa8303413775352455c61fab7db5fd1f0e3eef69e2fa7b5457fb24476651c41f6a340d12554c23a7f35e68acc41646643a92ae7f8c55ee7d1abb31da6b0404bf47cf7df4c3cc8b2a6a79e6e1bb9b9169d4ce777e0ed7bf82b98c23223fc0a7ee22fefdf47a6c9c7ccb193c993407da46e6f562cedce5604dc93d3b5ffd8266cd8f50a30a0a6e02c190d7aa5e292702d3e54b9784c30e6b2d9c8d9cb49f44ba9132"
+      }
+    ],
+    "signature_validity": [
+      true
+    ],
+    "source_authentication_required": true,
+    "source_count": 1,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": true,
+    "accepted_wrong": false,
+    "id": "3-sources-authentic-truth",
+    "majority_value": false,
+    "mode": "authentic-truth",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": false
+        },
+        "signature": "2acb7808516d26da3ab8e844a56ab4947fe0f8d1c076114d059ceb650daefe7dd13d0f66936a3aa70d55bfe981c77e9673aca117c0addb4c32e9cc3b02bce4b9ce92bd42fb43ba86f7ab8c5ffa66df1542ccc9334989ff373ca70c6613251fb565bdd8e3d00def9de74c19f26ddcd9afbec5aab9230e7e85f18fc3585bb7b3b3286051c3048e53122f318ac0f56aa10a125d44ad8a2ca1075fb51ffcf4452dcbb8008b8aae51d4b70b4946f04b28c17cc5105c0f588a495b7ffb1a3c3ef7d80bcad4f9902578ef0e8fa401ac015bf4b9c5ad1327aa39f54e9124944dd204d03bf774f322cb266331b4577eb40b20adf4e859f493689821f7fedd122b935a61bf"
+      },
+      {
+        "body": {
+          "authority": "source_b",
+          "request_id": "source-attack-001",
+          "value": false
+        },
+        "signature": "4d04be898d96508efbec1c1e37a79305afb2d2a9c4b52de2ce6e128f3d8eba3a8a8b15d0bcd78362c4bef38508a336f6f2f120e8ca753e48f5eb5ee026910e7e2f86c7046b95965749bf11ab2db10171f1fa2409d5678d661426a6ae2fa421edfc82de8aaedf8bb66b1a4846f48a0a20b31e1521aadb054d6aac07aa6abe3faaaa0a3e355d5946437798077e46bd345f0aba880eb5d28f2dc3893d575cee233c97a3cd3cc5e94369d7786607605450d4874b3d81fdae352c5b8dfc6a1aac90c10e0497939587f86d68ab142c3dd2f982f293eada2a1793deb55655c933ca51186834280febe62842e66589f7f0dc55a24ff602a4fdf3170536f4afe6b52d7359"
+      },
+      {
+        "body": {
+          "authority": "source_c",
+          "request_id": "source-attack-001",
+          "value": false
+        },
+        "signature": "95af02e7cb351d30ca8cfa6e1873a21f82dd5229bdb3104a40c48a86f56140baab23cf2d918270b3486b5ec92fbf7497b33d08fb30117d6818a8bd72be35719d5c8a08254cb24afdb077a67a7615ecf090003e16f32b207abf7e1699294b2dce4afcad639bb7f7b63f2626bdeb0c13da7beb7b1c428c62767f8790703a345c919e24f68c1f24907b28411b17201143af8c842167632a19f0b7c009f21ca2430273fcf3fb4d6b44a2dae004b9d8b59cc2a791f951874454c6f2602a89472e88ea6c1e7205f4a027393754370ab1a6964f322e4aacb52d806b1a3c3366b5fef94e9068a11831b15d40f10aa9309a3bfc6716d548d74c341ebfe4d0d8081867edf3"
+      }
+    ],
+    "signature_validity": [
+      true,
+      true,
+      true
+    ],
+    "source_authentication_required": true,
+    "source_count": 3,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": true,
+    "accepted_wrong": true,
+    "id": "3-sources-unauthenticated-host-forgery",
+    "majority_value": true,
+    "mode": "unauthenticated-host-forgery",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "2acb7808516d26da3ab8e844a56ab4947fe0f8d1c076114d059ceb650daefe7dd13d0f66936a3aa70d55bfe981c77e9673aca117c0addb4c32e9cc3b02bce4b9ce92bd42fb43ba86f7ab8c5ffa66df1542ccc9334989ff373ca70c6613251fb565bdd8e3d00def9de74c19f26ddcd9afbec5aab9230e7e85f18fc3585bb7b3b3286051c3048e53122f318ac0f56aa10a125d44ad8a2ca1075fb51ffcf4452dcbb8008b8aae51d4b70b4946f04b28c17cc5105c0f588a495b7ffb1a3c3ef7d80bcad4f9902578ef0e8fa401ac015bf4b9c5ad1327aa39f54e9124944dd204d03bf774f322cb266331b4577eb40b20adf4e859f493689821f7fedd122b935a61bf"
+      },
+      {
+        "body": {
+          "authority": "source_b",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "4d04be898d96508efbec1c1e37a79305afb2d2a9c4b52de2ce6e128f3d8eba3a8a8b15d0bcd78362c4bef38508a336f6f2f120e8ca753e48f5eb5ee026910e7e2f86c7046b95965749bf11ab2db10171f1fa2409d5678d661426a6ae2fa421edfc82de8aaedf8bb66b1a4846f48a0a20b31e1521aadb054d6aac07aa6abe3faaaa0a3e355d5946437798077e46bd345f0aba880eb5d28f2dc3893d575cee233c97a3cd3cc5e94369d7786607605450d4874b3d81fdae352c5b8dfc6a1aac90c10e0497939587f86d68ab142c3dd2f982f293eada2a1793deb55655c933ca51186834280febe62842e66589f7f0dc55a24ff602a4fdf3170536f4afe6b52d7359"
+      },
+      {
+        "body": {
+          "authority": "source_c",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "95af02e7cb351d30ca8cfa6e1873a21f82dd5229bdb3104a40c48a86f56140baab23cf2d918270b3486b5ec92fbf7497b33d08fb30117d6818a8bd72be35719d5c8a08254cb24afdb077a67a7615ecf090003e16f32b207abf7e1699294b2dce4afcad639bb7f7b63f2626bdeb0c13da7beb7b1c428c62767f8790703a345c919e24f68c1f24907b28411b17201143af8c842167632a19f0b7c009f21ca2430273fcf3fb4d6b44a2dae004b9d8b59cc2a791f951874454c6f2602a89472e88ea6c1e7205f4a027393754370ab1a6964f322e4aacb52d806b1a3c3366b5fef94e9068a11831b15d40f10aa9309a3bfc6716d548d74c341ebfe4d0d8081867edf3"
+      }
+    ],
+    "signature_validity": [
+      false,
+      false,
+      false
+    ],
+    "source_authentication_required": false,
+    "source_count": 3,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": false,
+    "accepted_wrong": false,
+    "id": "3-sources-authenticated-host-forgery",
+    "majority_value": true,
+    "mode": "authenticated-host-forgery",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "2acb7808516d26da3ab8e844a56ab4947fe0f8d1c076114d059ceb650daefe7dd13d0f66936a3aa70d55bfe981c77e9673aca117c0addb4c32e9cc3b02bce4b9ce92bd42fb43ba86f7ab8c5ffa66df1542ccc9334989ff373ca70c6613251fb565bdd8e3d00def9de74c19f26ddcd9afbec5aab9230e7e85f18fc3585bb7b3b3286051c3048e53122f318ac0f56aa10a125d44ad8a2ca1075fb51ffcf4452dcbb8008b8aae51d4b70b4946f04b28c17cc5105c0f588a495b7ffb1a3c3ef7d80bcad4f9902578ef0e8fa401ac015bf4b9c5ad1327aa39f54e9124944dd204d03bf774f322cb266331b4577eb40b20adf4e859f493689821f7fedd122b935a61bf"
+      },
+      {
+        "body": {
+          "authority": "source_b",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "4d04be898d96508efbec1c1e37a79305afb2d2a9c4b52de2ce6e128f3d8eba3a8a8b15d0bcd78362c4bef38508a336f6f2f120e8ca753e48f5eb5ee026910e7e2f86c7046b95965749bf11ab2db10171f1fa2409d5678d661426a6ae2fa421edfc82de8aaedf8bb66b1a4846f48a0a20b31e1521aadb054d6aac07aa6abe3faaaa0a3e355d5946437798077e46bd345f0aba880eb5d28f2dc3893d575cee233c97a3cd3cc5e94369d7786607605450d4874b3d81fdae352c5b8dfc6a1aac90c10e0497939587f86d68ab142c3dd2f982f293eada2a1793deb55655c933ca51186834280febe62842e66589f7f0dc55a24ff602a4fdf3170536f4afe6b52d7359"
+      },
+      {
+        "body": {
+          "authority": "source_c",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "95af02e7cb351d30ca8cfa6e1873a21f82dd5229bdb3104a40c48a86f56140baab23cf2d918270b3486b5ec92fbf7497b33d08fb30117d6818a8bd72be35719d5c8a08254cb24afdb077a67a7615ecf090003e16f32b207abf7e1699294b2dce4afcad639bb7f7b63f2626bdeb0c13da7beb7b1c428c62767f8790703a345c919e24f68c1f24907b28411b17201143af8c842167632a19f0b7c009f21ca2430273fcf3fb4d6b44a2dae004b9d8b59cc2a791f951874454c6f2602a89472e88ea6c1e7205f4a027393754370ab1a6964f322e4aacb52d806b1a3c3366b5fef94e9068a11831b15d40f10aa9309a3bfc6716d548d74c341ebfe4d0d8081867edf3"
+      }
+    ],
+    "signature_validity": [
+      false,
+      false,
+      false
+    ],
+    "source_authentication_required": true,
+    "source_count": 3,
+    "stipulated_truth": false
+  },
+  {
+    "accepted": true,
+    "accepted_wrong": true,
+    "id": "3-sources-authentic-common-source-error",
+    "majority_value": true,
+    "mode": "authentic-common-source-error",
+    "reports": [
+      {
+        "body": {
+          "authority": "source_a",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "94a7de4be3d7af741a6dd3d6f8dafdd91756f66ef9dfad89bda7b30f9f1291510f1af6590295da25c84e835ad16ae895dc455756714fdb8d33ffd2b792d80ab114362aabaed9ca54e6af38d857fbd54e966c762e79cceaf2c6d11866dbc4e1fa8303413775352455c61fab7db5fd1f0e3eef69e2fa7b5457fb24476651c41f6a340d12554c23a7f35e68acc41646643a92ae7f8c55ee7d1abb31da6b0404bf47cf7df4c3cc8b2a6a79e6e1bb9b9169d4ce777e0ed7bf82b98c23223fc0a7ee22fefdf47a6c9c7ccb193c993407da46e6f562cedce5604dc93d3b5ffd8266cd8f50a30a0a6e02c190d7aa5e292702d3e54b9784c30e6b2d9c8d9cb49f44ba9132"
+      },
+      {
+        "body": {
+          "authority": "source_b",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "2b52bb5a2fde3960881e57b9a560d1819fb62e3b3f1e70ea3a83b47aeb052b4cf5c278be6425211ce0643a2016e7ff333d3e2e56f3756597d8474fb51efbdee362c89b2c352c224ebbb6121852369c4f51610bee3fc56479489c43a66ea0b8ae79902ba6a327e80f3c9dc5a8dcb40a3628ceface1b36bbb239d59e2d2476e516e94a2480de74a9bc0532a4377502c19fc1a7ee3a215c2af101511dfd0317bbd3c6334e1df63327d667706cfafa01fe32b6d590228eb8d055ffc66e5904c0f468ac6f7d568325663c28b127d7b32904a5d2b860f14822d1303adf01e6bd534d3b2b28e3a04cd736aadb454438dd85ed89adcb9bd35628eea3b03eb166a15290fc"
+      },
+      {
+        "body": {
+          "authority": "source_c",
+          "request_id": "source-attack-001",
+          "value": true
+        },
+        "signature": "55fff76f16bf911e00df3df9b2db59704d766d5ae719e8a4e1c72d849ae2bb25084e481d2133750d7fdf9683e2f9a271e601d1ac96845b0b8738e150b7590d079038fe6a2f00479b1b47e83007f54813efedd9362e8c2c73a88ae1b50a08f43962df93115be2368acb4953c05f9a7a14ec993040f71d0c9b3786cb24712219229e638c9a5c796534248248b938dca132d05387cdce1cff60cf19acdf0eeca0f182a33316f4431b646eedf019819b956d6977a4f43315e5f65ff0304823d1b4910a2fac6678866d08c6fdb72b07d35699342a4c1ea56af8c78810402c0ff3fb5db14e632971d5b42272f88cdcbb882a91bbe01b6a588a7851c4669cd4581bc345"
+      }
+    ],
+    "signature_validity": [
+      true,
+      true,
+      true
+    ],
+    "source_authentication_required": true,
+    "source_count": 3,
+    "stipulated_truth": false
+  }
+]

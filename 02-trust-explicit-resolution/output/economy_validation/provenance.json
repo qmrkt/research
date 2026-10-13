@@ -1,0 +1,9 @@
+{
+  "plan_sha256": "cfd6deab695d6e1f8bb9d526f812eeb01861b7769803619ad8ca796ab63f7732",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "sources": {
+    "economics.py": "d5a5e43429c2ba64ae1b67d643be4ce55d0705a47d04f5a68e60c7e902a72d7c",
+    "economy_validation.py": "4439cd64eb85a0dc94f95004960abb0117ee7e8b5e2f12a7f67e4dd5e53702dc"
+  }
+}

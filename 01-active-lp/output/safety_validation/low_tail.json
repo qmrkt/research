@@ -1,0 +1,294 @@
+[
+  {
+    "assets": "435.88830833596718565033927287490594084530008061615315247240800569603617318181683",
+    "checks": [
+      {
+        "details": "aggregate=(Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')), trader_sum=(Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'))",
+        "event_index": 1,
+        "name": "aggregate_claims_match_traders",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "diff=0E-77",
+        "event_index": 1,
+        "name": "settlement_conservation",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "available=435.88830833596718565033927287490594084530008061615315247240800569603617318181683, reserve_required=0, margin=435.88830833596718565033927287490594084530008061615315247240800569603617318181683",
+        "event_index": 1,
+        "name": "winner_reserve_coverage",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "min_margin=435.88830833596718565033927287490594084530008061615315247240800569603617318181683",
+        "event_index": 1,
+        "name": "sponsor_solvency",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "max_component_diff=0",
+        "event_index": 1,
+        "name": "component_alignment",
+        "passed": true,
+        "severity": "error"
+      }
+    ],
+    "cohorts": {
+      "creator:bootstrap": [
+        "435.88830833596718565033927287490594084530008061615315247240800569603617318181683",
+        "435.88830833596718565033927287490594084530008061615315247240800569603617318181683"
+      ]
+    },
+    "event": "Bootstrap",
+    "margin": "435.88830833596718565033927287490594084530008061615315247240800569603617318181683",
+    "reserve": "0"
+  },
+  {
+    "assets": "451.99184107795284422267111728277863222943101675943075888732029566971270569704996",
+    "checks": [
+      {
+        "details": "aggregate=(Decimal('250'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')), trader_sum=(Decimal('250'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'))",
+        "event_index": 2,
+        "name": "aggregate_claims_match_traders",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "diff=0E-77",
+        "event_index": 2,
+        "name": "settlement_conservation",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "available=451.99184107795284422267111728277863222943101675943075888732029566971270569704996, reserve_required=250, margin=201.99184107795284422267111728277863222943101675943075888732029566971270569704996",
+        "event_index": 2,
+        "name": "winner_reserve_coverage",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "min_margin=201.99184107795284422267111728277863222943101675943075888732029566971270569704996",
+        "event_index": 2,
+        "name": "sponsor_solvency",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "max_component_diff=0",
+        "event_index": 2,
+        "name": "component_alignment",
+        "passed": true,
+        "severity": "error"
+      }
+    ],
+    "cohorts": {
+      "creator:bootstrap": [
+        "201.99184107795284422267111728277863222943101675943075888732029566971270569704996",
+        "451.99184107795284422267111728277863222943101675943075888732029566971270569704996"
+      ]
+    },
+    "event": "Buy0",
+    "margin": "201.99184107795284422267111728277863222943101675943075888732029566971270569704996",
+    "reserve": "250"
+  },
+  {
+    "assets": "560.53569106331605202174994606614570797207710115624885280706925695996558350147478",
+    "checks": [
+      {
+        "details": "aggregate=(Decimal('250'), Decimal('500'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')), trader_sum=(Decimal('250'), Decimal('500'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'))",
+        "event_index": 3,
+        "name": "aggregate_claims_match_traders",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "diff=1E-77",
+        "event_index": 3,
+        "name": "settlement_conservation",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "available=560.53569106331605202174994606614570797207710115624885280706925695996558350147478, reserve_required=500, margin=60.53569106331605202174994606614570797207710115624885280706925695996558350147478",
+        "event_index": 3,
+        "name": "winner_reserve_coverage",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "min_margin=60.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "event_index": 3,
+        "name": "sponsor_solvency",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "max_component_diff=0",
+        "event_index": 3,
+        "name": "component_alignment",
+        "passed": true,
+        "severity": "error"
+      }
+    ],
+    "cohorts": {
+      "creator:bootstrap": [
+        "310.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "60.53569106331605202174994606614570797207710115624885280706925695996558350147479"
+      ]
+    },
+    "event": "Buy1",
+    "margin": "60.53569106331605202174994606614570797207710115624885280706925695996558350147478",
+    "reserve": "500"
+  },
+  {
+    "assets": "668.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+    "checks": [
+      {
+        "details": "aggregate=(Decimal('250'), Decimal('500'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')), trader_sum=(Decimal('250'), Decimal('500'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'))",
+        "event_index": 4,
+        "name": "aggregate_claims_match_traders",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "diff=1E-77",
+        "event_index": 4,
+        "name": "settlement_conservation",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "available=668.64282927597926242609993527937484956649252138749862336848310835195870020177061, reserve_required=500, margin=168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+        "event_index": 4,
+        "name": "winner_reserve_coverage",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "min_margin=60.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "event_index": 4,
+        "name": "sponsor_solvency",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "max_component_diff=2E-80",
+        "event_index": 4,
+        "name": "component_alignment",
+        "passed": true,
+        "severity": "error"
+      }
+    ],
+    "cohorts": {
+      "creator:bootstrap": [
+        "310.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "60.53569106331605202174994606614570797207710115624885280706925695996558350147479"
+      ],
+      "late:4": [
+        "108.10713821266321040434998921322914159441542023124977056141385139199311670029583",
+        "108.10713821266321040434998921322914159441542023124977056141385139199311670029583"
+      ]
+    },
+    "event": "LP entry",
+    "margin": "168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+    "reserve": "500"
+  },
+  {
+    "assets": "668.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+    "checks": [
+      {
+        "details": "aggregate=(Decimal('250'), Decimal('500'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')), trader_sum=(Decimal('250'), Decimal('500'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'))",
+        "event_index": 5,
+        "name": "aggregate_claims_match_traders",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "diff=1E-77",
+        "event_index": 5,
+        "name": "settlement_conservation",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "available=668.64282927597926242609993527937484956649252138749862336848310835195870020177061, reserve_required=500, margin=168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+        "event_index": 5,
+        "name": "winner_reserve_coverage",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "min_margin=60.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "event_index": 5,
+        "name": "sponsor_solvency",
+        "passed": true,
+        "severity": "error"
+      }
+    ],
+    "cohorts": {
+      "creator:bootstrap": [
+        "310.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "60.53569106331605202174994606614570797207710115624885280706925695996558350147479"
+      ],
+      "late:4": [
+        "108.10713821266321040434998921322914159441542023124977056141385139199311670029583",
+        "108.10713821266321040434998921322914159441542023124977056141385139199311670029583"
+      ]
+    },
+    "event": "Resolve",
+    "margin": "168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+    "reserve": "500"
+  },
+  {
+    "assets": "168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+    "checks": [
+      {
+        "details": "aggregate=(Decimal('250'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0')), trader_sum=(Decimal('250'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'))",
+        "event_index": 6,
+        "name": "aggregate_claims_match_traders",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "diff=1E-77",
+        "event_index": 6,
+        "name": "settlement_conservation",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "available=168.64282927597926242609993527937484956649252138749862336848310835195870020177061, reserve_required=0, margin=168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+        "event_index": 6,
+        "name": "winner_reserve_coverage",
+        "passed": true,
+        "severity": "error"
+      },
+      {
+        "details": "min_margin=60.53569106331605202174994606614570797207710115624885280706925695996558350147479",
+        "event_index": 6,
+        "name": "sponsor_solvency",
+        "passed": true,
+        "severity": "error"
+      }
+    ],
+    "cohorts": {
+      "creator:bootstrap": [
+        "-189.46430893668394797825005393385429202792289884375114719293074304003441649852521",
+        "60.53569106331605202174994606614570797207710115624885280706925695996558350147479"
+      ],
+      "late:4": [
+        "108.10713821266321040434998921322914159441542023124977056141385139199311670029583",
+        "108.10713821266321040434998921322914159441542023124977056141385139199311670029583"
+      ]
+    },
+    "event": "Winner claim",
+    "margin": "168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+    "reserve": "0"
+  }
+]

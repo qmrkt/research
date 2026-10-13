@@ -1,0 +1,11 @@
+{
+  "all_expected_results": true,
+  "cases": 5,
+  "files": {
+    "integration_design.json": "96added44cdbb0b719487dcfcdcd97f827600779451230a3d67c35d7a0a19c96",
+    "integration_vectors.json": "21193bd787ea7a123f11417153fb2b982d605b232bff186540c965a015f91fa7",
+    "protocol.py": "193081f1519163f4c1414e6f35afb19a31f862f535af18995ad36d88d0f74658",
+    "quorum.py": "04a217bce00d8a51d31f1bc05defe3bce6e82cede2213110b100318e4be85d91",
+    "quorum_integration.py": "a4a4abd55aecdc29fa6ce8c0859d322192e216d897c5f5d7071113b8a8e05699"
+  }
+}

@@ -21,12 +21,6 @@ from research.active_lp.fpmm_baseline import (
     FpmmScenarioRunner,
     create_fpmm_initial_state,
 )
-from research.active_lp.layer_c_fixed_point import (
-    LayerCFixedPointEngine,
-    LayerCMetricCollector,
-    LayerCScenarioRunner,
-    create_layer_c_initial_state,
-)
 from research.active_lp.metrics import CanonicalEvaluation
 from research.active_lp.reference_parallel_lmsr import (
     ReferenceMetricCollector,
@@ -144,6 +138,8 @@ def _state_for_mechanism(
             residual_linear_lambda=config.residual_linear_lambda,
         )
     elif mechanism is MechanismVariant.GLOBAL_STATE_AVM_FIXED_POINT:
+        from research.active_lp.layer_c_fixed_point import LayerCFixedPointEngine, create_layer_c_initial_state
+
         engine = LayerCFixedPointEngine(lp_fee_bps=config.fee_bps, protocol_fee_bps=config.protocol_fee_bps)
         state = create_layer_c_initial_state(config.num_outcomes)
     else:
@@ -167,6 +163,8 @@ def _collector_for_mechanism(
     if mechanism is MechanismVariant.GLOBAL_STATE_FUNGIBLE_FEES_RESERVE_RESIDUAL:
         return CandidateMetricCollector(residual_policy=RESERVE_POOL)
     if mechanism is MechanismVariant.GLOBAL_STATE_AVM_FIXED_POINT:
+        from research.active_lp.layer_c_fixed_point import LayerCMetricCollector
+
         return LayerCMetricCollector()
     raise NotImplementedError(f"mechanism not implemented yet: {mechanism.value}")
 
@@ -249,6 +247,8 @@ def _runner_for_mechanism(
             reference_trades=config.reference_trades,
         )
     if mechanism is MechanismVariant.GLOBAL_STATE_AVM_FIXED_POINT:
+        from research.active_lp.layer_c_fixed_point import LayerCFixedPointEngine, LayerCScenarioRunner
+
         engine = LayerCFixedPointEngine(lp_fee_bps=config.fee_bps, protocol_fee_bps=config.protocol_fee_bps)
         return LayerCScenarioRunner(
             num_outcomes=config.num_outcomes,

@@ -1,0 +1,8 @@
+#pragma version 11
+#pragma typetrack false
+
+// contract.ExecutionVerifier.clear_state_program() -> uint64:
+main:
+    // 03-verified-execution/avm/contract.py:94
+    // return False
+    err

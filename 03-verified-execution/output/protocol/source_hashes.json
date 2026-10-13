@@ -1,0 +1,6 @@
+{
+  "fixtures/TEST_ONLY_RSA_KEYS.json": "968787e9d22015111060f040c274358b8fd3a854fe6a41d441b243dcf843489e",
+  "independent_verifier.mjs": "0010c11a3c03ad4ede127027003d3e4692b8ad8ffe3a04eb975e0571440b6260",
+  "protocol.py": "193081f1519163f4c1414e6f35afb19a31f862f535af18995ad36d88d0f74658",
+  "protocol_experiments.py": "a84a6935009e3cc99c04a23380aba5702802362c74da5b08f9d4dba25c83210f"
+}

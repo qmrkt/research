@@ -1,0 +1,7 @@
+{
+  "changed_results": 0,
+  "favorable_requests": 1018,
+  "reexecutions": 300000,
+  "requests": 10000,
+  "warning": "deterministic toy inference only; no real LLM determinism or unbiased beacon claim"
+}

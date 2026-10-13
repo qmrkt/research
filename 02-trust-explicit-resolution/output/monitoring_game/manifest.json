@@ -1,0 +1,10 @@
+{
+  "design_sha256": "655f1b92676d3d918b2827f4db16325ce0b1ec78cc4720da302eec7f11da4d0f",
+  "source_sha256": "807eb83169e12658c4f21163982614ddc4519a3e77d0e7a742bfcb698547b7d4",
+  "designed_configs": 15,
+  "fresh_base_regimes": 64,
+  "fresh_rows": 192,
+  "mc_episodes": 900000,
+  "max_money_balance_error": 1.4432899320127035e-15,
+  "max_equilibrium_regret": 2.8199664825478976e-14
+}

@@ -1,0 +1,32 @@
+{
+  "comparison": {
+    "adversarial_limit": 24,
+    "deterministic_names": [
+      "neutral_late_lp",
+      "skewed_late_lp",
+      "long_tail_late_lp",
+      "early_vs_late_same_delta_b",
+      "same_final_claims_different_timing",
+      "repeated_lp_entries",
+      "zero_flow_nav_invariance",
+      "same_block_trade_reordering"
+    ],
+    "high_skew_limit": 12,
+    "linear_lambda": "0.150",
+    "residual_weight_scheme": "linear_lambda_normalized"
+  },
+  "entry_deposits": "same LMSR-derived deposit schedule for both mechanisms",
+  "fixed": [
+    "trader share requests",
+    "fee rates",
+    "LP entry dates",
+    "resolved outcome",
+    "LP hold-to-settlement"
+  ],
+  "funding": [
+    "floor",
+    "fixed_20",
+    "proportional_20pct"
+  ],
+  "inference": "descriptive designed 44 pairs; no population confidence intervals"
+}

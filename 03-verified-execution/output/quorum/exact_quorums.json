@@ -1,0 +1,2185 @@
+{
+  "configurations": 240,
+  "conflicting_certificates_witness": {
+    "both_verify": true,
+    "byzantine": [
+      "r0"
+    ],
+    "f": 1,
+    "k": 3,
+    "n": 5,
+    "no_signers": [
+      "r0",
+      "r3",
+      "r4"
+    ],
+    "yes_signers": [
+      "r0",
+      "r1",
+      "r2"
+    ]
+  },
+  "fault_sets_enumerated": 3586,
+  "rows": [
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 1,
+      "n": 1
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 1,
+      "n": 1
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 2
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 2
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 2
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 2,
+      "n": 2
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 2,
+      "n": 2
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 2,
+      "n": 2
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 3
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 3
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 3
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 3
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 1,
+      "n": 3
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 1,
+      "n": 3
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 1,
+      "n": 3
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 1,
+      "n": 3
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 3,
+      "n": 3
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 3,
+      "n": 3
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 3,
+      "n": 3
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 3,
+      "n": 3
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 2,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 2,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 2,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 2,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 2,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 4,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 4,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 4,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 4,
+      "n": 4
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 4,
+      "n": 4
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 1,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 1,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 1,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 1,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 1,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 1,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 3,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 3,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 3,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 3,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 3,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 3,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 5,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 5,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 5,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 5,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 5,
+      "n": 5
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 5,
+      "n": 5
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 2,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 4,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 6,
+      "n": 6
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 1,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 3,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 5,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 7,
+      "n": 7
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": true,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 1,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": true,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 2,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": true,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 3,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": true,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 4,
+      "minimum_intersection": 0,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 3,
+      "honest_quorum_available": true,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 5,
+      "minimum_intersection": 2,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": true,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 6,
+      "minimum_intersection": 4,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": true,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": false,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 7,
+      "minimum_intersection": 6,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 0,
+      "honest_quorum_available": true,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 1,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 2,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 3,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 4,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 5,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 6,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": true,
+      "conflict_resistance": true,
+      "f": 7,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    },
+    {
+      "authenticity": false,
+      "conflict_resistance": false,
+      "f": 8,
+      "honest_quorum_available": false,
+      "k": 8,
+      "minimum_intersection": 8,
+      "n": 8
+    }
+  ]
+}

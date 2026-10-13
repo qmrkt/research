@@ -1,0 +1,10 @@
+{
+  "engine_sha256": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd",
+  "all_csv_outputs_identical_after_engine_fee_rounding_fix": true,
+  "output_sha256": {
+    "worlds.csv": "6c902fafb35762a9711e98e633255fc70b892cff7216d8fcf55483f80cc34f85",
+    "frontier.csv": "40dd874ab9bae4b4927587e6622d4abf2795d69e014ba7226fa4e0c2db3fa936",
+    "cohort_allocation.csv": "51fbb776c0849d89118e2209614de010c47bb906f7ae563a157614c2a244208c",
+    "causal_effects.csv": "eec96d8a8f67438dbdb66dcd2f6d1bf71c40a9bf61ba748eb55819cebb84df5a"
+  }
+}

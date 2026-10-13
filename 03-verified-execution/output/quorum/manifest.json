@@ -1,0 +1,28 @@
+{
+  "artifacts": {
+    "certificate_vectors.json": "7b126826e4fa35ca6631356410b0b252915d883ca4789b7166d09eddd617d9f0",
+    "dependency_covers.json": "375bf35acaec737f353b8bd01068feca243474eadca27885abfc0ad1be6a69e5",
+    "design.json": "b66ec145fdcf24ec90a9f70539016700289d8bf458b87e088afe6ab3cf6a3940",
+    "exact_quorums.json": "55cb8a5d6d9df9136b97539b59b8596e8791fb73a8a22de8a145a8774f986c90",
+    "protocol_boundary_audit.json": "99ef43fc7aa466ac19fb51179531bb2c11758d52f2a3c50a58b538eee50c0eee",
+    "raw_audit.json": "17ab152e961bf010bbaa7e47dabdec0b7e452ab30d1d30c68b93a2c508bd3ba7",
+    "seeded_restarts.json": "648fd449b59a6d711743ac743825c75da8a9bcebf9aba13770f05ef0bd2755b5",
+    "selection_observations.jsonl.gz": "2c4c8a7dfecdf9a3e0e39770b506aa690b7326e464b35a4d4542b6063aef2433",
+    "selection_summary.json": "2742d6d5c197fc636e54f0af111eda59fa3ae5456b665a6c3482bf582b64f7c8",
+    "selective_abort_exact.json": "9ec5c648a79dc0db2ae9dd4d5f4ad35da529a8a1f449027691246e0c95f002ea"
+  },
+  "design_sha256": "b66ec145fdcf24ec90a9f70539016700289d8bf458b87e088afe6ab3cf6a3940",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "source_sha256": {
+    "protocol.py": "193081f1519163f4c1414e6f35afb19a31f862f535af18995ad36d88d0f74658",
+    "quorum.py": "04a217bce00d8a51d31f1bc05defe3bce6e82cede2213110b100318e4be85d91",
+    "quorum_experiments.py": "8c37aeca8d7bc6d78188e0a96fa06205f312ccf0cbbdb3a1806f510b8a23515c"
+  },
+  "summary": {
+    "abort_event_selection_pairs": 65280,
+    "certificate_vectors": 17,
+    "fault_sets_enumerated": 3586,
+    "quorum_configurations": 240,
+    "raw_observations": 320000
+  }
+}

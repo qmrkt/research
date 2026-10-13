@@ -56,6 +56,13 @@ class AggregatedMetrics:
     single_eligible_rate: float
     single_willing_rate: float
     welfare_loss: float
+    attack_attempt_rate: float
+    deferral_rate: float
+    false_challenge_rate: float
+    mean_resource_cost: float
+    mean_opportunity_cost: float
+    payout_misallocation: float
+    max_balance_error: float
     num_episodes: int
 
 
@@ -64,8 +71,9 @@ def _binomial_summary(successes: int, trials: int) -> tuple[float, float, float]
         return (0.0, 0.0, 0.0)
     rate = successes / trials
     se = (rate * (1.0 - rate) / trials) ** 0.5
-    margin = 1.96 * se
-    return (se, max(0.0, rate - margin), min(1.0, rate + margin))
+    from .economy_validation import wilson
+    low, high = wilson(successes, trials)
+    return (se, low, high)
 
 
 def aggregate(result: SimResult) -> AggregatedMetrics:
@@ -116,6 +124,13 @@ def aggregate(result: SimResult) -> AggregatedMetrics:
         single_eligible_rate=result.single_eligible_rate,
         single_willing_rate=result.single_willing_rate,
         welfare_loss=result.welfare_loss,
+        attack_attempt_rate=sum(e.attack_attempted for e in result.episodes) / max(1, len(result.episodes)),
+        deferral_rate=sum(e.terminal_status == "deferred" for e in result.episodes) / max(1, len(result.episodes)),
+        false_challenge_rate=sum(e.false_challenge for e in result.episodes) / max(1, len(result.episodes)),
+        mean_resource_cost=sum(e.resource_cost for e in result.episodes) / max(1, len(result.episodes)),
+        mean_opportunity_cost=sum(e.opportunity_cost for e in result.episodes) / max(1, len(result.episodes)),
+        payout_misallocation=sum(e.payout_misallocation for e in result.episodes),
+        max_balance_error=max((abs(e.balance_error) for e in result.episodes), default=0.),
         num_episodes=len(result.episodes),
     )
 

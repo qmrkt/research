@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "wheel": "question_market_research-0.3.0-py3-none-any.whl",
+  "wheel_sha256": "6b73a9d549bb57fb1f863605c4aaff4fda5af19c09447daa6e1fd928bb84f615",
+  "source_import_path_injected": false,
+  "checks": [
+    "test_active_lp_package.py",
+    "test_blueprint_protocol.py",
+    "test_certified_math.py",
+    "test_certified_math_audit.py",
+    "test_decimal_fee_reconciliation.py",
+    "test_fixed_point_validation.py",
+    "test_historical_calibration.py",
+    "test_information_timing.py",
+    "test_layer_c_final_policy.py",
+    "test_monitoring_game.py",
+    "test_monitoring_remediation.py",
+    "test_publication_validation.py",
+    "test_reference_safety.py",
+    "test_residual_weighting.py",
+    "test_resolution_economics.py",
+    "test_resolution_economy_validation.py",
+    "test_resolution_legacy_compatibility.py",
+    "test_safety_validation.py"
+  ],
+  "scope": "Installed-package test suite. This does not regenerate or validate every historical paper artifact.",
+  "tests_passed": 88,
+  "resolution_tests": 37,
+  "first_paper_tests": 51,
+  "verification_date": "2026-10-12 America/Los_Angeles"
+}

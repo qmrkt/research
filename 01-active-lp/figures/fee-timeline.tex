@@ -1,0 +1,135 @@
+\definecolor{lp1fee}{HTML}{355B8C}
+\definecolor{lp2fee}{HTML}{7C93BD}
+\definecolor{arrowgray}{HTML}{888888}
+\definecolor{axgray}{HTML}{666666}
+\definecolor{entryred}{HTML}{C9714A}
+
+\begin{tikzpicture}
+
+% Timeline dimensions
+\def\tstart{0}
+\def\tend{13}
+\def\theight{3.2}
+\def\lponetime{1.5}
+\def\lptwotime{7.0}
+
+% Cumulative fee curve heights (monotonically increasing)
+\def\hA{0.15}  % at LP1 entry (index starts near zero)
+\def\hB{1.4}   % at LP2 entry
+\def\hE{2.8}   % at settlement
+
+% LP1 share fraction after LP2 enters: s_1 / (s_1 + s_2) = 2/3
+\pgfmathsetmacro{\lpOneFrac}{0.6667}
+
+% === LP1-only region (t1 to t2): all fees go to LP1 ===
+\fill[lp1fee!18]
+  (\lponetime, 0) --
+  plot[smooth, tension=0.6] coordinates {
+    (\lponetime, \hA)
+    (2.5, 0.4)
+    (4.0, 0.7)
+    (5.5, 1.05)
+    (\lptwotime, \hB)
+  } --
+  (\lptwotime, 0) -- cycle;
+
+% === Shared region (t2 onward): LP1's share (bottom, 2/3) ===
+\fill[lp1fee!12]
+  (\lptwotime, 0) --
+  plot[smooth, tension=0.6] coordinates {
+    (\lptwotime, 0)
+    (8.5, {(\lpOneFrac)*(1.85-\hB)})
+    (10.0, {(\lpOneFrac)*(2.25-\hB)})
+    (11.5, {(\lpOneFrac)*(2.55-\hB)})
+    (12.5, {(\lpOneFrac)*(\hE-\hB)})
+  } --
+  (12.5, 0) -- cycle;
+
+% === Shared region (t2 onward): LP2's share (top, 1/3) ===
+\fill[lp2fee!15]
+  plot[smooth, tension=0.6] coordinates {
+    (\lptwotime, 0)
+    (8.5, {(\lpOneFrac)*(1.85-\hB)})
+    (10.0, {(\lpOneFrac)*(2.25-\hB)})
+    (11.5, {(\lpOneFrac)*(2.55-\hB)})
+    (12.5, {(\lpOneFrac)*(\hE-\hB)})
+  } --
+  plot[smooth, tension=0.6] coordinates {
+    (12.5, {\hE-\hB})
+    (11.5, {2.55-\hB})
+    (10.0, {2.25-\hB})
+    (8.5, {1.85-\hB})
+    (\lptwotime, 0)
+  } -- cycle;
+
+% === Cumulative fee index curve (full, for LP1 perspective) ===
+\draw[black!50, thick]
+  plot[smooth, tension=0.6] coordinates {
+    (\lponetime, \hA)
+    (2.5, 0.4)
+    (4.0, 0.7)
+    (5.5, 1.05)
+    (\lptwotime, \hB)
+  };
+
+% Post-LP2: total incremental fees (from LP2's entry baseline)
+\draw[black!50, thick]
+  plot[smooth, tension=0.6] coordinates {
+    (\lptwotime, 0)
+    (8.5, {1.85-\hB})
+    (10.0, {2.25-\hB})
+    (11.5, {2.55-\hB})
+    (12.5, {\hE-\hB})
+  };
+
+% === Split line after LP2 entry (LP1's 2/3 share) ===
+\draw[black!30, densely dashed]
+  plot[smooth, tension=0.6] coordinates {
+    (\lptwotime, 0)
+    (8.5, {(\lpOneFrac)*(1.85-\hB)})
+    (10.0, {(\lpOneFrac)*(2.25-\hB)})
+    (11.5, {(\lpOneFrac)*(2.55-\hB)})
+    (12.5, {(\lpOneFrac)*(\hE-\hB)})
+  };
+
+% === Timeline axis ===
+\draw[-{Stealth[length=4pt]}, axgray, thick] (\tstart, 0) -- (\tend, 0);
+\node[font=\small, axgray, anchor=west] at (\tend+0.1, 0) {time};
+
+% Y-axis
+\draw[-{Stealth[length=4pt]}, axgray, thick] (\tstart, 0) -- (\tstart, \theight);
+\node[font=\small, axgray, rotate=90, anchor=south] at (-0.5, \theight/2) {Fee flow};
+
+% === LP entry markers ===
+% LP1 entry
+\draw[entryred, thick, densely dashed] (\lponetime, -0.15) -- (\lponetime, \hA+0.5);
+\node[font=\footnotesize\bfseries, entryred!80!black, anchor=south] at (\lponetime, \hA+0.50) {LP\textsubscript{1} enters};
+\fill[entryred] (\lponetime, 0) circle (2.5pt);
+
+% LP2 entry
+\draw[entryred, thick, densely dashed] (\lptwotime, -0.15) -- (\lptwotime, \hB+0.3);
+\node[font=\footnotesize\bfseries, entryred!80!black, anchor=south] at (\lptwotime, \hB+0.30) {LP\textsubscript{2} enters};
+\node[font=\tiny, arrowgray, anchor=north west] at (\lptwotime+0.15, -0.15) {snapshots $I_t$};
+\fill[entryred] (\lptwotime, 0) circle (2.5pt);
+
+% === Region labels ===
+% LP1 exclusive region
+\node[font=\footnotesize, lp1fee!80!black, align=center] at (4.25, 0.45) {LP\textsubscript{1} earns};
+\node[font=\footnotesize, lp1fee!80!black, align=center] at (4.25, 0.2) {100\% of fees};
+
+% After LP2: LP1 share
+\node[font=\footnotesize, lp1fee!70!black] at (10.5, 0.28) {LP\textsubscript{1}: $\frac{s_1}{S}$};
+
+% After LP2: LP2 share
+\node[font=\footnotesize, lp2fee!80!black] at (10.5, 0.78) {LP\textsubscript{2}: $\frac{s_2}{S}$};
+
+% === Key insight annotation ===
+\draw[decorate, decoration={brace, amplitude=5pt, mirror}, arrowgray]
+  (\lponetime, -0.5) -- (\lptwotime, -0.5);
+\node[font=\tiny, arrowgray, anchor=north] at ({(\lponetime+\lptwotime)/2}, -0.63) {LP\textsubscript{2} receives none of these fees};
+
+% Settlement marker
+\draw[black!40, thick] (12.5, -0.15) -- (12.5, 0.15);
+\node[font=\scriptsize, black!50, anchor=north] at (12.5, -0.2) {settlement};
+
+\end{tikzpicture}

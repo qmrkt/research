@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools==75.8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "question-market-research"
+version = "0.4.0"
+description = "Standalone liquidity, resolution, and execution research tools for question.market"
+readme = "01-active-lp/simulation/README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = []
+
+[project.scripts]
+active-lp = "research.active_lp.cli:main"
+
+[tool.setuptools]
+packages = ["research.active_lp", "research.active_lp._vendor", "research.resolution_trust", "research.verified_execution"]
+include-package-data = false
+
+[tool.setuptools.package-dir]
+"research.active_lp" = "01-active-lp/simulation"
+"research.resolution_trust" = "02-trust-explicit-resolution/simulation"
+"research.verified_execution" = "03-verified-execution/simulation"
+
+[tool.setuptools.package-data]
+"research.active_lp._vendor" = ["provenance.json", "LICENSE.lmsr_math"]
+
+"research.resolution_trust" = ["fixtures/*.json"]
+"research.verified_execution" = ["*.mjs", "fixtures/*.json"]

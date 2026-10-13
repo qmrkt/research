@@ -1,0 +1,21 @@
+{
+  "sha256": {
+    "availability_vectors.json": "e3d75dcc5ce99a6e48837a2225582e39f657a0d58cf0497c7ccd346c75185275",
+    "config.json": "fe341d30debce4b7e195f61596f345ce4cad6740b6518b9f0fa7ece67912d792",
+    "conformance_vectors.json": "e2e059a51251a95256b67d2bffadbe290b49ac99ef6b78fb6378f659799b14d5",
+    "disclosure_benchmarks.json": "28bef6faec650c877f8726435e849f2fb47d0f8a4f9be5da29d4c34b1ea34e60",
+    "node_verifier_results.json": "2fd9b20a411aaa75860515edc2f4b0952f1c8b3641e881a7990c0b9d1c6a84a6",
+    "python_verifier_results.json": "a6d25b64662201747281d90af2d19b30eecef056033f06539e1812a286b4d15a",
+    "semantic_vectors.json": "c71b9407bb61615296ba8c5c6db08395505d8508ebf719e6dcb40c2bde208300",
+    "shared_result_example.json": "ed07fa139b17be55a288cf313d0526a5aa00dffc66fb0f7da60ce5d0acfab08e",
+    "source_authentication_vectors.json": "85406daf920c0a39c0ed3de6b9f56814ff9c18dbc0d00820be94b297af87ef96",
+    "source_hashes.json": "248d5071a8b425ac16b040e10d006b1821231c7a092c29815b497f65e31f70a5",
+    "summary.json": "dc5e39073372f716a9577a57b902646b7f9dfb93f0bf016e148444922d5406f8"
+  },
+  "source_sha256": {
+    "fixtures/TEST_ONLY_RSA_KEYS.json": "968787e9d22015111060f040c274358b8fd3a854fe6a41d441b243dcf843489e",
+    "independent_verifier.mjs": "0010c11a3c03ad4ede127027003d3e4692b8ad8ffe3a04eb975e0571440b6260",
+    "protocol.py": "193081f1519163f4c1414e6f35afb19a31f862f535af18995ad36d88d0f74658",
+    "protocol_experiments.py": "a84a6935009e3cc99c04a23380aba5702802362c74da5b08f9d4dba25c83210f"
+  }
+}

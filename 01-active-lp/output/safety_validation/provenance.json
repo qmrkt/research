@@ -1,0 +1,23 @@
+{
+  "config_sha256": "a3886444d288efa81bf9c8b610c2744b0051c7225fe926c1c747c3d7930bcd85",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "sources": {
+    "01-active-lp/simulation/candidate_global_state.py": "6b75a3f2580d6d553e55d602d3c6cd3af672d887f5b6f9987f94214f0cbd0131",
+    "01-active-lp/simulation/certified_math.py": "834b61662ce96e61aebbdb8364c27510268492b743c440938c9a9c9fc84e338c",
+    "01-active-lp/simulation/events.py": "155797ba276d07f29175ce855c876f89e37cd1d1f94ef1187109658fe2f641fa",
+    "01-active-lp/simulation/precision.py": "af59ad487b66b446e973b3cfeb34272b6902feb084f84ea18fcdf7b38404aa90",
+    "01-active-lp/simulation/reference_math.py": "c7b87587bbe33619efae57c44f6a0d76fc1274c024964b2ec9291897af6c1470",
+    "01-active-lp/simulation/reference_parallel_lmsr.py": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd",
+    "01-active-lp/simulation/safety_validation.py": "471182b989dbc91a025ac610462ceb93ede21e4e40c266852ad9f12de62b5014",
+    "01-active-lp/simulation/state.py": "1b30111b3188f65612cec53159f65e63fc17df9e3a695a514ea52b5ddf9e6993",
+    "tests/test_certified_math.py": "5bc0b12cf782691216c1a511fa432a773733a1a4b5d03a43980579bd8a87b843",
+    "tests/test_certified_math_audit.py": "6567b447746db2fa36899cdb7de38da00a41806a053354f68268a71eb327a3ff",
+    "tests/test_safety_validation.py": "8e273f39789a1d4684570bcc642e60bafaad6c883c799d126445a289ba9d4cc7"
+  },
+  "test_source_files_present": [
+    "tests/test_certified_math.py",
+    "tests/test_certified_math_audit.py",
+    "tests/test_safety_validation.py"
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "revision": "October 2026 manuscript remediation",
+  "publication_release_commit": null,
+  "base_git_commit": "00101010963451cb5067317f37de87a72b69efeb",
+  "working_tree_changes_expected": true,
+  "pdf_pages": 29,
+  "installed_package_tests": 51,
+  "fixed_point_terminal_model_runs": 6381,
+  "fixed_point_quote_checks": 21186,
+  "fixed_point_quote_failures": 0,
+  "files": {
+    "01-active-lp/active-lp-paper.pdf": {
+      "bytes": 200978,
+      "sha256": "8abb25d4cf75ef5982ca9d25df7e1597a7c18feeb046f49e004d5242c07cf510"
+    },
+    "01-active-lp/active-lp-paper.tex": {
+      "bytes": 102004,
+      "sha256": "b16a1a82d756834a17f6806cebcc41967ba9f17d64b4df71cf09ebccf19755df"
+    },
+    "01-active-lp/figures/fee-timeline.tex": {
+      "bytes": 4374,
+      "sha256": "9abe8511400bd3455f4e1ad15c415c5125bcaea72b76485f781c0223c8df55fe"
+    },
+    "01-active-lp/figures/settlement-waterfall.tex": {
+      "bytes": 5025,
+      "sha256": "8749576a8cd4a9b25cd854ab28a1d3cff4a6f9c7ad2c75c4e732bbcb00084fe3"
+    },
+    "01-active-lp/figures/slippage-curve.tex": {
+      "bytes": 2003,
+      "sha256": "de0fbcba4cff4263202525b63ed857eb564435af080ea70eabf91dbe17e77d9b"
+    },
+    "01-active-lp/figures/three-layer-architecture.tex": {
+      "bytes": 2400,
+      "sha256": "9912b3d87ea3f187fe07f7f83842390e779c34e9ea2c8270431eed0e081f1dc5"
+    },
+    "01-active-lp/output/fixed_point_validation/config.json": {
+      "bytes": 2059,
+      "sha256": "628667a514293921d5548246b38d21f6b012425b2550d212bcbcc597c1e196b7"
+    },
+    "01-active-lp/output/fixed_point_validation/manifest.json": {
+      "bytes": 1277,
+      "sha256": "d26b5270e9d2d74e25dbd9a9e862293ab365f6835f01b6fcdc263095503c9113"
+    },
+    "01-active-lp/output/fixed_point_validation/provenance.json": {
+      "bytes": 1537,
+      "sha256": "460b59af647d6553589c00c203ab08736d876393ea5193f53cd2e796413e6a61"
+    },
+    "01-active-lp/output/fixed_point_validation/summary.json": {
+      "bytes": 4459,
+      "sha256": "de37e8572969df2fb03792fbe00b5538e05127dbca727b73b6340b6cc1b5044b"
+    },
+    "01-active-lp/output/fpmm_validation/config.json": {
+      "bytes": 834,
+      "sha256": "1c33bd04893bfe07914f3d24fcb88f36d10f0dc33404a3ffd716d669794a6854"
+    },
+    "01-active-lp/output/fpmm_validation/provenance.json": {
+      "bytes": 672,
+      "sha256": "b34c3b9eadd531fb2e7ac5548b6b496c3c2ec8234825f3ce43286d16c7934e3e"
+    },
+    "01-active-lp/output/fpmm_validation/summary.json": {
+      "bytes": 12855,
+      "sha256": "e9ca4b9840faaa35b8ebc915a818ea1bde2e8ee6540de592048d04bac816152c"
+    },
+    "01-active-lp/output/historical_calibration/config.json": {
+      "bytes": 1741,
+      "sha256": "9b1f1630546fa2ea5f7211f1c6490b555f96fd365e82024ad5ab9d419892f9d0"
+    },
+    "01-active-lp/output/historical_calibration/manifest.json": {
+      "bytes": 1154,
+      "sha256": "5778be1485eadc9eeb906a407aacf008b31907174ac361a947fcbed3945e8abf"
+    },
+    "01-active-lp/output/historical_calibration/provenance.json": {
+      "bytes": 1650,
+      "sha256": "fd66ec4b83fc30afe672fc550c806d30dd73163dcc09e687606fa1f5cddb8a77"
+    },
+    "01-active-lp/output/historical_calibration/summary.json": {
+      "bytes": 82005,
+      "sha256": "c86d61272cb6312f709dcdad98c5ae2fca36e83a1addcca741140d0693de5378"
+    },
+    "01-active-lp/output/information_timing/confirmation/manifest.json": {
+      "bytes": 7369,
+      "sha256": "6b5716db6b7788b9bfaea31bc28a6a2cb7ddafe9592ed6c8f4e799460bc857da"
+    },
+    "01-active-lp/output/information_timing/confirmation_precision/manifest.json": {
+      "bytes": 701,
+      "sha256": "a597a5143809fc9f70a1df5b744f8edcc6850001bc48648e674a6da01dbc424e"
+    },
+    "01-active-lp/output/information_timing/flow_alignment/manifest.json": {
+      "bytes": 2250,
+      "sha256": "7e597f5fb7ac42727b08294ecc980ea7db4c2546292a974442049c77c3652d24"
+    },
+    "01-active-lp/output/information_timing/frontier/manifest.json": {
+      "bytes": 1736,
+      "sha256": "e77c00f4634aab592fc7dd06b3041874f39fd59912445f69a1624b64c1cfc336"
+    },
+    "01-active-lp/output/information_timing/manifest.json": {
+      "bytes": 463,
+      "sha256": "d66ed35389a2a6b31e391092cfa1d59017143d270a11974aedb003b877a8d378"
+    },
+    "01-active-lp/output/information_timing/outcome_population/manifest.json": {
+      "bytes": 2225,
+      "sha256": "3201af10873fdacb41df3c5981c23b37f018265b00e1b977f4b12bb263751d03"
+    },
+    "01-active-lp/output/package_verification.json": {
+      "bytes": 980,
+      "sha256": "22a1808ac2889a30c200829c1715d518e7323681fdd6f3069bac8f45a388e36a"
+    },
+    "01-active-lp/output/publication_validation/config.json": {
+      "bytes": 2732,
+      "sha256": "29e892ed47d278297dacfe313e0ae27d5fc0637973b2e6ed8f84d608c183c7e7"
+    },
+    "01-active-lp/output/publication_validation/manifest.json": {
+      "bytes": 1562,
+      "sha256": "50aaf0e7f7321ca8bab42ef77eded8b89a6b680ea63fe4be02d06c32e458f516"
+    },
+    "01-active-lp/output/publication_validation/provenance.json": {
+      "bytes": 1461,
+      "sha256": "d81cb9acff90b14cd1c0f988791ff86308fdcb6d0eb4cf644b99582ba0b136f8"
+    },
+    "01-active-lp/output/publication_validation/summary.json": {
+      "bytes": 43004,
+      "sha256": "ec21bd0823e5bb25dd392d5ed35989f7bd53f231e7ba0d62e69ce9f0edf8c8a9"
+    },
+    "01-active-lp/output/safety_validation/config.json": {
+      "bytes": 1079,
+      "sha256": "48d58232d8d78c4e8ba1cb7cb1e85e653ee6f8be215034fc4a2bfc4201b3e570"
+    },
+    "01-active-lp/output/safety_validation/manifest.json": {
+      "bytes": 1024,
+      "sha256": "f7eae9e14df5969171df9f0629997995cf9adfbd199e9eb7cfa23ef0ac31642e"
+    },
+    "01-active-lp/output/safety_validation/provenance.json": {
+      "bytes": 1652,
+      "sha256": "5bfa11cacde30b24bd690234071b0098896630535399bc0a4e2075727e0e0410"
+    },
+    "01-active-lp/output/safety_validation/summary.json": {
+      "bytes": 1849,
+      "sha256": "d2a94b186dd06d231d358b73342cacec2f9b2fada005856db6a20865e7ef09ff"
+    },
+    "01-active-lp/simulation/__init__.py": {
+      "bytes": 7450,
+      "sha256": "79f5dae21d546de152930c8bfb8fa223a3aaa7abe5963c9df77f8113d1b01946"
+    },
+    "01-active-lp/simulation/__main__.py": {
+      "bytes": 134,
+      "sha256": "4d42f57d6b3444d2ef91dc422d831f28c1508974daffff1a2d4a409327a3aa80"
+    },
+    "01-active-lp/simulation/adversarial_search.py": {
+      "bytes": 5496,
+      "sha256": "dd45ba78c674a86646842df5512f774c300322c915f0bea522f59705307cb1d8"
+    },
+    "01-active-lp/simulation/calibration_upgrade.py": {
+      "bytes": 30648,
+      "sha256": "c2723c0248d739b6062e4a59548bf23cda9aa3f807bf59804752c302e553c736"
+    },
+    "01-active-lp/simulation/candidate_global_state.py": {
+      "bytes": 55786,
+      "sha256": "6b75a3f2580d6d553e55d602d3c6cd3af672d887f5b6f9987f94214f0cbd0131"
+    },
+    "01-active-lp/simulation/certified_math.py": {
+      "bytes": 10018,
+      "sha256": "834b61662ce96e61aebbdb8364c27510268492b743c440938c9a9c9fc84e338c"
+    },
+    "01-active-lp/simulation/cli.py": {
+      "bytes": 19715,
+      "sha256": "fdfab20b0afa383170bbd7ea76a6734d41f6bcfe66acc8376a0714ffacf410a1"
+    },
+    "01-active-lp/simulation/events.py": {
+      "bytes": 2432,
+      "sha256": "155797ba276d07f29175ce855c876f89e37cd1d1f94ef1187109658fe2f641fa"
+    },
+    "01-active-lp/simulation/experiments.py": {
+      "bytes": 18556,
+      "sha256": "716c4f095e39f4b3cfb7c835508b4049c86bdf45aa92f4c6ae96872147e969ba"
+    },
+    "01-active-lp/simulation/figures.py": {
+      "bytes": 25903,
+      "sha256": "9a72839e7ab6843f0f23e06e96e0475c45c2e7ef1116216632eb842404c9d074"
+    },
+    "01-active-lp/simulation/fixed_point_validation.py": {
+      "bytes": 21097,
+      "sha256": "3c565e477dbc13938db0f9024edc41b83bbc359f352ded76afb0aec4e17de44a"
+    },
+    "01-active-lp/simulation/fpmm_baseline.py": {
+      "bytes": 38573,
+      "sha256": "2c6c0f91b1d559f54aebd54c163fa5f2fb8a44a30690da8d281447e9d247dab8"
+    },
+    "01-active-lp/simulation/fpmm_comparison.py": {
+      "bytes": 12846,
+      "sha256": "773718f288eb0ae5b38dbcc8a99b67bbb3dc62be3462d51a28971e2780ebb7fc"
+    },
+    "01-active-lp/simulation/fpmm_validation.py": {
+      "bytes": 6204,
+      "sha256": "629765ee333715490e3384aefe19c99baff44193dcf7929f6133372ec58b38a3"
+    },
+    "01-active-lp/simulation/high_skew_boundary.py": {
+      "bytes": 7472,
+      "sha256": "8e8b78053680c98e23e28d3c31dc55bb8049d475f4f097f26634546a4dc5bb9a"
+    },
+    "01-active-lp/simulation/historical_calibration.py": {
+      "bytes": 18827,
+      "sha256": "07bb7512dca831f48925943ce7eeebd2e2b984c404840b0e37493d7bfb570607"
+    },
+    "01-active-lp/simulation/information_confirmation.py": {
+      "bytes": 7475,
+      "sha256": "ca50e9b3bc71e292e2b1ca23caf043edf3f9ed04695e13e8758799a6bda82b50"
+    },
+    "01-active-lp/simulation/information_frontier.py": {
+      "bytes": 12486,
+      "sha256": "ab8c4db63547e8ce037c04ac47bb44b92d2d08c5e590a65d12416a6741aec078"
+    },
+    "01-active-lp/simulation/information_precision.py": {
+      "bytes": 7621,
+      "sha256": "5aa083e97937be4d1232e198fd12d43ddf7206470fcaef099b3aefb295984f05"
+    },
+    "01-active-lp/simulation/information_timing.py": {
+      "bytes": 28184,
+      "sha256": "67ebf8ad6c20dd3d86996834f2df6a5b4829d4ef03794c8f938774488caeaa10"
+    },
+    "01-active-lp/simulation/layer_c_analysis.py": {
+      "bytes": 19800,
+      "sha256": "feaa0dab3915c6c4e8009511a237dd50c3af63399a02247e0231bc76ec846ab1"
+    },
+    "01-active-lp/simulation/layer_c_fixed_point.py": {
+      "bytes": 71598,
+      "sha256": "87a6dae2847e1a836d63cbff9c2c46f3ce1a6eba6e3467ff4fca45540bfdbfcf"
+    },
+    "01-active-lp/simulation/low_tail_trace.py": {
+      "bytes": 10654,
+      "sha256": "5967f99c8e9eb70b241c939006134ff7938d715df55075b65f7b55925a99f59b"
+    },
+    "01-active-lp/simulation/metrics.py": {
+      "bytes": 777,
+      "sha256": "9b5bf8c6acf3a8d5bde472495b264d3109770da3d5b494b0247d4ae33fc57e94"
+    },
+    "01-active-lp/simulation/monte_carlo.py": {
+      "bytes": 5974,
+      "sha256": "91214f04862ca7eaf451e4964528a2f203220793b3d3051ebb0c24d877b3caa9"
+    },
+    "01-active-lp/simulation/paper_artifacts.py": {
+      "bytes": 7918,
+      "sha256": "1758ad251a7340e8e2a89808e5bd505b09d7d44b0efc564481aa9b99d9e12f87"
+    },
+    "01-active-lp/simulation/paper_tables.py": {
+      "bytes": 19347,
+      "sha256": "4957296d92804abbe54246b04252f4cc2e129d3a5b9100425b4542a35a9d07b7"
+    },
+    "01-active-lp/simulation/precision.py": {
+      "bytes": 624,
+      "sha256": "af59ad487b66b446e973b3cfeb34272b6902feb084f84ea18fcdf7b38404aa90"
+    },
+    "01-active-lp/simulation/publication_validation.py": {
+      "bytes": 44659,
+      "sha256": "d7f0683cd62a8b654282b0e9ae6dbc77283df135534d437cd9cbe02923668733"
+    },
+    "01-active-lp/simulation/reference_math.py": {
+      "bytes": 3575,
+      "sha256": "c7b87587bbe33619efae57c44f6a0d76fc1274c024964b2ec9291897af6c1470"
+    },
+    "01-active-lp/simulation/reference_parallel_lmsr.py": {
+      "bytes": 63868,
+      "sha256": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd"
+    },
+    "01-active-lp/simulation/reporting.py": {
+      "bytes": 15091,
+      "sha256": "9cf825ff8351e54b0cd52732948ab905a7d554667c2254342140c3e8fe7c4679"
+    },
+    "01-active-lp/simulation/residual_weight_analysis.py": {
+      "bytes": 6213,
+      "sha256": "59c5cca1fa4c436fd0b3f831c4170b42fe942f0510bf4585851a9ceebfcd9257"
+    },
+    "01-active-lp/simulation/runner.py": {
+      "bytes": 3173,
+      "sha256": "a45504d2096d4ff8ef80e92751a4c938e2c8a387353310312284d13f350022e7"
+    },
+    "01-active-lp/simulation/safety_validation.py": {
+      "bytes": 19040,
+      "sha256": "471182b989dbc91a025ac610462ceb93ede21e4e40c266852ad9f12de62b5014"
+    },
+    "01-active-lp/simulation/scenarios.py": {
+      "bytes": 27338,
+      "sha256": "4054cb1b4176ad426306b92d4bb4f8f7a4993a025b214fef536d9478134eb9b8"
+    },
+    "01-active-lp/simulation/state.py": {
+      "bytes": 2131,
+      "sha256": "1b30111b3188f65612cec53159f65e63fc17df9e3a695a514ea52b5ddf9e6993"
+    },
+    "01-active-lp/simulation/sweep_presets.py": {
+      "bytes": 4428,
+      "sha256": "170d29926c08ff58663cd0438fc070793457fb88ba95c55c0b4bab2c71049a5a"
+    },
+    "01-active-lp/simulation/types.py": {
+      "bytes": 1478,
+      "sha256": "410babdd9a9a9a6ac9f77571e96e61cdd8dfd03df702533db750e5558a38be7d"
+    },
+    "pyproject.toml": {
+      "bytes": 713,
+      "sha256": "b159529d32ea224356cc148d29a78850c270fe292c82a3b8c06c40d904483a34"
+    },
+    "scripts/check_active_lp.py": {
+      "bytes": 2771,
+      "sha256": "acbbc6ac1ade60ffadf26faedd7141b52aa624cb0cb778fb15f1f5b4f2364192"
+    },
+    "tests/test_active_lp_package.py": {
+      "bytes": 3632,
+      "sha256": "53398471781c85ab77fe91b39a035d818a3bfb02fdb4e9a52de0614d9d4158e6"
+    },
+    "tests/test_certified_math.py": {
+      "bytes": 5465,
+      "sha256": "5bc0b12cf782691216c1a511fa432a773733a1a4b5d03a43980579bd8a87b843"
+    },
+    "tests/test_certified_math_audit.py": {
+      "bytes": 3143,
+      "sha256": "6567b447746db2fa36899cdb7de38da00a41806a053354f68268a71eb327a3ff"
+    },
+    "tests/test_decimal_fee_reconciliation.py": {
+      "bytes": 3030,
+      "sha256": "e559ba97d12e26ee82f6ac09a7d053996540bf639802b949e42ce560cb39cf9c"
+    },
+    "tests/test_fixed_point_validation.py": {
+      "bytes": 1562,
+      "sha256": "85af7df63ef8f852cfa45b18b54b9b1ed6b1f9f50322f00d570f0fabd3eafff2"
+    },
+    "tests/test_historical_calibration.py": {
+      "bytes": 3402,
+      "sha256": "580760abb267264131df5e30b25adea2c2f9dc81c71d18614accf855c1574776"
+    },
+    "tests/test_information_timing.py": {
+      "bytes": 4571,
+      "sha256": "2845b3eaa131da7e85359af5a2d44cfa7a72c2d5c7351bd4823718de52f2462e"
+    },
+    "tests/test_layer_c_final_policy.py": {
+      "bytes": 14999,
+      "sha256": "cb000397ced478d07f8797f37e64b150d1a2627509e60adc1b6e10ef3cd1c9e8"
+    },
+    "tests/test_publication_validation.py": {
+      "bytes": 6392,
+      "sha256": "685e0be019763774028eea013b0ad4250312d90f0e5df50340b9ee6cfe48ae4e"
+    },
+    "tests/test_reference_safety.py": {
+      "bytes": 11363,
+      "sha256": "7fd3a3af4541665258927d7bd9634681ef5bd94492f1c536ca02d8413feed61a"
+    },
+    "tests/test_residual_weighting.py": {
+      "bytes": 7643,
+      "sha256": "0f4bf719de7984d4aa0b5d5c218fffca95c13b77bb809ba14389d6dd724c3513"
+    },
+    "tests/test_safety_validation.py": {
+      "bytes": 1821,
+      "sha256": "8e273f39789a1d4684570bcc642e60bafaad6c883c799d126445a289ba9d4cc7"
+    },
+    "01-active-lp/README.md": {
+      "bytes": 199,
+      "sha256": "62c2552557570052906d6a4cc510a1ed12ea66a1d0f0c02bd960cdfe494e20bd"
+    },
+    "01-active-lp/REPRODUCIBILITY.md": {
+      "bytes": 2096,
+      "sha256": "905005e0fde0e9d16ba2e261d2441014e8963f3047c4d2ae6215bae755b23400"
+    },
+    "01-active-lp/output/information_timing/README.md": {
+      "bytes": 388,
+      "sha256": "7fc2c7926d014a015643cd2c004ca1ca08bcb68b16cd18e827811c452423b458"
+    },
+    "01-active-lp/output/information_timing/report.md": {
+      "bytes": 21221,
+      "sha256": "dd8f061b33c34bac2a167d32b33a4b61d261b497fd8fd69291196fdb94dea72f"
+    },
+    "01-active-lp/simulation/README.md": {
+      "bytes": 670,
+      "sha256": "648b8bbb39e8a90e2359bfc05382e586d7cd241461be6207e41fdb1005955ec7"
+    }
+  },
+  "pdf_validation": {
+    "compiled_successfully": true,
+    "pages": 29,
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "all_pages_rendered_and_visually_reviewed": true
+  },
+  "documentation_update": "Minimal README landing pages; detailed results preserved verbatim in report.md. Numerical outputs and original run provenance are unchanged."
+}

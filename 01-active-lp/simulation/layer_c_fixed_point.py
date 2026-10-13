@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from dataclasses import replace
+from dataclasses import dataclass, field, replace
 from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR
+from fractions import Fraction
 
 from research.active_lp.events import (
     BootstrapMarket,
@@ -23,62 +24,180 @@ from research.active_lp.precision import DECIMAL_ONE, DECIMAL_ZERO, high_precisi
 from research.active_lp.reference_math import max_abs_diff, uniform_price_vector
 from research.active_lp.reference_parallel_lmsr import (
     BPS_DENOMINATOR,
+    RESERVE_POOL,
+    STRICT_ALL_CLAIMED,
+    RefundReserveViolation,
     _aggregate_outstanding,
     _all_sponsors,
     _available_non_fee_assets,
-    _basis_reduction,
     _current_price_vector,
     _debit_sponsor_assets,
     _ensure_trader,
     _replace_tuple_entry,
     _set_tuple_entry,
     _sponsor_keys,
+    _total_non_fee_assets,
+    _refund_reserve_requirement,
+    _winner_reserve_requirement,
     _zero_vector,
 )
 from research.active_lp.state import MarketPricingState, SimulationState, SponsorPosition, TraderPositionBook, TreasuryState
 from research.active_lp.types import MarketStatus, MechanismVariant, Numeric
-from smart_contracts.lmsr_math import SCALE as AVM_SCALE
-from smart_contracts.lmsr_math import lmsr_cost_delta as avm_lmsr_cost_delta
-from smart_contracts.lmsr_math import lmsr_liquidity_scale as avm_lmsr_liquidity_scale
-from smart_contracts.lmsr_math import lmsr_prices as avm_lmsr_prices
-from smart_contracts.lmsr_math import lmsr_sell_return as avm_lmsr_sell_return
+from research.active_lp.certified_math import certified_lmsr_cost_delta as avm_lmsr_cost_delta
+from research.active_lp.certified_math import certified_lmsr_sell_return as avm_lmsr_sell_return
+from research.active_lp._vendor.lmsr_math import SCALE as AVM_SCALE
+from research.active_lp._vendor.lmsr_math import lmsr_liquidity_scale as avm_lmsr_liquidity_scale
+from research.active_lp._vendor.lmsr_math import lmsr_prices as avm_lmsr_prices
 
 FP_PRICE_TOLERANCE = Decimal("0.000005")
 FP_NAV_TOLERANCE = Decimal("0.00005")
 FP_PRICE_FLOOR = 1
 FP_ENTRY_SAFETY_MARGIN = 1
-FP_ORDER_TOLERANCE = Decimal("10")
 FP_STALE_REJECTION_TOLERANCE = Decimal("0.01")
 AVM_AMOUNT_SCALE = Decimal("1000000")
+MAX_UINT64 = (1 << 64) - 1
+
+
+@dataclass(slots=True)
+class LayerCSimulationState(SimulationState):
+    """Integer payout snapshots, separate from signed cohort attribution books.
+
+    Authoritative balances and entitlements use micro-units. Fractional cohort
+    cash attribution remains a research diagnostic, not an AVM storage layout.
+    """
+
+    residual_entitlements_fp: dict[str, int] = field(default_factory=dict)
+    settlement_residual_pool_fp: int | None = None
+
+
+def _checked_u64(value: int, *, name: str) -> int:
+    if not 0 <= value <= MAX_UINT64:
+        raise ValueError(f"{name} out of uint64 range")
+    return value
 
 
 def _to_uint64(value: Numeric, *, name: str) -> int:
     decimal_value = to_decimal(value)
-    if decimal_value < 0:
+    if not decimal_value.is_finite() or decimal_value < 0:
         raise ValueError(f"{name} must be non-negative")
     integer_value = int(decimal_value)
     if decimal_value != integer_value:
         raise ValueError(f"{name} must be an integer-compatible quantity")
-    return integer_value
+    return _checked_u64(integer_value, name=name)
 
 
 def _ceil_uint64(value: Numeric, *, name: str) -> int:
     decimal_value = to_decimal(value)
-    if decimal_value < 0:
+    if not decimal_value.is_finite() or decimal_value < 0:
         raise ValueError(f"{name} must be non-negative")
-    return int(decimal_value.to_integral_value(rounding=ROUND_CEILING))
+    return _checked_u64(int(decimal_value.to_integral_value(rounding=ROUND_CEILING)), name=name)
 
 
 def _amount_to_fp(value: Numeric, *, rounding=ROUND_CEILING, name: str = "amount") -> int:
     decimal_value = to_decimal(value)
-    if decimal_value < 0:
+    if not decimal_value.is_finite() or decimal_value < 0:
         raise ValueError(f"{name} must be non-negative")
     scaled = (decimal_value * AVM_AMOUNT_SCALE).to_integral_value(rounding=rounding)
-    return int(scaled)
+    return _checked_u64(int(scaled), name=name)
 
 
 def _fp_to_amount(value_fp: int | Decimal) -> Decimal:
     return to_decimal(value_fp) / AVM_AMOUNT_SCALE
+
+
+def _ledger_fp(value: Numeric, *, name: str) -> int:
+    """Read an authoritative balance without silently rounding it."""
+    return _to_uint64(to_decimal(value) * AVM_AMOUNT_SCALE, name=name)
+
+
+def _basis_reduction_fp(current_shares: Decimal, current_basis: Decimal, shares: Decimal) -> Decimal:
+    held_fp = _ledger_fp(current_shares, name="held shares")
+    basis_fp = _ledger_fp(current_basis, name="remaining basis")
+    sold_fp = _ledger_fp(shares, name="shares")
+    if not 0 < sold_fp <= held_fp:
+        raise ValueError("shares must be positive and no larger than holdings")
+    # Partial redemptions round down; the final redemption receives the remainder.
+    return _fp_to_amount(basis_fp * sold_fp // held_fp)
+
+
+def _fee_amount(gross_fp: int, rate_bps: Decimal) -> Decimal:
+    return _fp_to_amount(int((Decimal(gross_fp) * rate_bps / BPS_DENOMINATOR).to_integral_value(rounding=ROUND_FLOOR)))
+
+
+def _require_terminal_reserves(state: SimulationState, *, margin_fp: int = 0) -> None:
+    assets = _total_non_fee_assets(state)
+    refunds = _refund_reserve_requirement(state)
+    if state.pricing.status is MarketStatus.ACTIVE and assets < refunds + _fp_to_amount(margin_fp):
+        raise RefundReserveViolation(assets, refunds + _fp_to_amount(margin_fp))
+    required = _winner_reserve_requirement(state) + _fp_to_amount(margin_fp)
+    if assets < required:
+        raise ValueError(f"fixed-point terminal reserve underfunded: available={assets}, required={required}")
+
+
+def _validate_authoritative_balances(state: SimulationState) -> None:
+    _to_uint64(state.pricing.depth_b, name="depth_b")
+    for idx, q in enumerate(state.pricing.pricing_q):
+        _to_uint64(q, name=f"pricing_q[{idx}]")
+    for field_name in ("contract_funds", "lp_fee_balance", "protocol_fee_balance", "rounding_dust"):
+        _ledger_fp(getattr(state.treasury, field_name), name=field_name)
+    for sponsor in state.sponsors.values():
+        for field_name in ("claimable_fees", "withdrawable_fee_surplus", "residual_claimed", "share_units", "target_delta_b"):
+            _ledger_fp(getattr(sponsor, field_name), name=field_name)
+    for book in (state.traders.positions_by_trader, state.traders.cost_basis_by_trader):
+        for vector in book.values():
+            for quantity in vector:
+                _ledger_fp(quantity, name="trader ledger")
+    for quantity in state.traders.aggregate_outstanding_claims:
+        _ledger_fp(quantity, name="aggregate claims")
+    _ledger_fp(_total_non_fee_assets(state), name="non-fee assets")
+
+
+def _snapshot_residual_entitlements(state: SimulationState) -> None:
+    if not isinstance(state, LayerCSimulationState):
+        raise TypeError("pooled fixed-point settlement requires create_layer_c_initial_state")
+    if state.settlement_residual_pool_fp is not None:
+        raise ValueError("settlement entitlements already fixed")
+    pool_fp = _ledger_fp(_total_non_fee_assets(state) - _winner_reserve_requirement(state), name="residual pool")
+    start = min(sponsor.entry_timestamp for sponsor in state.sponsors.values())
+    finish = state.settlement_timestamp
+    if finish is None:
+        raise ValueError("settlement timestamp missing")
+    span = max(1, finish - start)
+    coefficient = Fraction(to_decimal(state.residual_linear_lambda))
+    weights: dict[str, Fraction] = {}
+    for key, sponsor in state.sponsors.items():
+        premium = max(0, finish - sponsor.entry_timestamp - 1)
+        scheme = state.residual_weight_scheme
+        if scheme == "flat":
+            time_weight = Fraction(1)
+        elif scheme == "linear":
+            time_weight = Fraction(1 + premium)
+        elif scheme == "linear_lambda":
+            time_weight = 1 + coefficient * premium
+        elif scheme == "linear_lambda_normalized":
+            exposure = Fraction(premium, span - 1) if span > 1 else Fraction(0)
+            time_weight = 1 + coefficient * exposure
+        else:
+            raise ValueError(f"unsupported integer residual weight scheme: {scheme}")
+        weights[key] = _ledger_fp(sponsor.share_units, name="share_units") * time_weight
+    total_weight = sum(weights.values(), Fraction(0))
+    if total_weight <= 0:
+        raise ValueError("residual weights must have a positive sum")
+    state.settlement_residual_pool_fp = pool_fp
+    # Each entitlement is fixed once, floored independently, and bounded by the
+    # actual pool. No claim can redistribute another account's rounding remainder.
+    state.residual_entitlements_fp = {key: int(pool_fp * weight // total_weight) for key, weight in weights.items()}
+    state.treasury.rounding_dust = _fp_to_amount(pool_fp - sum(state.residual_entitlements_fp.values()))
+
+
+def _pooled_claimable(state: SimulationState, sponsor: SponsorPosition) -> Decimal:
+    if not isinstance(state, LayerCSimulationState) or state.settlement_residual_pool_fp is None:
+        return DECIMAL_ZERO
+    entitlement = state.residual_entitlements_fp[sponsor.cohort_id]
+    paid = _ledger_fp(sponsor.residual_claimed, name="residual_claimed")
+    if paid > entitlement:
+        raise ValueError("residual entitlement overpaid")
+    return _fp_to_amount(entitlement - paid)
 
 
 def _active_sponsors(state: SimulationState) -> list[SponsorPosition]:
@@ -94,7 +213,7 @@ def _total_depth_u64(state: SimulationState) -> int:
     total = 0
     for sponsor in _active_sponsors(state):
         total += _amount_to_fp(sponsor.target_delta_b, name="target_delta_b")
-    return total
+    return _checked_u64(total, name="total depth")
 
 
 def _cohort_net_claims(state: SimulationState, sponsor: SponsorPosition) -> tuple[Decimal, ...]:
@@ -176,15 +295,18 @@ def _gauge_shifted_q_from_prices_fp(prices_fp: tuple[int, ...], depth_b: int) ->
         return tuple(values)
 
 
-def _collateral_required_fp(delta_b: int, prices_fp: tuple[int, ...], *, safety_margin: int = FP_ENTRY_SAFETY_MARGIN) -> int:
+def _collateral_required_fp(
+    delta_b: int, prices_fp: tuple[int, ...], *,
+    safety_margin: int = FP_ENTRY_SAFETY_MARGIN, price_floor_fp: int = FP_PRICE_FLOOR,
+) -> int:
     if delta_b <= 0:
         raise ValueError("delta_b must be positive")
-    safe_prices = _apply_price_floor(prices_fp)
+    safe_prices = _apply_price_floor(prices_fp, floor_fp=price_floor_fp)
     price_decimals = _fp_prices_to_decimal(safe_prices)
     with high_precision():
         alpha = max((DECIMAL_ONE / price).ln() for price in price_decimals)
         base = (Decimal(delta_b) * alpha).to_integral_value(rounding=ROUND_CEILING)
-        return int(base) + max(0, safety_margin)
+        return _checked_u64(int(base) + max(0, safety_margin), name="required collateral")
 
 
 def _route_by_depth_u64(state: SimulationState, shares: int) -> dict[str, int]:
@@ -234,19 +356,21 @@ def _route_by_positive_claims_u64(state: SimulationState, outcome_index: int, sh
 def _allocate_lp_fees(state: SimulationState, lp_fee: Decimal) -> None:
     if lp_fee <= 0:
         return
-    total_depth = Decimal(_total_depth_u64(state))
+    total_depth = _total_depth_u64(state)
     if total_depth <= 0:
         return
     state.treasury.lp_fee_balance += lp_fee
-    remaining = lp_fee
+    fee_fp = _ledger_fp(lp_fee, name="lp_fee")
+    remaining_fp = fee_fp
     active = [sponsor.cohort_id for sponsor in _active_sponsors(state)]
     for idx, key in enumerate(active):
         sponsor = state.sponsors[key]
         if idx == len(active) - 1:
-            fee_share = remaining
+            fee_share_fp = remaining_fp
         else:
-            fee_share = lp_fee * (to_decimal(sponsor.share_units) / total_depth)
-            remaining -= fee_share
+            fee_share_fp = fee_fp * _ledger_fp(sponsor.target_delta_b, name="cohort depth") // total_depth
+            remaining_fp -= fee_share_fp
+        fee_share = _fp_to_amount(fee_share_fp)
         state.sponsors[key] = replace(sponsor, claimable_fees=to_decimal(sponsor.claimable_fees) + fee_share)
 
 
@@ -341,6 +465,7 @@ def _sync_state(state: SimulationState) -> SimulationState:
             sponsor,
             residual_basis_by_outcome=_component_residuals(state, sponsor),
         )
+    _validate_authoritative_balances(state)
     return state
 
 
@@ -352,11 +477,31 @@ class LayerCFixedPointEngine:
         protocol_fee_bps: Numeric = 0,
         price_floor_fp: int = FP_PRICE_FLOOR,
         entry_safety_margin: int = FP_ENTRY_SAFETY_MARGIN,
+        residual_policy: str = STRICT_ALL_CLAIMED,
+        residual_weight_scheme: str = "linear",
+        residual_linear_lambda: Numeric = 1,
+        reserve_margin_fp: int = 0,
     ) -> None:
         self.lp_fee_bps = to_decimal(lp_fee_bps)
         self.protocol_fee_bps = to_decimal(protocol_fee_bps)
-        self.price_floor_fp = price_floor_fp
-        self.entry_safety_margin = entry_safety_margin
+        if not self.lp_fee_bps.is_finite() or not self.protocol_fee_bps.is_finite():
+            raise ValueError("fee rates must be finite")
+        if min(self.lp_fee_bps, self.protocol_fee_bps) < 0 or self.lp_fee_bps + self.protocol_fee_bps >= BPS_DENOMINATOR:
+            raise ValueError("fee rates must be nonnegative and total less than 10000 bps")
+        if residual_policy not in (STRICT_ALL_CLAIMED, RESERVE_POOL):
+            raise ValueError("unsupported residual policy")
+        if residual_weight_scheme not in ("flat", "linear", "linear_lambda", "linear_lambda_normalized"):
+            raise ValueError("unsupported integer residual weight scheme")
+        self.residual_policy = residual_policy
+        self.residual_weight_scheme = residual_weight_scheme
+        self.residual_linear_lambda = to_decimal(residual_linear_lambda)
+        if not self.residual_linear_lambda.is_finite() or self.residual_linear_lambda < 0:
+            raise ValueError("residual_linear_lambda must be finite and nonnegative")
+        self.reserve_margin_fp = _to_uint64(reserve_margin_fp, name="reserve_margin_fp")
+        self.price_floor_fp = _to_uint64(price_floor_fp, name="price_floor_fp")
+        if not 1 <= self.price_floor_fp <= AVM_SCALE // 2:
+            raise ValueError("price_floor_fp must be positive and permit at least two outcomes")
+        self.entry_safety_margin = _to_uint64(entry_safety_margin, name="entry_safety_margin")
 
     def clone_state(self, state: SimulationState) -> SimulationState:
         return deepcopy(state)
@@ -382,10 +527,34 @@ class LayerCFixedPointEngine:
         )
         return _fp_to_amount(quote)
 
+    def sell_execution_quote(self, state: SimulationState, trader_id: str, outcome_index: int, shares: Numeric) -> dict[str, Decimal | bool]:
+        if state.pricing.status is not MarketStatus.ACTIVE:
+            raise ValueError("sell requires ACTIVE market")
+        amount = _fp_to_amount(_amount_to_fp(shares, name="shares"))
+        held = to_decimal(state.traders.positions_by_trader[trader_id][outcome_index])
+        basis = to_decimal(state.traders.cost_basis_by_trader[trader_id][outcome_index])
+        reduction = _basis_reduction_fp(held, basis, amount)
+        gross = self.sell_return(state.pricing, outcome_index, amount)
+        assets_after = _total_non_fee_assets(state) - gross
+        refunds_after = _refund_reserve_requirement(state) - reduction
+        claims_after = list(_aggregate_outstanding(state))
+        claims_after[outcome_index] -= amount
+        margin = _fp_to_amount(self.reserve_margin_fp)
+        return {
+            "gross_return": gross,
+            "basis_reduction": reduction,
+            "available_assets_after": assets_after,
+            "required_refunds_after": refunds_after,
+            "cancellation_reserve_margin": assets_after - refunds_after,
+            "executable": assets_after >= max(refunds_after, max(claims_after)) + margin,
+        }
+
     def route_trade(self, state: SimulationState, event: BuyOutcome | SellOutcome) -> dict[str, int]:
         return _route_by_depth_u64(state, _amount_to_fp(event.shares, name="shares"))
 
     def apply_lp_entry(self, state: SimulationState, event: LpEnterActive) -> dict[str, Decimal | SimulationState]:
+        if _to_uint64(event.timestamp, name="timestamp") < state.pricing.timestamp:
+            raise ValueError("event timestamp must not go backwards")
         working = self.clone_state(state)
         if working.pricing.status is not MarketStatus.ACTIVE:
             raise ValueError("lp entry requires ACTIVE market")
@@ -397,8 +566,8 @@ class LayerCFixedPointEngine:
         if max_abs_diff(current_prices, expected_prices) > allowed_tolerance:
             raise ValueError("stale LP entry price")
 
-        delta_b_units = to_decimal(event.target_delta_b)
-        delta_b = _amount_to_fp(delta_b_units, name="target_delta_b")
+        delta_b = _amount_to_fp(event.target_delta_b, name="target_delta_b")
+        delta_b_units = _fp_to_amount(delta_b)
         if delta_b <= 0:
             raise ValueError("target_delta_b must be positive")
         if event.min_delta_b is not None and delta_b < _amount_to_fp(event.min_delta_b, name="min_delta_b"):
@@ -409,8 +578,9 @@ class LayerCFixedPointEngine:
             delta_b,
             tuple(current_prices_fp),
             safety_margin=self.entry_safety_margin,
+            price_floor_fp=self.price_floor_fp,
         )
-        if required_deposit > _amount_to_fp(event.max_deposit, name="max_deposit"):
+        if _fp_to_amount(required_deposit) > to_decimal(event.max_deposit):
             raise ValueError("max_deposit too small")
 
         cohort_id = f"{event.sponsor_id}:{working.event_index + 1}"
@@ -450,6 +620,7 @@ class LayerCFixedPointEngine:
         working.treasury.contract_funds += required_deposit_amount
         working.pricing.timestamp = event.timestamp
         working.event_index += 1
+        _require_terminal_reserves(working, margin_fp=self.reserve_margin_fp)
         return {"deposit_required": required_deposit_amount, "state": _sync_state(working)}
 
     def mark_to_market_nav(self, state: SimulationState) -> dict[str, Decimal]:
@@ -457,7 +628,9 @@ class LayerCFixedPointEngine:
         nav: dict[str, Decimal] = {}
         for key in _sponsor_keys(state):
             sponsor = state.sponsors[key]
-            if state.pricing.status is MarketStatus.RESOLVED and state.winning_outcome is not None:
+            if self.residual_policy == RESERVE_POOL and state.pricing.status in (MarketStatus.RESOLVED, MarketStatus.CANCELLED):
+                residual_value = _pooled_claimable(state, sponsor)
+            elif state.pricing.status is MarketStatus.RESOLVED and state.winning_outcome is not None:
                 if _aggregate_outstanding(state)[state.winning_outcome] == DECIMAL_ZERO:
                     residual_value = _available_non_fee_assets(sponsor)
                 else:
@@ -473,18 +646,27 @@ class LayerCFixedPointEngine:
         return nav
 
     def apply_event(self, state: SimulationState, event: SimulationEvent) -> SimulationState:
+        timestamp = _to_uint64(event.timestamp, name="timestamp")
+        if timestamp < state.pricing.timestamp:
+            raise ValueError("event timestamp must not go backwards")
+        for field_name in ("outcome_index", "winning_outcome"):
+            if hasattr(event, field_name):
+                outcome = getattr(event, field_name)
+                if not isinstance(outcome, int) or not 0 <= outcome < state.pricing.num_outcomes:
+                    raise ValueError("invalid outcome index")
         working = self.clone_state(state)
         if isinstance(event, BootstrapMarket):
             if working.pricing.status is not MarketStatus.CREATED:
                 raise ValueError("market already bootstrapped")
             prices = uniform_price_vector(working.pricing.num_outcomes)
             prices_fp = _decimal_prices_to_fp(prices)
-            depth_b_units = to_decimal(event.initial_depth_b)
-            depth_b = _amount_to_fp(depth_b_units, name="initial_depth_b")
+            depth_b = _amount_to_fp(event.initial_depth_b, name="initial_depth_b")
+            depth_b_units = _fp_to_amount(depth_b)
             required_collateral = _collateral_required_fp(
                 depth_b,
                 prices_fp,
                 safety_margin=self.entry_safety_margin,
+                price_floor_fp=self.price_floor_fp,
             )
             initial_collateral = _amount_to_fp(event.initial_collateral, name="initial_collateral")
             if initial_collateral < required_collateral:
@@ -515,7 +697,10 @@ class LayerCFixedPointEngine:
             working.pricing.depth_b = depth_b
             working.pricing.pricing_q = _gauge_shifted_q_from_prices_fp(prices_fp, depth_b)
             working.treasury.contract_funds = initial_collateral_amount
+            working.residual_weight_scheme = self.residual_weight_scheme
+            working.residual_linear_lambda = self.residual_linear_lambda
             working.event_index += 1
+            _require_terminal_reserves(working, margin_fp=self.reserve_margin_fp)
             return _sync_state(working)
 
         if isinstance(event, LpEnterActive):
@@ -561,10 +746,10 @@ class LayerCFixedPointEngine:
                     net_outcome_claims=next_claims,
                     trade_cash_balance=to_decimal(sponsor.trade_cash_balance) + allocated_cash[key],
                 )
-            lp_fee = total_cost * self.lp_fee_bps / BPS_DENOMINATOR
-            protocol_fee = total_cost * self.protocol_fee_bps / BPS_DENOMINATOR
+            lp_fee = _fee_amount(total_cost_fp, self.lp_fee_bps)
+            protocol_fee = _fee_amount(total_cost_fp, self.protocol_fee_bps)
             total_paid = total_cost + lp_fee + protocol_fee
-            if total_paid - to_decimal(event.max_total_cost) > FP_ORDER_TOLERANCE:
+            if total_paid > to_decimal(event.max_total_cost):
                 raise ValueError("max_total_cost exceeded")
             positions = tuple(map(to_decimal, working.traders.positions_by_trader[event.trader_id]))
             basis = tuple(map(to_decimal, working.traders.cost_basis_by_trader[event.trader_id]))
@@ -580,6 +765,7 @@ class LayerCFixedPointEngine:
             _allocate_lp_fees(working, lp_fee)
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            _require_terminal_reserves(working, margin_fp=self.reserve_margin_fp)
             return _sync_state(working)
 
         if isinstance(event, SellOutcome):
@@ -617,12 +803,12 @@ class LayerCFixedPointEngine:
                     net_outcome_claims=next_claims,
                     trade_cash_balance=to_decimal(sponsor.trade_cash_balance) - allocated_returns[key],
                 )
-            lp_fee = gross_return * self.lp_fee_bps / BPS_DENOMINATOR
-            protocol_fee = gross_return * self.protocol_fee_bps / BPS_DENOMINATOR
+            lp_fee = _fee_amount(gross_return_fp, self.lp_fee_bps)
+            protocol_fee = _fee_amount(gross_return_fp, self.protocol_fee_bps)
             net_return = gross_return - lp_fee - protocol_fee
-            if to_decimal(event.min_total_return) - net_return > FP_ORDER_TOLERANCE:
+            if to_decimal(event.min_total_return) > net_return:
                 raise ValueError("min_total_return not met")
-            basis_reduction = _basis_reduction(current_shares, basis[event.outcome_index], shares_amount)
+            basis_reduction = _basis_reduction_fp(current_shares, basis[event.outcome_index], shares_amount)
             positions = _replace_tuple_entry(positions, event.outcome_index, current_shares - shares_amount)
             basis = _replace_tuple_entry(basis, event.outcome_index, basis[event.outcome_index] - basis_reduction)
             working.traders.positions_by_trader[event.trader_id] = positions
@@ -639,6 +825,7 @@ class LayerCFixedPointEngine:
             _allocate_lp_fees(working, lp_fee)
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            _require_terminal_reserves(working, margin_fp=self.reserve_margin_fp)
             return _sync_state(working)
 
         if isinstance(event, ResolveMarket):
@@ -646,8 +833,12 @@ class LayerCFixedPointEngine:
                 raise ValueError("resolve requires ACTIVE market")
             working.pricing.status = MarketStatus.RESOLVED
             working.winning_outcome = event.winning_outcome
+            working.settlement_timestamp = event.timestamp
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            _require_terminal_reserves(working)
+            if self.residual_policy == RESERVE_POOL:
+                _snapshot_residual_entitlements(working)
             return _sync_state(working)
 
         if isinstance(event, ClaimWinnings):
@@ -662,7 +853,7 @@ class LayerCFixedPointEngine:
             current_shares = positions[event.outcome_index]
             if current_shares < shares:
                 raise ValueError("insufficient shares")
-            basis_reduction = _basis_reduction(current_shares, basis[event.outcome_index], shares)
+            basis_reduction = _basis_reduction_fp(current_shares, basis[event.outcome_index], shares)
             positions = _replace_tuple_entry(positions, event.outcome_index, current_shares - shares)
             basis = _replace_tuple_entry(basis, event.outcome_index, basis[event.outcome_index] - basis_reduction)
             working.traders.positions_by_trader[event.trader_id] = positions
@@ -683,14 +874,19 @@ class LayerCFixedPointEngine:
             working.treasury.contract_funds -= shares
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            _require_terminal_reserves(working)
             return _sync_state(working)
 
         if isinstance(event, CancelMarket):
             if working.pricing.status is not MarketStatus.ACTIVE:
                 raise ValueError("cancel requires ACTIVE market")
+            _require_terminal_reserves(working)
             working.pricing.status = MarketStatus.CANCELLED
+            working.settlement_timestamp = event.timestamp
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            if self.residual_policy == RESERVE_POOL:
+                _snapshot_residual_entitlements(working)
             return _sync_state(working)
 
         if isinstance(event, ClaimRefund):
@@ -703,7 +899,7 @@ class LayerCFixedPointEngine:
             current_shares = positions[event.outcome_index]
             if current_shares < shares:
                 raise ValueError("insufficient shares")
-            basis_reduction = _basis_reduction(current_shares, basis[event.outcome_index], shares)
+            basis_reduction = _basis_reduction_fp(current_shares, basis[event.outcome_index], shares)
             positions = _replace_tuple_entry(positions, event.outcome_index, current_shares - shares)
             basis = _replace_tuple_entry(basis, event.outcome_index, basis[event.outcome_index] - basis_reduction)
             working.traders.positions_by_trader[event.trader_id] = positions
@@ -719,6 +915,7 @@ class LayerCFixedPointEngine:
             working.treasury.contract_funds -= basis_reduction
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            _require_terminal_reserves(working)
             return _sync_state(working)
 
         if isinstance(event, ClaimLpFees):
@@ -741,7 +938,7 @@ class LayerCFixedPointEngine:
             return _sync_state(working)
 
         if isinstance(event, WithdrawLpFees):
-            amount = to_decimal(event.amount)
+            amount = _fp_to_amount(_ledger_fp(event.amount, name="withdraw amount"))
             if amount <= 0:
                 raise ValueError("withdraw amount must be positive")
             cohort_keys = [key for key in _sponsor_keys(working) if working.sponsors[key].sponsor_id == event.sponsor_id]
@@ -771,11 +968,24 @@ class LayerCFixedPointEngine:
         if isinstance(event, ClaimLpResidual):
             if working.pricing.status not in (MarketStatus.RESOLVED, MarketStatus.CANCELLED):
                 raise ValueError("LP residual claims require RESOLVED or CANCELLED market")
+            cohort_keys = [key for key in _sponsor_keys(working) if working.sponsors[key].sponsor_id == event.sponsor_id]
+            if not cohort_keys:
+                raise ValueError("unknown sponsor_id")
             payout = DECIMAL_ZERO
-            for key in _sponsor_keys(working):
+            if self.residual_policy == RESERVE_POOL:
+                claims = {key: _pooled_claimable(working, working.sponsors[key]) for key in cohort_keys}
+                payout = sum(claims.values(), DECIMAL_ZERO)
+                _debit_sponsor_assets(working, payout)
+                for key, amount in claims.items():
+                    sponsor = working.sponsors[key]
+                    working.sponsors[key] = replace(sponsor, residual_claimed=to_decimal(sponsor.residual_claimed) + amount)
+                working.treasury.contract_funds -= payout
+                working.pricing.timestamp = event.timestamp
+                working.event_index += 1
+                _require_terminal_reserves(working)
+                return _sync_state(working)
+            for key in cohort_keys:
                 sponsor = working.sponsors[key]
-                if sponsor.sponsor_id != event.sponsor_id:
-                    continue
                 if working.pricing.status is MarketStatus.RESOLVED:
                     winning_outcome = working.winning_outcome
                     if winning_outcome is None:
@@ -785,7 +995,7 @@ class LayerCFixedPointEngine:
                 else:
                     if any(outstanding != DECIMAL_ZERO for outstanding in _aggregate_outstanding(working)):
                         raise ValueError("all refunds must be paid before LP residual claims")
-                cohort_payout = _available_non_fee_assets(sponsor)
+                cohort_payout = _fp_to_amount(_amount_to_fp(_available_non_fee_assets(sponsor), rounding=ROUND_FLOOR))
                 payout += cohort_payout
                 zero_q = _zero_vector(working.pricing.num_outcomes)
                 working.sponsors[key] = replace(
@@ -797,16 +1007,23 @@ class LayerCFixedPointEngine:
                     trade_cash_balance=DECIMAL_ZERO,
                     baseline_q=zero_q,
                     current_q=zero_q,
+                    residual_claimed=to_decimal(sponsor.residual_claimed) + cohort_payout,
                 )
+            if payout > _total_non_fee_assets(working):
+                raise ValueError("strict residual claims exceed actual treasury assets")
             working.treasury.contract_funds -= payout
             working.pricing.timestamp = event.timestamp
             working.event_index += 1
+            _require_terminal_reserves(working)
             return _sync_state(working)
 
         raise TypeError(f"unsupported event type: {type(event)!r}")
 
 
 class LayerCInvariantChecker:
+    def __init__(self, *, residual_policy: str = STRICT_ALL_CLAIMED) -> None:
+        self.residual_policy = residual_policy
+
     def check_price_continuity(self, before: SimulationState, after: SimulationState) -> InvariantCheckResult:
         diff = max_abs_diff(_current_price_vector(before), _current_price_vector(after))
         return InvariantCheckResult(
@@ -818,12 +1035,15 @@ class LayerCInvariantChecker:
         )
 
     def check_sponsor_solvency(self, state: SimulationState) -> InvariantCheckResult:
+        if self.residual_policy == RESERVE_POOL or state.pricing.status is MarketStatus.CANCELLED:
+            margin = _total_non_fee_assets(state) - _winner_reserve_requirement(state)
+            return InvariantCheckResult(name="sponsor_solvency", passed=margin >= 0, severity="error", details=f"scope=aggregate, min_margin={margin}", event_index=state.event_index)
         min_margin = None
         for sponsor in _all_sponsors(state):
             residuals = sponsor.residual_basis_by_outcome or _component_residuals(state, sponsor)
             if not residuals:
                 continue
-            sponsor_min = min(residuals)
+            sponsor_min = residuals[state.winning_outcome] if state.pricing.status is MarketStatus.RESOLVED and state.winning_outcome is not None else min(residuals)
             min_margin = sponsor_min if min_margin is None else min(min_margin, sponsor_min)
         passed = min_margin is None or min_margin >= -FP_NAV_TOLERANCE
         return InvariantCheckResult(
@@ -887,7 +1107,19 @@ class LayerCInvariantChecker:
             ),
             self.check_sponsor_solvency(state),
             self.check_settlement_conservation(state),
+            InvariantCheckResult(
+                name="terminal_reserve_coverage",
+                passed=_total_non_fee_assets(state) >= _winner_reserve_requirement(state),
+                severity="error",
+                details=f"available={_total_non_fee_assets(state)}, required={_winner_reserve_requirement(state)}",
+                event_index=state.event_index,
+            ),
         ]
+        if isinstance(state, LayerCSimulationState) and state.settlement_residual_pool_fp is not None:
+            unpaid = sum(state.residual_entitlements_fp[key] - _ledger_fp(sponsor.residual_claimed, name="residual_claimed") for key, sponsor in state.sponsors.items())
+            free = _ledger_fp(_total_non_fee_assets(state) - _winner_reserve_requirement(state), name="free pool")
+            dust = _ledger_fp(state.treasury.rounding_dust, name="rounding_dust")
+            checks.append(InvariantCheckResult(name="integer_entitlement_conservation", passed=unpaid >= 0 and free == unpaid + dust, severity="error", details=f"free={free}, unpaid={unpaid}, dust={dust}", event_index=state.event_index))
         if state.pricing.status is MarketStatus.ACTIVE and int(state.pricing.depth_b) > 0:
             derived_prices = _fp_prices_to_decimal(avm_lmsr_prices(list(map(int, state.pricing.pricing_q)), int(state.pricing.depth_b)))
             max_price_diff = max_abs_diff(derived_prices, _current_price_vector(state))
@@ -904,8 +1136,8 @@ class LayerCInvariantChecker:
 
 
 class LayerCMetricCollector:
-    def __init__(self) -> None:
-        self.engine = LayerCFixedPointEngine()
+    def __init__(self, *, engine: LayerCFixedPointEngine | None = None) -> None:
+        self.engine = engine or LayerCFixedPointEngine()
 
     def price_continuity(self, before: SimulationState, after: SimulationState) -> dict[str, object]:
         return {
@@ -966,7 +1198,7 @@ class LayerCMetricCollector:
         return {"rows": rows}
 
     def solvency_report(self, state: SimulationState) -> dict[str, object]:
-        result = LayerCInvariantChecker().check_sponsor_solvency(state)
+        result = LayerCInvariantChecker(residual_policy=self.engine.residual_policy).check_sponsor_solvency(state)
         return {"passed": result.passed, "details": result.details}
 
     def path_dependence(self, states: list[SimulationState]) -> dict[str, object]:
@@ -1010,7 +1242,7 @@ class LayerCMetricCollector:
                     "residual_claimed": to_decimal(sponsor.residual_claimed),
                 }
             )
-        return {"policy": "strict_all_claimed", "rows": rows}
+        return {"policy": self.engine.residual_policy, "weight_scheme": state.residual_weight_scheme, "rounding_dust": state.treasury.rounding_dust, "rows": rows}
 
     def divergence(self, reference_result: CanonicalEvaluation, candidate_result: CanonicalEvaluation) -> dict[str, object]:
         reference_price_entries = list(reference_result.price_continuity.get("entries", []))
@@ -1057,7 +1289,7 @@ class LayerCMetricCollector:
             "max_nav_diff_vs_reference": max_nav_diff,
             "max_nav_per_deposit_diff_vs_reference": max_nav_per_deposit_diff,
             "solvency_match": reference_result.solvency.get("passed") == candidate_result.solvency.get("passed"),
-            "math_mode": "avm_fixed_point_uint64",
+            "math_mode": "python_certified_interval_quotes_with_uint64_ledger_checks",
             "price_floor_fp": self.engine.price_floor_fp,
             "entry_safety_margin": self.engine.entry_safety_margin,
         }
@@ -1086,8 +1318,8 @@ class LayerCScenarioRunner:
     ) -> None:
         self.num_outcomes = num_outcomes
         self.engine = engine or LayerCFixedPointEngine()
-        self.collector = LayerCMetricCollector()
-        self.invariant_checker = invariant_checker or LayerCInvariantChecker()
+        self.collector = LayerCMetricCollector(engine=self.engine)
+        self.invariant_checker = invariant_checker or LayerCInvariantChecker(residual_policy=self.engine.residual_policy)
         self.reference_trade_size = to_decimal(reference_trade_size)
         self.reference_trades = reference_trades
 
@@ -1155,9 +1387,13 @@ class LayerCScenarioRunner:
         )
 
 
-def create_layer_c_initial_state(num_outcomes: int) -> SimulationState:
+def create_layer_c_initial_state(
+    num_outcomes: int, *, residual_weight_scheme: str = "linear", residual_linear_lambda: Numeric = 1,
+) -> LayerCSimulationState:
+    if not isinstance(num_outcomes, int) or not 2 <= num_outcomes <= 64:
+        raise ValueError("num_outcomes must be between 2 and 64 in the certified quote domain")
     zero_prices = uniform_price_vector(num_outcomes)
-    return SimulationState(
+    return LayerCSimulationState(
         mechanism=MechanismVariant.GLOBAL_STATE_AVM_FIXED_POINT,
         pricing=MarketPricingState(
             num_outcomes=num_outcomes,
@@ -1170,4 +1406,6 @@ def create_layer_c_initial_state(num_outcomes: int) -> SimulationState:
         traders=TraderPositionBook(aggregate_outstanding_claims=_zero_vector(num_outcomes)),
         sponsors={},
         treasury=TreasuryState(contract_funds=DECIMAL_ZERO),
+        residual_weight_scheme=residual_weight_scheme,
+        residual_linear_lambda=residual_linear_lambda,
     )

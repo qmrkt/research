@@ -1,0 +1,163 @@
+\begin{tikzpicture}[
+  x=1cm, y=1cm,
+  every node/.style={font=\sffamily},
+  >={Stealth[length=2.2mm]},
+  % ── DAG node styles ─────────────────────────────────────────────
+  nbase/.style={
+    text width=2.5cm, minimum height=0.95cm,
+    align=center, inner sep=4pt,
+    rounded corners=4pt, line width=0.65pt,
+    font=\sffamily\fontsize{9pt}{10.5pt}\selectfont,
+  },
+  proc/.style={nbase, draw=blue!50!black, fill=blue!6},
+  tsubmit/.style={nbase, draw=teal!50!black, fill=teal!5},
+  tcancel/.style={nbase, draw=black!38, fill=red!3},
+  tdefer/.style={nbase, draw=orange!40!black, fill=orange!5},
+  % ── Stage styles (bottom half) ──────────────────────────────────
+  sbase/.style={
+    text width=3.4cm, minimum height=0.95cm,
+    align=center, inner sep=4pt,
+    rounded corners=4pt, line width=0.6pt,
+    font=\sffamily\fontsize{9pt}{10.5pt}\selectfont,
+  },
+  stage/.style={sbase, draw=black!32, fill=black!3},
+  sfinal/.style={sbase, draw=orange!40!black, fill=orange!5},
+  % ── Labels and titles ──────────────────────────────────────────
+  elabel/.style={
+    font=\sffamily\fontsize{7pt}{8pt}\selectfont,
+    text=black!48, inner sep=1pt,
+  },
+  ftitle/.style={
+    font=\sffamily\bfseries\fontsize{12.5pt}{14pt}\selectfont,
+    text=black!78,
+  },
+  fsubtitle/.style={
+    font=\ttfamily\fontsize{7.6pt}{8.6pt}\selectfont,
+    text=black!45,
+  },
+  sectitle/.style={
+    font=\sffamily\bfseries\fontsize{11.5pt}{13pt}\selectfont,
+    text=black!78,
+  },
+  badge/.style={
+    draw=blue!30, fill=blue!4, rounded corners=2pt,
+    font=\sffamily\fontsize{6.5pt}{7.5pt}\selectfont\bfseries,
+    text=blue!50!black, inner sep=2.5pt, align=center,
+  },
+  % ── Arrows ─────────────────────────────────────────────────────
+  flow/.style={->, line width=0.75pt, draw=black!46},
+  faint/.style={->, line width=0.6pt, draw=black!24, dashed},
+]
+
+% ══════════════════════════════════════════════════════════════════
+% TOP HALF: Worked blueprint DAG
+% ══════════════════════════════════════════════════════════════════
+
+\node[anchor=west, ftitle] at (0, 0.4) {Declared main blueprint};
+\node[anchor=west, fsubtitle] at (0, 0.02) {\texttt{participant\_evidence\_llm} workflow};
+
+% ── Row 0 (y = -1.3) ────────────────────────────────────────────
+\node[proc] (wait) at (2, -1.3) {%
+  \textbf{Wait}\\[1pt]{\scriptsize evidence window}};
+
+\node[proc] (evidence) at (6, -1.3) {%
+  \textbf{Load evidence}\\[1pt]{\scriptsize participant bundle}};
+
+\node[badge] at (9.2, -1.3) {trust class:\\agent\_assisted};
+
+% ── Row 1 (y = -3.2) ────────────────────────────────────────────
+\node[tdefer] (defer) at (0, -3.2) {%
+  \textbf{Defer}\\[1pt]{\scriptsize scheduled next run}};
+
+\node[proc] (judge) at (6, -3.2) {%
+  \textbf{LLM judge}\\[1pt]{\scriptsize interpret evidence}};
+
+% ── Row 2 (y = -5.1) ────────────────────────────────────────────
+\node[tsubmit] (submit) at (4, -5.1) {%
+  \textbf{Submit}\\[1pt]{\scriptsize propose outcome}};
+
+\node[tcancel] (cancel) at (8, -5.1) {%
+  \textbf{Cancel}\\[1pt]{\scriptsize void market}};
+
+% ── DAG edges (all orthogonal) ──────────────────────────────────
+
+% Wait -> Evidence: horizontal
+\draw[flow] (wait.east) -- node[elabel, above=2pt] {closed} (evidence.west);
+
+% Wait -> Defer: down then left
+\draw[flow] (wait.south) |- (defer.east);
+\node[elabel, left=2pt] at (2, -2.5) {still open};
+
+% Evidence -> Judge: straight down
+\draw[flow] (evidence.south) -- node[elabel, right=2pt] {loaded} (judge.north);
+
+% Evidence ~> Cancel: right then down (dashed)
+\draw[faint] (evidence.east) -| (cancel.north);
+\node[elabel, right=2pt] at (8, -2.8) {missing};
+
+% Judge -> fork -> Submit / Cancel: symmetric Y-split
+\path (judge.south) ++(0, -0.45) coordinate (fork);
+\draw[flow, -] (judge.south) -- (fork);
+\draw[flow] (fork) -| node[elabel, above, pos=0.35] {conclusive} (submit.north);
+\draw[flow] (fork) -| node[elabel, above, pos=0.35] {inconclusive} (cancel.north);
+
+
+% ══════════════════════════════════════════════════════════════════
+% SEPARATOR
+% ══════════════════════════════════════════════════════════════════
+
+\draw[draw=black!15, line width=0.5pt] (-0.3, -6.15) -- (10, -6.15);
+\node[font=\sffamily\fontsize{6.8pt}{7.8pt}\selectfont, text=black!28]
+  at (4.85, -5.92) {from declared workflow to execution};
+
+
+% ══════════════════════════════════════════════════════════════════
+% BOTTOM HALF: Executable constitution and challenge surface
+% ══════════════════════════════════════════════════════════════════
+
+\node[anchor=west, sectitle] at (0, -6.65) {Executable constitution and challenge surface};
+
+% ── Row 0 (y = -7.65) ───────────────────────────────────────────
+\node[stage] (compile) at (2.2, -7.65) {%
+  \textbf{Compile \& validate}\\[1pt]{\scriptsize tokens, roots, terminals}};
+
+\node[stage] (store) at (7.2, -7.65) {%
+  \textbf{Store on-chain}\\[1pt]{\scriptsize versioned main + dispute}};
+
+% ── Row 1 (y = -9.15) ───────────────────────────────────────────
+\node[stage] (run) at (2.2, -9.15) {%
+  \textbf{Engine executes DAG}\\[1pt]{\scriptsize node states, traces}};
+
+\node[stage] (proposal) at (7.2, -9.15) {%
+  \textbf{Submit proposal}\\[1pt]{\scriptsize outcome + full-trace hash}};
+
+% ── Row 2 (y = -10.65) ──────────────────────────────────────────
+\node[stage] (verify) at (2.2, -10.65) {%
+  \textbf{Verifier re-checks}\\[1pt]{\scriptsize authenticity, replay, availability}};
+
+\node[sfinal] (dispute) at (7.2, -10.65) {%
+  \textbf{Challenge or finalize}\\[1pt]{\scriptsize dispute path / accept}};
+
+% ── Constitution flow (all orthogonal) ───────────────────────────
+
+% Row 0: compile -> store (horizontal)
+\draw[flow] (compile.east) -- (store.west);
+
+% Col 0: compile -> run -> verify (vertical)
+\draw[flow] (compile.south) -- (run.north);
+\draw[flow] (run.south) -- (verify.north);
+
+% Col 1: store -> proposal -> dispute (vertical)
+\draw[flow] (store.south) -- (proposal.north);
+\draw[flow] (proposal.south) -- (dispute.north);
+
+% Cross: run -> proposal (horizontal)
+\draw[flow] (run.east) -- (proposal.west);
+
+% Cross: verify -> dispute (horizontal)
+\draw[flow] (verify.east) -- (dispute.west);
+
+% Dashed: store commitment enables challenge (orthogonal L-path)
+\draw[faint] (store.east) -- ++(0.65, 0) |- (dispute.east);
+
+\end{tikzpicture}

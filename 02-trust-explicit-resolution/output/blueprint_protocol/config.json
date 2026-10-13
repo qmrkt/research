@@ -1,0 +1,22 @@
+{
+  "adversary": "cost-constrained maximizer; not an equilibrium proposer/challenger model",
+  "attack_cost_units": "illustrative units, independent keys cost 2/4/6; common upstream costs 3",
+  "dependency_models": [
+    "distinct sources",
+    "common error shock",
+    "shared corruptible upstream",
+    "independent and common availability"
+  ],
+  "method": "exact finite-state enumeration using rational probabilities",
+  "parameter_tuning": "none",
+  "protocol_states": "all 3^1+3^3 = 30 possible Boolean/absent source vectors",
+  "random_seed": null,
+  "sampling_intervals": "not applicable: exact specified model expectations",
+  "security_assumptions": [
+    "signature unforgeability and pinned authority keys (public test keys only in fixture runs)",
+    "binding SHA-256 domain-separated canonical roots",
+    "honest append-only publication layer and clock"
+  ],
+  "truth": false,
+  "version": 1
+}

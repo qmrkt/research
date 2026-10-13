@@ -1,0 +1,60 @@
+[
+  {
+    "certificate_accepted": true,
+    "name": "same_snapshot_independent_runs",
+    "result_outcome": true,
+    "reveal_statuses": [
+      "finalized",
+      "finalized",
+      "finalized"
+    ],
+    "shared_result_digest": "4b59c339c94e2e8a7a41f9817352e7680ad6c742cc61bbb18d0d9e5d05503540",
+    "synthetic_true_world_outcome": true,
+    "trace_roots": [
+      "33953072dfa1bb492be53630162611bd989f90bbd1955ba9851d6da01ec783f4",
+      "e6f876977d1cf6fba5cdf7c67d00aba0e3b5eb15630fdda94e2eb61310f59907",
+      "fc5639161dc04be44fe5ac07c64b58777f545cc321926627e4c1ed94ca2cbf9b"
+    ],
+    "truth_correct": true
+  },
+  {
+    "certificate_accepted": true,
+    "name": "authentic_common_source_error",
+    "result_outcome": false,
+    "reveal_statuses": [
+      "finalized",
+      "finalized",
+      "finalized"
+    ],
+    "shared_result_digest": "67c05b9ee5fb29571e570646eac1a11ab0e9bac39e84397928dbdf5e12653b45",
+    "synthetic_true_world_outcome": true,
+    "trace_roots": [
+      "efd0bac46aa6653c71eb78f0f39d955325d424a3ebccd7bb09677f6fd87ef4d9",
+      "065875688b2310fac6876bac311d080e4eff8dc2ab35436252ec106535f61158",
+      "d647462a06feca599cd9e7f74b258e35702037220f685034d24f959b137c32a4"
+    ],
+    "truth_correct": false
+  },
+  {
+    "internal_consistency": true,
+    "name": "fabricated_source_preimage",
+    "reason": "source authentication failed",
+    "receipt_issued": false
+  },
+  {
+    "internal_consistency": true,
+    "name": "wrong_registered_measurement",
+    "reason": "unassigned runner or measurement mismatch",
+    "receipt_issued": false
+  },
+  {
+    "all_required_trace_gate_passed": false,
+    "certificate_accepted": true,
+    "name": "one_trace_withheld",
+    "reveal_statuses": [
+      "unavailable",
+      "finalized",
+      "finalized"
+    ]
+  }
+]

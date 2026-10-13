@@ -1,0 +1,26 @@
+{
+  "module": "research.active_lp._vendor.lmsr_math",
+  "upstream_repository": "https://github.com/andsav/question-market-contracts",
+  "upstream_commit": "0010101ecba7800db0f7737dcc5328a472e87694",
+  "upstream_path": "smart_contracts/lmsr_math.py",
+  "upstream_commit_date": "2026-04-12T21:21:26-07:00",
+  "sha256": "54b3d202473b771d455febbf173d964108cbb70c77cab0bbc12aac4d26029c74",
+  "license": "Apache-2.0",
+  "license_sha256": "958507b3c4728c3f417fe0c9909a5831f3d945551770f640561033c96eedee5c",
+  "modifications": [],
+  "scope": "Historical pure-Python fixed-point numerical helper. This is not compiled AVM execution, an opcode-budget check, or a proof of contract safety. The source was absent from the original research release; this pre-publication version is restored with explicit provenance.",
+  "spot_check": {
+    "historical_artifact": "01-active-lp/output/layer_c_compare_target/results.jsonl",
+    "scenario": "neutral_late_lp",
+    "mechanism": "global_state_avm_fixed_point",
+    "command": "python -m research.active_lp layer-c-target --scenario neutral_late_lp --monte-carlo-trials 0 --adversarial-limit 0 --output-dir <temporary_directory>",
+    "matching_evaluation_fields": [
+      "price_continuity",
+      "slippage_improvement",
+      "lp_fairness_by_entry_time",
+      "exact_vs_simplified_divergence"
+    ],
+    "engine_stage": "Restored legacy engine before the final-policy integer accounting and fee-allocation corrections. The vendored numerical helper bytes remain unchanged.",
+    "limitation": "One preserved fixture matched exactly at restoration; full historical artifact pack not regenerated. Current final-policy runs are new results and are not asserted to match the old accounting outputs."
+  }
+}

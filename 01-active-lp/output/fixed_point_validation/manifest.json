@@ -1,0 +1,42 @@
+{
+  "cohort_rows.jsonl": {
+    "bytes": 9442616,
+    "sha256": "bd97cf289b40eb7b6e5502ced588911f2fa82ac411c0bcf62df0a70c9dfee657"
+  },
+  "config.json": {
+    "bytes": 2059,
+    "sha256": "628667a514293921d5548246b38d21f6b012425b2550d212bcbcc597c1e196b7"
+  },
+  "paths.jsonl": {
+    "bytes": 604212,
+    "sha256": "926b90c5533d0d3efd19be34cd81741b856f44cfe073eb492f35f1f60abb172b"
+  },
+  "provenance.json": {
+    "bytes": 1537,
+    "sha256": "460b59af647d6553589c00c203ab08736d876393ea5193f53cd2e796413e6a61"
+  },
+  "rejections.jsonl": {
+    "bytes": 5598,
+    "sha256": "b9b5f87bd2d6cb8efd078a7ce8bdbcf5800d424e7f3aa9d6c7f16b552f7953f9"
+  },
+  "report.md": {
+    "bytes": 4698,
+    "sha256": "6f89f77fe5da4c831d9f62e80abd8062d9dcedf56b08cd8a9c2afa0205b9dcd4"
+  },
+  "requests.jsonl": {
+    "bytes": 19145481,
+    "sha256": "b71924f0c9224e14837b1f40bc3d21150593959a8d6806e0057c55b991e3a088"
+  },
+  "rows.csv": {
+    "bytes": 158878,
+    "sha256": "e88158373d25da53797eb04066547e821e48eb59465ca545ac4c8694c0a20994"
+  },
+  "summary.json": {
+    "bytes": 4459,
+    "sha256": "de37e8572969df2fb03792fbe00b5538e05127dbca727b73b6340b6cc1b5044b"
+  },
+  "terminal_rows.csv": {
+    "bytes": 2341485,
+    "sha256": "accf223f2e8f11d5ed913e4d77494eda9e87c75fc8b6de07d1acad3f77aeb675"
+  }
+}

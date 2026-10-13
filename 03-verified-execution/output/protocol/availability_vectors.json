@@ -1,0 +1,475 @@
+[
+  {
+    "challenge_deadline": null,
+    "events": [
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 19
+      }
+    ],
+    "final_status": "unavailable",
+    "id": "no-reveal",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 0
+  },
+  {
+    "challenge_deadline": null,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 19
+      }
+    ],
+    "final_status": "unavailable",
+    "id": "one-leaf-withheld",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 3
+  },
+  {
+    "challenge_deadline": null,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "late-reveal-rejected",
+        "status": "unavailable",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 19
+      }
+    ],
+    "final_status": "unavailable",
+    "id": "late-final-leaf",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 3
+  },
+  {
+    "challenge_deadline": 19,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 9
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 9
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 9
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "challenging",
+        "time": 9
+      },
+      {
+        "event": "finalize",
+        "status": "challenging",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "challenging",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 19
+      }
+    ],
+    "final_status": "finalized",
+    "id": "complete-at-9",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 4
+  },
+  {
+    "challenge_deadline": 13,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "challenging",
+        "time": 3
+      },
+      {
+        "event": "semantic-challenge",
+        "status": "challenging",
+        "successful": false,
+        "time": 4
+      },
+      {
+        "event": "finalize",
+        "status": "challenging",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 19
+      }
+    ],
+    "final_status": "finalized",
+    "id": "honest-challenge",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 4
+  },
+  {
+    "challenge_deadline": 13,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "challenging",
+        "time": 3
+      },
+      {
+        "event": "semantic-challenge",
+        "status": "challenging",
+        "successful": false,
+        "time": 4
+      },
+      {
+        "event": "finalize",
+        "status": "challenging",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 19
+      }
+    ],
+    "final_status": "finalized",
+    "id": "false-challenge",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 4
+  },
+  {
+    "challenge_deadline": 13,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "challenging",
+        "time": 3
+      },
+      {
+        "event": "invalid-membership-challenge",
+        "status": "challenging",
+        "successful": false,
+        "time": 4
+      },
+      {
+        "event": "finalize",
+        "status": "challenging",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 19
+      }
+    ],
+    "final_status": "finalized",
+    "id": "invalid-challenger-proof",
+    "reference_semantics_valid": true,
+    "revealed_leaves": 4
+  },
+  {
+    "challenge_deadline": 13,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "challenging",
+        "time": 3
+      },
+      {
+        "event": "semantic-challenge",
+        "status": "rejected",
+        "successful": true,
+        "time": 4
+      },
+      {
+        "event": "finalize",
+        "status": "rejected",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "rejected",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "rejected",
+        "time": 19
+      }
+    ],
+    "final_status": "rejected",
+    "id": "semantic-fraud-challenged",
+    "reference_semantics_valid": false,
+    "revealed_leaves": 4
+  },
+  {
+    "challenge_deadline": 13,
+    "events": [
+      {
+        "event": "reveal",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "challenging",
+        "time": 3
+      },
+      {
+        "event": "finalize",
+        "status": "challenging",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "finalized",
+        "time": 19
+      }
+    ],
+    "final_status": "finalized",
+    "id": "semantic-fraud-unmonitored",
+    "reference_semantics_valid": false,
+    "revealed_leaves": 4
+  },
+  {
+    "challenge_deadline": null,
+    "events": [
+      {
+        "event": "source-preimage-reveal-rejected",
+        "index": 0,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 1,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 2,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "reveal",
+        "index": 3,
+        "status": "revealing",
+        "time": 3
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 10
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 13
+      },
+      {
+        "event": "finalize",
+        "status": "unavailable",
+        "time": 19
+      }
+    ],
+    "final_status": "unavailable",
+    "id": "missing-source-preimage-blocked",
+    "reference_semantics_valid": false,
+    "revealed_leaves": 3
+  }
+]

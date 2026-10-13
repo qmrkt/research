@@ -1,0 +1,47 @@
+\section{Economic Fallback and Product Validation}
+\label{sec:product}
+
+Verified execution changes what a challenger must establish. It does not remove the need to pay for discovering and adjudicating faults. The companion resolution paper derives funded inspection conditions and exposure-scaled deterrence under explicit coverage and adjudication assumptions \cite{trustexplicit2026}. Those conditions replace a universal fixed bond or fixed challenge-window recommendation.
+
+The relevant verification cost is a sum: retrieving the account, locating a questionable step, authenticating the evidence, checking its semantics, and submitting or defending the challenge. A Merkle proof can reduce the authenticated evidence sent to the contract. It need not reduce the time needed to discover the bad step. Attestation can reduce the need to distrust every claimed local transition. It does not make a false source report, an ambiguous question, or a poor model judgment disappear.
+
+The practical proposition is still strong: blueprints define the rules; traces pin the account; execution evidence narrows substitution; request rules constrain selection; and funded challenges handle the residual. The market's exposure and the remaining failure modes determine which layers are worth buying.
+
+\subsection{Why question.market is a useful test bed}
+
+question.market controls the components that need to be varied independently: market creation, blueprint publication, execution requests, evidence presentation, runner selection, challenges, and final settlement. This makes it a suitable platform for a causal study of execution assurance while holding the question, source snapshot, and adjudication path fixed. The current implementation need not match the research protocol for the paper to stand on its own; a test deployment must identify exactly which revision and assurance profile it implements.
+
+Every trial must retain a request record before outcome production, including market exposure, blueprint/snapshot commitments, committee and dependency map, seed and sampling policy, start/expiry times, every permitted attempt, failures, publication events, challenges, and adjudication. An absent result is an observation. Measuring only finalized markets would erase the selective-abort effect established in Section~\ref{sec:selection}.
+
+A useful first comparative study has three interfaces over the same case material: a complete canonical trace with a whole-trace hash; the same trace with Merkle openings and node-specific tools; and the same tools with request-bound signed or genuinely attested receipts. Random assignment of interface and fault condition should measure diagnostic correctness, false accusations, time to first correct diagnosis, bytes retrieved, transaction cost, and missed deadlines. Keep source falsity separate from transition fabrication: stronger execution evidence is not expected to repair a false source by itself.
+
+The independent unit is the question/snapshot/request or independently sampled fault scenario, not every node or every repeated verifier click. Pair interfaces on matched cases and cluster uncertainty by that unit and, where appropriate, operator. Determine sample size from a declared primary effect and a blinded pilot estimate of variance or paired discordance. Do not infer a population false-acceptance rate from this paper's designed rejection vectors. For genuinely independent representative Bernoulli trials with zero failures, the one-sided 95\% upper bound is $1-0.05^{1/N}$; designed attack cases and correlated repeats do not satisfy that sampling premise.
+
+A subsequent hardware experiment should launch independently built images, verify source-to-measurement reproducibility, perform real remote-attestation registration, terminate TLS within the measured boundary, and inject host delay, false plaintext, stale objects, key revocation, restarts, and coordinator censorship. Record image/build hashes, hardware and cloud configuration, latency distributions, boot and quote times, resource use, and complete protocol costs. The present prototype gives that experiment an exact acceptance oracle instead of an informal expectation of what ``verified'' means.
+
+\section{Directions Worth Pursuing}
+\label{sec:directions}
+
+\textbf{Proof-carrying subgraphs.} The most useful ZK question is not whether an entire open-ended resolver can be proved today. It is which deterministic transformations are cheap enough to prove and which boundary inputs still need source authentication, attestation, or judgment. The composition theorem supplies a common interface. Compare replay, a general zkVM, and specialized proofs on the same pinned source/extraction/branch workload. Report prover time, verifier cost, proof size, memory, and the exact trusted input boundary. A remote API receipt is not a proof of the provider's model; a model proof is not a proof that its answer is true.
+
+\textbf{A public execution-request log.} Release transparency makes the permitted software inspectable. An analogous public request-and-attempt record makes selection inspectable. The strongest near-term experiment combines a frozen request, independently generated randomness, deterministic repeated execution, and permissionless submission of the same valid result. Compare its favorable-result rate \emph{and} completion rate with unconstrained retrying. Hardware protects a run; the authoritative log controls which runs count.
+
+\textbf{Dependency-aware committee selection.} The important unit of diversity is a trust dependency, not a public key. A compiler can expose shared vendors, registrars, builds, provider accounts, and upstream data. The quorum policy can then be checked against explicit compromise and outage sets before a market opens. The exact covering and intersection calculations in this paper are small enough to do at creation time. Their inputs still need evidence and governance; invented independence is worse than a visible single dependency.
+
+\textbf{A funded verification budget.} A market can declare the maximum evidence size, necessary disclosure policy, and expected cost of checking its workflow. The execution measurements then feed the inspection incentives of the companion paper. The falsifiable question is whether compact challenges and stronger provenance reduce the reward needed to sustain reliable checking at equal market exposure. That requires measuring discovery and adjudication work, not merely counting hashes.
+
+\section{Scope of the Evidence}
+
+The paper provides proofs under explicit cryptographic and behavioral assumptions, an executable bounded workflow profile, adversarial vectors, cross-language commitment checks, a committee/attempt state model, and real compiled AVM measurements on a private test ledger. The AVM verifier authenticates records and a signed receipt projection. It does not implement the complete market, general JSON semantics, Nitro certificate appraisal, the full publication service, or a production dispute economy.
+
+The committee model's public HMAC test fixtures exercise authentication and policy state transitions; they are not public-key security or hardware measurements. Source fixtures exercise actual RSA signature verification with intentionally public test keys. The AVM signed path exercises actual Ed25519 verification. None of those experiments establishes physical enclave isolation, real vendor independence, reproducible Nitro images, or the truth of a provider's report. Those are precisely the boundaries assigned to the next deployment study.
+
+The source/add/branch/terminal grammar is a complete reference profile, not a claim to cover every blueprint. Large blobs, joins, retries inside a graph, confidential evidence, and asynchronous human judgments require additional bounded semantics and publication rules. The general composition theorem applies when those local rules and their checkers satisfy its premises. The runtime cannot inherit the theorem merely by naming a new node type.
+
+\section{Conclusion}
+
+A market should not stop at declaring how it will resolve. It should carry evidence that its declared decision program was followed, that the counted execution was authorized, and that the evidence was available in time to challenge.
+
+The two-axis model keeps execution assurance separate from the kind of judgment on which settlement depends. The trace protocol makes the account complete and selectively challengeable. The common-result certificate makes independent execution meaningful without demanding identical run metadata. The attempt policy exposes a failure that attestation alone cannot fix: selecting the result after seeing it. The compiled verifier measurements show that compact checking is practical, while locating the actual budget and publication costs.
+
+The resulting architecture is stronger because its boundaries are executable. A false transition, missing record, substituted request, invalid committee, or withheld attempt becomes a specific protocol event. Source truth and judgment remain visible dependencies, with funded disputes where they belong. Markets should progressively improve evidence that the committed program actually ran. This paper supplies the commitments, proofs, and experiments needed to make that progression concrete.

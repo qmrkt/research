@@ -1,0 +1,6045 @@
+{
+  "all_index_sweep": [
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 473,
+      "index": 0,
+      "method": "member",
+      "rpc_ms": 1.233916,
+      "simulation_id": 21,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        386
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2434,
+      "index": 0,
+      "method": "signed",
+      "rpc_ms": 1.956834,
+      "simulation_id": 22,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2347
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 472,
+      "index": 1,
+      "method": "member",
+      "rpc_ms": 1.394083,
+      "simulation_id": 23,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        385
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2433,
+      "index": 1,
+      "method": "signed",
+      "rpc_ms": 2.237583,
+      "simulation_id": 24,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2346
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 472,
+      "index": 2,
+      "method": "member",
+      "rpc_ms": 1.234166,
+      "simulation_id": 25,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        385
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2433,
+      "index": 2,
+      "method": "signed",
+      "rpc_ms": 1.964833,
+      "simulation_id": 26,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2346
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 471,
+      "index": 3,
+      "method": "member",
+      "rpc_ms": 1.245875,
+      "simulation_id": 27,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        384
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2432,
+      "index": 3,
+      "method": "signed",
+      "rpc_ms": 2.1925,
+      "simulation_id": 28,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2345
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 631,
+      "index": 0,
+      "method": "member",
+      "rpc_ms": 1.319125,
+      "simulation_id": 127,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        544
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2592,
+      "index": 0,
+      "method": "signed",
+      "rpc_ms": 2.327833,
+      "simulation_id": 128,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2505
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 630,
+      "index": 1,
+      "method": "member",
+      "rpc_ms": 1.425209,
+      "simulation_id": 129,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        543
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2591,
+      "index": 1,
+      "method": "signed",
+      "rpc_ms": 2.213167,
+      "simulation_id": 130,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2504
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 630,
+      "index": 2,
+      "method": "member",
+      "rpc_ms": 1.437125,
+      "simulation_id": 131,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        543
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2591,
+      "index": 2,
+      "method": "signed",
+      "rpc_ms": 2.352958,
+      "simulation_id": 132,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2504
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 629,
+      "index": 3,
+      "method": "member",
+      "rpc_ms": 1.485625,
+      "simulation_id": 133,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        542
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2590,
+      "index": 3,
+      "method": "signed",
+      "rpc_ms": 2.2215,
+      "simulation_id": 134,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2503
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 630,
+      "index": 4,
+      "method": "member",
+      "rpc_ms": 1.393042,
+      "simulation_id": 135,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        543
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2591,
+      "index": 4,
+      "method": "signed",
+      "rpc_ms": 2.038625,
+      "simulation_id": 136,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2504
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 629,
+      "index": 5,
+      "method": "member",
+      "rpc_ms": 1.368041,
+      "simulation_id": 137,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        542
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2590,
+      "index": 5,
+      "method": "signed",
+      "rpc_ms": 2.194916,
+      "simulation_id": 138,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2503
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 629,
+      "index": 6,
+      "method": "member",
+      "rpc_ms": 1.287542,
+      "simulation_id": 139,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        542
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2590,
+      "index": 6,
+      "method": "signed",
+      "rpc_ms": 2.047917,
+      "simulation_id": 140,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2503
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 628,
+      "index": 7,
+      "method": "member",
+      "rpc_ms": 1.598292,
+      "simulation_id": 141,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        541
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2589,
+      "index": 7,
+      "method": "signed",
+      "rpc_ms": 2.123041,
+      "simulation_id": 142,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2502
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 630,
+      "index": 8,
+      "method": "member",
+      "rpc_ms": 1.384875,
+      "simulation_id": 143,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        543
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2591,
+      "index": 8,
+      "method": "signed",
+      "rpc_ms": 2.1595,
+      "simulation_id": 144,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2504
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 629,
+      "index": 9,
+      "method": "member",
+      "rpc_ms": 1.659167,
+      "simulation_id": 145,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        542
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2590,
+      "index": 9,
+      "method": "signed",
+      "rpc_ms": 2.1865,
+      "simulation_id": 146,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2503
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 629,
+      "index": 10,
+      "method": "member",
+      "rpc_ms": 1.404333,
+      "simulation_id": 147,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        542
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2590,
+      "index": 10,
+      "method": "signed",
+      "rpc_ms": 2.251959,
+      "simulation_id": 148,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2503
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 628,
+      "index": 11,
+      "method": "member",
+      "rpc_ms": 1.431958,
+      "simulation_id": 149,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        541
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2589,
+      "index": 11,
+      "method": "signed",
+      "rpc_ms": 2.076166,
+      "simulation_id": 150,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2502
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 629,
+      "index": 12,
+      "method": "member",
+      "rpc_ms": 1.433542,
+      "simulation_id": 151,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        542
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2590,
+      "index": 12,
+      "method": "signed",
+      "rpc_ms": 2.140584,
+      "simulation_id": 152,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2503
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 628,
+      "index": 13,
+      "method": "member",
+      "rpc_ms": 1.365,
+      "simulation_id": 153,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        541
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2589,
+      "index": 13,
+      "method": "signed",
+      "rpc_ms": 2.344,
+      "simulation_id": 154,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2502
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 628,
+      "index": 14,
+      "method": "member",
+      "rpc_ms": 1.480084,
+      "simulation_id": 155,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        541
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2589,
+      "index": 14,
+      "method": "signed",
+      "rpc_ms": 2.112625,
+      "simulation_id": 156,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2502
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 627,
+      "index": 15,
+      "method": "member",
+      "rpc_ms": 1.609667,
+      "simulation_id": 157,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        540
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2588,
+      "index": 15,
+      "method": "signed",
+      "rpc_ms": 2.309833,
+      "simulation_id": 158,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2501
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 789,
+      "index": 0,
+      "method": "member",
+      "rpc_ms": 1.380875,
+      "simulation_id": 257,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        702
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2750,
+      "index": 0,
+      "method": "signed",
+      "rpc_ms": 1.949042,
+      "simulation_id": 258,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2663
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 788,
+      "index": 1,
+      "method": "member",
+      "rpc_ms": 1.590709,
+      "simulation_id": 259,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        701
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "index": 1,
+      "method": "signed",
+      "rpc_ms": 1.997208,
+      "simulation_id": 260,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 788,
+      "index": 2,
+      "method": "member",
+      "rpc_ms": 1.237833,
+      "simulation_id": 261,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        701
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "index": 2,
+      "method": "signed",
+      "rpc_ms": 2.092791,
+      "simulation_id": 262,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 3,
+      "method": "member",
+      "rpc_ms": 1.278333,
+      "simulation_id": 263,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 3,
+      "method": "signed",
+      "rpc_ms": 2.104084,
+      "simulation_id": 264,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 788,
+      "index": 4,
+      "method": "member",
+      "rpc_ms": 1.454709,
+      "simulation_id": 265,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        701
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "index": 4,
+      "method": "signed",
+      "rpc_ms": 1.9375,
+      "simulation_id": 266,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 5,
+      "method": "member",
+      "rpc_ms": 1.300459,
+      "simulation_id": 267,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 5,
+      "method": "signed",
+      "rpc_ms": 2.116917,
+      "simulation_id": 268,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 6,
+      "method": "member",
+      "rpc_ms": 1.372541,
+      "simulation_id": 269,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 6,
+      "method": "signed",
+      "rpc_ms": 2.0445,
+      "simulation_id": 270,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 7,
+      "method": "member",
+      "rpc_ms": 1.138625,
+      "simulation_id": 271,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 7,
+      "method": "signed",
+      "rpc_ms": 2.026667,
+      "simulation_id": 272,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 788,
+      "index": 8,
+      "method": "member",
+      "rpc_ms": 1.183458,
+      "simulation_id": 273,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        701
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "index": 8,
+      "method": "signed",
+      "rpc_ms": 2.054541,
+      "simulation_id": 274,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 9,
+      "method": "member",
+      "rpc_ms": 1.140625,
+      "simulation_id": 275,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 9,
+      "method": "signed",
+      "rpc_ms": 1.875292,
+      "simulation_id": 276,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 10,
+      "method": "member",
+      "rpc_ms": 1.2985,
+      "simulation_id": 277,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 10,
+      "method": "signed",
+      "rpc_ms": 1.892458,
+      "simulation_id": 278,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 11,
+      "method": "member",
+      "rpc_ms": 1.178334,
+      "simulation_id": 279,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 11,
+      "method": "signed",
+      "rpc_ms": 1.949917,
+      "simulation_id": 280,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 12,
+      "method": "member",
+      "rpc_ms": 1.323625,
+      "simulation_id": 281,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 12,
+      "method": "signed",
+      "rpc_ms": 1.986833,
+      "simulation_id": 282,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 13,
+      "method": "member",
+      "rpc_ms": 1.183584,
+      "simulation_id": 283,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 13,
+      "method": "signed",
+      "rpc_ms": 2.056666,
+      "simulation_id": 284,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 14,
+      "method": "member",
+      "rpc_ms": 1.2465,
+      "simulation_id": 285,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 14,
+      "method": "signed",
+      "rpc_ms": 2.078208,
+      "simulation_id": 286,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 15,
+      "method": "member",
+      "rpc_ms": 1.17675,
+      "simulation_id": 287,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 15,
+      "method": "signed",
+      "rpc_ms": 2.018083,
+      "simulation_id": 288,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 788,
+      "index": 16,
+      "method": "member",
+      "rpc_ms": 1.211583,
+      "simulation_id": 289,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        701
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "index": 16,
+      "method": "signed",
+      "rpc_ms": 2.043709,
+      "simulation_id": 290,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 17,
+      "method": "member",
+      "rpc_ms": 1.211333,
+      "simulation_id": 291,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 17,
+      "method": "signed",
+      "rpc_ms": 1.974209,
+      "simulation_id": 292,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 18,
+      "method": "member",
+      "rpc_ms": 1.319875,
+      "simulation_id": 293,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 18,
+      "method": "signed",
+      "rpc_ms": 1.918208,
+      "simulation_id": 294,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 19,
+      "method": "member",
+      "rpc_ms": 1.224458,
+      "simulation_id": 295,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 19,
+      "method": "signed",
+      "rpc_ms": 1.917416,
+      "simulation_id": 296,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 20,
+      "method": "member",
+      "rpc_ms": 1.183334,
+      "simulation_id": 297,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 20,
+      "method": "signed",
+      "rpc_ms": 2.047375,
+      "simulation_id": 298,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 21,
+      "method": "member",
+      "rpc_ms": 1.223958,
+      "simulation_id": 299,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 21,
+      "method": "signed",
+      "rpc_ms": 1.888541,
+      "simulation_id": 300,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 22,
+      "method": "member",
+      "rpc_ms": 1.140625,
+      "simulation_id": 301,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 22,
+      "method": "signed",
+      "rpc_ms": 2.017375,
+      "simulation_id": 302,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 23,
+      "method": "member",
+      "rpc_ms": 1.146,
+      "simulation_id": 303,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 23,
+      "method": "signed",
+      "rpc_ms": 2.026,
+      "simulation_id": 304,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 24,
+      "method": "member",
+      "rpc_ms": 1.32025,
+      "simulation_id": 305,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 24,
+      "method": "signed",
+      "rpc_ms": 1.96475,
+      "simulation_id": 306,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 25,
+      "method": "member",
+      "rpc_ms": 1.28225,
+      "simulation_id": 307,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 25,
+      "method": "signed",
+      "rpc_ms": 1.918834,
+      "simulation_id": 308,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 26,
+      "method": "member",
+      "rpc_ms": 1.319583,
+      "simulation_id": 309,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 26,
+      "method": "signed",
+      "rpc_ms": 2.090333,
+      "simulation_id": 310,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 27,
+      "method": "member",
+      "rpc_ms": 1.235291,
+      "simulation_id": 311,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 27,
+      "method": "signed",
+      "rpc_ms": 2.07575,
+      "simulation_id": 312,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 28,
+      "method": "member",
+      "rpc_ms": 1.241291,
+      "simulation_id": 313,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 28,
+      "method": "signed",
+      "rpc_ms": 2.040167,
+      "simulation_id": 314,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 29,
+      "method": "member",
+      "rpc_ms": 1.192208,
+      "simulation_id": 315,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 29,
+      "method": "signed",
+      "rpc_ms": 2.106,
+      "simulation_id": 316,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 30,
+      "method": "member",
+      "rpc_ms": 1.253542,
+      "simulation_id": 317,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 30,
+      "method": "signed",
+      "rpc_ms": 3.047625,
+      "simulation_id": 318,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 784,
+      "index": 31,
+      "method": "member",
+      "rpc_ms": 1.426667,
+      "simulation_id": 319,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        697
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2745,
+      "index": 31,
+      "method": "signed",
+      "rpc_ms": 2.022333,
+      "simulation_id": 320,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2658
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 788,
+      "index": 32,
+      "method": "member",
+      "rpc_ms": 1.159125,
+      "simulation_id": 321,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        701
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "index": 32,
+      "method": "signed",
+      "rpc_ms": 1.88625,
+      "simulation_id": 322,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 33,
+      "method": "member",
+      "rpc_ms": 1.259833,
+      "simulation_id": 323,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 33,
+      "method": "signed",
+      "rpc_ms": 2.000666,
+      "simulation_id": 324,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 34,
+      "method": "member",
+      "rpc_ms": 1.258625,
+      "simulation_id": 325,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 34,
+      "method": "signed",
+      "rpc_ms": 2.862833,
+      "simulation_id": 326,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 35,
+      "method": "member",
+      "rpc_ms": 1.127,
+      "simulation_id": 327,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 35,
+      "method": "signed",
+      "rpc_ms": 1.932375,
+      "simulation_id": 328,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 36,
+      "method": "member",
+      "rpc_ms": 1.176875,
+      "simulation_id": 329,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 36,
+      "method": "signed",
+      "rpc_ms": 1.948917,
+      "simulation_id": 330,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 37,
+      "method": "member",
+      "rpc_ms": 1.346542,
+      "simulation_id": 331,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 37,
+      "method": "signed",
+      "rpc_ms": 2.007459,
+      "simulation_id": 332,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 38,
+      "method": "member",
+      "rpc_ms": 1.208625,
+      "simulation_id": 333,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 38,
+      "method": "signed",
+      "rpc_ms": 1.903917,
+      "simulation_id": 334,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 39,
+      "method": "member",
+      "rpc_ms": 1.12775,
+      "simulation_id": 335,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 39,
+      "method": "signed",
+      "rpc_ms": 1.961542,
+      "simulation_id": 336,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 40,
+      "method": "member",
+      "rpc_ms": 1.184292,
+      "simulation_id": 337,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 40,
+      "method": "signed",
+      "rpc_ms": 1.94575,
+      "simulation_id": 338,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 41,
+      "method": "member",
+      "rpc_ms": 1.14625,
+      "simulation_id": 339,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 41,
+      "method": "signed",
+      "rpc_ms": 1.973625,
+      "simulation_id": 340,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 42,
+      "method": "member",
+      "rpc_ms": 1.263417,
+      "simulation_id": 341,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 42,
+      "method": "signed",
+      "rpc_ms": 1.972042,
+      "simulation_id": 342,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 43,
+      "method": "member",
+      "rpc_ms": 2.240542,
+      "simulation_id": 343,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 43,
+      "method": "signed",
+      "rpc_ms": 2.085166,
+      "simulation_id": 344,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 44,
+      "method": "member",
+      "rpc_ms": 1.27575,
+      "simulation_id": 345,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 44,
+      "method": "signed",
+      "rpc_ms": 1.929209,
+      "simulation_id": 346,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 45,
+      "method": "member",
+      "rpc_ms": 1.326208,
+      "simulation_id": 347,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 45,
+      "method": "signed",
+      "rpc_ms": 1.991583,
+      "simulation_id": 348,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 46,
+      "method": "member",
+      "rpc_ms": 1.177834,
+      "simulation_id": 349,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 46,
+      "method": "signed",
+      "rpc_ms": 3.963792,
+      "simulation_id": 350,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 784,
+      "index": 47,
+      "method": "member",
+      "rpc_ms": 1.343833,
+      "simulation_id": 351,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        697
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2745,
+      "index": 47,
+      "method": "signed",
+      "rpc_ms": 2.047625,
+      "simulation_id": 352,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2658
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 787,
+      "index": 48,
+      "method": "member",
+      "rpc_ms": 1.888208,
+      "simulation_id": 353,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        700
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2748,
+      "index": 48,
+      "method": "signed",
+      "rpc_ms": 1.907292,
+      "simulation_id": 354,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2661
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 49,
+      "method": "member",
+      "rpc_ms": 1.177417,
+      "simulation_id": 355,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 49,
+      "method": "signed",
+      "rpc_ms": 1.921792,
+      "simulation_id": 356,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 50,
+      "method": "member",
+      "rpc_ms": 1.247167,
+      "simulation_id": 357,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 50,
+      "method": "signed",
+      "rpc_ms": 2.016167,
+      "simulation_id": 358,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 51,
+      "method": "member",
+      "rpc_ms": 1.219166,
+      "simulation_id": 359,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 51,
+      "method": "signed",
+      "rpc_ms": 1.91375,
+      "simulation_id": 360,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 52,
+      "method": "member",
+      "rpc_ms": 1.158,
+      "simulation_id": 361,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 52,
+      "method": "signed",
+      "rpc_ms": 2.003375,
+      "simulation_id": 362,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 53,
+      "method": "member",
+      "rpc_ms": 1.149875,
+      "simulation_id": 363,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 53,
+      "method": "signed",
+      "rpc_ms": 2.029292,
+      "simulation_id": 364,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 54,
+      "method": "member",
+      "rpc_ms": 1.243584,
+      "simulation_id": 365,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 54,
+      "method": "signed",
+      "rpc_ms": 2.067209,
+      "simulation_id": 366,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 784,
+      "index": 55,
+      "method": "member",
+      "rpc_ms": 1.160166,
+      "simulation_id": 367,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        697
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2745,
+      "index": 55,
+      "method": "signed",
+      "rpc_ms": 1.94475,
+      "simulation_id": 368,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2658
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 786,
+      "index": 56,
+      "method": "member",
+      "rpc_ms": 1.208375,
+      "simulation_id": 369,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        699
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2747,
+      "index": 56,
+      "method": "signed",
+      "rpc_ms": 1.922958,
+      "simulation_id": 370,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2660
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 57,
+      "method": "member",
+      "rpc_ms": 1.237166,
+      "simulation_id": 371,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 57,
+      "method": "signed",
+      "rpc_ms": 2.168542,
+      "simulation_id": 372,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 58,
+      "method": "member",
+      "rpc_ms": 1.335541,
+      "simulation_id": 373,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 58,
+      "method": "signed",
+      "rpc_ms": 1.971709,
+      "simulation_id": 374,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 784,
+      "index": 59,
+      "method": "member",
+      "rpc_ms": 1.219583,
+      "simulation_id": 375,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        697
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2745,
+      "index": 59,
+      "method": "signed",
+      "rpc_ms": 2.173459,
+      "simulation_id": 376,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2658
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 785,
+      "index": 60,
+      "method": "member",
+      "rpc_ms": 1.171834,
+      "simulation_id": 377,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        698
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2746,
+      "index": 60,
+      "method": "signed",
+      "rpc_ms": 1.958416,
+      "simulation_id": 378,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2659
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 784,
+      "index": 61,
+      "method": "member",
+      "rpc_ms": 1.258875,
+      "simulation_id": 379,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        697
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2745,
+      "index": 61,
+      "method": "signed",
+      "rpc_ms": 2.057542,
+      "simulation_id": 380,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2658
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 784,
+      "index": 62,
+      "method": "member",
+      "rpc_ms": 1.229875,
+      "simulation_id": 381,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        697
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2745,
+      "index": 62,
+      "method": "signed",
+      "rpc_ms": 1.931042,
+      "simulation_id": 382,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2658
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 783,
+      "index": 63,
+      "method": "member",
+      "rpc_ms": 1.312333,
+      "simulation_id": 383,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        696
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 64,
+      "failure": "",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2744,
+      "index": 63,
+      "method": "signed",
+      "rpc_ms": 2.0455,
+      "simulation_id": 384,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2657
+      ]
+    }
+  ],
+  "approval_bytes": 624,
+  "avm_target": 11,
+  "clear_bytes": 2,
+  "compiler": "puyapy 5.7.1 -O2 --target-avm-version 11",
+  "dependencies": {
+    "PyNaCl": "1.6.0",
+    "puyapy": "5.7.1",
+    "py-algorand-sdk": "2.11.1"
+  },
+  "global_state": {
+    "byte_slots": 5,
+    "uint_slots": 1
+  },
+  "host": "macOS-26.2-arm64-arm-64bit",
+  "negative_cases": [
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction FU2AWSVCXIXX7ZA5444SE3SWFSGOSHISQQR3OHXBPKIUEKWWSWIQ: logic eval error: assert failed pc=324. Details: app=1001, pc=324, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 133,
+      "mutation": "wrong_context",
+      "rpc_ms": 1.206875,
+      "simulation_id": 29,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        46
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction C5A3DWH3W2RFPKRSCNT7JAV54AUG4QRIY2EU53T64URQPVETAVPA: logic eval error: assert failed pc=341. Details: app=1001, pc=341, opcodes=dig 1; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 145,
+      "mutation": "wrong_count",
+      "rpc_ms": 2.247125,
+      "simulation_id": 30,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        58
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction 66IJTXKXCGRAT4VQKGRHL5NFFYGE4I7HGXHT6COLOWYKGDBKI44A: logic eval error: assert failed pc=359. Details: app=1001, pc=359, opcodes=dig 1; <; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 157,
+      "mutation": "index_out_of_bounds",
+      "rpc_ms": 1.313333,
+      "simulation_id": 31,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        70
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction JT4BNIOE6NUFXW5AVWVTP2BUZPKKK6U6UC2NKU4H6METY74AX4NA: logic eval error: assert failed pc=542. Details: app=1001, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 467,
+      "mutation": "wrong_index",
+      "rpc_ms": 1.386375,
+      "simulation_id": 32,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        380
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction VEXD4S6FMYXMQAJ57CS4SJM3NI6T32F7SVY7DZ3JZHCRSBD3H67A: logic eval error: assert failed pc=542. Details: app=1001, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 465,
+      "mutation": "modified_payload",
+      "rpc_ms": 1.244084,
+      "simulation_id": 33,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        378
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction TD5FYLVKK2OYOA2A3L3BCF4BABFGBGKPAFZXNAAH3IORUFXKYDLQ: logic eval error: assert failed pc=403. Details: app=1001, pc=403, opcodes=*; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 201,
+      "mutation": "truncated_proof",
+      "rpc_ms": 1.28575,
+      "simulation_id": 34,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        114
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction QK7ATILYNQHCMHMUU3WTR5LOEKBF45KYN7TV34GCPF6VODBV67JA: logic eval error: assert failed pc=403. Details: app=1001, pc=403, opcodes=*; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 201,
+      "mutation": "extended_proof",
+      "rpc_ms": 1.125459,
+      "simulation_id": 35,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        114
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction FBYRPJMFLU6ZCWYMMH3W3BA6DBAUU5U6AR6I5O4EHRTX4NYUTSUQ: logic eval error: assert failed pc=542. Details: app=1001, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 465,
+      "mutation": "modified_sibling",
+      "rpc_ms": 1.230583,
+      "simulation_id": 36,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        378
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction MTSLC46PUQRMCVXPWBTC6HM2WJPJIHP6IKZ4RRIDKEGG2BQKMAEQ: logic eval error: assert failed pc=608. Details: app=1001, pc=608, opcodes=cover 2; ed25519verify_bare; assert; label19:",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2430,
+      "mutation": "bad_signature",
+      "rpc_ms": 1.845334,
+      "simulation_id": 37,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2343
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction MPQNFOLOB2FVQ4S35NXQU7SWCPUVFHV2LGSLBQQ7RWZSDS6ZEBIQ: logic eval error: assert failed pc=559. Details: app=1001, pc=559, opcodes=pushint 64; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 480,
+      "mutation": "truncated_signature",
+      "rpc_ms": 1.312625,
+      "simulation_id": 38,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        393
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction WGQ7NXB44JUYF7XRHNNVYMLNSR5N7OUW7B5B2PGHXDC7OBLMT2NQ: logic eval error: assert failed pc=331. Details: app=1001, pc=331, opcodes=intc_3 // 8; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 138,
+      "mutation": "count_noncanonical_width",
+      "rpc_ms": 1.349625,
+      "simulation_id": 39,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        51
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction Z76IKWYSJAC733HE3PBULGWPF2VUB7EIRULOSB4TXKBDMWYSONMQ: logic eval error: assert failed pc=348. Details: app=1001, pc=348, opcodes=intc_3 // 8; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 150,
+      "mutation": "index_noncanonical_width",
+      "rpc_ms": 1.229417,
+      "simulation_id": 40,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        63
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "transaction GVA5GIXSTRLERXLP4VWKU5ECAT6LLMSSZCZJ6LPWFTNNQLD45ZAA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1001, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 442,
+      "mutation": "payment_cannot_buy_signature_budget",
+      "rpc_ms": 2.690542,
+      "simulation_id": 41,
+      "txn_opcode_costs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        442
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 4,
+      "failure": "txgroup with 5mA fees is less than 5.012mA (usage=5.011800 * base=1mA)",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 471,
+      "mutation": "large_arguments_without_surcharge",
+      "rpc_ms": 1.477667,
+      "simulation_id": 84,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        384
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction ZKAXMSVQOTNXTC7RKHAUU7QUZPC2Z45CYQ7EIC65QBOHBIDABMXQ: logic eval error: assert failed pc=324. Details: app=1033, pc=324, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 133,
+      "mutation": "wrong_context",
+      "rpc_ms": 1.319042,
+      "simulation_id": 159,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        46
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction G2TFVKDJ5NTVRBC2YMW6TUBUSDIQETDJARWXL6L5ZMEOFS6IJGVA: logic eval error: assert failed pc=341. Details: app=1033, pc=341, opcodes=dig 1; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 145,
+      "mutation": "wrong_count",
+      "rpc_ms": 1.228333,
+      "simulation_id": 160,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        58
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction IO2YVVP6ZYOVDXO44DGFWE5UPF7XCO3VVFKSGGS4HWNWFMKCSTFA: logic eval error: assert failed pc=359. Details: app=1033, pc=359, opcodes=dig 1; <; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 157,
+      "mutation": "index_out_of_bounds",
+      "rpc_ms": 1.416375,
+      "simulation_id": 161,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        70
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction 6FCAXHDMSA5GTQCAU4PCWFIYREIE5E2WEMWKLN3OIAVSVPMJZJMQ: logic eval error: assert failed pc=542. Details: app=1033, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 625,
+      "mutation": "wrong_index",
+      "rpc_ms": 1.266167,
+      "simulation_id": 162,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        538
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction S2NCQNCNYQQXMQ5NDTA2KXLRYU6SWEZ3HX545TCFPDNRJLDOMT5A: logic eval error: assert failed pc=542. Details: app=1033, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 621,
+      "mutation": "modified_payload",
+      "rpc_ms": 1.346167,
+      "simulation_id": 163,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        534
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction MTF2EWA27TU6ZM2IOJ43Q5DMNYVXRCKMAKZUFJKJRN3AFUC3N7NA: logic eval error: assert failed pc=403. Details: app=1033, pc=403, opcodes=*; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 227,
+      "mutation": "truncated_proof",
+      "rpc_ms": 1.46325,
+      "simulation_id": 164,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        140
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction W264G5PJWX4V3PYWAZEQZHFATAYID7TKZFXDRJ75GN4YFXGGNXRQ: logic eval error: assert failed pc=403. Details: app=1033, pc=403, opcodes=*; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 227,
+      "mutation": "extended_proof",
+      "rpc_ms": 1.4235,
+      "simulation_id": 165,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        140
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction 7MZOGNYUQVZB7YT7GGYK7NMTNDCOSY2KAQY5TEAUJZUDIDXJK5DA: logic eval error: assert failed pc=542. Details: app=1033, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 621,
+      "mutation": "modified_sibling",
+      "rpc_ms": 1.181458,
+      "simulation_id": 166,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        534
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction 2WQ4DLOKGUKV44P7J4DVVW7DMPRNSLXCK6ZBK6GLVOA6ULJTJUSA: logic eval error: assert failed pc=608. Details: app=1033, pc=608, opcodes=cover 2; ed25519verify_bare; assert; label19:",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2586,
+      "mutation": "bad_signature",
+      "rpc_ms": 1.928583,
+      "simulation_id": 167,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2499
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction 7Z2R5Y4G56WJCLUDLQXCSMNOYDBGQGXUK7RQJDHO4AJ5GD5T5VHQ: logic eval error: assert failed pc=559. Details: app=1033, pc=559, opcodes=pushint 64; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 636,
+      "mutation": "truncated_signature",
+      "rpc_ms": 1.283083,
+      "simulation_id": 168,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        549
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction XKTQ3UOQGY2E4O5D4LXJYGRTX7UZZI5NMNYQB7D4T2BE3KJTZRKQ: logic eval error: assert failed pc=331. Details: app=1033, pc=331, opcodes=intc_3 // 8; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 138,
+      "mutation": "count_noncanonical_width",
+      "rpc_ms": 1.290417,
+      "simulation_id": 169,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        51
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction 4ESQIW67GCCRSTANZS3WACHOP4TUACO3BBESTDG7GMYDVXWH3EVQ: logic eval error: assert failed pc=348. Details: app=1033, pc=348, opcodes=intc_3 // 8; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 150,
+      "mutation": "index_noncanonical_width",
+      "rpc_ms": 1.131542,
+      "simulation_id": 170,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        63
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "transaction EABQAI7XC454UJOA3TE5RCQPNZJ3S6QW5H5SEXL67KTWBYTLIHFA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1033, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 598,
+      "mutation": "payment_cannot_buy_signature_budget",
+      "rpc_ms": 3.1435,
+      "simulation_id": 171,
+      "txn_opcode_costs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        598
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 16,
+      "failure": "txgroup with 5mA fees is less than 5.019mA (usage=5.018200 * base=1mA)",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 627,
+      "mutation": "large_arguments_without_surcharge",
+      "rpc_ms": 1.408333,
+      "simulation_id": 214,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        540
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction PQL5IKZXMZFPL5WX4NQITFFEBANBQ7IC5O4UGS7UE3A5ESQUMVCA: logic eval error: assert failed pc=324. Details: app=1065, pc=324, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 133,
+      "mutation": "wrong_context",
+      "rpc_ms": 1.16875,
+      "simulation_id": 385,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        46
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction QAZ2NPOE57OK2RP423AXRW2SP445DGCCSZQMBEH6FPL6NEBY3M6A: logic eval error: assert failed pc=341. Details: app=1065, pc=341, opcodes=dig 1; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 145,
+      "mutation": "wrong_count",
+      "rpc_ms": 1.17275,
+      "simulation_id": 386,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        58
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction Q2QDI5QY4YFCUBVUD3ZF4653R5T4IDXAFUY2GBN55AFJWWRJ5HBQ: logic eval error: assert failed pc=359. Details: app=1065, pc=359, opcodes=dig 1; <; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 157,
+      "mutation": "index_out_of_bounds",
+      "rpc_ms": 1.185333,
+      "simulation_id": 387,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        70
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction 6FKKP3HYP2OZI63SKOIQD4A75ZNRPBDTJVAAVEEFHXMIIUXMEGGQ: logic eval error: assert failed pc=542. Details: app=1065, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 783,
+      "mutation": "wrong_index",
+      "rpc_ms": 1.248042,
+      "simulation_id": 388,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        696
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction D4EDJSO2GJUZ7KFH4LSOL66CWVII7SU5E5YODDONHP6BP5FZFDLA: logic eval error: assert failed pc=542. Details: app=1065, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 777,
+      "mutation": "modified_payload",
+      "rpc_ms": 1.272375,
+      "simulation_id": 389,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        690
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction SZZJXHZ3RBUMJL5LGU37NSFLD5EBTG4HTHOJBX4UD6R4SX447NLA: logic eval error: assert failed pc=403. Details: app=1065, pc=403, opcodes=*; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 253,
+      "mutation": "truncated_proof",
+      "rpc_ms": 1.174875,
+      "simulation_id": 390,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        166
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction 6L6RIW3GM37FAPM5HJ7PHSRGESW55CZ6USWOR6FF65XE5GAIH44A: logic eval error: assert failed pc=403. Details: app=1065, pc=403, opcodes=*; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 253,
+      "mutation": "extended_proof",
+      "rpc_ms": 1.214291,
+      "simulation_id": 391,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        166
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction DDYXL66MS7MULLZQAL4LXRLM5W6Z7XBPYWLOUN2YSYKMZO4WABCA: logic eval error: assert failed pc=542. Details: app=1065, pc=542, opcodes=app_global_get; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 777,
+      "mutation": "modified_sibling",
+      "rpc_ms": 1.23475,
+      "simulation_id": 392,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        690
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction GFTPCX74XOY3Q2JPPARGLQTQN54YZ2IRQKXVNXRCHMDFLRQ2JTWA: logic eval error: assert failed pc=608. Details: app=1065, pc=608, opcodes=cover 2; ed25519verify_bare; assert; label19:",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2742,
+      "mutation": "bad_signature",
+      "rpc_ms": 1.94425,
+      "simulation_id": 393,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2655
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction KIWFNSEEHAV4GMMK57NVBXYAW6EYWWFS32KPSNZ4X54QGQCLO4XQ: logic eval error: assert failed pc=559. Details: app=1065, pc=559, opcodes=pushint 64; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 792,
+      "mutation": "truncated_signature",
+      "rpc_ms": 1.272125,
+      "simulation_id": 394,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        705
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction CCHVHNEP62TNRKJPBDMNLHE7JFR2VFOVSH5FVQ5K76NUMX63JBWA: logic eval error: assert failed pc=331. Details: app=1065, pc=331, opcodes=intc_3 // 8; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 138,
+      "mutation": "count_noncanonical_width",
+      "rpc_ms": 1.192042,
+      "simulation_id": 395,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        51
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction CKBIAQ745FFLDVTLRBIESLHR4TRE6FINV2ZI7ZPTK5UHCARGOWRQ: logic eval error: assert failed pc=348. Details: app=1065, pc=348, opcodes=intc_3 // 8; ==; assert",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 150,
+      "mutation": "index_noncanonical_width",
+      "rpc_ms": 1.14125,
+      "simulation_id": 396,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        63
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "transaction EDPSMJF7GXKSSTZQ5Q654EBB2M4ZAV2NNSQZ5T6S4OXLDYUEC7OA: logic eval error: dynamic cost budget exceeded, executing dup: local program cost was 700. Details: app=1065, pc=554, opcodes=bz label19; txna ApplicationArgs 6; dup",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 700,
+      "mutation": "payment_cannot_buy_signature_budget",
+      "rpc_ms": 2.712584,
+      "simulation_id": 397,
+      "txn_opcode_costs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        700
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "txgroup with 5mA fees is less than 5.025mA (usage=5.024600 * base=1mA)",
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 783,
+      "mutation": "large_arguments_without_surcharge",
+      "rpc_ms": 1.352417,
+      "simulation_id": 440,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        696
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 0,
+      "failure": "transaction 5CINKR6Q7JAY33HDXWJGLBQKJI2U7VSLB5QG3TEQJKLEKJJXWKYQ: logic eval error: assert failed pc=146. Details: app=1165, pc=146, opcodes=bz label2; intc_0 // 1; label7:; assert",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 48,
+      "mutation": "unsupported_creation_count",
+      "rpc_ms": 1.017,
+      "simulation_id": 515,
+      "txn_opcode_costs": [
+        48
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 3,
+      "failure": "transaction IVUVG4PVWXJTMNLD3YLYTTMKZQK3WOU5AY7SCL3VNWWAQCJ2A36Q: logic eval error: assert failed pc=154. Details: app=1165, pc=154, opcodes=&; !; assert",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 58,
+      "mutation": "unsupported_creation_count",
+      "rpc_ms": 1.159791,
+      "simulation_id": 516,
+      "txn_opcode_costs": [
+        58
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 65,
+      "failure": "transaction CB6ZPWRERQY4W7Q4L2JHHTBLHS2F4K2XXKK5P7RCHIEXLS62PRMA: logic eval error: assert failed pc=146. Details: app=1165, pc=146, opcodes=bz label2; intc_0 // 1; label7:; assert",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 52,
+      "mutation": "unsupported_creation_count",
+      "rpc_ms": 0.888541,
+      "simulation_id": 517,
+      "txn_opcode_costs": [
+        52
+      ]
+    }
+  ],
+  "node_version": {
+    "build": {
+      "branch": "rel/stable",
+      "build_number": 3,
+      "channel": "stable",
+      "commit_hash": "2dc9524e",
+      "major": 5,
+      "minor": 0
+    },
+    "genesis_hash_b64": "HoPc280tJcMuc+mmhKZzyxG1xJ6ox9Dj6inpWHPCFwM=",
+    "genesis_id": "verified-execution-bench-v1",
+    "versions": [
+      "v2"
+    ]
+  },
+  "positive_cases": [
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 374,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 384,
+          "rpc_ms": 1.148958,
+          "simulation_id": 1,
+          "txn_opcode_costs": [
+            0,
+            384
+          ]
+        }
+      ],
+      "confirmed_round": 2,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 384,
+      "group_signed_bytes": 983,
+      "method": "member",
+      "payload_bytes": 256,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 0.947791,
+      "simulation_id": 1,
+      "txn_opcode_costs": [
+        0,
+        384
+      ],
+      "whole_trace_bytes": 1029
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 438,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction YEHYEE4EGSHVVBAE77OGDOHU3LBLV4CP2BMP2LGGP5M7ECTRKLLQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1001, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 442,
+          "rpc_ms": 3.746,
+          "simulation_id": 9,
+          "txn_opcode_costs": [
+            0,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction CVIODUNLEKSNYQWFDIXSEVGBUW7AE6E7TFVZB2Z5ISSFGPO22CGA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1001, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 471,
+          "rpc_ms": 0.946459,
+          "simulation_id": 10,
+          "txn_opcode_costs": [
+            0,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction UKQNF2F4VCQG2EWJIWLZPQG4DAWPRQY5TUO46PIQHTDF7DCDKXKA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1001, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 500,
+          "rpc_ms": 1.0005,
+          "simulation_id": 11,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2432,
+          "rpc_ms": 2.323625,
+          "simulation_id": 12,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2345
+          ]
+        }
+      ],
+      "confirmed_round": 3,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2432,
+      "group_signed_bytes": 1940,
+      "method": "signed",
+      "payload_bytes": 256,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 2.067209,
+      "simulation_id": 12,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2345
+      ],
+      "whole_trace_bytes": 1029
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 1142,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 384,
+          "rpc_ms": 2.656166,
+          "simulation_id": 43,
+          "txn_opcode_costs": [
+            0,
+            384
+          ]
+        }
+      ],
+      "confirmed_round": 5,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 384,
+      "group_signed_bytes": 1753,
+      "method": "member",
+      "payload_bytes": 1024,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 1.071084,
+      "simulation_id": 43,
+      "txn_opcode_costs": [
+        0,
+        384
+      ],
+      "whole_trace_bytes": 4101
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 1206,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction WSNXQIGJ2T3EMV5XIUK5VNP7XX3KKK6OEEPKNZL5HFZ5RL6PAJ7Q: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1009, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 442,
+          "rpc_ms": 3.633584,
+          "simulation_id": 51,
+          "txn_opcode_costs": [
+            0,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction HMGF7GXBBDPAGVUSQYOBZVQSCQZGTJZDC6KAP35WRZHOE56RSUYA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1009, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 471,
+          "rpc_ms": 1.067875,
+          "simulation_id": 52,
+          "txn_opcode_costs": [
+            0,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction T7D3UMJKISMJD56LUNJI7LAO7CJ3XDPMYYS5MT2XD7CNQTABA72A: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1009, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 500,
+          "rpc_ms": 1.30975,
+          "simulation_id": 53,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2432,
+          "rpc_ms": 2.35075,
+          "simulation_id": 54,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2345
+          ]
+        }
+      ],
+      "confirmed_round": 6,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2432,
+      "group_signed_bytes": 2713,
+      "method": "signed",
+      "payload_bytes": 1024,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 2.1435,
+      "simulation_id": 54,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2345
+      ],
+      "whole_trace_bytes": 4101
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 2166,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 384,
+          "rpc_ms": 2.800709,
+          "simulation_id": 64,
+          "txn_opcode_costs": [
+            0,
+            384
+          ]
+        }
+      ],
+      "confirmed_round": 8,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2012,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 384,
+      "group_signed_bytes": 2777,
+      "method": "member",
+      "payload_bytes": 2048,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 0.964917,
+      "simulation_id": 64,
+      "txn_opcode_costs": [
+        0,
+        384
+      ],
+      "whole_trace_bytes": 8197
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 2230,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction ELZH3XLHA323BDEZ3H6EKO7OTRJOHS2XWAWJ5XBAYRXDRRUUNC3A: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1017, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 442,
+          "rpc_ms": 4.970875,
+          "simulation_id": 72,
+          "txn_opcode_costs": [
+            0,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction LSIOWLGHZMBPDK7TXEWPSNBVEQEZGKAZ5SWVFDFGKH3C3YLEJ3EQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1017, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 471,
+          "rpc_ms": 1.228459,
+          "simulation_id": 73,
+          "txn_opcode_costs": [
+            0,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction EOVN6HXTNEMURP27OHIPVST72G2MSK7BZHPRJNA3MZPUY3LN5UOQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1017, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 500,
+          "rpc_ms": 1.030125,
+          "simulation_id": 74,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2432,
+          "rpc_ms": 1.975792,
+          "simulation_id": 75,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2345
+          ]
+        }
+      ],
+      "confirmed_round": 9,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5019,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2432,
+      "group_signed_bytes": 3737,
+      "method": "signed",
+      "payload_bytes": 2048,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 2.278625,
+      "simulation_id": 75,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2345
+      ],
+      "whole_trace_bytes": 8197
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 4214,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 384,
+          "rpc_ms": 2.660667,
+          "simulation_id": 86,
+          "txn_opcode_costs": [
+            0,
+            384
+          ]
+        }
+      ],
+      "confirmed_round": 11,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2217,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 384,
+      "group_signed_bytes": 4825,
+      "method": "member",
+      "payload_bytes": 4096,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 0.974,
+      "simulation_id": 86,
+      "txn_opcode_costs": [
+        0,
+        384
+      ],
+      "whole_trace_bytes": 16389
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 4278,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction 5XOKVTEUOCFE2AEKZHQU7JFCBKZD6E36V2FTYYONKWOYSJPRRUPA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1025, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 442,
+          "rpc_ms": 3.7135,
+          "simulation_id": 94,
+          "txn_opcode_costs": [
+            0,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction FFT7HHQAB62JK3JUJ4GNYRVW44QUGVMDTMAAVK6IKVREKPXKD5QA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1025, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 471,
+          "rpc_ms": 1.187875,
+          "simulation_id": 95,
+          "txn_opcode_costs": [
+            0,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction ZHLSOGRUUG2N6ESJ3VHH33QBVF7CTZUG7JHMYSCSEDUDIKBDUHJQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 442. Details: app=1025, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 500,
+          "rpc_ms": 1.324292,
+          "simulation_id": 96,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            442
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2432,
+          "rpc_ms": 2.179417,
+          "simulation_id": 97,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2345
+          ]
+        }
+      ],
+      "confirmed_round": 12,
+      "count": 4,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5223,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2432,
+      "group_signed_bytes": 5785,
+      "method": "signed",
+      "payload_bytes": 4096,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_median_ms": 2.28975,
+      "simulation_id": 97,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2345
+      ],
+      "whole_trace_bytes": 16389
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 438,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 540,
+          "rpc_ms": 3.562375,
+          "simulation_id": 107,
+          "txn_opcode_costs": [
+            0,
+            540
+          ]
+        }
+      ],
+      "confirmed_round": 14,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 540,
+      "group_signed_bytes": 1049,
+      "method": "member",
+      "payload_bytes": 256,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 0.904666,
+      "simulation_id": 107,
+      "txn_opcode_costs": [
+        0,
+        540
+      ],
+      "whole_trace_bytes": 4113
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 502,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction F72DJKP4V4CGJTYMPJESPOYTKMRG7ML2P3OXTF22VON2O6WQBIQA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1033, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 598,
+          "rpc_ms": 3.298625,
+          "simulation_id": 115,
+          "txn_opcode_costs": [
+            0,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction O5TLRO6MSHEHMQUDZNHUIJXJBN6NRCL23R4EZM27N4KCOLV7BYYA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1033, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 627,
+          "rpc_ms": 1.111458,
+          "simulation_id": 116,
+          "txn_opcode_costs": [
+            0,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction NXWUQSMJDDZKCMDSTFCEH2PFS4W7HVV7QTMGRFET3THCKMW45U7A: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1033, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 656,
+          "rpc_ms": 1.433209,
+          "simulation_id": 117,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2588,
+          "rpc_ms": 2.090417,
+          "simulation_id": 118,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2501
+          ]
+        }
+      ],
+      "confirmed_round": 15,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2588,
+      "group_signed_bytes": 2009,
+      "method": "signed",
+      "payload_bytes": 256,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 2.069916,
+      "simulation_id": 118,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2501
+      ],
+      "whole_trace_bytes": 4113
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 1206,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 540,
+          "rpc_ms": 1.164625,
+          "simulation_id": 173,
+          "txn_opcode_costs": [
+            0,
+            540
+          ]
+        }
+      ],
+      "confirmed_round": 17,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 540,
+      "group_signed_bytes": 1817,
+      "method": "member",
+      "payload_bytes": 1024,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 0.891375,
+      "simulation_id": 173,
+      "txn_opcode_costs": [
+        0,
+        540
+      ],
+      "whole_trace_bytes": 16401
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 1270,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction DOXE5GVOI6AZTQ6AG5Z4VRKNH6PMWXNE5FW4OUPDKFDWHAOK4Z4Q: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1041, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 598,
+          "rpc_ms": 1.724084,
+          "simulation_id": 181,
+          "txn_opcode_costs": [
+            0,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction V5STL4GJCSYQWN4WJPQLE3VK2D7YHCS27BHMANWSE4RI5GLQWJPA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1041, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 627,
+          "rpc_ms": 1.161,
+          "simulation_id": 182,
+          "txn_opcode_costs": [
+            0,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction 2CR4VGFLOOL25FGRX237VVZH5Y4HV7J4MLGCIDBEQHO4P6C5EFYQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1041, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 656,
+          "rpc_ms": 1.23625,
+          "simulation_id": 183,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2588,
+          "rpc_ms": 2.332959,
+          "simulation_id": 184,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2501
+          ]
+        }
+      ],
+      "confirmed_round": 18,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2588,
+      "group_signed_bytes": 2782,
+      "method": "signed",
+      "payload_bytes": 1024,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 2.264208,
+      "simulation_id": 184,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2501
+      ],
+      "whole_trace_bytes": 16401
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 2230,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 540,
+          "rpc_ms": 1.085416,
+          "simulation_id": 194,
+          "txn_opcode_costs": [
+            0,
+            540
+          ]
+        }
+      ],
+      "confirmed_round": 20,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2019,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 540,
+      "group_signed_bytes": 2843,
+      "method": "member",
+      "payload_bytes": 2048,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 0.870917,
+      "simulation_id": 194,
+      "txn_opcode_costs": [
+        0,
+        540
+      ],
+      "whole_trace_bytes": 32785
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 2294,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction XJQUISYJWQCT5SPMW72GX4ZG2NAZ6LAAYHBTSTSTAV4GIEJU6E6A: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1049, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 598,
+          "rpc_ms": 1.444125,
+          "simulation_id": 202,
+          "txn_opcode_costs": [
+            0,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction QUW7ZFGB4I2WEEG2RGOAYIF4DSJNRKHCB3OM5TQHOBL2WPLD3XXA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1049, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 627,
+          "rpc_ms": 1.15325,
+          "simulation_id": 203,
+          "txn_opcode_costs": [
+            0,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction D7OIUGPZK2GPZKBUVOZF7BHONSAA6S7FZLZB3LW5CQZDNJSCBDIQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1049, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 656,
+          "rpc_ms": 1.193916,
+          "simulation_id": 204,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2588,
+          "rpc_ms": 2.170542,
+          "simulation_id": 205,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2501
+          ]
+        }
+      ],
+      "confirmed_round": 21,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5025,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2588,
+      "group_signed_bytes": 3806,
+      "method": "signed",
+      "payload_bytes": 2048,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 2.068834,
+      "simulation_id": 205,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2501
+      ],
+      "whole_trace_bytes": 32785
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 4278,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 540,
+          "rpc_ms": 1.15125,
+          "simulation_id": 216,
+          "txn_opcode_costs": [
+            0,
+            540
+          ]
+        }
+      ],
+      "confirmed_round": 23,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2223,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 540,
+      "group_signed_bytes": 4891,
+      "method": "member",
+      "payload_bytes": 4096,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 1.109542,
+      "simulation_id": 216,
+      "txn_opcode_costs": [
+        0,
+        540
+      ],
+      "whole_trace_bytes": 65553
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 4342,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction BCOX22SC56OQXA25YIF5WTVWD3XPHFPYD4FMC66JC4WPJ3WIIFRA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1057, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 598,
+          "rpc_ms": 6.029792,
+          "simulation_id": 224,
+          "txn_opcode_costs": [
+            0,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction DHXB6GD7KJH3EA2MJDP3V5ZDTC5JH2MY6YGVUE4LTBHZXPCWLFJA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1057, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 627,
+          "rpc_ms": 1.325792,
+          "simulation_id": 225,
+          "txn_opcode_costs": [
+            0,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction 3XTA5OSSAIUTJWQSR2OUPOMZGQP6RU2CVCG622ENBVX34F347CJA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 598. Details: app=1057, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 656,
+          "rpc_ms": 1.222125,
+          "simulation_id": 226,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            598
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2588,
+          "rpc_ms": 2.5075,
+          "simulation_id": 227,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2501
+          ]
+        }
+      ],
+      "confirmed_round": 24,
+      "count": 16,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5230,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2588,
+      "group_signed_bytes": 5854,
+      "method": "signed",
+      "payload_bytes": 4096,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_median_ms": 2.1365,
+      "simulation_id": 227,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2501
+      ],
+      "whole_trace_bytes": 65553
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 502,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 696,
+          "rpc_ms": 0.884958,
+          "simulation_id": 237,
+          "txn_opcode_costs": [
+            0,
+            696
+          ]
+        }
+      ],
+      "confirmed_round": 26,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 696,
+      "group_signed_bytes": 1115,
+      "method": "member",
+      "payload_bytes": 256,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 0.807834,
+      "simulation_id": 237,
+      "txn_opcode_costs": [
+        0,
+        696
+      ],
+      "whole_trace_bytes": 16449
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 566,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction RDDEYOXWTJVWV4XF6FM34VPCEW5FU3WTTGMBOVKIFID5FWKS67VA: logic eval error: dynamic cost budget exceeded, executing dup: local program cost was 700. Details: app=1065, pc=554, opcodes=bz label19; txna ApplicationArgs 6; dup",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 700,
+          "rpc_ms": 1.110959,
+          "simulation_id": 245,
+          "txn_opcode_costs": [
+            0,
+            700
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction BMVZU2IHUKEMWLN7E22XW2UIS565EUDO24VOKHQOC7Y2QH3JOH2A: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1065, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 783,
+          "rpc_ms": 1.039459,
+          "simulation_id": 246,
+          "txn_opcode_costs": [
+            0,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction HDPRH5GZPUR2T6XCLBX32KMHPVIIOTT6VYPBR33YOAXVBSEYOMFQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1065, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 812,
+          "rpc_ms": 1.145709,
+          "simulation_id": 247,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2744,
+          "rpc_ms": 2.125417,
+          "simulation_id": 248,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2657
+          ]
+        }
+      ],
+      "confirmed_round": 27,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2744,
+      "group_signed_bytes": 2078,
+      "method": "signed",
+      "payload_bytes": 256,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 2.0125,
+      "simulation_id": 248,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2657
+      ],
+      "whole_trace_bytes": 16449
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 1270,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 696,
+          "rpc_ms": 0.950167,
+          "simulation_id": 399,
+          "txn_opcode_costs": [
+            0,
+            696
+          ]
+        }
+      ],
+      "confirmed_round": 29,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 696,
+      "group_signed_bytes": 1883,
+      "method": "member",
+      "payload_bytes": 1024,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 0.844292,
+      "simulation_id": 399,
+      "txn_opcode_costs": [
+        0,
+        696
+      ],
+      "whole_trace_bytes": 65601
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 1334,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction GF6X4VXQX5WBURIKVCPBYFBR7ZN2OSYDVCDWM73XASVE3B32CVPA: logic eval error: dynamic cost budget exceeded, executing dup: local program cost was 700. Details: app=1073, pc=554, opcodes=bz label19; txna ApplicationArgs 6; dup",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 700,
+          "rpc_ms": 2.517541,
+          "simulation_id": 407,
+          "txn_opcode_costs": [
+            0,
+            700
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction EF6KQOWXEJ4QOIUQOGBK5HAKYGQEKTTLB5CP2ADEFM3FWEEFU52A: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1073, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 783,
+          "rpc_ms": 1.091541,
+          "simulation_id": 408,
+          "txn_opcode_costs": [
+            0,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction 33MTE3WURRMVZIYFWS7OTESKVSR5TT6PH2ZGS4N3X2253KEJCMGQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1073, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 812,
+          "rpc_ms": 1.102125,
+          "simulation_id": 409,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2744,
+          "rpc_ms": 2.0955,
+          "simulation_id": 410,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2657
+          ]
+        }
+      ],
+      "confirmed_round": 30,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2744,
+      "group_signed_bytes": 2846,
+      "method": "signed",
+      "payload_bytes": 1024,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 2.074208,
+      "simulation_id": 410,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2657
+      ],
+      "whole_trace_bytes": 65601
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 2294,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 696,
+          "rpc_ms": 3.137917,
+          "simulation_id": 420,
+          "txn_opcode_costs": [
+            0,
+            696
+          ]
+        }
+      ],
+      "confirmed_round": 32,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2025,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 696,
+      "group_signed_bytes": 2907,
+      "method": "member",
+      "payload_bytes": 2048,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 1.001833,
+      "simulation_id": 420,
+      "txn_opcode_costs": [
+        0,
+        696
+      ],
+      "whole_trace_bytes": 131137
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 2358,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction TVTKN5PGLPP6G46CY2LLSJRRDKB3XDH3WCKO4LFZN5F3ANWORS4Q: logic eval error: dynamic cost budget exceeded, executing dup: local program cost was 700. Details: app=1081, pc=554, opcodes=bz label19; txna ApplicationArgs 6; dup",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 700,
+          "rpc_ms": 1.786833,
+          "simulation_id": 428,
+          "txn_opcode_costs": [
+            0,
+            700
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction WBRKO5ENE7GFQERBTNI3OUBJGEPQ5ZN7KATRWZZRKLYIZ66A2EZQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1081, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 783,
+          "rpc_ms": 1.089209,
+          "simulation_id": 429,
+          "txn_opcode_costs": [
+            0,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction FDQKT6BUF3OIOKZSJD7DGK7SIQ3J6SPDXISX2M2FGPLTK5GMDFVA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1081, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 812,
+          "rpc_ms": 1.141375,
+          "simulation_id": 430,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2744,
+          "rpc_ms": 2.09525,
+          "simulation_id": 431,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2657
+          ]
+        }
+      ],
+      "confirmed_round": 33,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5031,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2744,
+      "group_signed_bytes": 3870,
+      "method": "signed",
+      "payload_bytes": 2048,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 2.036375,
+      "simulation_id": 431,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2657
+      ],
+      "whole_trace_bytes": 131137
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 4342,
+      "attempts": [
+        {
+          "accepted": true,
+          "application_calls": 1,
+          "failure": "",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 696,
+          "rpc_ms": 1.000125,
+          "simulation_id": 442,
+          "txn_opcode_costs": [
+            0,
+            696
+          ]
+        }
+      ],
+      "confirmed_round": 35,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 2230,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 696,
+      "group_signed_bytes": 4955,
+      "method": "member",
+      "payload_bytes": 4096,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 0.925083,
+      "simulation_id": 442,
+      "txn_opcode_costs": [
+        0,
+        696
+      ],
+      "whole_trace_bytes": 262209
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 4406,
+      "attempts": [
+        {
+          "accepted": false,
+          "application_calls": 1,
+          "failure": "transaction J5EBFXHYD632QLMYBHDJVKQC6MVX6DHOYPTNOIKHSN3RBWP4TD3A: logic eval error: dynamic cost budget exceeded, executing dup: local program cost was 700. Details: app=1089, pc=554, opcodes=bz label19; txna ApplicationArgs 6; dup",
+          "group_opcode_budget": 700,
+          "group_opcode_cost": 700,
+          "rpc_ms": 3.095291,
+          "simulation_id": 450,
+          "txn_opcode_costs": [
+            0,
+            700
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 2,
+          "failure": "transaction WKNZ5F367275LABHGA44NW2LPT6HHAKQIW5PS467EVAMYR6ERLVQ: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1089, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 1400,
+          "group_opcode_cost": 783,
+          "rpc_ms": 1.2065,
+          "simulation_id": 451,
+          "txn_opcode_costs": [
+            0,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": false,
+          "application_calls": 3,
+          "failure": "transaction ATO3623KEVWTH4A2BKTXU3C65UY5UVRYL4K3BDEIR3XYZPTNBHPA: logic eval error: dynamic cost budget exceeded, executing ed25519verify_bare: local program cost was 754. Details: app=1089, pc=607, opcodes=swap; cover 2; ed25519verify_bare",
+          "group_opcode_budget": 2100,
+          "group_opcode_cost": 812,
+          "rpc_ms": 1.321292,
+          "simulation_id": 452,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            754
+          ]
+        },
+        {
+          "accepted": true,
+          "application_calls": 4,
+          "failure": "",
+          "group_opcode_budget": 2800,
+          "group_opcode_cost": 2744,
+          "rpc_ms": 2.144292,
+          "simulation_id": 453,
+          "txn_opcode_costs": [
+            0,
+            29,
+            29,
+            29,
+            2657
+          ]
+        }
+      ],
+      "confirmed_round": 36,
+      "count": 64,
+      "creation_opcode_cost": 102,
+      "group_fee_microalgo": 5236,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2744,
+      "group_signed_bytes": 5918,
+      "method": "signed",
+      "payload_bytes": 4096,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_median_ms": 2.190458,
+      "simulation_id": 453,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2657
+      ],
+      "whole_trace_bytes": 262209
+    }
+  ],
+  "protocol": "https://github.com/algorandfoundation/specs/tree/268b63433a907455d439995bf916f6b296018f4f",
+  "raw_observations": {
+    "count": 518,
+    "file": "simulate_observations.jsonl.gz",
+    "sha256": "3c71fecf4bf6278cc72f7d1c3ec1bf36635a2368e018fa9c647a8cabf51f89d9"
+  },
+  "real_protocol_cases": [
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 1309,
+      "confirmed_round": 38,
+      "count": 4,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 386,
+      "group_signed_bytes": 1922,
+      "index": 0,
+      "method": "member",
+      "payload_bytes": 1191,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_ms": 0.967583,
+      "simulation_id": 464,
+      "txn_opcode_costs": [
+        0,
+        386
+      ],
+      "whole_trace_bytes": 2166
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 1373,
+      "confirmed_round": 39,
+      "count": 4,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2434,
+      "group_signed_bytes": 2885,
+      "index": 0,
+      "method": "signed",
+      "payload_bytes": 1191,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_ms": 2.042958,
+      "simulation_id": 468,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2347
+      ],
+      "whole_trace_bytes": 2166
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 223,
+      "confirmed_round": 40,
+      "count": 4,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 385,
+      "group_signed_bytes": 835,
+      "index": 2,
+      "method": "member",
+      "payload_bytes": 105,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_ms": 1.827917,
+      "simulation_id": 469,
+      "txn_opcode_costs": [
+        0,
+        385
+      ],
+      "whole_trace_bytes": 2166
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 287,
+      "confirmed_round": 41,
+      "count": 4,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2433,
+      "group_signed_bytes": 1798,
+      "index": 2,
+      "method": "signed",
+      "payload_bytes": 105,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_ms": 1.908375,
+      "simulation_id": 473,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2346
+      ],
+      "whole_trace_bytes": 2166
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 228,
+      "confirmed_round": 42,
+      "count": 4,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 384,
+      "group_signed_bytes": 840,
+      "index": 3,
+      "method": "member",
+      "payload_bytes": 110,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_ms": 3.750042,
+      "simulation_id": 474,
+      "txn_opcode_costs": [
+        0,
+        384
+      ],
+      "whole_trace_bytes": 2166
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 292,
+      "confirmed_round": 43,
+      "count": 4,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2432,
+      "group_signed_bytes": 1803,
+      "index": 3,
+      "method": "signed",
+      "payload_bytes": 110,
+      "payment_transactions": 1,
+      "proof_bytes": 64,
+      "rpc_ms": 1.946625,
+      "simulation_id": 478,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2345
+      ],
+      "whole_trace_bytes": 2166
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 1373,
+      "confirmed_round": 45,
+      "count": 16,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 544,
+      "group_signed_bytes": 1986,
+      "index": 0,
+      "method": "member",
+      "payload_bytes": 1191,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_ms": 0.8515,
+      "simulation_id": 481,
+      "txn_opcode_costs": [
+        0,
+        544
+      ],
+      "whole_trace_bytes": 3356
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 1437,
+      "confirmed_round": 46,
+      "count": 16,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2592,
+      "group_signed_bytes": 2949,
+      "index": 0,
+      "method": "signed",
+      "payload_bytes": 1191,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_ms": 2.054083,
+      "simulation_id": 485,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2505
+      ],
+      "whole_trace_bytes": 3356
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 280,
+      "confirmed_round": 47,
+      "count": 16,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 543,
+      "group_signed_bytes": 892,
+      "index": 8,
+      "method": "member",
+      "payload_bytes": 98,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_ms": 0.953166,
+      "simulation_id": 486,
+      "txn_opcode_costs": [
+        0,
+        543
+      ],
+      "whole_trace_bytes": 3356
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 344,
+      "confirmed_round": 48,
+      "count": 16,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2591,
+      "group_signed_bytes": 1855,
+      "index": 8,
+      "method": "signed",
+      "payload_bytes": 98,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_ms": 1.950166,
+      "simulation_id": 490,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2504
+      ],
+      "whole_trace_bytes": 3356
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 293,
+      "confirmed_round": 49,
+      "count": 16,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 540,
+      "group_signed_bytes": 905,
+      "index": 15,
+      "method": "member",
+      "payload_bytes": 111,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_ms": 3.151583,
+      "simulation_id": 491,
+      "txn_opcode_costs": [
+        0,
+        540
+      ],
+      "whole_trace_bytes": 3356
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 357,
+      "confirmed_round": 50,
+      "count": 16,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2588,
+      "group_signed_bytes": 1868,
+      "index": 15,
+      "method": "signed",
+      "payload_bytes": 111,
+      "payment_transactions": 1,
+      "proof_bytes": 128,
+      "rpc_ms": 1.936666,
+      "simulation_id": 495,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2501
+      ],
+      "whole_trace_bytes": 3356
+    },
+    {
+      "accepted": true,
+      "application_calls": 2,
+      "argument_bytes": 1437,
+      "confirmed_round": 52,
+      "count": 64,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 3000,
+      "group_opcode_budget": 1400,
+      "group_opcode_cost": 731,
+      "group_signed_bytes": 2349,
+      "index": 0,
+      "method": "member",
+      "payload_bytes": 1191,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_ms": 1.008,
+      "simulation_id": 499,
+      "txn_opcode_costs": [
+        0,
+        29,
+        702
+      ],
+      "whole_trace_bytes": 8156
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 1501,
+      "confirmed_round": 53,
+      "count": 64,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2750,
+      "group_signed_bytes": 3013,
+      "index": 0,
+      "method": "signed",
+      "payload_bytes": 1191,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_ms": 2.240125,
+      "simulation_id": 503,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2663
+      ],
+      "whole_trace_bytes": 8156
+    },
+    {
+      "accepted": true,
+      "application_calls": 2,
+      "argument_bytes": 345,
+      "confirmed_round": 54,
+      "count": 64,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 3000,
+      "group_opcode_budget": 1400,
+      "group_opcode_cost": 730,
+      "group_signed_bytes": 1256,
+      "index": 32,
+      "method": "member",
+      "payload_bytes": 99,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_ms": 1.019291,
+      "simulation_id": 505,
+      "txn_opcode_costs": [
+        0,
+        29,
+        701
+      ],
+      "whole_trace_bytes": 8156
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 409,
+      "confirmed_round": 55,
+      "count": 64,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2749,
+      "group_signed_bytes": 1920,
+      "index": 32,
+      "method": "signed",
+      "payload_bytes": 99,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_ms": 2.068,
+      "simulation_id": 509,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2662
+      ],
+      "whole_trace_bytes": 8156
+    },
+    {
+      "accepted": true,
+      "application_calls": 1,
+      "argument_bytes": 357,
+      "confirmed_round": 56,
+      "count": 64,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 2000,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 696,
+      "group_signed_bytes": 969,
+      "index": 63,
+      "method": "member",
+      "payload_bytes": 111,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_ms": 1.072541,
+      "simulation_id": 510,
+      "txn_opcode_costs": [
+        0,
+        696
+      ],
+      "whole_trace_bytes": 8156
+    },
+    {
+      "accepted": true,
+      "application_calls": 4,
+      "argument_bytes": 421,
+      "confirmed_round": 57,
+      "count": 64,
+      "creator_min_balance_delta_microalgo": 378500,
+      "failure": "",
+      "group_fee_microalgo": 5000,
+      "group_opcode_budget": 2800,
+      "group_opcode_cost": 2744,
+      "group_signed_bytes": 1932,
+      "index": 63,
+      "method": "signed",
+      "payload_bytes": 111,
+      "payment_transactions": 1,
+      "proof_bytes": 192,
+      "rpc_ms": 2.20475,
+      "simulation_id": 514,
+      "txn_opcode_costs": [
+        0,
+        29,
+        29,
+        29,
+        2657
+      ],
+      "whole_trace_bytes": 8156
+    }
+  ],
+  "real_whole_trace_baseline": [
+    {
+      "accepted": true,
+      "count": 4,
+      "failure": "",
+      "group_fee_microalgo": 1013,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 71,
+      "rpc_ms": 3.031417,
+      "simulation_id": 463,
+      "trace_bytes": 2166,
+      "txn_opcode_costs": [
+        71
+      ]
+    },
+    {
+      "accepted": true,
+      "count": 16,
+      "failure": "",
+      "group_fee_microalgo": 1132,
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 71,
+      "rpc_ms": 0.806667,
+      "simulation_id": 480,
+      "trace_bytes": 3356,
+      "txn_opcode_costs": [
+        71
+      ]
+    },
+    {
+      "accepted": false,
+      "count": 64,
+      "failure": "tx.ApplicationArgs[1] length is too long. 8156 > 4096",
+      "group_fee_microalgo": 1612,
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "rpc_ms": 1.220875,
+      "simulation_id": 497,
+      "trace_bytes": 8156,
+      "txn_opcode_costs": [
+        0
+      ]
+    }
+  ],
+  "schema": "question-verified-execution-avm-v1",
+  "simulation_overrides": {},
+  "source_sha256": {
+    "avm/benchmark.py": "e1953b24b527a00cb1ebd1a8e7163c6e69cda25452772d43fae8de5271ee8f22",
+    "avm/compiled/ExecutionVerifier.approval.bin": "8f12567ade6d43585d252eaa67a4c29afb4bb08be8f57120a0b8e78c7c25407f",
+    "avm/compiled/ExecutionVerifier.clear.bin": "cbe2268747c9c8072c7f9926f2288f270637dc55bb9d14d3368361d5e47d25be",
+    "avm/contract.py": "6d80a4c2a5b63658e027ab66cbc86eab0db47d6f20bb0d589f5c761b264bc526",
+    "simulation/protocol.py": "193081f1519163f4c1414e6f35afb19a31f862f535af18995ad36d88d0f74658"
+  },
+  "whole_trace_baseline": [
+    {
+      "accepted": true,
+      "argument_bytes": 1034,
+      "count": 4,
+      "failure": "",
+      "group_opcode_budget": 700,
+      "group_opcode_cost": 71,
+      "payload_bytes": 256,
+      "rpc_ms": 0.867,
+      "simulation_id": 20,
+      "txn_opcode_costs": [
+        71
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 4106,
+      "count": 4,
+      "failure": "tx.ApplicationArgs[1] length is too long. 4101 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 1024,
+      "rpc_ms": 3.67475,
+      "simulation_id": 62,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 8202,
+      "count": 4,
+      "failure": "tx.ApplicationArgs[1] length is too long. 8197 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 2048,
+      "rpc_ms": 3.616875,
+      "simulation_id": 83,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 16394,
+      "count": 4,
+      "failure": "tx.ApplicationArgs[1] length is too long. 16389 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 4096,
+      "rpc_ms": 1.887583,
+      "simulation_id": 105,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 4118,
+      "count": 16,
+      "failure": "tx.ApplicationArgs[1] length is too long. 4113 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 256,
+      "rpc_ms": 3.296417,
+      "simulation_id": 126,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 16406,
+      "count": 16,
+      "failure": "tx.ApplicationArgs[1] length is too long. 16401 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 1024,
+      "rpc_ms": 1.843541,
+      "simulation_id": 192,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 32790,
+      "count": 16,
+      "failure": "tx.ApplicationArgs[1] length is too long. 32785 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 2048,
+      "rpc_ms": 2.991625,
+      "simulation_id": 213,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 65558,
+      "count": 16,
+      "failure": "tx.ApplicationArgs[1] length is too long. 65553 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 4096,
+      "rpc_ms": 5.053291,
+      "simulation_id": 235,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 16454,
+      "count": 64,
+      "failure": "tx.ApplicationArgs[1] length is too long. 16449 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 256,
+      "rpc_ms": 3.585416,
+      "simulation_id": 256,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 65606,
+      "count": 64,
+      "failure": "tx.ApplicationArgs[1] length is too long. 65601 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 1024,
+      "rpc_ms": 4.887583,
+      "simulation_id": 418,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 131142,
+      "count": 64,
+      "failure": "tx.ApplicationArgs[1] length is too long. 131137 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 2048,
+      "rpc_ms": 13.072,
+      "simulation_id": 439,
+      "txn_opcode_costs": [
+        0
+      ]
+    },
+    {
+      "accepted": false,
+      "argument_bytes": 262214,
+      "count": 64,
+      "failure": "tx.ApplicationArgs[1] length is too long. 262209 > 4096",
+      "group_opcode_budget": 0,
+      "group_opcode_cost": 0,
+      "payload_bytes": 4096,
+      "rpc_ms": 17.686417,
+      "simulation_id": 461,
+      "txn_opcode_costs": [
+        0
+      ]
+    }
+  ]
+}

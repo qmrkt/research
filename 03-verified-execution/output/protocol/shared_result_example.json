@@ -1,0 +1,388 @@
+{
+  "different_traces": true,
+  "request": {
+    "agreement_policy_digest": "d06083fca9128beeace1864fd814f5e0c2b74f87f278e0e73cc4e90c25edb594",
+    "blueprint_digest": "a4025708ec8a74396110f72d990f96748b030ad604dc87cfbfaa4a9b853f3532",
+    "chain_id": "algorand-research",
+    "market_id": "market-001",
+    "request_id": "authorized-slot-001",
+    "snapshot_digest": "aa19a4890aaf7cbb2ce0d30a2cd73401725b4ab406e7c217be8b718306684920",
+    "version": 1
+  },
+  "request_digest": "a742f424b92f4e63c83808d01510e46a7137f3be0d93cc32be5584bde6074598",
+  "result_digests": [
+    "1b10cc0828c8b4bb92a33a2c176b2a56b671e0364a9225810f286b9c2438c468",
+    "1b10cc0828c8b4bb92a33a2c176b2a56b671e0364a9225810f286b9c2438c468"
+  ],
+  "same_result": true,
+  "trace_roots": [
+    "c5cfb92eeeb9f44d0be2ed94f1f6c820c198cae3243003ecad69859291dfdd62",
+    "7c9cf79137e3dcb9bcd565b86e7098653623bb160c76e77b109d00b8cc39fa53"
+  ],
+  "traces": [
+    {
+      "context": {
+        "measurement": "0000000000000000000000000000000000000000000000000000000000000000",
+        "request_digest": "a742f424b92f4e63c83808d01510e46a7137f3be0d93cc32be5584bde6074598",
+        "run_id": "run-a",
+        "runner_id": "runner-a",
+        "snapshot_digest": "aa19a4890aaf7cbb2ce0d30a2cd73401725b4ab406e7c217be8b718306684920"
+      },
+      "records": [
+        {
+          "edge_taken": "n001",
+          "index": 0,
+          "input": {
+            "reports": [
+              {
+                "body": {
+                  "authority": "source_a",
+                  "blueprint_digest": "a4025708ec8a74396110f72d990f96748b030ad604dc87cfbfaa4a9b853f3532",
+                  "chain_id": "algorand-research",
+                  "data": "archived-source-payload:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                  "market_id": "market-001",
+                  "observed_at": 105,
+                  "request_id": "authorized-slot-001",
+                  "value": 7,
+                  "version": 1
+                },
+                "signature": "29879957469cb9a1218c8ae32aee76439aa3e880b927437de2ae149b8d5fd43c719bde1a9801cf3cc47d35115f4a6aff5d63894d66a0ec6c663c4b58cbecd38fbc10fa109987b0d9cda384ae0566f79a656d869b77daa400dc0233c699dc76f88c5a20f2b74a723e59fa8bccc921972485c67fcaf0b3122a7746742731ebf84762743eddad4e6af78a9c077d0113d4c5bad37f62fae1a9ee076c61521bb896d516cf1d2a492d7a188f5c19a48be3c4e4c2a30ceb3bcfb809e84a9ebf100703e8d611d041e824afe33bde5f05cba600a86d2c4f91bd0cafe54763e2a83022b7c1451ed45b8c6cf600e859407875e22b40028c4065c7e520fb31e86877feaab09e"
+              }
+            ],
+            "version": 1
+          },
+          "kind": "source",
+          "node_id": "n000",
+          "output": 7,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n002",
+          "index": 1,
+          "input": 7,
+          "kind": "add",
+          "node_id": "n001",
+          "output": 8,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n003",
+          "index": 2,
+          "input": 8,
+          "kind": "add",
+          "node_id": "n002",
+          "output": 9,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n004",
+          "index": 3,
+          "input": 9,
+          "kind": "add",
+          "node_id": "n003",
+          "output": 10,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n005",
+          "index": 4,
+          "input": 10,
+          "kind": "add",
+          "node_id": "n004",
+          "output": 11,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n006",
+          "index": 5,
+          "input": 11,
+          "kind": "add",
+          "node_id": "n005",
+          "output": 12,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n007",
+          "index": 6,
+          "input": 12,
+          "kind": "add",
+          "node_id": "n006",
+          "output": 13,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n008",
+          "index": 7,
+          "input": 13,
+          "kind": "add",
+          "node_id": "n007",
+          "output": 14,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n009",
+          "index": 8,
+          "input": 14,
+          "kind": "add",
+          "node_id": "n008",
+          "output": 15,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n010",
+          "index": 9,
+          "input": 15,
+          "kind": "add",
+          "node_id": "n009",
+          "output": 16,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n011",
+          "index": 10,
+          "input": 16,
+          "kind": "add",
+          "node_id": "n010",
+          "output": 17,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n012",
+          "index": 11,
+          "input": 17,
+          "kind": "add",
+          "node_id": "n011",
+          "output": 18,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n013",
+          "index": 12,
+          "input": 18,
+          "kind": "add",
+          "node_id": "n012",
+          "output": 19,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n014",
+          "index": 13,
+          "input": 19,
+          "kind": "ge",
+          "node_id": "n013",
+          "output": true,
+          "status": "ok"
+        },
+        {
+          "edge_taken": null,
+          "index": 14,
+          "input": true,
+          "kind": "terminal",
+          "node_id": "n014",
+          "output": true,
+          "status": "ok"
+        },
+        {
+          "edge_taken": null,
+          "index": 15,
+          "input": true,
+          "kind": "terminal",
+          "node_id": "n015",
+          "output": null,
+          "status": "skipped"
+        }
+      ],
+      "result": {
+        "outcome": true,
+        "request_digest": "a742f424b92f4e63c83808d01510e46a7137f3be0d93cc32be5584bde6074598",
+        "semantic_projection_digest": "5752dac7f111c4410607193705dcb9d3ad22b38fd7f262f1a2354d2b71144f49",
+        "snapshot_digest": "aa19a4890aaf7cbb2ce0d30a2cd73401725b4ab406e7c217be8b718306684920",
+        "terminal_action": "resolve",
+        "version": 1
+      },
+      "version": 1
+    },
+    {
+      "context": {
+        "measurement": "1212121212121212121212121212121212121212121212121212121212121212",
+        "request_digest": "a742f424b92f4e63c83808d01510e46a7137f3be0d93cc32be5584bde6074598",
+        "run_id": "run-b",
+        "runner_id": "runner-b",
+        "snapshot_digest": "aa19a4890aaf7cbb2ce0d30a2cd73401725b4ab406e7c217be8b718306684920"
+      },
+      "records": [
+        {
+          "edge_taken": "n001",
+          "index": 0,
+          "input": {
+            "reports": [
+              {
+                "body": {
+                  "authority": "source_a",
+                  "blueprint_digest": "a4025708ec8a74396110f72d990f96748b030ad604dc87cfbfaa4a9b853f3532",
+                  "chain_id": "algorand-research",
+                  "data": "archived-source-payload:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                  "market_id": "market-001",
+                  "observed_at": 105,
+                  "request_id": "authorized-slot-001",
+                  "value": 7,
+                  "version": 1
+                },
+                "signature": "29879957469cb9a1218c8ae32aee76439aa3e880b927437de2ae149b8d5fd43c719bde1a9801cf3cc47d35115f4a6aff5d63894d66a0ec6c663c4b58cbecd38fbc10fa109987b0d9cda384ae0566f79a656d869b77daa400dc0233c699dc76f88c5a20f2b74a723e59fa8bccc921972485c67fcaf0b3122a7746742731ebf84762743eddad4e6af78a9c077d0113d4c5bad37f62fae1a9ee076c61521bb896d516cf1d2a492d7a188f5c19a48be3c4e4c2a30ceb3bcfb809e84a9ebf100703e8d611d041e824afe33bde5f05cba600a86d2c4f91bd0cafe54763e2a83022b7c1451ed45b8c6cf600e859407875e22b40028c4065c7e520fb31e86877feaab09e"
+              }
+            ],
+            "version": 1
+          },
+          "kind": "source",
+          "node_id": "n000",
+          "output": 7,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n002",
+          "index": 1,
+          "input": 7,
+          "kind": "add",
+          "node_id": "n001",
+          "output": 8,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n003",
+          "index": 2,
+          "input": 8,
+          "kind": "add",
+          "node_id": "n002",
+          "output": 9,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n004",
+          "index": 3,
+          "input": 9,
+          "kind": "add",
+          "node_id": "n003",
+          "output": 10,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n005",
+          "index": 4,
+          "input": 10,
+          "kind": "add",
+          "node_id": "n004",
+          "output": 11,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n006",
+          "index": 5,
+          "input": 11,
+          "kind": "add",
+          "node_id": "n005",
+          "output": 12,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n007",
+          "index": 6,
+          "input": 12,
+          "kind": "add",
+          "node_id": "n006",
+          "output": 13,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n008",
+          "index": 7,
+          "input": 13,
+          "kind": "add",
+          "node_id": "n007",
+          "output": 14,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n009",
+          "index": 8,
+          "input": 14,
+          "kind": "add",
+          "node_id": "n008",
+          "output": 15,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n010",
+          "index": 9,
+          "input": 15,
+          "kind": "add",
+          "node_id": "n009",
+          "output": 16,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n011",
+          "index": 10,
+          "input": 16,
+          "kind": "add",
+          "node_id": "n010",
+          "output": 17,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n012",
+          "index": 11,
+          "input": 17,
+          "kind": "add",
+          "node_id": "n011",
+          "output": 18,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n013",
+          "index": 12,
+          "input": 18,
+          "kind": "add",
+          "node_id": "n012",
+          "output": 19,
+          "status": "ok"
+        },
+        {
+          "edge_taken": "n014",
+          "index": 13,
+          "input": 19,
+          "kind": "ge",
+          "node_id": "n013",
+          "output": true,
+          "status": "ok"
+        },
+        {
+          "edge_taken": null,
+          "index": 14,
+          "input": true,
+          "kind": "terminal",
+          "node_id": "n014",
+          "output": true,
+          "status": "ok"
+        },
+        {
+          "edge_taken": null,
+          "index": 15,
+          "input": true,
+          "kind": "terminal",
+          "node_id": "n015",
+          "output": null,
+          "status": "skipped"
+        }
+      ],
+      "result": {
+        "outcome": true,
+        "request_digest": "a742f424b92f4e63c83808d01510e46a7137f3be0d93cc32be5584bde6074598",
+        "semantic_projection_digest": "5752dac7f111c4410607193705dcb9d3ad22b38fd7f262f1a2354d2b71144f49",
+        "snapshot_digest": "aa19a4890aaf7cbb2ce0d30a2cd73401725b4ab406e7c217be8b718306684920",
+        "terminal_action": "resolve",
+        "version": 1
+      },
+      "version": 1
+    }
+  ]
+}

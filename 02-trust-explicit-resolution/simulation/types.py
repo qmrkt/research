@@ -69,6 +69,7 @@ class SimConfig:
 
     # Challenge window (hours)
     challenge_window_hours: float = 24.0
+    adjudication_delay_hours: float = 24.0
 
     # Participant attention
     attention_coefficient: float = 1.0  # alpha
@@ -82,11 +83,13 @@ class SimConfig:
 
     # Proposer type
     proposer_type: ProposerType = ProposerType.STRATEGIC
-    proposer_mev_model: ProposerMEVModel = ProposerMEVModel.POOL_FRACTION
+    proposer_mev_model: ProposerMEVModel = ProposerMEVModel.POSITION_BOUNDED
     proposer_budget_profile: ProposerBudgetProfile = ProposerBudgetProfile.UNCONSTRAINED
     proposer_fee: float = 0.0  # success-conditioned proposer compensation
     proposer_work_cost: float = 0.0  # fixed operational cost per submitted proposal
     proposer_capital_cost_apy: float = 0.0  # annualized opportunity cost on locked bond
+    verification_work_cost: float = 0.5
+    challenge_work_cost: float = 0.25
 
     # Blueprint composition / source corruption
     composition_scenario: CompositionScenario = CompositionScenario.NONE
@@ -111,10 +114,8 @@ class SimConfig:
             if self.bond_cap is None:
                 return uncapped
             return min(uncapped, self.bond_cap)
-        elif self.bond_structure == BondStructure.LINEAR_ESCALATION:
-            return max(self.flat_bond, self.bond_rate * self.pool_size * 0.5)
-        elif self.bond_structure == BondStructure.EXPONENTIAL_ESCALATION:
-            return max(self.flat_bond, self.bond_rate * self.pool_size * 0.3)
+        elif self.bond_structure in (BondStructure.LINEAR_ESCALATION, BondStructure.EXPONENTIAL_ESCALATION):
+            raise ValueError("Sequential escalation requires an explicit multiround game")
         return self.flat_bond
 
     @property
@@ -132,7 +133,7 @@ class SimConfig:
         capital_cost = (
             self.proposer_bond
             * self.proposer_capital_cost_apy
-            * self.challenge_window_hours
+            * (self.challenge_window_hours + self.adjudication_delay_hours)
             / (24.0 * 365.0)
         )
         return self.proposer_work_cost + capital_cost
@@ -149,6 +150,8 @@ class Participant:
     attention_prob: float = 0.0  # probability of verifying during window
     capital_budget: float = float("inf")
     role: Literal["proposer", "challenger", "lazy"] = "lazy"
+    payout_true: float | None = None
+    payout_false: float | None = None
 
 
 @dataclass
@@ -159,7 +162,7 @@ class EpisodeResult:
     challenged: bool
     proposal_submitted: bool = True
     adjudicator_correct: bool = True
-    resolution_correct: bool = True
+    resolution_correct: bool | None = True
     eligible_proposers: int = 0
     willing_proposers: int = 0
     num_verifiers: int = 0
@@ -168,6 +171,16 @@ class EpisodeResult:
     total_bond_locked: float = 0.0
     time_to_finalization_hours: float = 0.0
     bounty_paid: float = 0.0
+    attack_attempted: bool = False
+    terminal_status: str = "correct"
+    false_challenge: bool = False
+    wrongful_slash: bool = False
+    resource_cost: float = 0.0
+    opportunity_cost: float = 0.0
+    payout_misallocation: float = 0.0
+    balance_error: float = 0.0
+    positive_gain_candidates: int = 0
+    positive_gain_truthful: int = 0
 
 
 @dataclass
@@ -214,13 +227,9 @@ class SimResult:
 
     @property
     def proposer_deterrence(self) -> float:
-        """Fraction of episodes where a strategic proposer chose truthful."""
-        submitted = [e for e in self.episodes if e.proposal_submitted]
-        if not submitted:
-            return 0.0
-        total = len(submitted)
-        false_count = sum(1 for e in submitted if e.proposal_is_false)
-        return 1.0 - false_count / total
+        """Truth choices among eligible candidates with positive signed false upside."""
+        total = sum(e.positive_gain_candidates for e in self.episodes)
+        return sum(e.positive_gain_truthful for e in self.episodes) / total if total else 0.0
 
     @property
     def proposer_liveness_rate(self) -> float:
@@ -262,7 +271,5 @@ class SimResult:
 
     @property
     def welfare_loss(self) -> float:
-        """Total payoff loss from incorrect resolutions."""
-        return sum(
-            abs(e.proposer_payoff) for e in self.episodes if not e.resolution_correct
-        )
+        """Deprecated name: measured real work spending, not transfer-based welfare."""
+        return sum(e.resource_cost for e in self.episodes)

@@ -1,0 +1,385 @@
+{
+  "revision": "October 2026 resolution manuscript remediation",
+  "publication_release_commit": null,
+  "base_git_commit": "00101010963451cb5067317f37de87a72b69efeb",
+  "working_tree_changes_expected": true,
+  "pdf_pages": 28,
+  "installed_package_tests": 88,
+  "resolution_tests": 37,
+  "funded_game_episodes": 855000,
+  "inspection_monte_carlo_episodes": 900000,
+  "funded_game_configurations": 171,
+  "economic_seeds": [
+    64000,
+    64001,
+    64002,
+    64003,
+    64004,
+    64005,
+    64006,
+    64007,
+    64008,
+    64009,
+    64010,
+    64011,
+    64012,
+    64013,
+    64014,
+    64015,
+    64016,
+    64017,
+    64018,
+    64019
+  ],
+  "inspection_fresh_base_regimes": 64,
+  "inspection_primary_arms": 3,
+  "inspection_subsequent_zero_stake_arms": 1,
+  "executed_source_vectors": 30,
+  "exact_source_experiments": 40,
+  "exact_source_weighted_rows": 1670,
+  "trace_attack_and_control_vectors": 14,
+  "intentionally_invalid_trace_vectors_blocked": 12,
+  "first_paper_artifact_preservation": {
+    "manifest_files_verified_unchanged": 74,
+    "mismatches": []
+  },
+  "build": {
+    "tectonic": "0.15.0",
+    "plotting": "matplotlib 3.10.8",
+    "python_package": "0.3.0",
+    "full_pdf_rendered_and_inspected": true,
+    "overfull_or_undefined_tex_diagnostics": 0
+  },
+  "inference": "Conditional synthetic comparative statics and exact mechanism results; no field calibration. Designs locally frozen after development; subsequent remediation labeled separately.",
+  "files": {
+    "02-trust-explicit-resolution/BLUEPRINT_PROTOCOL.md": {
+      "bytes": 16114,
+      "sha256": "08e86fb22a84b4acfd4db140247ca8092068bb5456fe66ceb66c1189a969f505"
+    },
+    "02-trust-explicit-resolution/README.md": {
+      "bytes": 283,
+      "sha256": "86259892a6fe409c57dc7b8eeafabd81cdcb7ee8027d6da0b2c8c25f7111e634"
+    },
+    "02-trust-explicit-resolution/REPRODUCIBILITY.md": {
+      "bytes": 2446,
+      "sha256": "69ecdf406d2df68dd510cdad7e792e83cf73ae6e88b32b822899bda773227f01"
+    },
+    "02-trust-explicit-resolution/fig-blueprint-constitution.tex": {
+      "bytes": 8033,
+      "sha256": "bcad4894ca1a831d1126c565cc076043e82213125c28f30398f3b3343410d6b5"
+    },
+    "02-trust-explicit-resolution/figures/frontier_and_composition.pdf": {
+      "bytes": 19072,
+      "sha256": "5bca28d416f8b33c7283ab316453a5da143c33dcf8c656309dec3ec4d521e14c"
+    },
+    "02-trust-explicit-resolution/figures/frontier_and_composition.png": {
+      "bytes": 82442,
+      "sha256": "5b818b207d59699e6f4508684239278f64f3234005a39b9b3863dc17659e7d40"
+    },
+    "02-trust-explicit-resolution/figures/funded_game.pdf": {
+      "bytes": 19368,
+      "sha256": "975c275b130fe2b0a8e3837a88a97525611a171332ea28ff14807af169acea89"
+    },
+    "02-trust-explicit-resolution/figures/funded_game.png": {
+      "bytes": 108975,
+      "sha256": "8957b12122f0d830535460d1b4329c8396fa4f4aae99b772d9f94114f852142b"
+    },
+    "02-trust-explicit-resolution/figures/provenance.json": {
+      "bytes": 562,
+      "sha256": "21b9e2a1cbdc8ba2caac4e432be82723f193ae787328171872f4a70223521187"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/config.json": {
+      "bytes": 910,
+      "sha256": "fb32db27cf12eb59482ed3316b5215b1895a32357eaad067c42c4137fcf79559"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/manifest.json": {
+      "bytes": 733,
+      "sha256": "09aa582204ccefb22e1d42bef0626c09f8b1705618a9a8d1db28e347cf6ce1d9"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/protocol_test_vectors.json": {
+      "bytes": 481651,
+      "sha256": "b9d08bbc68347d7f59414753e9af002cc9ab0d2222ad9d91745add0d99340590"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/report.md": {
+      "bytes": 2890,
+      "sha256": "1c66242c84c1438b5fcb9effe6288ec88a7399cee95afe27097ca09d834fe2c9"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/source_hashes.json": {
+      "bytes": 293,
+      "sha256": "77b9ee22b025056a38363f5c49ef99906f35949b495766b69499635a0eeca00d"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/summary.json": {
+      "bytes": 70962,
+      "sha256": "9a6642ccd0599d2b5819d45fea662cbe613a035393d135b4600126e10d2b2a5e"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/tampering_vectors.json": {
+      "bytes": 188747,
+      "sha256": "fd59ce719c8c1c85c733e2b37e879beb56777cdcb95f6b9cc4509fe5e375a832"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/weighted_states.jsonl": {
+      "bytes": 825251,
+      "sha256": "d2a2a55b0a814819ffae8235994f4d9f8965ccf8425d8d455d1257858936f830"
+    },
+    "02-trust-explicit-resolution/output/blueprint_protocol/worked_example.json": {
+      "bytes": 62460,
+      "sha256": "c65b9640e70c051e5ae27758c46e425c686bb9493717263be644501a71061547"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/README.md": {
+      "bytes": 342,
+      "sha256": "9e9a364c29b33c7f34b17a61684d691f17a07d640f3250623dc69e5fbb1bd614"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/episodes.jsonl.gz": {
+      "bytes": 27712513,
+      "sha256": "cb7ebec143854e7ce1d53c138271998d1089fd53b98044a71d3276960ae0ab49"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/manifest.json": {
+      "bytes": 1278,
+      "sha256": "ead94cc22fb2720c1a3897cdb03781248f91ba99258d73503924c95d3597806f"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/paired_contrasts.csv": {
+      "bytes": 132084,
+      "sha256": "2382ee38298bdd008b8c136daf7cb98ffc5a9270044cf536e4c685ade8ed5b7c"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/plan.json": {
+      "bytes": 158872,
+      "sha256": "48b2ab43d72fd2921dacf8c37674c005a77ab6373b227fce00451e297b79636c"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/provenance.json": {
+      "bytes": 426,
+      "sha256": "de88910e8d440e8a09fb05e724abf3fbdaa3a2ff0fe828549b2e1d9da566b659"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/seed_rows.csv": {
+      "bytes": 865019,
+      "sha256": "f80a712866876ce31bec4fd6c0571c4c7334f38674d33f424498aaf0497d6d2c"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/summary.csv": {
+      "bytes": 50366,
+      "sha256": "fb5a99ed929a8e1da5d915cb499e2c519accf013d5f05e450e0054c763aad7fc"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/summary.json": {
+      "bytes": 229305,
+      "sha256": "e066f8f5a6c4a82ed025439e88520e3effe3486fb1f19867f8307e2a2037750a"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/witnesses.jsonl": {
+      "bytes": 2304992,
+      "sha256": "69a1112a21e3e6bd9458ff31d94773b5d725a134332db67c0e5514db67425655"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/README.md": {
+      "bytes": 357,
+      "sha256": "4bba6ac42a642514733633f1dbc14e0a81a7b3ff220d41c13177f2f5c85fa32d"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/boundary_audit.py": {
+      "bytes": 2663,
+      "sha256": "c66a4a48e513f7b3b1ebb1d3b32a815c31b4ef673557b1d7e9b42495b124bab2"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/boundary_cases.csv": {
+      "bytes": 445652,
+      "sha256": "790e27de4e260b40ca34ae5f6bd367c88d5b6a0dec7f692202f35c6433b7df50"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/boundary_validation.json": {
+      "bytes": 337,
+      "sha256": "ac1701268d50719dcff6099e71c5750f215d5a87aa0c919b1f2cd78248238282"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/capital_frontier.csv": {
+      "bytes": 145660,
+      "sha256": "982ea4235927abd2fc0f3fb1de97d292d214a782871e0b33cb781996e60e1d72"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/capital_frontier_design.json": {
+      "bytes": 570,
+      "sha256": "433c5f6dbee44647c8f87679718d2566fcce5e12f7d7249625441640ba0123b3"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/design.json": {
+      "bytes": 171755,
+      "sha256": "655f1b92676d3d918b2827f4db16325ce0b1ec78cc4720da302eec7f11da4d0f"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/deterrence_frontier.csv": {
+      "bytes": 2926,
+      "sha256": "b9564dab9239d6738a538c39771387588d1bf86ed52decb365d7d3f64c795d57"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/episode_samples.csv": {
+      "bytes": 468747,
+      "sha256": "17c5a66e9b82d11b237721214177fc94eacb0270ca9df38a8f0391d80f3fdf5d"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/equilibria.csv": {
+      "bytes": 7155,
+      "sha256": "fe946eda9aa0210801230ea4d1d59f281e2b58ec4deabf124e02f966f469d565"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/fresh_pairs.csv": {
+      "bytes": 6810,
+      "sha256": "fc9d45c7661b266dfcb7cb3c560c119f028a49add602799694677c43b3dc2b9f"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/fresh_regimes.csv": {
+      "bytes": 100048,
+      "sha256": "1b531a36eb9ba9a01001dc11b3cbcae3f4b2d0ae1050e073f9f3e45060cc891c"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/fresh_summary.csv": {
+      "bytes": 359,
+      "sha256": "854a9211057460c3d5f756dabc96482933e44081c30ab79feeafabe6315fb37f"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/manifest.json": {
+      "bytes": 382,
+      "sha256": "4b171c13b6878defcc5607cafad47fa10980472909f97893700afe3b70b1c665"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/monte_carlo.csv": {
+      "bytes": 32465,
+      "sha256": "e2b261cbc1626d2aed35ad5b7daa614bfba35de86dbbf83010f6b37527567e1e"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/no_stake_remediation/README.md": {
+      "bytes": 323,
+      "sha256": "c726a5765e22edc55f31cd638f8e8e1a256199d046a4b065f33765c7de41cbda"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/no_stake_remediation/design.json": {
+      "bytes": 105596,
+      "sha256": "08abca4b748a17cf4d2da936f280287522a86d60bcf4b782e8d330b0e4f74953"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/no_stake_remediation/equilibria.csv": {
+      "bytes": 34962,
+      "sha256": "57bf88593ed9cf77380364cd6b4e49ab11166cd609c6e21cd42676e479a1d386"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/no_stake_remediation/pairs.csv": {
+      "bytes": 18004,
+      "sha256": "833bbff0038806c38942ca91dcf34719f7f271fd3f161cc4a3b95abebd1468cb"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/no_stake_remediation/summary.json": {
+      "bytes": 1510,
+      "sha256": "954f46797abb214075fbe45bf748c1fc9ce79b7a0b4293b5562e56eac0153608"
+    },
+    "02-trust-explicit-resolution/output/package_verification.json": {
+      "bytes": 1222,
+      "sha256": "9baf4415424fbc551c53c2701623423c61e86ee8f033a7a03bac937ad49f27ed"
+    },
+    "02-trust-explicit-resolution/simulation/__init__.py": {
+      "bytes": 86,
+      "sha256": "583956bc25358ab6eada646c2fd8efdb1407da403706881df1c029d78356014d"
+    },
+    "02-trust-explicit-resolution/simulation/__main__.py": {
+      "bytes": 55,
+      "sha256": "77a402805c8643499f42ca11a51f9a285878b2f11583daf32a533b71163d4e8e"
+    },
+    "02-trust-explicit-resolution/simulation/agents.py": {
+      "bytes": 3247,
+      "sha256": "59567fe66a60ae8e02ed0ed8021bb98e4fe718d5f45eb11cd90d9572dc2da9f6"
+    },
+    "02-trust-explicit-resolution/simulation/blueprint_experiments.py": {
+      "bytes": 20915,
+      "sha256": "f096226b77f3f6045fecd3018b6a8aa4e9eb268d1ec9bf777e71c6e6b0e93293"
+    },
+    "02-trust-explicit-resolution/simulation/blueprint_protocol.py": {
+      "bytes": 30068,
+      "sha256": "afad22b05d3dc196414ac9d1666f37393d6d8106b274aaf1bfb1cd84533bfefa"
+    },
+    "02-trust-explicit-resolution/simulation/cli.py": {
+      "bytes": 4356,
+      "sha256": "0f160319464adc3424aeae93fe4c944601bf453b8fafbe6b50a3190186766a66"
+    },
+    "02-trust-explicit-resolution/simulation/economics.py": {
+      "bytes": 17104,
+      "sha256": "d5a5e43429c2ba64ae1b67d643be4ce55d0705a47d04f5a68e60c7e902a72d7c"
+    },
+    "02-trust-explicit-resolution/simulation/economy_audit.py": {
+      "bytes": 5057,
+      "sha256": "9cd899122594bec497d2ac756aad029ff35fbaa6d85b17a4e8e5d1012e249681"
+    },
+    "02-trust-explicit-resolution/simulation/economy_validation.py": {
+      "bytes": 21708,
+      "sha256": "33f5a82a9bc79318fcac8a0f8b3957a7b78ebf2c75369894454ae980f6f54694"
+    },
+    "02-trust-explicit-resolution/simulation/figures.py": {
+      "bytes": 13684,
+      "sha256": "4e26c0505e4581ea58c2fd7ec59d37d4ac9677505d3e2aa256485bac0bd56aef"
+    },
+    "02-trust-explicit-resolution/simulation/fixtures/TEST_ONLY_RSA_KEYS.json": {
+      "bytes": 3503,
+      "sha256": "968787e9d22015111060f040c274358b8fd3a854fe6a41d441b243dcf843489e"
+    },
+    "02-trust-explicit-resolution/simulation/legacy_config.py": {
+      "bytes": 2309,
+      "sha256": "66919d6dec22aec721a8cc1ceca6d017fa288aff7f538ba8ebb0d97d4a4ed4bb"
+    },
+    "02-trust-explicit-resolution/simulation/metrics.py": {
+      "bytes": 6928,
+      "sha256": "3ee7b5a9d18ccff638e75b77ba4af5497c45f5d847aba90175130211c602af48"
+    },
+    "02-trust-explicit-resolution/simulation/monitoring_game.py": {
+      "bytes": 22671,
+      "sha256": "807eb83169e12658c4f21163982614ddc4519a3e77d0e7a742bfcb698547b7d4"
+    },
+    "02-trust-explicit-resolution/simulation/monitoring_remediation.py": {
+      "bytes": 6772,
+      "sha256": "32870d0697c83a5f034bf3c6076a877b8c6289a717e4c1df57a485166da21f8d"
+    },
+    "02-trust-explicit-resolution/simulation/scenarios.py": {
+      "bytes": 12410,
+      "sha256": "f8f2c9a6080a4872645f92c4223c9cf8954333a1c426708ce07883cc484e6a30"
+    },
+    "02-trust-explicit-resolution/simulation/simulation.py": {
+      "bytes": 2598,
+      "sha256": "ed123daa8af629c404e28a711bed3d73291513e9712170c1c18c7a653024e39c"
+    },
+    "02-trust-explicit-resolution/simulation/types.py": {
+      "bytes": 9456,
+      "sha256": "2fef436d04080965b4e5719043c479f0409bf4d232ebd48c08fb49ff3879a429"
+    },
+    "02-trust-explicit-resolution/trust-explicit-resolution.pdf": {
+      "bytes": 229622,
+      "sha256": "f58df5064ad031dd98c203a254d574a45137dd4f7fec080fd46d1cac27c3d09f"
+    },
+    "02-trust-explicit-resolution/trust-explicit-resolution.tex": {
+      "bytes": 97823,
+      "sha256": "f6814c6ca6a9fb99d308d390736120df254336a7e00add24d1d2b22d6f6593b7"
+    },
+    "pyproject.toml": {
+      "bytes": 870,
+      "sha256": "f33fe486d4c50f24f40a6723d20ea70c41556bd0e06a3c320e689249df04d1a3"
+    },
+    "scripts/check_active_lp.py": {
+      "bytes": 3037,
+      "sha256": "1808c687e8fd9ac31549719b1f7b6b5aa70f2b5bd4b51f50ac6516c415a4b0f7"
+    },
+    "scripts/check_research.py": {
+      "bytes": 157,
+      "sha256": "0228f5c59cfe463d5912a3de3fd00b22657dc610925f748d82350a33df356e90"
+    },
+    "scripts/render_resolution_figures.py": {
+      "bytes": 4118,
+      "sha256": "f4a260795adb0ca7c3fda91a12357dce3605c71e3b5cfccb05f39f99a7c485fb"
+    },
+    "tests/test_blueprint_protocol.py": {
+      "bytes": 12149,
+      "sha256": "3f099468b843c333707874576a8d6b750dc5dbf0c773f03863d5a2602aa95e3e"
+    },
+    "tests/test_monitoring_game.py": {
+      "bytes": 6074,
+      "sha256": "b47c08b3c184064d09cd5c8891a593b699b56db09ae55732500dfac9a116c67d"
+    },
+    "tests/test_monitoring_remediation.py": {
+      "bytes": 2831,
+      "sha256": "00ea331e2fdc64c91b74a05b705aa67d9b834e50012b81aa2a54fac9c0bd75ab"
+    },
+    "tests/test_resolution_economics.py": {
+      "bytes": 7523,
+      "sha256": "672bf6e482ab5a9e37a800c489a67ee38324a0c0676539c03fde47c35ef1ca56"
+    },
+    "tests/test_resolution_economy_validation.py": {
+      "bytes": 2860,
+      "sha256": "6895e86ce411f56a638b1dc209a83c42eeb3776afe7c8611d8962f0ce1e40450"
+    },
+    "tests/test_resolution_legacy_compatibility.py": {
+      "bytes": 2853,
+      "sha256": "b2f32731443283688751fcb1d7660b5dfac20af5d0915481c30c23c8396ec988"
+    },
+    "02-trust-explicit-resolution/output/economy_validation/report.md": {
+      "bytes": 16531,
+      "sha256": "7bbdcb1deb6b2329ef0cdd08f245be04275b6f43243b22ed12609b47a81ff1e3"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/report.md": {
+      "bytes": 18191,
+      "sha256": "ab20926c75c43cb5dc94af04fed332b08a122d94dedf37bd38acf349b0845589"
+    },
+    "02-trust-explicit-resolution/output/monitoring_game/no_stake_remediation/report.md": {
+      "bytes": 6816,
+      "sha256": "c39cd5d42e1986c54bdb753f326e50881d060d1a1ac8bb2ece38f66bfae3471f"
+    }
+  },
+  "documentation_update": "Minimal README landing pages; detailed results preserved verbatim in report.md. Numerical outputs and original run provenance are unchanged."
+}

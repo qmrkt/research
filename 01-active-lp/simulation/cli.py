@@ -27,7 +27,9 @@ from research.active_lp.residual_weight_analysis import run_residual_weight_swee
 from research.active_lp.scenarios import deterministic_scenario_names
 from research.active_lp.sweep_presets import build_sweep_preset, sweep_preset_names
 
-DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parent / "output"
+# Installed wheels must never write results into site-packages. Keep fresh runs
+# separate from the historical artifact archive unless the caller opts into it.
+DEFAULT_OUTPUT_DIR = Path("output") / "active_lp"
 
 
 def build_parser() -> argparse.ArgumentParser:

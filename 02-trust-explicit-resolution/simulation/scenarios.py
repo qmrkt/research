@@ -43,14 +43,12 @@ def bond_scaling_sweep() -> list[SimConfig]:
 
 
 def bond_structure_comparison() -> list[SimConfig]:
-    """Compare flat, proportional, linear, and exponential bond structures."""
+    """Compare genuine one-shot flat, proportional, and capped rules."""
     configs = []
     pool_size = 5_000
     for structure in [
         BondStructure.FLAT,
         BondStructure.POOL_PROPORTIONAL,
-        BondStructure.LINEAR_ESCALATION,
-        BondStructure.EXPONENTIAL_ESCALATION,
     ]:
         configs.append(SimConfig(
             pool_size=pool_size,
@@ -117,11 +115,11 @@ def bond_cap_sweep() -> list[SimConfig]:
 
 
 def mev_bound_sweep() -> list[SimConfig]:
-    """Compare pool-fraction and position-bounded proposer MEV models."""
+    """Compare actual funded positions across size and concentration."""
     configs = []
     for pool_size in [5_000, 50_000]:
         for stake_distribution in [StakeDistribution.UNIFORM, StakeDistribution.POWER_LAW]:
-            for mev_model in [ProposerMEVModel.POOL_FRACTION, ProposerMEVModel.POSITION_BOUNDED]:
+            for mev_model in [ProposerMEVModel.POSITION_BOUNDED]:
                 configs.append(SimConfig(
                     pool_size=pool_size,
                     num_participants=10,
@@ -330,7 +328,6 @@ SCENARIO_FAMILIES = {
     "challenge_window": challenge_window_sweep,
     "adjudicator_accuracy": adjudicator_accuracy_sweep,
     "honest_majority": honest_majority_baseline,
-    "composition": composition_resilience,
     "stake_distribution": stake_distribution_sweep,
 }
 

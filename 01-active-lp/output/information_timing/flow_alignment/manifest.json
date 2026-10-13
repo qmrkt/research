@@ -1,0 +1,61 @@
+{
+  "signal_target": "flow_alignment",
+  "selected": {
+    "lambda": 0,
+    "feasible": true,
+    "mean_information_value": 0.036850261442265365,
+    "public_entry_rate": 0.1851851851851852,
+    "private_entry_rate": 0.23111111111111113,
+    "public_profitable_baseline_regimes": 5,
+    "public_profitable_baseline_regimes_preserved": 5,
+    "mean_public_offered_return": 0.02947576653138355,
+    "mean_private_offered_return": 0.06632602797364892
+  },
+  "selection_at_upper_boundary": false,
+  "holdout": [
+    {
+      "arm": "flat_0.0",
+      "regime_count": 32,
+      "mean_information_value": 0.035822164937366195,
+      "mean_public_offered_return": 0.005061423896786938,
+      "mean_private_offered_return": 0.040883588834153134,
+      "public_entry_rate": 0.125,
+      "private_entry_rate": 0.24749999999999997,
+      "strict_information_value_regimes": 16
+    },
+    {
+      "arm": "normalized_0.15",
+      "regime_count": 32,
+      "mean_information_value": 0.027606884910849668,
+      "mean_public_offered_return": 0.0,
+      "mean_private_offered_return": 0.027606884910849668,
+      "public_entry_rate": 0.0,
+      "private_entry_rate": 0.15375,
+      "strict_information_value_regimes": 10
+    },
+    {
+      "arm": "isolated_cohort_0.0",
+      "regime_count": 32,
+      "mean_information_value": 0.05745315695068904,
+      "mean_public_offered_return": 0.024600860562384873,
+      "mean_private_offered_return": 0.08205401751307391,
+      "public_entry_rate": 0.25,
+      "private_entry_rate": 0.42999999999999994,
+      "strict_information_value_regimes": 28
+    },
+    {
+      "arm": "selected_0",
+      "regime_count": 32,
+      "mean_information_value": 0.035822164937366195,
+      "mean_public_offered_return": 0.005061423896786938,
+      "mean_private_offered_return": 0.040883588834153134,
+      "public_entry_rate": 0.125,
+      "private_entry_rate": 0.24749999999999997,
+      "strict_information_value_regimes": 16
+    }
+  ],
+  "exact_world_rows": 8622,
+  "design_sha256": "5901a9e3f63f622980808c8f6fd5506e143bbbff6386f19ba29ea55612279627",
+  "module_sha256": "67ebf8ad6c20dd3d86996834f2df6a5b4829d4ef03794c8f938774488caeaa10",
+  "reference_engine_sha256": "c0ee366f20321c841fc48d9a7847c06f4cb1dfb361d749bd3cb97db056137e6b"
+}

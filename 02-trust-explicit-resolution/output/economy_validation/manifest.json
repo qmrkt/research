@@ -1,0 +1,42 @@
+{
+  "README.md": {
+    "bytes": 342,
+    "sha256": "9e9a364c29b33c7f34b17a61684d691f17a07d640f3250623dc69e5fbb1bd614"
+  },
+  "episodes.jsonl.gz": {
+    "bytes": 27712513,
+    "sha256": "cb7ebec143854e7ce1d53c138271998d1089fd53b98044a71d3276960ae0ab49"
+  },
+  "paired_contrasts.csv": {
+    "bytes": 132084,
+    "sha256": "2382ee38298bdd008b8c136daf7cb98ffc5a9270044cf536e4c685ade8ed5b7c"
+  },
+  "plan.json": {
+    "bytes": 158872,
+    "sha256": "48b2ab43d72fd2921dacf8c37674c005a77ab6373b227fce00451e297b79636c"
+  },
+  "provenance.json": {
+    "bytes": 426,
+    "sha256": "de88910e8d440e8a09fb05e724abf3fbdaa3a2ff0fe828549b2e1d9da566b659"
+  },
+  "report.md": {
+    "bytes": 16531,
+    "sha256": "7bbdcb1deb6b2329ef0cdd08f245be04275b6f43243b22ed12609b47a81ff1e3"
+  },
+  "seed_rows.csv": {
+    "bytes": 865019,
+    "sha256": "f80a712866876ce31bec4fd6c0571c4c7334f38674d33f424498aaf0497d6d2c"
+  },
+  "summary.csv": {
+    "bytes": 50366,
+    "sha256": "fb5a99ed929a8e1da5d915cb499e2c519accf013d5f05e450e0054c763aad7fc"
+  },
+  "summary.json": {
+    "bytes": 229305,
+    "sha256": "e066f8f5a6c4a82ed025439e88520e3effe3486fb1f19867f8307e2a2037750a"
+  },
+  "witnesses.jsonl": {
+    "bytes": 2304992,
+    "sha256": "69a1112a21e3e6bd9458ff31d94773b5d725a134332db67c0e5514db67425655"
+  }
+}

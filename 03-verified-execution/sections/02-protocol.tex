@@ -1,0 +1,77 @@
+\section{Complete Traces and Compact Challenges}
+\label{sec:merkle}
+
+The reference profile deliberately fixes a small executable language so every acceptance rule can be tested. A blueprint has between 4 and 64 ordered slots: an authenticated integer source, zero or more additions of one, one comparison against the declared slot count, and two mutually exclusive Boolean terminals. Both terminal slots appear in the trace; the unselected one is explicitly skipped. The blueprint hash authenticates the exact grammar, constants, source policy, slot count, and semantics version. This profile exercises data flow, branching, source authentication, omission, and terminal linkage. The compositional theorem in Section~\ref{sec:composition} states the extension to arbitrary acyclic graphs; the prototype does not pretend to implement that entire language.
+
+\subsection{Canonical objects and exact tree construction}
+
+The public protocol specification and vectors are part of the paper's reproducibility package. Objects use a restricted canonical JSON profile: ASCII strings and keys, exact integers of magnitude at most $2^{53}-1$, booleans, null, arrays, and objects; sorted object keys; no insignificant whitespace; duplicate keys, floating-point spellings, unknown schema fields, and noncanonical encodings are rejected. Large external values are represented by explicitly typed byte or decimal encodings before entering the profile. There is no implicit Unicode normalization or approximate numeric coercion. This avoids claiming that a default JSON serializer implements all of RFC~8785, whose full number and Unicode rules are more demanding \cite{rfc8785}.
+
+Let $J(x)$ be the canonical bytes and let $H$ be SHA-256. For an object domain $D$, define $H_D(x)=H(D\|\mathtt{00}\|J(x))$. Domains are ASCII constants without zero bytes. The source report, blueprint, request, run context, semantic projection, and terminal result have distinct domains. Hash digests are raw 32-byte values inside the binary tree envelopes and lowercase 64-character hexadecimal strings in JSON. A consumer obtains the schema version from the authenticated object or protocol context, not by trying to read a domain tag out of a bare digest.
+
+The per-run context commitment $C$ includes the request and snapshot digests, run identity, runner identity, and measurement. For record bytes $B_i$, a count $n$, and zero-based position $i$, the tree is
+\begin{align}
+\ell_i &= H(D_L\|C\|\operatorname{u64}(n)\|\operatorname{u64}(i)\|H(B_i)),\\
+\operatorname{pad}_i &= H(D_P\|C\|\operatorname{u64}(n)\|\operatorname{u64}(i)),\\
+\operatorname{parent}(x,y) &= H(D_N\|x\|y),\\
+R &= H(D_R\|C\|\operatorname{u64}(n)\|\operatorname{tree}).
+\end{align}
+Here $D_L,D_P,D_N,D_R$ are respectively the zero-terminated ASCII strings \texttt{QM\_EXEC\_LEAF\_V1}, \texttt{QM\_EXEC\_PAD\_V1}, \texttt{QM\_EXEC\_NODE\_V1}, and \texttt{QM\_EXEC\_ROOT\_V1}; $\operatorname{u64}$ is eight-byte unsigned big-endian encoding. Right padding extends the tree to the next power of two using the indexed padding hashes. Empty traces are rejected. Leaf payloads are bounded to 4,096 bytes in the wire profile; transport-specific limits may be smaller.
+
+An opening consists of the exact record bytes, index, count, and exactly $\lceil\log_2 n\rceil$ sibling hashes. The verifier enforces $0\leq i<n$, count and context equality with the stored commitment, fixed digest lengths, proof depth, prescribed fully padded siblings, and the final wrapped root. Left/right order follows the bits of $i$. A false proof is rejected as a challenge submission; it is not evidence that the proposer committed fraud.
+
+\begin{proposition}[Position and count binding]
+Assuming collision resistance of $H$, a committed root cannot be opened to different record bytes at the same context, count, and index, nor validly transplanted to another context or count, except by finding a hash collision.
+\end{proposition}
+\begin{proof}
+If two distinct payloads yield the same leaf, either their payload hashes collide or the fixed-length leaf envelopes collide. If different leaves yield the same wrapped root, follow the first point where the two paths merge: unequal ordered child pairs produce the same parent hash, or unequal root envelopes produce the same wrapped root. Context, count, position, and padding have unambiguous fixed-length encodings and disjoint domains. Each alternative supplies a collision.
+\end{proof}
+
+This is an authentication property, not a completeness theorem. A proposer can commit to any collection of bytes. The contract's count must come from the authenticated blueprint; the records must then satisfy its semantics.
+
+\subsection{Completeness is a semantic property}
+
+A count alone accepts the wrong object. A required path $A\to B\to C$ and the fabricated list $(A,A,C)$ both have length three. An arbitrary 32-byte root can also be paired with the scalar ``3.'' Neither the scalar nor a successful opening for one leaf proves that $B$ exists or that $C$ uses $B$'s output.
+
+The fully verified receipt path combines complete semantic verification with receipt and commitment checks:
+\begin{enumerate}
+\item The blueprint and snapshot hash to the request's commitments; all schemas and source keys are exact.
+\item There is one record for each declared slot, in order, with the prescribed node identity and kind. No duplicates, substitutions, or omitted slots are allowed.
+\item The source's signature, issuer, scope, provider observation time, and declared freshness constraints pass. Its complete preimage is present.
+\item Each active computation's input equals its predecessor's typed output; its output is obtained by the declared operation. Numeric booleans and integers cannot substitute for one another.
+\item The comparison selects the prescribed edge; exactly one Boolean terminal completes. The other terminal has the prescribed skipped record.
+\item The semantic verifier checks that the terminal action, Boolean outcome, and semantic projection agree with the shared result. The receipt adapter checks the registered runner/context and constructs its authenticated receipt from the recomputed full-tree root and that result digest.
+\end{enumerate}
+
+\begin{proposition}[Completeness and deterministic consistency]
+For the bounded reference grammar, acceptance by the complete semantic verifier implies that every required active operation appears exactly once with the declared input/output relation and that the result equals execution of the committed blueprint on the authenticated snapshot, assuming no commitment collision or source-signature forgery.
+\end{proposition}
+\begin{proof}
+The exact record array establishes coverage and uniqueness independently of the tree. The authenticated source fixes the initial integer. Induction over the additions fixes each successive value. The comparison fixes one branch, the two terminal checks establish the completed/skipped pattern, and the result-binding check fixes the final Boolean. There is no remaining record position at which an omitted operation, substituted branch, or different output can enter without failing one of these checks.
+\end{proof}
+
+An authentic but false provider report passes origin authentication. That is the right boundary: the source policy and dispute path must handle falsity. Likewise an anonymous proposer can manufacture a \emph{consistent} trace by computing the correct values. Semantic verification establishes the relation, not a claim about which machine historically performed it.
+
+\subsection{A publication gate that actually gates finalization}
+\label{sec:availability}
+
+The reference profile takes an intentionally direct route to data availability: every bounded committed record is revealed to an authoritative public ledger before the challenge period begins. The source reveal must contain the complete signed input object, whose snapshot digest matches the request before that position counts as published; no necessary preimage is replaced with an unresolvable URL. A production ledger adapter must make these accepted bytes retrievable to challengers throughout the window. The research state machine models that ledger as an append-only public log.
+
+A proposal enters \texttt{REVEALING}. Every accepted reveal authenticates a distinct declared index against the fixed root and count. Repeated reveals cannot inflate coverage. Only after every slot has been published does the state enter \texttt{CHALLENGE}, and the full challenge interval starts then. If the reveal deadline expires first, the proposal becomes unavailable and cannot finalize. After a valid semantic challenge it is rejected; after an unchallenged complete window it can finalize. Protocol-time ordering specifies deadline inclusivity, so a last-minute reveal cannot consume the checking period.
+
+\begin{proposition}[Publication before finalization]
+Under the append-only ledger and authenticated-opening assumptions, every finalized reference proposal has published all $n$ committed record preimages before the start of its full challenge window.
+\end{proposition}
+\begin{proof}
+The only transition into the challenge state requires the set of distinct authenticated indices to be exactly $\{0,\ldots,n-1\}$. The only finalization transition requires that state and its elapsed challenge deadline. No timeout or duplicate reveal can satisfy the coverage predicate. Position binding fixes the published bytes at each index. The source preimage is inside its required record.
+\end{proof}
+
+This proves a publication invariant, not that an honest checker is online. The control case of a fully published, semantically fabricated trace with no successful challenge remains able to finalize in the optimistic profile. Adding authenticated execution or proof verification supplies a separate acceptance requirement; paying checkers supplies a separate economic mechanism. The distinction makes ``no trace, no finalization'' an enforceable statement without pretending that availability alone proves correctness.
+
+Publishing every record has a measurable byte and transaction cost. Larger or confidential traces need a different declared profile, such as a data-availability committee or forced disclosure after a challenge, with its own retrieval, censorship, and timing assumptions. They cannot inherit the full-publication theorem merely by including an IPFS pointer. The AVM experiment measures compact opening checks; it does not establish the deployment cost of a complete production publication service.
+
+\subsection{The whole-trace baseline}
+
+A canonical whole-trace hash already fixes the complete account. Given the whole trace, a verifier can authenticate and replay it. Merkle trees improve the size of an authenticated opening: one record plus $32\lceil\log_2 n\rceil$ sibling bytes, with the small context envelope, instead of all record bytes. They also make adjacent or node-specific faults easy to name.
+
+The improvement has a boundary. Discovering a bad node may still require downloading and replaying the whole workflow, and a fault can require several parent records or external preimages. The benchmark therefore reports whole-trace hashing, full semantic replay, tree construction, and single-record authentication separately. Merkle construction is extra work; the compact proof repays it when selective disclosure or targeted challenges matter. We do not convert a smaller opening into an unsupported claim that all verifier work becomes logarithmic.

@@ -1,0 +1,19 @@
+{
+  "cash_check": "independently quote each event before applying it; compare expected external cash with treasury change and cumulative ledger; assert failed request leaves state exactly unchanged",
+  "decimal_digits": 80,
+  "funding": "100*ln(N)+20",
+  "lambda": ".15",
+  "low_tail": "N64,b100; buy250outcome0; buy500outcome1; LPdepth20; resolve1; winner500claim. Also all6 orders of winner/creator/late payout under pooled policy.",
+  "lp_fee_bps": 0,
+  "models": [
+    "reference",
+    "compressed"
+  ],
+  "protocol_fee_bps": 0,
+  "purpose": "designed regression traces and payout-order conservation; not randomized inference",
+  "refund_failure": "N3,b100; a buys100outcome0,b buys500outcome0,a sells100outcome0,a buys100outcome1,c buys1000outcome1,a requests sell100outcome1; retain rejected request, cancel, all24 orders of3refunds+creator residual.",
+  "residual_weight": "linear_lambda_normalized",
+  "schema": "safety_validation_v1",
+  "settlement_policy": "reserve_pool; strict_all_claimed replay also preserves original low-tail diagnostic",
+  "tolerance": "1E-16"
+}

@@ -1,0 +1,19 @@
+{
+  "config_sha256": "786709d3df2f62fe9b106afb4d9853b0206a5f340c69dc161c92558ad007887e",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "sources": {
+    "01-active-lp/simulation/adversarial_search.py": "dd45ba78c674a86646842df5512f774c300322c915f0bea522f59705307cb1d8",
+    "01-active-lp/simulation/calibration_upgrade.py": "c2723c0248d739b6062e4a59548bf23cda9aa3f807bf59804752c302e553c736",
+    "01-active-lp/simulation/events.py": "155797ba276d07f29175ce855c876f89e37cd1d1f94ef1187109658fe2f641fa",
+    "01-active-lp/simulation/historical_calibration.py": "07bb7512dca831f48925943ce7eeebd2e2b984c404840b0e37493d7bfb570607",
+    "01-active-lp/simulation/monte_carlo.py": "91214f04862ca7eaf451e4964528a2f203220793b3d3051ebb0c24d877b3caa9",
+    "01-active-lp/simulation/precision.py": "af59ad487b66b446e973b3cfeb34272b6902feb084f84ea18fcdf7b38404aa90",
+    "01-active-lp/simulation/publication_validation.py": "d7f0683cd62a8b654282b0e9ae6dbc77283df135534d437cd9cbe02923668733",
+    "01-active-lp/simulation/reference_math.py": "c7b87587bbe33619efae57c44f6a0d76fc1274c024964b2ec9291897af6c1470",
+    "01-active-lp/simulation/reference_parallel_lmsr.py": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd",
+    "01-active-lp/simulation/scenarios.py": "4054cb1b4176ad426306b92d4bb4f8f7a4993a025b214fef536d9478134eb9b8",
+    "01-active-lp/simulation/state.py": "1b30111b3188f65612cec53159f65e63fc17df9e3a695a514ea52b5ddf9e6993",
+    "01-active-lp/simulation/sweep_presets.py": "170d29926c08ff58663cd0438fc070793457fb88ba95c55c0b4bab2c71049a5a"
+  }
+}

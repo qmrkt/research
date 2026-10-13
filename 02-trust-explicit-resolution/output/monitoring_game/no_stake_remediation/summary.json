@@ -1,0 +1,42 @@
+{
+  "regimes": 64,
+  "launched": 64,
+  "reserve_feasible": 64,
+  "unchanged_eligibility_vs_bounty": 64,
+  "mean_false_finalization": 0.4072090668295553,
+  "zero_fraud_regimes": 27,
+  "mean_expected_external_spend": 14.476852817488025,
+  "mean_expected_real_cost": 13.318119919423921,
+  "mean_expected_audit_spend": 0.6569007766481975,
+  "mean_required_external_reserve": 29.470094236018245,
+  "max_required_external_reserve": 90.79820212036657,
+  "minimum_truthful_participation_margin": 0.9999999999999996,
+  "max_equilibrium_regret": 0.0,
+  "contrasts": {
+    "bounty": {
+      "mean_difference_wrong": -0.08376108364946737,
+      "improved": 18,
+      "tied": 46,
+      "worse": 0,
+      "mean_difference_external_spend": 8.84686935111125
+    },
+    "unaudited": {
+      "mean_difference_wrong": -0.17810867670635352,
+      "improved": 30,
+      "tied": 34,
+      "worse": 0,
+      "mean_difference_external_spend": 4.018654372920414
+    },
+    "staked_audited": {
+      "mean_difference_wrong": -0.1087178096344781,
+      "improved": 19,
+      "tied": 45,
+      "worse": 0,
+      "mean_difference_external_spend": 3.804834726570988
+    }
+  },
+  "design_sha256": "08abca4b748a17cf4d2da936f280287522a86d60bcf4b782e8d330b0e4f74953",
+  "source_sha256": "32870d0697c83a5f034bf3c6076a877b8c6289a717e4c1df57a485166da21f8d",
+  "game_source_sha256": "807eb83169e12658c4f21163982614ddc4519a3e77d0e7a742bfcb698547b7d4",
+  "primary_results_sha256": "1b531a36eb9ba9a01001dc11b3cbcae3f4b2d0ae1050e073f9f3e45060cc891c"
+}

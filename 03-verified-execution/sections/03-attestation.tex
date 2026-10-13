@@ -1,0 +1,59 @@
+\section{Signed and Attested Runners}
+\label{sec:tee}
+
+A signature proves endorsement by a key. It does not identify the program that used the key. The signed-runner mode is useful because it fixes an accountable execution identity and supports rotation, revocation, and authorization. Its claimed measurement remains metadata until a separate attestation policy binds it to an execution environment.
+
+\subsection{A concrete Nitro registration policy}
+
+AWS Nitro is the concrete hardware example. Its attestation document is CBOR encoded and COSE signed and can carry PCR measurements, a public key, user data, and a nonce \cite{nitrodocs}. Our registration policy turns that evidence into a bounded authorization:
+\begin{enumerate}
+\item The registrar issues an unpredictable, single-use challenge naming the registry, chain, policy version, and requested epoch.
+\item Approved measured code generates a signing key inside the enclave and requests an attestation binding that public key, the challenge, and the registry context. The code never exports the secret or offers an unrestricted signing interface.
+\item The verifier validates the COSE signature, vendor certificate path and validity, the expected challenge, freshness, and the exact measurement policy. Failure rejects registration.
+\item The registrar publishes the evidence, appraisal policy, source/build mapping, and resulting registration; its approval threshold is itself declared.
+\item Receipts bind the registry epoch and authorized request. The contract checks the runner signature, identity, epoch, permitted measurement, and validity through the required finalization horizon.
+\end{enumerate}
+
+The attestation's caller-supplied public-key field does not independently prove that the corresponding secret was generated inside the enclave. That property follows from the measured code and its key-handling interface. The hardware and software claims must meet at this boundary.
+
+Nitro PCRs do not all mean ``the binary.'' PCR0--2 describe image, kernel/bootstrap, and application measurements; PCR3 and PCR4 can bind parent IAM-role and instance identity, and PCR8 the signing certificate. The policy pins the intended fields and rejects debug-mode zero measurements \cite{nitropcr2026}. Reproducible image measurements do not imply identical parent-instance measurements. A build manifest records source revision, toolchain, dependencies, image digest, and the approved PCR subset.
+
+A registry entry has an identity, key, measurement class, validity interval, and policy epoch. Routine expiration must not surprise an already accepted request: the chosen profile requires validity through its finalization deadline. Revocation for suspected compromise before finalization freezes affected pending receipts and invokes the declared recovery or cancellation path. A fixed request committee cannot be silently replaced midway through voting. The replacement is a new, publicly identified policy epoch or request.
+
+The registrar is a real trust root. Publishing evidence makes a false registration inspectable; it does not make a contract that blindly trusts the registrar immune to capture. A threshold registrar protects against fewer than its threshold of faulty approvers only when those approvers actually verify the evidence. A measurement transparency log similarly exposes unauthorized build changes only under its append-only consistency and monitoring assumptions. These are enforceable responsibilities, not decorative labels.
+
+\subsection{Authenticate the network inside the trusted boundary}
+
+Host-mediated networking does not mean unauthenticated networking. A host can forward a TLS byte stream while endpoint authentication and decryption occur inside the enclave. AWS's KMS integration supplies a concrete example of enclave communication through a parent proxy \cite{nitrokms2026}. Under correct endpoint and certificate validation, the host can delay or drop that connection but cannot replace an authenticated response with arbitrary plaintext.
+
+The dangerous configuration terminates authentication at the untrusted host and forwards bare response bytes to the enclave. In that configuration, ten apparent sources still have one forgery point: the host can invent all ten responses without compromising any endpoint. Independence becomes useful only after each source channel is authenticated.
+
+The request's source policy therefore distinguishes four properties: \emph{origin authentication}, \emph{request/snapshot binding}, \emph{freshness}, and \emph{truth}. A signed source object binds its issuer, scope, data, and time under a pinned key. A replayed object can have a valid signature and fail scope or freshness. An authentic fresh object can still be false. TLS authenticates the channel to the enclave but does not ordinarily create a publicly transferable provider signature; a third-party verifier then relies on the attested client or an additional TLS provenance protocol.
+
+For remote LLM APIs, an attested runner proves its own authenticated request and receipt processing. It does not measure the provider's weights, tokenizer, numerical kernels, or serving configuration. Moving inference into a separately attested GPU environment, or obtaining a proof of that computation, requires explicit composition of those evidence boundaries. ``An LLM call was made'' and ``this particular model executed'' are different claims.
+
+\subsection{What attestation contributes}
+
+Under the hardware, appraisal, code, and key-custody assumptions, a valid receipt supports the claim that the approved environment produced the bound trace. It raises the cost of substituting an arbitrary signing program. It does not establish that the approved program implements the intended semantics, that a source told the truth, or that the host will run anything at all.
+
+The host retains control over launch, scheduling, network availability, and termination. Protected volatile memory does not automatically give rollback-resistant persistent state \cite{teerex2026}. A sealed local ``already used'' flag is therefore not the authoritative defense against retries. The ledger consumes request attempts, and deterministic restarts must reproduce the same authorized computation. Section~\ref{sec:selection} proves both the benefit and the remaining selective-abort boundary.
+
+\section{Composing Different Verification Mechanisms}
+\label{sec:composition}
+
+A blueprint need not force every step into the same verification mechanism. Source authentication can establish input provenance; deterministic replay or a proof can check transformations; an attested environment can protect a model call and its signing key. The edges connecting those components are part of the security statement.
+
+\begin{proposition}[Compositional computation integrity]
+Fix an acyclic blueprint, its request, and its authenticated external inputs. For every active node $v$, a local verifier checks a relation $R_v$ binding the request, node identity, semantics version, exact parent-output commitments, and declared output. Suppose that, for every admissible prior history and input chosen during execution, the conditional probability of accepting a false relation at node $v$ is at most $\varepsilon_v$. Let commitment/encoding failures occur with probability at most $\varepsilon_H$. If the complete graph and terminal binding pass, an accepted terminal result is consistent with the declared composition except with probability at most
+\[
+\varepsilon_H+\sum_{v\in V}\varepsilon_v.
+\]
+The sum covers all declared nodes $V$, so adaptive branch selection cannot select an unaccounted error event. No independence assumption between the local mechanisms is required.
+\end{proposition}
+\begin{proof}
+Condition on no encoding or commitment failure and no false local acceptance. At each source node, the relation binds the declared external input. Induct through the topological order. The parent bindings fix exactly the values established at earlier nodes, and $R_v$ establishes a valid next computation on those values. Complete routing and the terminal check therefore establish a valid composed execution. A false terminal requires at least one excluded failure; the union bound gives the result.
+\end{proof}
+
+For deterministic replay, the relation is the specified state transition. For a ZK execution proof, its soundness is relative to the proved program and committed public inputs. For TEE evidence, validity is conditional on the relevant hardware, measurement, registrar, and key-handling assumptions; this paper does not assign an empirical small failure probability to an unaudited TEE. For a human decision, the relation may prove only that the authorized decision was recorded. The theorem composes exactly the stated relations. It cannot upgrade their meanings.
+
+This suggests a useful direction for question.market: proof-carrying deterministic subgraphs around explicitly attested or adjudicated boundary nodes. A source snapshot, numerical transformation, branch, and payout label can be tightly verified while keeping the residual judgment visible. The research question is the cost and diagnostic value of that composition, not whether a single technology deserves to replace every other layer.

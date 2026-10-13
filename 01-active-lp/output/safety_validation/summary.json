@@ -1,0 +1,41 @@
+{
+  "all_checks_passed": true,
+  "claim_orders": 60,
+  "event_rows": 266,
+  "maximum_cash_ledger_error": "1E-76",
+  "maximum_quote_cash_error": "4.05E-77",
+  "runs": {
+    "compressed/low_tail": {
+      "claim_orders": 6,
+      "prefix_events": 5,
+      "rejected_requests": 0,
+      "terminal_assets": "668.64282927597926242609993527937484956649252138749862336848310835195870020177060",
+      "terminal_residual": "168.64282927597926242609993527937484956649252138749862336848310835195870020177060",
+      "terminal_senior_reserve": "500"
+    },
+    "compressed/refund_failure": {
+      "claim_orders": 24,
+      "prefix_events": 8,
+      "rejected_requests": 1,
+      "terminal_assets": "1120.2492345402725580470083731210693590382827246293733489566118673167891876323534",
+      "terminal_residual": "75.9885359262003569227859418735772674297120723097307190742643130173004880519885",
+      "terminal_senior_reserve": "1044.2606986140722011242224312474920916085706523196426298823475542994886995803649"
+    },
+    "reference/low_tail": {
+      "claim_orders": 6,
+      "prefix_events": 5,
+      "rejected_requests": 0,
+      "terminal_assets": "668.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+      "terminal_residual": "168.64282927597926242609993527937484956649252138749862336848310835195870020177061",
+      "terminal_senior_reserve": "500"
+    },
+    "reference/refund_failure": {
+      "claim_orders": 24,
+      "prefix_events": 8,
+      "rejected_requests": 1,
+      "terminal_assets": "1120.2492345402725580470083731210693590382827246293733489566118673167891876323533",
+      "terminal_residual": "75.9885359262003569227859418735772674297120723097307190742643130173004880519884",
+      "terminal_senior_reserve": "1044.2606986140722011242224312474920916085706523196426298823475542994886995803649"
+    }
+  }
+}

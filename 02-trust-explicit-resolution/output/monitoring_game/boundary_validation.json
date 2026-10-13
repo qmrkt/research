@@ -1,0 +1,9 @@
+{
+  "seed": 321091,
+  "attempted": 3000,
+  "valid_solved": 2434,
+  "excluded_profitable_false_challenge": 566,
+  "max_equilibrium_regret": 1.6653345369377348e-16,
+  "source_sha256": "807eb83169e12658c4f21163982614ddc4519a3e77d0e7a742bfcb698547b7d4",
+  "audit_sha256": "c66a4a48e513f7b3b1ebb1d3b32a815c31b4ef673557b1d7e9b42495b124bab2"
+}

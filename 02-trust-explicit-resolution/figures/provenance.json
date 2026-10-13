@@ -1,0 +1,14 @@
+{
+  "renderer": "scripts/render_resolution_figures.py",
+  "matplotlib": "3.10.8",
+  "economy_summary_sha256": "e066f8f5a6c4a82ed025439e88520e3effe3486fb1f19867f8307e2a2037750a",
+  "source_error_formulas": {
+    "iid_majority": "3 e^2 - 2 e^3",
+    "common_shock": ".1 + .9 (3*.05^2 - 2*.05^3)",
+    "matched_source_error": ".1 + .9*.05 = .145"
+  },
+  "plots": {
+    "frontier_and_composition.pdf": "5bca28d416f8b33c7283ab316453a5da143c33dcf8c656309dec3ec4d521e14c",
+    "funded_game.pdf": "975c275b130fe2b0a8e3837a88a97525611a171332ea28ff14807af169acea89"
+  }
+}

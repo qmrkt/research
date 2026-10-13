@@ -1,0 +1,3122 @@
+{
+  "counterfactual_protocol_vectors": 30,
+  "exact_weighted_rows": 1670,
+  "experiments": [
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "perfect_1",
+      "latent_parameters": {},
+      "latent_state_count": 1,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 1.0,
+          "fraction": "1/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        }
+      },
+      "source_count": 1,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "independent_error_005_1",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "latent_state_count": 2,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.95,
+          "fraction": "19/20"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "source_count": 1,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.05,
+        "fraction": "1/20"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "independent_error_0145_1",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.145,
+          "fraction": "29/200"
+        }
+      },
+      "latent_state_count": 2,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.855,
+          "fraction": "171/200"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.145,
+          "fraction": "29/200"
+        }
+      },
+      "source_count": 1,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.145,
+        "fraction": "29/200"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "common_error_matched_0145_1",
+      "latent_parameters": {
+        "common_error": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        },
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "latent_state_count": 4,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.855,
+          "fraction": "171/200"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.145,
+          "fraction": "29/200"
+        }
+      },
+      "source_count": 1,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.145,
+        "fraction": "29/200"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.8,
+        "fraction": "4/5"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "independent_error_and_outage_1",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        }
+      },
+      "latent_state_count": 4,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        },
+        "correct": {
+          "decimal": 0.76,
+          "fraction": "19/25"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.04,
+          "fraction": "1/25"
+        }
+      },
+      "source_count": 1,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.05,
+        "fraction": "1/20"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.8,
+        "fraction": "4/5"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "common_outage_1",
+      "latent_parameters": {
+        "common_unavailable": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        },
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "latent_state_count": 4,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        },
+        "correct": {
+          "decimal": 0.76,
+          "fraction": "19/25"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.04,
+          "fraction": "1/25"
+        }
+      },
+      "source_count": 1,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.05,
+        "fraction": "1/20"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "perfect_3",
+      "latent_parameters": {},
+      "latent_state_count": 1,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 1.0,
+          "fraction": "1/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "independent_error_005_3",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "latent_state_count": 8,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.99275,
+          "fraction": "3971/4000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.00725,
+          "fraction": "29/4000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.00725,
+        "fraction": "29/4000"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "independent_error_0145_3",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.145,
+          "fraction": "29/200"
+        }
+      },
+      "latent_state_count": 8,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.94302225,
+          "fraction": "3772089/4000000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.05697775,
+          "fraction": "227911/4000000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.05697775,
+        "fraction": "227911/4000000"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "common_error_matched_0145_3",
+      "latent_parameters": {
+        "common_error": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        },
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "latent_state_count": 16,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.893475,
+          "fraction": "35739/40000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.106525,
+          "fraction": "4261/40000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.106525,
+        "fraction": "4261/40000"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.85952,
+        "fraction": "2686/3125"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "independent_error_and_outage_3",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.14048,
+          "fraction": "439/3125"
+        },
+        "correct": {
+          "decimal": 0.854848,
+          "fraction": "13357/15625"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.004672,
+          "fraction": "73/15625"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.005435591958302308,
+        "fraction": "73/13430"
+      }
+    },
+    {
+      "actions": [],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.8,
+        "fraction": "4/5"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "common_outage_3",
+      "latent_parameters": {
+        "common_unavailable": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        },
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        }
+      },
+      "latent_state_count": 16,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.2,
+          "fraction": "1/5"
+        },
+        "correct": {
+          "decimal": 0.7942,
+          "fraction": "3971/5000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.0058,
+          "fraction": "29/5000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.00725,
+        "fraction": "29/4000"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 2,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.0,
+        "fraction": "2/1"
+      },
+      "experiment": "forced_1_corrupt",
+      "latent_parameters": {},
+      "latent_state_count": 1,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 1.0,
+          "fraction": "1/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0"
+      ],
+      "static_cost": 2,
+      "wrong_given_decision": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "withhold",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 2,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.0,
+        "fraction": "2/1"
+      },
+      "experiment": "forced_1_withheld",
+      "latent_parameters": {},
+      "latent_state_count": 1,
+      "objective": "maximize cancel probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 1.0,
+          "fraction": "1/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0"
+      ],
+      "static_cost": 2,
+      "wrong_given_decision": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 6,
+      "decision_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 6.0,
+        "fraction": "6/1"
+      },
+      "experiment": "forced_2_corrupt",
+      "latent_parameters": {},
+      "latent_state_count": 1,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 1.0,
+          "fraction": "1/1"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0",
+        "source_1"
+      ],
+      "static_cost": 6,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "withhold",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 6,
+      "decision_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "expected_attack_cost": {
+        "decimal": 6.0,
+        "fraction": "6/1"
+      },
+      "experiment": "forced_2_withheld",
+      "latent_parameters": {},
+      "latent_state_count": 1,
+      "objective": "maximize cancel probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 1.0,
+          "fraction": "1/1"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0",
+        "source_1"
+      ],
+      "static_cost": 6,
+      "wrong_given_decision": null
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.948915,
+        "fraction": "189783/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "choice_shared0_budget0_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.051085,
+          "fraction": "10217/200000"
+        },
+        "correct": {
+          "decimal": 0.94302225,
+          "fraction": "3772089/4000000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.00589275,
+          "fraction": "23571/4000000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.006209987195902689,
+        "fraction": "97/15620"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.948915,
+        "fraction": "189783/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "choice_shared0_budget0_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.051085,
+          "fraction": "10217/200000"
+        },
+        "correct": {
+          "decimal": 0.94302225,
+          "fraction": "3772089/4000000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.00589275,
+          "fraction": "23571/4000000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.006209987195902689,
+        "fraction": "97/15620"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 2,
+      "decision_rate": {
+        "decimal": 0.810405,
+        "fraction": "162081/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.0,
+        "fraction": "2/1"
+      },
+      "experiment": "choice_shared0_budget2_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.189595,
+          "fraction": "37919/200000"
+        },
+        "correct": {
+          "decimal": 0.731025,
+          "fraction": "29241/40000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0"
+      ],
+      "static_cost": 2,
+      "wrong_given_decision": {
+        "decimal": 0.09795102448775612,
+        "fraction": "196/2001"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.07348725,
+        "fraction": "293949/4000000"
+      },
+      "budget": 2,
+      "decision_rate": {
+        "decimal": 0.95661,
+        "fraction": "95661/100000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.1469745,
+        "fraction": "293949/2000000"
+      },
+      "experiment": "choice_shared0_budget2_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.04339,
+          "fraction": "4339/100000"
+        },
+        "correct": {
+          "decimal": 0.87723,
+          "fraction": "87723/100000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.0829805249788315,
+        "fraction": "98/1181"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 3,
+      "decision_rate": {
+        "decimal": 0.810405,
+        "fraction": "162081/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.0,
+        "fraction": "2/1"
+      },
+      "experiment": "choice_shared0_budget3_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.189595,
+          "fraction": "37919/200000"
+        },
+        "correct": {
+          "decimal": 0.731025,
+          "fraction": "29241/40000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0"
+      ],
+      "static_cost": 2,
+      "wrong_given_decision": {
+        "decimal": 0.09795102448775612,
+        "fraction": "196/2001"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.07348725,
+        "fraction": "293949/4000000"
+      },
+      "budget": 3,
+      "decision_rate": {
+        "decimal": 0.95661,
+        "fraction": "95661/100000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.1469745,
+        "fraction": "293949/2000000"
+      },
+      "experiment": "choice_shared0_budget3_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.04339,
+          "fraction": "4339/100000"
+        },
+        "correct": {
+          "decimal": 0.87723,
+          "fraction": "87723/100000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.0829805249788315,
+        "fraction": "98/1181"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 4,
+      "decision_rate": {
+        "decimal": 0.810405,
+        "fraction": "162081/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.0,
+        "fraction": "2/1"
+      },
+      "experiment": "choice_shared0_budget4_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.189595,
+          "fraction": "37919/200000"
+        },
+        "correct": {
+          "decimal": 0.731025,
+          "fraction": "29241/40000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0"
+      ],
+      "static_cost": 2,
+      "wrong_given_decision": {
+        "decimal": 0.09795102448775612,
+        "fraction": "196/2001"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.114078375,
+        "fraction": "912627/8000000"
+      },
+      "budget": 4,
+      "decision_rate": {
+        "decimal": 0.964305,
+        "fraction": "192861/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.309339,
+        "fraction": "309339/1000000"
+      },
+      "experiment": "choice_shared0_budget4_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.035695,
+          "fraction": "7139/200000"
+        },
+        "correct": {
+          "decimal": 0.844333875,
+          "fraction": "6754671/8000000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.119971125,
+          "fraction": "959769/8000000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.12441201175976481,
+        "fraction": "11849/95240"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 6,
+      "decision_rate": {
+        "decimal": 0.8181,
+        "fraction": "8181/10000"
+      },
+      "expected_attack_cost": {
+        "decimal": 6.0,
+        "fraction": "6/1"
+      },
+      "experiment": "choice_shared0_budget6_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.1819,
+          "fraction": "1819/10000"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.8181,
+          "fraction": "8181/10000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0",
+        "source_1"
+      ],
+      "static_cost": 6,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.81990225,
+        "fraction": "3279609/4000000"
+      },
+      "budget": 6,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 4.54428225,
+        "fraction": "18177129/4000000"
+      },
+      "experiment": "choice_shared0_budget6_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.146205,
+          "fraction": "29241/200000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.825795,
+          "fraction": "165159/200000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.8495833333333334,
+        "fraction": "2039/2400"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 12,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 12.0,
+        "fraction": "12/1"
+      },
+      "experiment": "choice_shared0_budget12_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0",
+        "source_1",
+        "source_2"
+      ],
+      "static_cost": 12,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.96610725,
+        "fraction": "3864429/4000000"
+      },
+      "budget": 12,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 5.86012725,
+        "fraction": "23440509/4000000"
+      },
+      "experiment": "choice_shared0_budget12_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.948915,
+        "fraction": "189783/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "choice_shared1_budget0_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.051085,
+          "fraction": "10217/200000"
+        },
+        "correct": {
+          "decimal": 0.94302225,
+          "fraction": "3772089/4000000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.00589275,
+          "fraction": "23571/4000000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [],
+      "static_cost": 0,
+      "wrong_given_decision": {
+        "decimal": 0.006209987195902689,
+        "fraction": "97/15620"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "budget": 0,
+      "decision_rate": {
+        "decimal": 0.948915,
+        "fraction": "189783/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.0,
+        "fraction": "0/1"
+      },
+      "experiment": "choice_shared1_budget0_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.051085,
+          "fraction": "10217/200000"
+        },
+        "correct": {
+          "decimal": 0.94302225,
+          "fraction": "3772089/4000000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.00589275,
+          "fraction": "23571/4000000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.006209987195902689,
+        "fraction": "97/15620"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 2,
+      "decision_rate": {
+        "decimal": 0.810405,
+        "fraction": "162081/200000"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.0,
+        "fraction": "2/1"
+      },
+      "experiment": "choice_shared1_budget2_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.189595,
+          "fraction": "37919/200000"
+        },
+        "correct": {
+          "decimal": 0.731025,
+          "fraction": "29241/40000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "source_0"
+      ],
+      "static_cost": 2,
+      "wrong_given_decision": {
+        "decimal": 0.09795102448775612,
+        "fraction": "196/2001"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.07348725,
+        "fraction": "293949/4000000"
+      },
+      "budget": 2,
+      "decision_rate": {
+        "decimal": 0.95661,
+        "fraction": "95661/100000"
+      },
+      "expected_attack_cost": {
+        "decimal": 0.1469745,
+        "fraction": "293949/2000000"
+      },
+      "experiment": "choice_shared1_budget2_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.04339,
+          "fraction": "4339/100000"
+        },
+        "correct": {
+          "decimal": 0.87723,
+          "fraction": "87723/100000"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.07938,
+          "fraction": "3969/50000"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 0.0829805249788315,
+        "fraction": "98/1181"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 3,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 3.0,
+        "fraction": "3/1"
+      },
+      "experiment": "choice_shared1_budget3_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "common_upstream"
+      ],
+      "static_cost": 3,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.96610725,
+        "fraction": "3864429/4000000"
+      },
+      "budget": 3,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.8248345,
+        "fraction": "5649669/2000000"
+      },
+      "experiment": "choice_shared1_budget3_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 4,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 3.0,
+        "fraction": "3/1"
+      },
+      "experiment": "choice_shared1_budget4_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "common_upstream"
+      ],
+      "static_cost": 3,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.96610725,
+        "fraction": "3864429/4000000"
+      },
+      "budget": 4,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.8248345,
+        "fraction": "5649669/2000000"
+      },
+      "experiment": "choice_shared1_budget4_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 6,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 3.0,
+        "fraction": "3/1"
+      },
+      "experiment": "choice_shared1_budget6_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "common_upstream"
+      ],
+      "static_cost": 3,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.96610725,
+        "fraction": "3864429/4000000"
+      },
+      "budget": 6,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.8248345,
+        "fraction": "5649669/2000000"
+      },
+      "experiment": "choice_shared1_budget6_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "none; ex ante choice",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      },
+      "budget": 12,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 3.0,
+        "fraction": "3/1"
+      },
+      "experiment": "choice_shared1_budget12_static",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": [
+        "common_upstream"
+      ],
+      "static_cost": 3,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    },
+    {
+      "actions": [
+        {
+          "controls": [
+            0
+          ],
+          "cost": 2,
+          "id": "source_0"
+        },
+        {
+          "controls": [
+            1
+          ],
+          "cost": 4,
+          "id": "source_1"
+        },
+        {
+          "controls": [
+            2
+          ],
+          "cost": 6,
+          "id": "source_2"
+        },
+        {
+          "controls": [
+            0,
+            1,
+            2
+          ],
+          "cost": 3,
+          "id": "common_upstream"
+        }
+      ],
+      "adaptive_observation": "all realized error and availability states",
+      "attack_mode": "corrupt",
+      "attempt_rate": {
+        "decimal": 0.96610725,
+        "fraction": "3864429/4000000"
+      },
+      "budget": 12,
+      "decision_rate": {
+        "decimal": 0.972,
+        "fraction": "243/250"
+      },
+      "expected_attack_cost": {
+        "decimal": 2.8248345,
+        "fraction": "5649669/2000000"
+      },
+      "experiment": "choice_shared1_budget12_adaptive",
+      "latent_parameters": {
+        "error": {
+          "decimal": 0.05,
+          "fraction": "1/20"
+        },
+        "unavailable": {
+          "decimal": 0.1,
+          "fraction": "1/10"
+        }
+      },
+      "latent_state_count": 64,
+      "objective": "maximize wrong probability subject to budget; break ties by lower cost then action IDs",
+      "rates_per_offer": {
+        "blocked": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "cancel": {
+          "decimal": 0.028,
+          "fraction": "7/250"
+        },
+        "correct": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "defer": {
+          "decimal": 0.0,
+          "fraction": "0/1"
+        },
+        "wrong": {
+          "decimal": 0.972,
+          "fraction": "243/250"
+        }
+      },
+      "source_count": 3,
+      "static_choice": null,
+      "static_cost": null,
+      "wrong_given_decision": {
+        "decimal": 1.0,
+        "fraction": "1/1"
+      }
+    }
+  ],
+  "minimum_authority_covers": {
+    "independent": {
+      "availability": [
+        6,
+        [
+          "source_0",
+          "source_1"
+        ]
+      ],
+      "integrity": [
+        6,
+        [
+          "source_0",
+          "source_1"
+        ]
+      ]
+    },
+    "shared": {
+      "availability": [
+        3,
+        [
+          "common_upstream"
+        ]
+      ],
+      "integrity": [
+        3,
+        [
+          "common_upstream"
+        ]
+      ]
+    }
+  }
+}

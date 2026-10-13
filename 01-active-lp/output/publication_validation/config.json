@@ -1,0 +1,83 @@
+{
+  "adaptive": "greedy state-aware one-step expected terminal wealth improvement using fixed latent belief; observed current state, projected scheduled terminal time; wait/buy/sell/LP/joint buy+LP candidates; 4 decision epochs; not global optimality or equilibrium",
+  "adaptive_stress_histories": 4,
+  "adaptive_stress_seed_start": 42000,
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 51000,
+  "buy_signal": "mixture of uniform and latent probabilities; latent weight 0.15+0.7*trade_index/trade_count",
+  "clock": "independent integer interarrival gaps uniform 1..6; no restamped holdout copies",
+  "depths": [
+    80,
+    100,
+    160
+  ],
+  "development_seed_start": 31000,
+  "funding": {
+    "fixed_20": "floor+20",
+    "floor": "b*ln(N)",
+    "proportional_20pct": "floor*1.20"
+  },
+  "historical": "paper_quick MC seeds2100..2163 restamped12/48/168 and odd-parity adversarial holdout; descriptive replication, not fresh evidence",
+  "historical_enabled": true,
+  "holdout_histories": 96,
+  "holdout_seed_start": 41000,
+  "inference": "95% percentile intervals, 2000 bootstrap resamples of independent history IDs; paired policy/funding contrasts; no CI for stress/adaptive packs",
+  "latent_process": "softmax of iid Normal(0,0.8) logits; fixed latent outcome probabilities per path",
+  "lp_depth_fractions": [
+    0.1,
+    0.2,
+    0.4
+  ],
+  "lp_entry_count": [
+    1,
+    4
+  ],
+  "lp_fee_bps": [
+    50,
+    200
+  ],
+  "outcome_draw": "independent categorical draw from latent probabilities after requests are constructed",
+  "outcomes": [
+    3,
+    5,
+    8
+  ],
+  "primary_estimands": [
+    "mean late-minus-founder terminal NAV/deposit gap",
+    "mean absolute gap"
+  ],
+  "protocol_fee_bps": [
+    0,
+    25
+  ],
+  "residual_rules": {
+    "capital_accounts": "D_k+trade_cash_k-net_claim_k[winner]; resolved-only component bookkeeping; fees unchanged",
+    "flat": "pool allocated by depth shares",
+    "normalized_015": "historical lambda=.15 normalized time premium; diagnostic, never retuned"
+  },
+  "schema": "publication_validation_v1",
+  "scope": "decimal reference accounting after cancellation reserve guard; synthetic workload, no AVM/production safety or universal fairness claim",
+  "secondary_metrics": [
+    "LP profit/deposit",
+    "founder and last LP returns",
+    "5/50/95 percentiles",
+    "min/max",
+    "conditional 5% tails",
+    "guard rejection counts and quoted blocked proceeds",
+    "minimum refund and outcome coverage",
+    "fee yield"
+  ],
+  "sell_request_probability": 0.35,
+  "status": "fixed diagnostic comparison; no parameter selection or retuning",
+  "trade_count": [
+    40,
+    100
+  ],
+  "trade_depth_fractions": [
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "traders": 8
+}

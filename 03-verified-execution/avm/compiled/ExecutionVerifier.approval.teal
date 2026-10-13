@@ -1,0 +1,547 @@
+#pragma version 11
+#pragma typetrack false
+
+// contract.ExecutionVerifier.approval_program() -> uint64:
+main:
+    intcblock 1 32 0 8
+    bytecblock 0x77686f6c65 0x637478 0x636e74 0x726f6f74 0x726573756c74 0x6b6579 0x7369676e6564 0x514d5f455845435f4e4f44455f563100
+    intc_2 // 0
+    dupn 8
+    pushbytes ""
+    dupn 5
+    // 03-verified-execution/avm/contract.py:13
+    // assert Txn.on_completion == OnCompleteAction.NoOp
+    txn OnCompletion
+    !
+    assert
+    // 03-verified-execution/avm/contract.py:14
+    // assert Txn.rekey_to == Global.zero_address
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:15
+    // if Txn.application_id == 0:
+    txn ApplicationID
+    bnz main_after_if_else@14
+    // 03-verified-execution/avm/contract.py:16
+    // assert Txn.num_app_args == 6
+    txn NumAppArgs
+    pushint 6
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:17
+    // context = Txn.application_args(0)
+    txna ApplicationArgs 0
+    dup
+    bury 16
+    // 03-verified-execution/avm/contract.py:18
+    // count_bytes = Txn.application_args(1)
+    txna ApplicationArgs 1
+    // 03-verified-execution/avm/contract.py:19
+    // root = Txn.application_args(2)
+    txna ApplicationArgs 2
+    bury 10
+    // 03-verified-execution/avm/contract.py:20
+    // result = Txn.application_args(3)
+    txna ApplicationArgs 3
+    bury 11
+    // 03-verified-execution/avm/contract.py:21
+    // key = Txn.application_args(4)
+    txna ApplicationArgs 4
+    bury 15
+    // 03-verified-execution/avm/contract.py:22
+    // whole = Txn.application_args(5)
+    txna ApplicationArgs 5
+    bury 9
+    // 03-verified-execution/avm/contract.py:23
+    // assert context.length == 32
+    swap
+    len
+    intc_1 // 32
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:24
+    // assert count_bytes.length == 8
+    dup
+    len
+    intc_3 // 8
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:25
+    // count = op.btoi(count_bytes)
+    btoi
+    dup
+    bury 7
+    // 03-verified-execution/avm/contract.py:26
+    // assert count > 0 and count <= 64
+    bz main_bool_false@4
+    dig 5
+    pushint 64
+    <=
+    bz main_bool_false@4
+    intc_0 // 1
+
+main_bool_merge@5:
+    // 03-verified-execution/avm/contract.py:26
+    // assert count > 0 and count <= 64
+    assert
+    // 03-verified-execution/avm/contract.py:27
+    // assert count & (count - 1) == 0
+    dig 5
+    dup
+    intc_0 // 1
+    -
+    &
+    !
+    assert
+    // 03-verified-execution/avm/contract.py:28
+    // assert root.length == 32 and result.length == 32
+    dig 7
+    len
+    intc_1 // 32
+    ==
+    bz main_bool_false@8
+    dig 8
+    len
+    intc_1 // 32
+    ==
+    bz main_bool_false@8
+    intc_0 // 1
+
+main_bool_merge@9:
+    // 03-verified-execution/avm/contract.py:28
+    // assert root.length == 32 and result.length == 32
+    assert
+    // 03-verified-execution/avm/contract.py:29
+    // assert key.length == 32 and whole.length == 32
+    dig 12
+    len
+    intc_1 // 32
+    ==
+    bz main_bool_false@12
+    dig 6
+    len
+    intc_1 // 32
+    ==
+    bz main_bool_false@12
+    intc_0 // 1
+
+main_bool_merge@13:
+    // 03-verified-execution/avm/contract.py:29
+    // assert key.length == 32 and whole.length == 32
+    assert
+    // 03-verified-execution/avm/contract.py:30
+    // op.AppGlobal.put(b"ctx", context)
+    bytec_1 // 0x637478
+    dig 15
+    app_global_put
+    // 03-verified-execution/avm/contract.py:31
+    // op.AppGlobal.put(b"cnt", count)
+    bytec_2 // 0x636e74
+    dig 6
+    app_global_put
+    // 03-verified-execution/avm/contract.py:32
+    // op.AppGlobal.put(b"root", root)
+    bytec_3 // 0x726f6f74
+    dig 8
+    app_global_put
+    // 03-verified-execution/avm/contract.py:33
+    // op.AppGlobal.put(b"result", result)
+    bytec 4 // 0x726573756c74
+    dig 9
+    app_global_put
+    // 03-verified-execution/avm/contract.py:34
+    // op.AppGlobal.put(b"key", key)
+    bytec 5 // 0x6b6579
+    dig 13
+    app_global_put
+    // 03-verified-execution/avm/contract.py:35
+    // op.AppGlobal.put(b"whole", whole)
+    bytec_0 // 0x77686f6c65
+    dig 7
+    app_global_put
+    // 03-verified-execution/avm/contract.py:36
+    // return True
+    intc_0 // 1
+    return
+
+main_bool_false@12:
+    intc_2 // 0
+    b main_bool_merge@13
+
+main_bool_false@8:
+    intc_2 // 0
+    b main_bool_merge@9
+
+main_bool_false@4:
+    intc_2 // 0
+    b main_bool_merge@5
+
+main_after_if_else@14:
+    // 03-verified-execution/avm/contract.py:37
+    // assert Txn.num_app_args > 0
+    txn NumAppArgs
+    assert
+    // 03-verified-execution/avm/contract.py:38
+    // method = Txn.application_args(0)
+    txna ApplicationArgs 0
+    dup
+    bury 13
+    // 03-verified-execution/avm/contract.py:39
+    // if method == b"budget":
+    pushbytes 0x627564676574
+    ==
+    bz main_after_if_else@16
+    // 03-verified-execution/avm/contract.py:40
+    // assert Txn.num_app_args == 1
+    txn NumAppArgs
+    intc_0 // 1
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:41
+    // return True
+    intc_0 // 1
+    return
+
+main_after_if_else@16:
+    // 03-verified-execution/avm/contract.py:42
+    // if method == b"whole":
+    dig 11
+    bytec_0 // 0x77686f6c65
+    ==
+    bz main_after_if_else@18
+    // 03-verified-execution/avm/contract.py:43
+    // assert Txn.num_app_args == 2
+    txn NumAppArgs
+    pushint 2
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:44
+    // return op.sha256(Txn.application_args(1)) == op.AppGlobal.get_bytes(b"whole")
+    txna ApplicationArgs 1
+    sha256
+    bytec_0 // 0x77686f6c65
+    app_global_get
+    ==
+    return
+
+main_after_if_else@18:
+    // 03-verified-execution/avm/contract.py:45
+    // assert method == b"member" or method == b"signed"
+    dig 11
+    pushbytes 0x6d656d626572
+    ==
+    dup
+    bury 3
+    bnz main_bool_true@20
+    dig 11
+    bytec 6 // 0x7369676e6564
+    ==
+    bz main_bool_false@21
+
+main_bool_true@20:
+    intc_0 // 1
+
+main_bool_merge@22:
+    // 03-verified-execution/avm/contract.py:45
+    // assert method == b"member" or method == b"signed"
+    assert
+    // 03-verified-execution/avm/contract.py:46
+    // if method == b"member":
+    dig 1
+    bz main_else_body@24
+    // 03-verified-execution/avm/contract.py:47
+    // assert Txn.num_app_args == 6
+    txn NumAppArgs
+    pushint 6
+    ==
+    assert
+
+main_after_if_else@25:
+    // 03-verified-execution/avm/contract.py:50
+    // assert Txn.application_args(1) == op.AppGlobal.get_bytes(b"ctx")
+    txna ApplicationArgs 1
+    bytec_1 // 0x637478
+    app_global_get
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:51
+    // assert Txn.application_args(2).length == 8
+    txna ApplicationArgs 2
+    len
+    intc_3 // 8
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:52
+    // count = op.btoi(Txn.application_args(2))
+    txna ApplicationArgs 2
+    btoi
+    // 03-verified-execution/avm/contract.py:53
+    // assert count == op.AppGlobal.get_uint64(b"cnt")
+    bytec_2 // 0x636e74
+    app_global_get
+    dig 1
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:54
+    // assert Txn.application_args(3).length == 8
+    txna ApplicationArgs 3
+    len
+    intc_3 // 8
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:55
+    // index = op.btoi(Txn.application_args(3))
+    txna ApplicationArgs 3
+    btoi
+    dup
+    bury 6
+    // 03-verified-execution/avm/contract.py:56
+    // assert index < count
+    dig 1
+    <
+    assert
+    // 03-verified-execution/avm/contract.py:57
+    // payload = Txn.application_args(4)
+    txna ApplicationArgs 4
+    bury 12
+    // 03-verified-execution/avm/contract.py:58
+    // proof = Txn.application_args(5)
+    txna ApplicationArgs 5
+    bury 11
+    // 03-verified-execution/avm/contract.py:59
+    // depth = UInt64(0)
+    intc_2 // 0
+    bury 6
+    bury 1
+
+main_while_top@26:
+    // 03-verified-execution/avm/contract.py:61
+    // while width > 1:
+    dup
+    intc_0 // 1
+    >
+    bz main_after_while@28
+    // 03-verified-execution/avm/contract.py:62
+    // width >>= 1
+    dup
+    intc_0 // 1
+    shr
+    bury 1
+    // 03-verified-execution/avm/contract.py:63
+    // depth += 1
+    dig 4
+    intc_0 // 1
+    +
+    bury 5
+    b main_while_top@26
+
+main_after_while@28:
+    // 03-verified-execution/avm/contract.py:64
+    // assert proof.length == depth * 32
+    dig 9
+    len
+    dig 5
+    intc_1 // 32
+    *
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:66
+    // b"QM_EXEC_LEAF_V1\x00" + Txn.application_args(1)
+    pushbytes 0x514d5f455845435f4c4541465f563100
+    txna ApplicationArgs 1
+    concat
+    // 03-verified-execution/avm/contract.py:67
+    // + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    txna ApplicationArgs 2
+    // 03-verified-execution/avm/contract.py:66-67
+    // b"QM_EXEC_LEAF_V1\x00" + Txn.application_args(1)
+    // + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    concat
+    // 03-verified-execution/avm/contract.py:67
+    // + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    txna ApplicationArgs 3
+    // 03-verified-execution/avm/contract.py:66-67
+    // b"QM_EXEC_LEAF_V1\x00" + Txn.application_args(1)
+    // + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    concat
+    // 03-verified-execution/avm/contract.py:67
+    // + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    dig 11
+    sha256
+    // 03-verified-execution/avm/contract.py:66-67
+    // b"QM_EXEC_LEAF_V1\x00" + Txn.application_args(1)
+    // + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    concat
+    // 03-verified-execution/avm/contract.py:65-68
+    // hashed = op.sha256(
+    //     b"QM_EXEC_LEAF_V1\x00" + Txn.application_args(1)
+    //     + Txn.application_args(2) + Txn.application_args(3) + op.sha256(payload)
+    // )
+    sha256
+    bury 14
+    // 03-verified-execution/avm/contract.py:69
+    // pos = UInt64(0)
+    intc_2 // 0
+    bury 3
+
+main_while_top@29:
+    // 03-verified-execution/avm/contract.py:70
+    // while pos < depth:
+    dig 2
+    dig 5
+    <
+    bz main_after_while@34
+    // 03-verified-execution/avm/contract.py:71
+    // sibling = op.extract(proof, pos * 32, 32)
+    dig 2
+    intc_1 // 32
+    *
+    dig 10
+    swap
+    intc_1 // 32
+    extract3
+    // 03-verified-execution/avm/contract.py:72
+    // if index & 1:
+    dig 4
+    intc_0 // 1
+    &
+    bz main_else_body@32
+    // 03-verified-execution/avm/contract.py:73
+    // hashed = op.sha256(b"QM_EXEC_NODE_V1\x00" + sibling + hashed)
+    bytec 7 // 0x514d5f455845435f4e4f44455f563100
+    swap
+    concat
+    dig 14
+    concat
+    sha256
+    bury 14
+
+main_after_if_else@33:
+    // 03-verified-execution/avm/contract.py:76
+    // index >>= 1
+    dig 3
+    intc_0 // 1
+    shr
+    bury 4
+    // 03-verified-execution/avm/contract.py:77
+    // pos += 1
+    dig 2
+    intc_0 // 1
+    +
+    bury 3
+    b main_while_top@29
+
+main_else_body@32:
+    // 03-verified-execution/avm/contract.py:75
+    // hashed = op.sha256(b"QM_EXEC_NODE_V1\x00" + hashed + sibling)
+    bytec 7 // 0x514d5f455845435f4e4f44455f563100
+    dig 15
+    concat
+    swap
+    concat
+    sha256
+    bury 14
+    b main_after_if_else@33
+
+main_after_while@34:
+    // 03-verified-execution/avm/contract.py:79
+    // b"QM_EXEC_ROOT_V1\x00" + Txn.application_args(1)
+    pushbytes 0x514d5f455845435f524f4f545f563100
+    txna ApplicationArgs 1
+    concat
+    // 03-verified-execution/avm/contract.py:80
+    // + Txn.application_args(2) + hashed
+    txna ApplicationArgs 2
+    // 03-verified-execution/avm/contract.py:79-80
+    // b"QM_EXEC_ROOT_V1\x00" + Txn.application_args(1)
+    // + Txn.application_args(2) + hashed
+    concat
+    dig 14
+    concat
+    // 03-verified-execution/avm/contract.py:78-81
+    // root = op.sha256(
+    //     b"QM_EXEC_ROOT_V1\x00" + Txn.application_args(1)
+    //     + Txn.application_args(2) + hashed
+    // )
+    sha256
+    dup
+    bury 9
+    // 03-verified-execution/avm/contract.py:82
+    // assert root == op.AppGlobal.get_bytes(b"root")
+    bytec_3 // 0x726f6f74
+    app_global_get
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:83
+    // if method == b"signed":
+    dig 11
+    bytec 6 // 0x7369676e6564
+    ==
+    bz main_after_if_else@36
+    // 03-verified-execution/avm/contract.py:84
+    // signature = Txn.application_args(6)
+    txna ApplicationArgs 6
+    // 03-verified-execution/avm/contract.py:85
+    // assert signature.length == 64
+    dup
+    len
+    pushint 64
+    ==
+    assert
+    // 03-verified-execution/avm/contract.py:87
+    // b"QM_EXEC_AVM_RECEIPT_V1\x00" + Txn.application_args(1)
+    pushbytes 0x514d5f455845435f41564d5f524543454950545f563100
+    txna ApplicationArgs 1
+    concat
+    // 03-verified-execution/avm/contract.py:88
+    // + Txn.application_args(2) + root + op.AppGlobal.get_bytes(b"result")
+    txna ApplicationArgs 2
+    // 03-verified-execution/avm/contract.py:87-88
+    // b"QM_EXEC_AVM_RECEIPT_V1\x00" + Txn.application_args(1)
+    // + Txn.application_args(2) + root + op.AppGlobal.get_bytes(b"result")
+    concat
+    dig 9
+    concat
+    // 03-verified-execution/avm/contract.py:88
+    // + Txn.application_args(2) + root + op.AppGlobal.get_bytes(b"result")
+    bytec 4 // 0x726573756c74
+    app_global_get
+    // 03-verified-execution/avm/contract.py:87-88
+    // b"QM_EXEC_AVM_RECEIPT_V1\x00" + Txn.application_args(1)
+    // + Txn.application_args(2) + root + op.AppGlobal.get_bytes(b"result")
+    concat
+    // 03-verified-execution/avm/contract.py:86-89
+    // message = op.sha256(
+    //     b"QM_EXEC_AVM_RECEIPT_V1\x00" + Txn.application_args(1)
+    //     + Txn.application_args(2) + root + op.AppGlobal.get_bytes(b"result")
+    // )
+    sha256
+    // 03-verified-execution/avm/contract.py:90
+    // assert op.ed25519verify_bare(message, signature, op.AppGlobal.get_bytes(b"key"))
+    bytec 5 // 0x6b6579
+    app_global_get
+    swap
+    cover 2
+    ed25519verify_bare
+    assert
+
+main_after_if_else@36:
+    // 03-verified-execution/avm/contract.py:91
+    // return True
+    intc_0 // 1
+    return
+
+main_else_body@24:
+    // 03-verified-execution/avm/contract.py:49
+    // assert Txn.num_app_args == 7
+    txn NumAppArgs
+    pushint 7
+    ==
+    assert
+    b main_after_if_else@25
+
+main_bool_false@21:
+    intc_2 // 0
+    b main_bool_merge@22

@@ -1,0 +1,9 @@
+{
+  "source": "03-verified-execution/output/quorum/selection_summary.json",
+  "source_sha256": "2742d6d5c197fc636e54f0af111eda59fa3ae5456b665a6c3482bf582b64f7c8",
+  "generator": "scripts/render_execution_figures.py",
+  "generator_sha256": "8b7e1ff78c353fb89802ec4c6d9ccee12d5c3f525b99baf2b35f73a8fbcc6639",
+  "matplotlib": "3.10.8",
+  "top": "p=.1, exact 1-(1-p)^m and saved seeded Monte Carlo Wilson intervals",
+  "bottom": "proved sharp bounds max(0,(p+alpha-1)/alpha) to min(1,p/alpha), p=.1; not observed field rates"
+}

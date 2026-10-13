@@ -1,0 +1,7927 @@
+{
+  "version": 3,
+  "sources": [
+    "../contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAYe;;AAAA;AAAP;AACO;;AAAgB;;AAAhB;AAAP;AACG;;AAAX;;;AACmB;;AAAoB;;AAApB;AAAP;AACU;;;AAAA;AAAA;;AACI;;;AACP;;;AAAA;;AACE;;;AAAA;;AACH;;;AAAA;;AACE;;;AAAA;;AACD;AAAA;AAAkB;AAAlB;AAAP;AACO;AAAA;AAAsB;AAAtB;AAAP;AACQ;AAAA;AAAA;;AACD;;;AAAc;;AAAS;;AAAT;AAAd;;;;AAAP;AACgB;;AAAA;AAAQ;AAAR;AAAT;AAAA;AAAP;AACO;;AAAA;AAAe;AAAf;AAAA;;;AAAsB;;AAAA;AAAiB;AAAjB;AAAtB;;;;AAAP;AACO;;AAAA;AAAc;AAAd;AAAA;;;AAAqB;;AAAA;AAAgB;AAAhB;AAArB;;;;AAAP;AACiB;AAAjB;;AAAA;AACiB;AAAjB;;AAAA;AACiB;AAAjB;;AAAA;AACiB;;AAAjB;;AAAA;AACiB;;AAAjB;;AAAA;AACiB;AAAjB;;AAAA;AACO;AAAP;;;;;;;;;;;;;AACG;;AAAP;AACS;;;AAAA;AAAA;;AACI;;;;;;;;AAAV;AAAX;;;AACmB;;AAAoB;AAApB;AAAP;AACO;AAAP;AACD;;AAAU;AAAV;AAAX;;;AACmB;;AAAoB;;AAApB;AAAP;AACiB;;;AAAV;AAA6D;AAAvB;AAAtC;AAAP;AACG;;AAAU;;;;;;;;AAAV;AAAA;AAAA;;AAAA;;;AAAuB;;AAAU;;AAAV;AAAvB;;;;AAAP;AACR;;AAAA;;;AACmB;;AAAoB;;AAApB;AAAP;AAGG;;;AAAkD;AAAvB;AAA3B;AAAP;AACO;;;AAAA;AAAkC;AAAlC;AAAP;AACgB;;;AAAR;AACgC;AAAxB;AAAT;;AAAA;AAAP;AACO;;;AAAA;AAAkC;AAAlC;AAAP;AACgB;;;AAAR;AAAA;AAAA;;AACD;;AAAA;AAAP;AACU;;;AAAA;;AACF;;;AAAA;;AACA;AAAR;;;;AAEM;AAAQ;AAAR;AAAd;;;AACY;AAAU;AAAV;AAAA;;AACA;;AAAS;AAAT;AAAA;;;;;AACG;;AAAA;AAAgB;;AAAQ;AAAR;AAAhB;AAAP;AAEI;;;;;;;;;;;;;;;;;;AAAyB;;;AAAzB;AACE;;;AADF;AAC4B;;;AAD5B;AACsD;;AAAA;AADtD;AADK;AAAA;;AAIH;AAAN;;AACM;;AAAA;;AAAA;AAAd;;;AACwC;;AAAM;AAAN;AAAlB;;AAAA;AAA4B;AAA5B;AACP;;AAAQ;AAAR;AAAf;;;AACmC;;AAAA;AAAA;AAAA;;AAAA;AAAV;AAAA;;AAGb;;AAAU;AAAV;AAAA;;AACA;;AAAO;AAAP;AAAA;;;;;AAFuB;;AAAA;;AAAA;AAAA;AAAA;AAAV;AAAA;;;;;AAIb;;;;;;;;;;;;;;;;;;AAAyB;;;AAAzB;AACE;;;AADF;AAAA;;AAAA;AADG;AAAA;AAAA;;AAI+B;AAAvB;AAAR;AAAP;AACG;;AAAU;;AAAV;AAAX;;;AACwB;;;AACL;AAAA;AAAoB;;AAApB;AAAP;AAEI;;;;;;;;;;;;;;;;;;;;;;;;;AAAgC;;;AAAhC;AACE;;;AADF;AAAA;;AAAA;AAC0D;;AAAvB;AADnC;AADM;AAI8D;;AAAvB;AAA1C;AAAA;;AAAA;AAAP;AACG;AAAP;AA1CW;;AAAoB;;AAApB;AAAP;;;;;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "contract.ExecutionVerifier.approval_program",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 1 32 0 8"
+    },
+    "7": {
+      "op": "bytecblock 0x77686f6c65 0x637478 0x636e74 0x726f6f74 0x726573756c74 0x6b6579 0x7369676e6564 0x514d5f455845435f4e4f44455f563100"
+    },
+    "63": {
+      "op": "intc_2 // 0",
+      "stack_out": [
+        "context#0"
+      ]
+    },
+    "64": {
+      "op": "dupn 8",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ]
+    },
+    "66": {
+      "op": "pushbytes \"\"",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0"
+      ]
+    },
+    "68": {
+      "op": "dupn 5",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "70": {
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%0#0"
+      ]
+    },
+    "72": {
+      "op": "!",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%1#0"
+      ]
+    },
+    "73": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "74": {
+      "op": "txn RekeyTo",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%2#0"
+      ]
+    },
+    "76": {
+      "op": "global ZeroAddress",
+      "defined_out": [
+        "tmp%2#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%2#0",
+        "tmp%3#0"
+      ]
+    },
+    "78": {
+      "op": "==",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%4#0"
+      ]
+    },
+    "79": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "80": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%5#0"
+      ]
+    },
+    "82": {
+      "op": "bnz main_after_if_else@14",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "85": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%7#0"
+      ]
+    },
+    "87": {
+      "op": "pushint 6",
+      "defined_out": [
+        "6",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%7#0",
+        "6"
+      ]
+    },
+    "89": {
+      "op": "==",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%8#0"
+      ]
+    },
+    "90": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "91": {
+      "op": "txna ApplicationArgs 0"
+    },
+    "94": {
+      "op": "dup",
+      "defined_out": [
+        "context#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "context#0"
+      ]
+    },
+    "95": {
+      "op": "bury 16",
+      "defined_out": [
+        "context#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0"
+      ]
+    },
+    "97": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0"
+      ]
+    },
+    "100": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0",
+        "root#0"
+      ]
+    },
+    "103": {
+      "op": "bury 10",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0"
+      ]
+    },
+    "105": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0",
+        "result#0"
+      ]
+    },
+    "108": {
+      "op": "bury 11",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0"
+      ]
+    },
+    "110": {
+      "op": "txna ApplicationArgs 4",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0",
+        "key#0"
+      ]
+    },
+    "113": {
+      "op": "bury 15",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0"
+      ]
+    },
+    "115": {
+      "op": "txna ApplicationArgs 5",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0",
+        "whole#0"
+      ]
+    },
+    "118": {
+      "op": "bury 9",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "context#0",
+        "count_bytes#0"
+      ]
+    },
+    "120": {
+      "op": "swap",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "context#0"
+      ]
+    },
+    "121": {
+      "op": "len",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%15#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "tmp%15#0"
+      ]
+    },
+    "122": {
+      "op": "intc_1 // 32",
+      "defined_out": [
+        "32",
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%15#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "tmp%15#0",
+        "32"
+      ]
+    },
+    "123": {
+      "op": "==",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%16#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "tmp%16#0"
+      ]
+    },
+    "124": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0"
+      ]
+    },
+    "125": {
+      "op": "dup",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "count_bytes#0 (copy)",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "count_bytes#0 (copy)"
+      ]
+    },
+    "126": {
+      "op": "len",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%17#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "tmp%17#0"
+      ]
+    },
+    "127": {
+      "op": "intc_3 // 8",
+      "defined_out": [
+        "8",
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%17#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "tmp%17#0",
+        "8"
+      ]
+    },
+    "128": {
+      "op": "==",
+      "defined_out": [
+        "context#0",
+        "count_bytes#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%18#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0",
+        "tmp%18#0"
+      ]
+    },
+    "129": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count_bytes#0"
+      ]
+    },
+    "130": {
+      "op": "btoi",
+      "defined_out": [
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "131": {
+      "op": "dup",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "count#0"
+      ]
+    },
+    "132": {
+      "op": "bury 7",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "134": {
+      "op": "bz main_bool_false@4",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "137": {
+      "op": "dig 5",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "139": {
+      "op": "pushint 64",
+      "defined_out": [
+        "64",
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "64"
+      ]
+    },
+    "141": {
+      "op": "<=",
+      "defined_out": [
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "tmp%21#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%21#0"
+      ]
+    },
+    "142": {
+      "op": "bz main_bool_false@4",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "145": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "and_result%0#0",
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%0#0"
+      ]
+    },
+    "146": {
+      "block": "main_bool_merge@5",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%0#0"
+      ],
+      "op": "assert",
+      "defined_out": [],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "147": {
+      "op": "dig 5",
+      "defined_out": [
+        "count#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "149": {
+      "op": "dup",
+      "defined_out": [
+        "count#0",
+        "count#0 (copy)"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "count#0 (copy)"
+      ]
+    },
+    "150": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "count#0",
+        "count#0 (copy)"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "count#0 (copy)",
+        "1"
+      ]
+    },
+    "151": {
+      "op": "-",
+      "defined_out": [
+        "count#0",
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%22#0"
+      ]
+    },
+    "152": {
+      "op": "&",
+      "defined_out": [
+        "count#0",
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%23#0"
+      ]
+    },
+    "153": {
+      "op": "!",
+      "defined_out": [
+        "count#0",
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%24#0"
+      ]
+    },
+    "154": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "155": {
+      "op": "dig 7",
+      "defined_out": [
+        "count#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "root#0"
+      ]
+    },
+    "157": {
+      "op": "len",
+      "defined_out": [
+        "count#0",
+        "root#0",
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%25#0"
+      ]
+    },
+    "158": {
+      "op": "intc_1 // 32",
+      "defined_out": [
+        "32",
+        "count#0",
+        "root#0",
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%25#0",
+        "32"
+      ]
+    },
+    "159": {
+      "op": "==",
+      "defined_out": [
+        "count#0",
+        "root#0",
+        "tmp%26#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%26#0"
+      ]
+    },
+    "160": {
+      "op": "bz main_bool_false@8",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "163": {
+      "op": "dig 8",
+      "defined_out": [
+        "count#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "result#0"
+      ]
+    },
+    "165": {
+      "op": "len",
+      "defined_out": [
+        "count#0",
+        "result#0",
+        "root#0",
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%27#0"
+      ]
+    },
+    "166": {
+      "op": "intc_1 // 32",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%27#0",
+        "32"
+      ]
+    },
+    "167": {
+      "op": "==",
+      "defined_out": [
+        "count#0",
+        "result#0",
+        "root#0",
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%28#0"
+      ]
+    },
+    "168": {
+      "op": "bz main_bool_false@8",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "171": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "and_result%1#0",
+        "count#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%1#0"
+      ]
+    },
+    "172": {
+      "block": "main_bool_merge@9",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%1#0"
+      ],
+      "op": "assert",
+      "defined_out": [],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "173": {
+      "op": "dig 12",
+      "defined_out": [
+        "key#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "key#0"
+      ]
+    },
+    "175": {
+      "op": "len",
+      "defined_out": [
+        "key#0",
+        "tmp%29#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%29#0"
+      ]
+    },
+    "176": {
+      "op": "intc_1 // 32",
+      "defined_out": [
+        "32",
+        "key#0",
+        "tmp%29#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%29#0",
+        "32"
+      ]
+    },
+    "177": {
+      "op": "==",
+      "defined_out": [
+        "key#0",
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%30#0"
+      ]
+    },
+    "178": {
+      "op": "bz main_bool_false@12",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "181": {
+      "op": "dig 6",
+      "defined_out": [
+        "key#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "whole#0"
+      ]
+    },
+    "183": {
+      "op": "len",
+      "defined_out": [
+        "key#0",
+        "tmp%31#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%31#0"
+      ]
+    },
+    "184": {
+      "op": "intc_1 // 32",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%31#0",
+        "32"
+      ]
+    },
+    "185": {
+      "op": "==",
+      "defined_out": [
+        "key#0",
+        "tmp%32#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%32#0"
+      ]
+    },
+    "186": {
+      "op": "bz main_bool_false@12",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "189": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "and_result%2#0",
+        "key#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%2#0"
+      ]
+    },
+    "190": {
+      "block": "main_bool_merge@13",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%2#0"
+      ],
+      "op": "assert",
+      "defined_out": [],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "191": {
+      "op": "bytec_1 // 0x637478",
+      "defined_out": [
+        "0x637478"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x637478"
+      ]
+    },
+    "192": {
+      "op": "dig 15",
+      "defined_out": [
+        "0x637478",
+        "context#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x637478",
+        "context#0"
+      ]
+    },
+    "194": {
+      "op": "app_global_put",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "195": {
+      "op": "bytec_2 // 0x636e74",
+      "defined_out": [
+        "0x636e74",
+        "context#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x636e74"
+      ]
+    },
+    "196": {
+      "op": "dig 6",
+      "defined_out": [
+        "0x636e74",
+        "context#0",
+        "count#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x636e74",
+        "count#0"
+      ]
+    },
+    "198": {
+      "op": "app_global_put",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "199": {
+      "op": "bytec_3 // 0x726f6f74",
+      "defined_out": [
+        "0x726f6f74",
+        "context#0",
+        "count#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x726f6f74"
+      ]
+    },
+    "200": {
+      "op": "dig 8",
+      "defined_out": [
+        "0x726f6f74",
+        "context#0",
+        "count#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x726f6f74",
+        "root#0"
+      ]
+    },
+    "202": {
+      "op": "app_global_put",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "203": {
+      "op": "bytec 4 // 0x726573756c74",
+      "defined_out": [
+        "0x726573756c74",
+        "context#0",
+        "count#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x726573756c74"
+      ]
+    },
+    "205": {
+      "op": "dig 9",
+      "defined_out": [
+        "0x726573756c74",
+        "context#0",
+        "count#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x726573756c74",
+        "result#0"
+      ]
+    },
+    "207": {
+      "op": "app_global_put",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "208": {
+      "op": "bytec 5 // 0x6b6579",
+      "defined_out": [
+        "0x6b6579",
+        "context#0",
+        "count#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x6b6579"
+      ]
+    },
+    "210": {
+      "op": "dig 13",
+      "defined_out": [
+        "0x6b6579",
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x6b6579",
+        "key#0"
+      ]
+    },
+    "212": {
+      "op": "app_global_put",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "213": {
+      "op": "bytec_0 // 0x77686f6c65",
+      "defined_out": [
+        "0x77686f6c65",
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x77686f6c65"
+      ]
+    },
+    "214": {
+      "op": "dig 7",
+      "defined_out": [
+        "0x77686f6c65",
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x77686f6c65",
+        "whole#0"
+      ]
+    },
+    "216": {
+      "op": "app_global_put",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "217": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "context#0",
+        "count#0",
+        "key#0",
+        "result#0",
+        "root#0",
+        "whole#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "1"
+      ]
+    },
+    "218": {
+      "op": "return",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "219": {
+      "block": "main_bool_false@12",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "intc_2 // 0",
+      "defined_out": [
+        "and_result%2#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%2#0"
+      ]
+    },
+    "220": {
+      "op": "b main_bool_merge@13"
+    },
+    "223": {
+      "block": "main_bool_false@8",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "intc_2 // 0",
+      "defined_out": [
+        "and_result%1#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%1#0"
+      ]
+    },
+    "224": {
+      "op": "b main_bool_merge@9"
+    },
+    "227": {
+      "block": "main_bool_false@4",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "intc_2 // 0",
+      "defined_out": [
+        "and_result%0#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "and_result%0#0"
+      ]
+    },
+    "228": {
+      "op": "b main_bool_merge@5"
+    },
+    "231": {
+      "block": "main_after_if_else@14",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%33#0"
+      ]
+    },
+    "233": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "234": {
+      "op": "txna ApplicationArgs 0"
+    },
+    "237": {
+      "op": "dup",
+      "defined_out": [
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0",
+        "method#0"
+      ]
+    },
+    "238": {
+      "op": "bury 13",
+      "defined_out": [
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0"
+      ]
+    },
+    "240": {
+      "op": "pushbytes 0x627564676574",
+      "defined_out": [
+        "0x627564676574",
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0",
+        "0x627564676574"
+      ]
+    },
+    "248": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%36#0"
+      ]
+    },
+    "249": {
+      "op": "bz main_after_if_else@16",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "252": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "method#0",
+        "tmp%37#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%37#0"
+      ]
+    },
+    "254": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "method#0",
+        "tmp%37#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%37#0",
+        "1"
+      ]
+    },
+    "255": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%38#0"
+      ]
+    },
+    "256": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "257": {
+      "op": "intc_0 // 1",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "1"
+      ]
+    },
+    "258": {
+      "op": "return",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "259": {
+      "block": "main_after_if_else@16",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "dig 11",
+      "defined_out": [
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0"
+      ]
+    },
+    "261": {
+      "op": "bytec_0 // 0x77686f6c65",
+      "defined_out": [
+        "0x77686f6c65",
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0",
+        "0x77686f6c65"
+      ]
+    },
+    "262": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%39#0"
+      ]
+    },
+    "263": {
+      "op": "bz main_after_if_else@18",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "266": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "method#0",
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%40#0"
+      ]
+    },
+    "268": {
+      "op": "pushint 2",
+      "defined_out": [
+        "2",
+        "method#0",
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%40#0",
+        "2"
+      ]
+    },
+    "270": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%41#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%41#0"
+      ]
+    },
+    "271": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "272": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "method#0",
+        "tmp%42#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%42#0"
+      ]
+    },
+    "275": {
+      "op": "sha256",
+      "defined_out": [
+        "method#0",
+        "tmp%43#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%43#0"
+      ]
+    },
+    "276": {
+      "op": "bytec_0 // 0x77686f6c65",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%43#0",
+        "0x77686f6c65"
+      ]
+    },
+    "277": {
+      "op": "app_global_get",
+      "defined_out": [
+        "method#0",
+        "tmp%43#0",
+        "tmp%44#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%43#0",
+        "tmp%44#0"
+      ]
+    },
+    "278": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%45#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%45#0"
+      ]
+    },
+    "279": {
+      "op": "return",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "280": {
+      "block": "main_after_if_else@18",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "dig 11",
+      "defined_out": [
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0"
+      ]
+    },
+    "282": {
+      "op": "pushbytes 0x6d656d626572",
+      "defined_out": [
+        "0x6d656d626572",
+        "method#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0",
+        "0x6d656d626572"
+      ]
+    },
+    "290": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%46#0"
+      ]
+    },
+    "291": {
+      "op": "dup",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%46#0",
+        "tmp%46#0"
+      ]
+    },
+    "292": {
+      "op": "bury 3",
+      "defined_out": [
+        "method#0",
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%46#0"
+      ]
+    },
+    "294": {
+      "op": "bnz main_bool_true@20",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "297": {
+      "op": "dig 11",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0"
+      ]
+    },
+    "299": {
+      "op": "bytec 6 // 0x7369676e6564",
+      "defined_out": [
+        "0x7369676e6564",
+        "method#0",
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0",
+        "0x7369676e6564"
+      ]
+    },
+    "301": {
+      "op": "==",
+      "defined_out": [
+        "method#0",
+        "tmp%46#0",
+        "tmp%47#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%47#0"
+      ]
+    },
+    "302": {
+      "op": "bz main_bool_false@21",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "305": {
+      "block": "main_bool_true@20",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "or_result%0#0"
+      ]
+    },
+    "306": {
+      "block": "main_bool_merge@22",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "or_result%0#0"
+      ],
+      "op": "assert",
+      "defined_out": [],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "307": {
+      "op": "dig 1",
+      "defined_out": [
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%46#0"
+      ]
+    },
+    "309": {
+      "op": "bz main_else_body@24",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "312": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%46#0",
+        "tmp%49#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%49#0"
+      ]
+    },
+    "314": {
+      "op": "pushint 6",
+      "defined_out": [
+        "6",
+        "tmp%46#0",
+        "tmp%49#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%49#0",
+        "6"
+      ]
+    },
+    "316": {
+      "op": "==",
+      "defined_out": [
+        "tmp%46#0",
+        "tmp%50#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%50#0"
+      ]
+    },
+    "317": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "318": {
+      "block": "main_after_if_else@25",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%53#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%53#0"
+      ]
+    },
+    "321": {
+      "op": "bytec_1 // 0x637478",
+      "defined_out": [
+        "0x637478",
+        "tmp%53#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%53#0",
+        "0x637478"
+      ]
+    },
+    "322": {
+      "op": "app_global_get",
+      "defined_out": [
+        "tmp%53#0",
+        "tmp%54#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%53#0",
+        "tmp%54#0"
+      ]
+    },
+    "323": {
+      "op": "==",
+      "defined_out": [
+        "tmp%55#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%55#0"
+      ]
+    },
+    "324": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "325": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%56#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%56#0"
+      ]
+    },
+    "328": {
+      "op": "len",
+      "defined_out": [
+        "tmp%57#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%57#0"
+      ]
+    },
+    "329": {
+      "op": "intc_3 // 8",
+      "defined_out": [
+        "8",
+        "tmp%57#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%57#0",
+        "8"
+      ]
+    },
+    "330": {
+      "op": "==",
+      "defined_out": [
+        "tmp%58#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%58#0"
+      ]
+    },
+    "331": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "332": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%59#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%59#0"
+      ]
+    },
+    "335": {
+      "op": "btoi",
+      "defined_out": [
+        "count#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "336": {
+      "op": "bytec_2 // 0x636e74",
+      "defined_out": [
+        "0x636e74",
+        "count#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "0x636e74"
+      ]
+    },
+    "337": {
+      "op": "app_global_get",
+      "defined_out": [
+        "count#0",
+        "tmp%61#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%61#0"
+      ]
+    },
+    "338": {
+      "op": "dig 1",
+      "defined_out": [
+        "count#0",
+        "count#0 (copy)",
+        "tmp%61#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%61#0",
+        "count#0 (copy)"
+      ]
+    },
+    "340": {
+      "op": "==",
+      "defined_out": [
+        "count#0",
+        "tmp%62#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%62#0"
+      ]
+    },
+    "341": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "342": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "count#0",
+        "tmp%63#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%63#0"
+      ]
+    },
+    "345": {
+      "op": "len",
+      "defined_out": [
+        "count#0",
+        "tmp%64#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%64#0"
+      ]
+    },
+    "346": {
+      "op": "intc_3 // 8",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%64#0",
+        "8"
+      ]
+    },
+    "347": {
+      "op": "==",
+      "defined_out": [
+        "count#0",
+        "tmp%65#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%65#0"
+      ]
+    },
+    "348": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "349": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "count#0",
+        "tmp%66#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%66#0"
+      ]
+    },
+    "352": {
+      "op": "btoi",
+      "defined_out": [
+        "count#0",
+        "index#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "index#0"
+      ]
+    },
+    "353": {
+      "op": "dup",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "index#0",
+        "index#0"
+      ]
+    },
+    "354": {
+      "op": "bury 6",
+      "defined_out": [
+        "count#0",
+        "index#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "index#0"
+      ]
+    },
+    "356": {
+      "op": "dig 1",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "index#0",
+        "count#0 (copy)"
+      ]
+    },
+    "358": {
+      "op": "<",
+      "defined_out": [
+        "count#0",
+        "index#0",
+        "tmp%68#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "tmp%68#0"
+      ]
+    },
+    "359": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "360": {
+      "op": "txna ApplicationArgs 4",
+      "defined_out": [
+        "count#0",
+        "index#0",
+        "payload#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "payload#0"
+      ]
+    },
+    "363": {
+      "op": "bury 12",
+      "defined_out": [
+        "count#0",
+        "index#0",
+        "payload#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "365": {
+      "op": "txna ApplicationArgs 5",
+      "defined_out": [
+        "count#0",
+        "index#0",
+        "payload#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "proof#0"
+      ]
+    },
+    "368": {
+      "op": "bury 11",
+      "defined_out": [
+        "count#0",
+        "index#0",
+        "payload#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0"
+      ]
+    },
+    "370": {
+      "op": "intc_2 // 0",
+      "defined_out": [
+        "count#0",
+        "depth#0",
+        "index#0",
+        "payload#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "count#0",
+        "depth#0"
+      ]
+    },
+    "371": {
+      "op": "bury 6",
+      "defined_out": [
+        "count#0",
+        "depth#0",
+        "index#0",
+        "payload#0",
+        "proof#0",
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "width#1"
+      ]
+    },
+    "373": {
+      "op": "bury 1",
+      "defined_out": [
+        "count#0",
+        "depth#0",
+        "index#0",
+        "payload#0",
+        "proof#0",
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "375": {
+      "block": "main_while_top@26",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "dup",
+      "defined_out": [
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "width#1"
+      ]
+    },
+    "376": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "width#1",
+        "1"
+      ]
+    },
+    "377": {
+      "op": ">",
+      "defined_out": [
+        "tmp%71#0",
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%71#0"
+      ]
+    },
+    "378": {
+      "op": "bz main_after_while@28",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "381": {
+      "op": "dup",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "width#1"
+      ]
+    },
+    "382": {
+      "op": "intc_0 // 1",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "width#1",
+        "1"
+      ]
+    },
+    "383": {
+      "op": "shr",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "width#1"
+      ]
+    },
+    "384": {
+      "op": "bury 1",
+      "defined_out": [
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "386": {
+      "op": "dig 4",
+      "defined_out": [
+        "depth#0",
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "depth#0"
+      ]
+    },
+    "388": {
+      "op": "intc_0 // 1",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "depth#0",
+        "1"
+      ]
+    },
+    "389": {
+      "op": "+",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "depth#0"
+      ]
+    },
+    "390": {
+      "op": "bury 5",
+      "defined_out": [
+        "depth#0",
+        "width#1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "392": {
+      "op": "b main_while_top@26"
+    },
+    "395": {
+      "block": "main_after_while@28",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "dig 9",
+      "defined_out": [
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "proof#0"
+      ]
+    },
+    "397": {
+      "op": "len",
+      "defined_out": [
+        "proof#0",
+        "tmp%74#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%74#0"
+      ]
+    },
+    "398": {
+      "op": "dig 5",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%74#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%74#0",
+        "depth#0"
+      ]
+    },
+    "400": {
+      "op": "intc_1 // 32",
+      "defined_out": [
+        "32",
+        "depth#0",
+        "proof#0",
+        "tmp%74#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%74#0",
+        "depth#0",
+        "32"
+      ]
+    },
+    "401": {
+      "op": "*",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%74#0",
+        "tmp%75#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%74#0",
+        "tmp%75#0"
+      ]
+    },
+    "402": {
+      "op": "==",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%76#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%76#0"
+      ]
+    },
+    "403": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "404": {
+      "op": "pushbytes 0x514d5f455845435f4c4541465f563100",
+      "defined_out": [
+        "0x514d5f455845435f4c4541465f563100",
+        "depth#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x514d5f455845435f4c4541465f563100"
+      ]
+    },
+    "422": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "0x514d5f455845435f4c4541465f563100",
+        "depth#0",
+        "proof#0",
+        "tmp%77#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x514d5f455845435f4c4541465f563100",
+        "tmp%77#0"
+      ]
+    },
+    "425": {
+      "op": "concat",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%78#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%78#0"
+      ]
+    },
+    "426": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%78#0",
+        "tmp%79#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%78#0",
+        "tmp%79#0"
+      ]
+    },
+    "429": {
+      "op": "concat",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%80#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%80#0"
+      ]
+    },
+    "430": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%80#0",
+        "tmp%81#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%80#0",
+        "tmp%81#0"
+      ]
+    },
+    "433": {
+      "op": "concat",
+      "defined_out": [
+        "depth#0",
+        "proof#0",
+        "tmp%82#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%82#0"
+      ]
+    },
+    "434": {
+      "op": "dig 11",
+      "defined_out": [
+        "depth#0",
+        "payload#0",
+        "proof#0",
+        "tmp%82#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%82#0",
+        "payload#0"
+      ]
+    },
+    "436": {
+      "op": "sha256",
+      "defined_out": [
+        "depth#0",
+        "payload#0",
+        "proof#0",
+        "tmp%82#0",
+        "tmp%83#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%82#0",
+        "tmp%83#0"
+      ]
+    },
+    "437": {
+      "op": "concat",
+      "defined_out": [
+        "depth#0",
+        "payload#0",
+        "proof#0",
+        "tmp%84#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%84#0"
+      ]
+    },
+    "438": {
+      "op": "sha256",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "payload#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "hashed#0"
+      ]
+    },
+    "439": {
+      "op": "bury 14",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "payload#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "441": {
+      "op": "intc_2 // 0",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "payload#0",
+        "pos#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0"
+      ]
+    },
+    "442": {
+      "op": "bury 3",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "payload#0",
+        "pos#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "444": {
+      "block": "main_while_top@29",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "dig 2",
+      "defined_out": [
+        "pos#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0"
+      ]
+    },
+    "446": {
+      "op": "dig 5",
+      "defined_out": [
+        "depth#0",
+        "pos#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0",
+        "depth#0"
+      ]
+    },
+    "448": {
+      "op": "<",
+      "defined_out": [
+        "depth#0",
+        "pos#0",
+        "tmp%86#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%86#0"
+      ]
+    },
+    "449": {
+      "op": "bz main_after_while@34",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "452": {
+      "op": "dig 2",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0"
+      ]
+    },
+    "454": {
+      "op": "intc_1 // 32",
+      "defined_out": [
+        "32",
+        "depth#0",
+        "pos#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0",
+        "32"
+      ]
+    },
+    "455": {
+      "op": "*",
+      "defined_out": [
+        "depth#0",
+        "pos#0",
+        "tmp%87#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%87#0"
+      ]
+    },
+    "456": {
+      "op": "dig 10",
+      "defined_out": [
+        "depth#0",
+        "pos#0",
+        "proof#0",
+        "tmp%87#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%87#0",
+        "proof#0"
+      ]
+    },
+    "458": {
+      "op": "swap",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "proof#0",
+        "tmp%87#0"
+      ]
+    },
+    "459": {
+      "op": "intc_1 // 32",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "proof#0",
+        "tmp%87#0",
+        "32"
+      ]
+    },
+    "460": {
+      "op": "extract3",
+      "defined_out": [
+        "depth#0",
+        "pos#0",
+        "proof#0",
+        "sibling#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0"
+      ]
+    },
+    "461": {
+      "op": "dig 4",
+      "defined_out": [
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "sibling#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "index#0"
+      ]
+    },
+    "463": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "sibling#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "index#0",
+        "1"
+      ]
+    },
+    "464": {
+      "op": "&",
+      "defined_out": [
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "sibling#0",
+        "tmp%89#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "tmp%89#0"
+      ]
+    },
+    "465": {
+      "op": "bz main_else_body@32",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0"
+      ]
+    },
+    "468": {
+      "op": "bytec 7 // 0x514d5f455845435f4e4f44455f563100",
+      "defined_out": [
+        "0x514d5f455845435f4e4f44455f563100",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "sibling#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "0x514d5f455845435f4e4f44455f563100"
+      ]
+    },
+    "470": {
+      "op": "swap",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x514d5f455845435f4e4f44455f563100",
+        "sibling#0"
+      ]
+    },
+    "471": {
+      "op": "concat",
+      "defined_out": [
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "tmp%91#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%91#0"
+      ]
+    },
+    "472": {
+      "op": "dig 14",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "tmp%91#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%91#0",
+        "hashed#0"
+      ]
+    },
+    "474": {
+      "op": "concat",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "index#0",
+        "pos#0",
+        "proof#0",
+        "tmp%92#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%92#0"
+      ]
+    },
+    "475": {
+      "op": "sha256",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "hashed#0"
+      ]
+    },
+    "476": {
+      "op": "bury 14",
+      "defined_out": [
+        "depth#0",
+        "hashed#0",
+        "index#0",
+        "pos#0",
+        "proof#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "478": {
+      "block": "main_after_if_else@33",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "dig 3",
+      "defined_out": [
+        "index#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "index#0"
+      ]
+    },
+    "480": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "index#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "index#0",
+        "1"
+      ]
+    },
+    "481": {
+      "op": "shr",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "index#0"
+      ]
+    },
+    "482": {
+      "op": "bury 4",
+      "defined_out": [
+        "index#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "484": {
+      "op": "dig 2",
+      "defined_out": [
+        "index#0",
+        "pos#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0"
+      ]
+    },
+    "486": {
+      "op": "intc_0 // 1",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0",
+        "1"
+      ]
+    },
+    "487": {
+      "op": "+",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "pos#0"
+      ]
+    },
+    "488": {
+      "op": "bury 3",
+      "defined_out": [
+        "index#0",
+        "pos#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "490": {
+      "op": "b main_while_top@29"
+    },
+    "493": {
+      "block": "main_else_body@32",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0"
+      ],
+      "op": "bytec 7 // 0x514d5f455845435f4e4f44455f563100",
+      "defined_out": [
+        "0x514d5f455845435f4e4f44455f563100"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "0x514d5f455845435f4e4f44455f563100"
+      ]
+    },
+    "495": {
+      "op": "dig 15",
+      "defined_out": [
+        "0x514d5f455845435f4e4f44455f563100",
+        "hashed#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "0x514d5f455845435f4e4f44455f563100",
+        "hashed#0"
+      ]
+    },
+    "497": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "tmp%94#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "sibling#0",
+        "tmp%94#0"
+      ]
+    },
+    "498": {
+      "op": "swap",
+      "defined_out": [
+        "hashed#0",
+        "sibling#0",
+        "tmp%94#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%94#0",
+        "sibling#0"
+      ]
+    },
+    "499": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "tmp%95#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%95#0"
+      ]
+    },
+    "500": {
+      "op": "sha256",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "hashed#0"
+      ]
+    },
+    "501": {
+      "op": "bury 14",
+      "defined_out": [
+        "hashed#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "503": {
+      "op": "b main_after_if_else@33"
+    },
+    "506": {
+      "block": "main_after_while@34",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "pushbytes 0x514d5f455845435f524f4f545f563100",
+      "defined_out": [
+        "0x514d5f455845435f524f4f545f563100"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x514d5f455845435f524f4f545f563100"
+      ]
+    },
+    "524": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "0x514d5f455845435f524f4f545f563100",
+        "tmp%99#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "0x514d5f455845435f524f4f545f563100",
+        "tmp%99#0"
+      ]
+    },
+    "527": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%100#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%100#0"
+      ]
+    },
+    "528": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%100#0",
+        "tmp%101#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%100#0",
+        "tmp%101#0"
+      ]
+    },
+    "531": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%102#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%102#0"
+      ]
+    },
+    "532": {
+      "op": "dig 14",
+      "defined_out": [
+        "hashed#0",
+        "tmp%102#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%102#0",
+        "hashed#0"
+      ]
+    },
+    "534": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "tmp%103#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%103#0"
+      ]
+    },
+    "535": {
+      "op": "sha256",
+      "defined_out": [
+        "hashed#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "root#0"
+      ]
+    },
+    "536": {
+      "op": "dup",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "root#0",
+        "root#0"
+      ]
+    },
+    "537": {
+      "op": "bury 9",
+      "defined_out": [
+        "hashed#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "root#0"
+      ]
+    },
+    "539": {
+      "op": "bytec_3 // 0x726f6f74",
+      "defined_out": [
+        "0x726f6f74",
+        "hashed#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "root#0",
+        "0x726f6f74"
+      ]
+    },
+    "540": {
+      "op": "app_global_get",
+      "defined_out": [
+        "hashed#0",
+        "root#0",
+        "tmp%105#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "root#0",
+        "tmp%105#0"
+      ]
+    },
+    "541": {
+      "op": "==",
+      "defined_out": [
+        "hashed#0",
+        "root#0",
+        "tmp%106#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%106#0"
+      ]
+    },
+    "542": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "543": {
+      "op": "dig 11",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0"
+      ]
+    },
+    "545": {
+      "op": "bytec 6 // 0x7369676e6564",
+      "defined_out": [
+        "0x7369676e6564",
+        "hashed#0",
+        "method#0",
+        "root#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "method#0",
+        "0x7369676e6564"
+      ]
+    },
+    "547": {
+      "op": "==",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "tmp%107#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%107#0"
+      ]
+    },
+    "548": {
+      "op": "bz main_after_if_else@36",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "551": {
+      "op": "txna ApplicationArgs 6",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0"
+      ]
+    },
+    "554": {
+      "op": "dup",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "signature#0 (copy)"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "signature#0 (copy)"
+      ]
+    },
+    "555": {
+      "op": "len",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%109#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%109#0"
+      ]
+    },
+    "556": {
+      "op": "pushint 64",
+      "defined_out": [
+        "64",
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%109#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%109#0",
+        "64"
+      ]
+    },
+    "558": {
+      "op": "==",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%110#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%110#0"
+      ]
+    },
+    "559": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0"
+      ]
+    },
+    "560": {
+      "op": "pushbytes 0x514d5f455845435f41564d5f524543454950545f563100",
+      "defined_out": [
+        "0x514d5f455845435f41564d5f524543454950545f563100",
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "0x514d5f455845435f41564d5f524543454950545f563100"
+      ]
+    },
+    "585": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "0x514d5f455845435f41564d5f524543454950545f563100",
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%111#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "0x514d5f455845435f41564d5f524543454950545f563100",
+        "tmp%111#0"
+      ]
+    },
+    "588": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%112#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%112#0"
+      ]
+    },
+    "589": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%112#0",
+        "tmp%113#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%112#0",
+        "tmp%113#0"
+      ]
+    },
+    "592": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%114#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%114#0"
+      ]
+    },
+    "593": {
+      "op": "dig 9",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%114#0",
+        "root#0"
+      ]
+    },
+    "595": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%115#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%115#0"
+      ]
+    },
+    "596": {
+      "op": "bytec 4 // 0x726573756c74",
+      "defined_out": [
+        "0x726573756c74",
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%115#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%115#0",
+        "0x726573756c74"
+      ]
+    },
+    "598": {
+      "op": "app_global_get",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%115#0",
+        "tmp%116#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%115#0",
+        "tmp%116#0"
+      ]
+    },
+    "599": {
+      "op": "concat",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%117#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%117#0"
+      ]
+    },
+    "600": {
+      "op": "sha256",
+      "defined_out": [
+        "hashed#0",
+        "message#0",
+        "method#0",
+        "root#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "message#0"
+      ]
+    },
+    "601": {
+      "op": "bytec 5 // 0x6b6579",
+      "defined_out": [
+        "0x6b6579",
+        "hashed#0",
+        "message#0",
+        "method#0",
+        "root#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "message#0",
+        "0x6b6579"
+      ]
+    },
+    "603": {
+      "op": "app_global_get",
+      "defined_out": [
+        "hashed#0",
+        "message#0",
+        "method#0",
+        "root#0",
+        "signature#0",
+        "tmp%119#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "message#0",
+        "tmp%119#0"
+      ]
+    },
+    "604": {
+      "op": "swap",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "signature#0",
+        "tmp%119#0",
+        "message#0"
+      ]
+    },
+    "605": {
+      "op": "cover 2",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "message#0",
+        "signature#0",
+        "tmp%119#0"
+      ]
+    },
+    "607": {
+      "op": "ed25519verify_bare",
+      "defined_out": [
+        "hashed#0",
+        "method#0",
+        "root#0",
+        "tmp%120#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%120#0"
+      ]
+    },
+    "608": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "609": {
+      "block": "main_after_if_else@36",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "1"
+      ]
+    },
+    "610": {
+      "op": "return",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "611": {
+      "block": "main_else_body@24",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%51#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%51#0"
+      ]
+    },
+    "613": {
+      "op": "pushint 7",
+      "defined_out": [
+        "7",
+        "tmp%51#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%51#0",
+        "7"
+      ]
+    },
+    "615": {
+      "op": "==",
+      "defined_out": [
+        "tmp%52#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "tmp%52#0"
+      ]
+    },
+    "616": {
+      "op": "assert",
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ]
+    },
+    "617": {
+      "op": "b main_after_if_else@25"
+    },
+    "620": {
+      "block": "main_bool_false@21",
+      "stack_in": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1"
+      ],
+      "op": "intc_2 // 0",
+      "defined_out": [
+        "or_result%0#0"
+      ],
+      "stack_out": [
+        "context#0",
+        "hashed#0",
+        "key#0",
+        "method#0",
+        "payload#0",
+        "proof#0",
+        "result#0",
+        "root#0",
+        "whole#0",
+        "count#0",
+        "depth#0",
+        "index#0",
+        "pos#0",
+        "tmp%46#0",
+        "width#1",
+        "or_result%0#0"
+      ]
+    },
+    "621": {
+      "op": "b main_bool_merge@22"
+    }
+  }
+}

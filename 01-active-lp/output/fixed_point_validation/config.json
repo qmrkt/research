@@ -1,0 +1,25 @@
+{
+  "bootstrap_quantization": "common to A/B/C: max(ceil(exact funding*1e6)/1e6, C initial funding requirement) + one micro-unit; C requirement includes quantized uniform prices and its one-micro entry margin; actual deposit recorded",
+  "claim_order": "all LP residuals first, then all senior claims, then all LP fees; permutation coverage is in test_layer_c_final_policy.py",
+  "fixed_point_quantization": "certified integer interval quotes: buy ceil upper, sell floor lower; each fee floor; removed partial basis floor; last partial claim gets remaining basis; once-only rational-weight residual snapshot, each entitlement floor; dust retained",
+  "fixed_point_reserve_margin_micro": 0,
+  "funding": [
+    "floor",
+    "fixed_20",
+    "proportional_20pct"
+  ],
+  "histories": 96,
+  "lambda": "0.15",
+  "policy": "reserve_pool",
+  "pricing_domain": "2..64 outcomes, uint64 q/b/shares, normalized spread and trade size <=64; explicit rejection outside certified domain",
+  "pricing_source": "certified_math for trade quotes; unchanged April12 helper for quantized prices and liquidity scaling; all source SHA retained",
+  "quote_validation": "every C trade quote compared with independent 80-digit Decimal LMSR at C's exact integer q,b; mathematical enclosure proof is separate from sampled cross-model error",
+  "request_generator": "publication_validation.generate_history; same fresh holdout IDs",
+  "schema": "fixed_point_validation_v1",
+  "scope": "Certified conservative integer quote intervals plus empirical cross-model fidelity and guarded settlement accounting. No compiled AVM behavior, opcode budget, or production safety claim.",
+  "seed_start": 41000,
+  "state_evolution": "identical requested actions; quotes and LP price expectations use each model's own current state; execution disagreements retained",
+  "stress": "all seven publication_validation.stress_histories, separately summarized",
+  "terminal_branches": "all N resolved outcomes plus cancellation for each accepted active history",
+  "weight_scheme": "linear_lambda_normalized"
+}

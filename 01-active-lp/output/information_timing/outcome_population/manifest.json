@@ -1,0 +1,61 @@
+{
+  "signal_target": "outcome",
+  "selected": {
+    "lambda": 0,
+    "feasible": true,
+    "mean_information_value": 0.004284529561581471,
+    "public_entry_rate": 0.1851851851851852,
+    "private_entry_rate": 0.1981278535684793,
+    "public_profitable_baseline_regimes": 5,
+    "public_profitable_baseline_regimes_preserved": 5,
+    "mean_public_offered_return": 0.02947576653138355,
+    "mean_private_offered_return": 0.03376029609296502
+  },
+  "selection_at_upper_boundary": false,
+  "holdout": [
+    {
+      "arm": "flat_0.0",
+      "regime_count": 32,
+      "mean_information_value": 0.0027618726717611227,
+      "mean_public_offered_return": 0.005061423896786938,
+      "mean_private_offered_return": 0.007823296568548061,
+      "public_entry_rate": 0.125,
+      "private_entry_rate": 0.11100974627153656,
+      "strict_information_value_regimes": 6
+    },
+    {
+      "arm": "normalized_0.15",
+      "regime_count": 32,
+      "mean_information_value": 0.0019591652420705864,
+      "mean_public_offered_return": 0.0,
+      "mean_private_offered_return": 0.0019591652420705864,
+      "public_entry_rate": 0.0,
+      "private_entry_rate": 0.07828825992354971,
+      "strict_information_value_regimes": 4
+    },
+    {
+      "arm": "isolated_cohort_0.0",
+      "regime_count": 32,
+      "mean_information_value": 0.0,
+      "mean_public_offered_return": 0.024600860562384873,
+      "mean_private_offered_return": 0.024600860562384873,
+      "public_entry_rate": 0.25,
+      "private_entry_rate": 0.25,
+      "strict_information_value_regimes": 0
+    },
+    {
+      "arm": "selected_0",
+      "regime_count": 32,
+      "mean_information_value": 0.0027618726717611227,
+      "mean_public_offered_return": 0.005061423896786938,
+      "mean_private_offered_return": 0.007823296568548061,
+      "public_entry_rate": 0.125,
+      "private_entry_rate": 0.11100974627153656,
+      "strict_information_value_regimes": 6
+    }
+  ],
+  "exact_world_rows": 11475,
+  "design_sha256": "a9fbcf144f2206931c9a1dea6bf76cca9b666c3cfc34317fde8a573ed35f8b58",
+  "module_sha256": "67ebf8ad6c20dd3d86996834f2df6a5b4829d4ef03794c8f938774488caeaa10",
+  "reference_engine_sha256": "c0ee366f20321c841fc48d9a7847c06f4cb1dfb361d749bd3cb97db056137e6b"
+}

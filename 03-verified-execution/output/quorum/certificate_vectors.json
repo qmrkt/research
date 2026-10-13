@@ -1,0 +1,87 @@
+[
+  {
+    "accepted": true,
+    "expected": true,
+    "name": "distinct_run_trace_binary_same_shared_result"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "duplicate_signer"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "insufficient_signers"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "tampered_receipt"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "cross_request_replay"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "changed_snapshot"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "changed_terminal"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "changed_semantic_projection"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "unassigned_runner"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "three_of_five_one_vendor_rejected_by_domain_policy"
+  },
+  {
+    "accepted": true,
+    "expected": true,
+    "name": "cross_vendor_certificate"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "policy_swap"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "expires_before_finalization_deadline"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "receipt_before_registration"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "epoch_replay"
+  },
+  {
+    "accepted": true,
+    "expected": true,
+    "name": "valid_before_revocation"
+  },
+  {
+    "accepted": false,
+    "expected": false,
+    "name": "revoked_before_finalization"
+  }
+]

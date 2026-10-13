@@ -1,0 +1,941 @@
+[
+  {
+    "baseline_whole_trace_digest": "3f6446ae9ad7f7855d78e47ab272f6649a5ed793de066f394f6d7588cb917df4",
+    "byte_accounting": "stored request/context/root/count and ordinary transaction framing excluded from both; selective proof adds u64 index; two independent paths not multiproof",
+    "complete_leaf_reveal_bytes": 1504,
+    "count": 4,
+    "full_trace_bytes": 2166,
+    "one_leaf_disclosure_reduction": 0.9215143120960295,
+    "parent_index": 0,
+    "selected_index": 1,
+    "selective_leaf_bytes": 98,
+    "selective_one_leaf_wire_bytes": 170,
+    "selective_two_leaf_wire_bytes": 1433,
+    "sibling_hash_bytes": 64,
+    "source_leaf_bytes": 1191,
+    "timing": {
+      "full_semantic_replay_including_RSA": {
+        "maximum_ns": 536730.84,
+        "median_ns": 530322.5,
+        "minimum_ns": 527012.92,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 52947833,
+            "iterations": 100,
+            "ns_per_operation": 529478.33
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 53032250,
+            "iterations": 100,
+            "ns_per_operation": 530322.5
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 52701292,
+            "iterations": 100,
+            "ns_per_operation": 527012.92
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 53072375,
+            "iterations": 100,
+            "ns_per_operation": 530723.75
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 53673084,
+            "iterations": 100,
+            "ns_per_operation": 536730.84
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 52858625,
+            "iterations": 100,
+            "ns_per_operation": 528586.25
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 53483042,
+            "iterations": 100,
+            "ns_per_operation": 534830.42
+          }
+        ]
+      },
+      "merkle_one_leaf_inclusion": {
+        "maximum_ns": 7349.25,
+        "median_ns": 7284.333,
+        "minimum_ns": 7214.208,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 7349250,
+            "iterations": 1000,
+            "ns_per_operation": 7349.25
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 7292708,
+            "iterations": 1000,
+            "ns_per_operation": 7292.708
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 7284333,
+            "iterations": 1000,
+            "ns_per_operation": 7284.333
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 7251000,
+            "iterations": 1000,
+            "ns_per_operation": 7251.0
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 7336042,
+            "iterations": 1000,
+            "ns_per_operation": 7336.042
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 7214208,
+            "iterations": 1000,
+            "ns_per_operation": 7214.208
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 7229750,
+            "iterations": 1000,
+            "ns_per_operation": 7229.75
+          }
+        ]
+      },
+      "selective_leaf_canonical_parse": {
+        "maximum_ns": 9785.0,
+        "median_ns": 8963.75,
+        "minimum_ns": 8119.58,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 911583,
+            "iterations": 100,
+            "ns_per_operation": 9115.83
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 811958,
+            "iterations": 100,
+            "ns_per_operation": 8119.58
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 896375,
+            "iterations": 100,
+            "ns_per_operation": 8963.75
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 963542,
+            "iterations": 100,
+            "ns_per_operation": 9635.42
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 824292,
+            "iterations": 100,
+            "ns_per_operation": 8242.92
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 812375,
+            "iterations": 100,
+            "ns_per_operation": 8123.75
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 978500,
+            "iterations": 100,
+            "ns_per_operation": 9785.0
+          }
+        ]
+      },
+      "two_leaf_local_check": {
+        "maximum_ns": 159233.75,
+        "median_ns": 135567.08,
+        "minimum_ns": 134131.66,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 13556708,
+            "iterations": 100,
+            "ns_per_operation": 135567.08
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 13653083,
+            "iterations": 100,
+            "ns_per_operation": 136530.83
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 15923375,
+            "iterations": 100,
+            "ns_per_operation": 159233.75
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 13417125,
+            "iterations": 100,
+            "ns_per_operation": 134171.25
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 13413166,
+            "iterations": 100,
+            "ns_per_operation": 134131.66
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 13480500,
+            "iterations": 100,
+            "ns_per_operation": 134805.0
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 13818167,
+            "iterations": 100,
+            "ns_per_operation": 138181.67
+          }
+        ]
+      },
+      "whole_trace_canonical_parse": {
+        "maximum_ns": 47258.75,
+        "median_ns": 45915.83,
+        "minimum_ns": 44656.25,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 4725875,
+            "iterations": 100,
+            "ns_per_operation": 47258.75
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 4581166,
+            "iterations": 100,
+            "ns_per_operation": 45811.66
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 4467166,
+            "iterations": 100,
+            "ns_per_operation": 44671.66
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 4599792,
+            "iterations": 100,
+            "ns_per_operation": 45997.92
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 4591583,
+            "iterations": 100,
+            "ns_per_operation": 45915.83
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 4620917,
+            "iterations": 100,
+            "ns_per_operation": 46209.17
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 4465625,
+            "iterations": 100,
+            "ns_per_operation": 44656.25
+          }
+        ]
+      },
+      "whole_trace_hash": {
+        "maximum_ns": 1889.208,
+        "median_ns": 1778.25,
+        "minimum_ns": 1773.709,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 1773709,
+            "iterations": 1000,
+            "ns_per_operation": 1773.709
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 1815375,
+            "iterations": 1000,
+            "ns_per_operation": 1815.375
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 1778250,
+            "iterations": 1000,
+            "ns_per_operation": 1778.25
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 1801625,
+            "iterations": 1000,
+            "ns_per_operation": 1801.625
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 1889208,
+            "iterations": 1000,
+            "ns_per_operation": 1889.208
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 1773958,
+            "iterations": 1000,
+            "ns_per_operation": 1773.958
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 1774792,
+            "iterations": 1000,
+            "ns_per_operation": 1774.792
+          }
+        ]
+      }
+    },
+    "trace_merkle_root": "63e725c3a0216df88ded75aa42f327eed1617ad4e50be0cd8a17878838bf2e29",
+    "two_leaf_disclosure_reduction": 0.3384118190212373
+  },
+  {
+    "baseline_whole_trace_digest": "ac15acc061711ef8bf7126df3ee0976db5f903724996a75f4386e92c8314a72b",
+    "byte_accounting": "stored request/context/root/count and ordinary transaction framing excluded from both; selective proof adds u64 index; two independent paths not multiproof",
+    "complete_leaf_reveal_bytes": 2682,
+    "count": 16,
+    "full_trace_bytes": 3356,
+    "one_leaf_disclosure_reduction": 0.9302741358760429,
+    "parent_index": 7,
+    "selected_index": 8,
+    "selective_leaf_bytes": 98,
+    "selective_one_leaf_wire_bytes": 234,
+    "selective_two_leaf_wire_bytes": 468,
+    "sibling_hash_bytes": 128,
+    "source_leaf_bytes": 1191,
+    "timing": {
+      "full_semantic_replay_including_RSA": {
+        "maximum_ns": 892195.42,
+        "median_ns": 884534.17,
+        "minimum_ns": 872107.92,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 89219542,
+            "iterations": 100,
+            "ns_per_operation": 892195.42
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 88721500,
+            "iterations": 100,
+            "ns_per_operation": 887215.0
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 87210792,
+            "iterations": 100,
+            "ns_per_operation": 872107.92
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 87643541,
+            "iterations": 100,
+            "ns_per_operation": 876435.41
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 87800958,
+            "iterations": 100,
+            "ns_per_operation": 878009.58
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 88453417,
+            "iterations": 100,
+            "ns_per_operation": 884534.17
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 88876292,
+            "iterations": 100,
+            "ns_per_operation": 888762.92
+          }
+        ]
+      },
+      "merkle_one_leaf_inclusion": {
+        "maximum_ns": 10080.5,
+        "median_ns": 9834.417,
+        "minimum_ns": 9742.416,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 9877666,
+            "iterations": 1000,
+            "ns_per_operation": 9877.666
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 9834417,
+            "iterations": 1000,
+            "ns_per_operation": 9834.417
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 9825833,
+            "iterations": 1000,
+            "ns_per_operation": 9825.833
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 9885083,
+            "iterations": 1000,
+            "ns_per_operation": 9885.083
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 9742416,
+            "iterations": 1000,
+            "ns_per_operation": 9742.416
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 9800666,
+            "iterations": 1000,
+            "ns_per_operation": 9800.666
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 10080500,
+            "iterations": 1000,
+            "ns_per_operation": 10080.5
+          }
+        ]
+      },
+      "selective_leaf_canonical_parse": {
+        "maximum_ns": 10332.5,
+        "median_ns": 8827.5,
+        "minimum_ns": 8332.92,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 858959,
+            "iterations": 100,
+            "ns_per_operation": 8589.59
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 922791,
+            "iterations": 100,
+            "ns_per_operation": 9227.91
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 833292,
+            "iterations": 100,
+            "ns_per_operation": 8332.92
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 1033250,
+            "iterations": 100,
+            "ns_per_operation": 10332.5
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 982875,
+            "iterations": 100,
+            "ns_per_operation": 9828.75
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 882750,
+            "iterations": 100,
+            "ns_per_operation": 8827.5
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 839709,
+            "iterations": 100,
+            "ns_per_operation": 8397.09
+          }
+        ]
+      },
+      "two_leaf_local_check": {
+        "maximum_ns": 241292.5,
+        "median_ns": 236067.08,
+        "minimum_ns": 233397.92,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 23339792,
+            "iterations": 100,
+            "ns_per_operation": 233397.92
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 23606708,
+            "iterations": 100,
+            "ns_per_operation": 236067.08
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 23358958,
+            "iterations": 100,
+            "ns_per_operation": 233589.58
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 23652458,
+            "iterations": 100,
+            "ns_per_operation": 236524.58
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 24129250,
+            "iterations": 100,
+            "ns_per_operation": 241292.5
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 23511000,
+            "iterations": 100,
+            "ns_per_operation": 235110.0
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 23762458,
+            "iterations": 100,
+            "ns_per_operation": 237624.58
+          }
+        ]
+      },
+      "whole_trace_canonical_parse": {
+        "maximum_ns": 97574.59,
+        "median_ns": 95252.5,
+        "minimum_ns": 94452.5,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 9525250,
+            "iterations": 100,
+            "ns_per_operation": 95252.5
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 9648333,
+            "iterations": 100,
+            "ns_per_operation": 96483.33
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 9757459,
+            "iterations": 100,
+            "ns_per_operation": 97574.59
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 9503000,
+            "iterations": 100,
+            "ns_per_operation": 95030.0
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 9515083,
+            "iterations": 100,
+            "ns_per_operation": 95150.83
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 9445250,
+            "iterations": 100,
+            "ns_per_operation": 94452.5
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 9589250,
+            "iterations": 100,
+            "ns_per_operation": 95892.5
+          }
+        ]
+      },
+      "whole_trace_hash": {
+        "maximum_ns": 2550.542,
+        "median_ns": 2430.458,
+        "minimum_ns": 2398.166,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 2430458,
+            "iterations": 1000,
+            "ns_per_operation": 2430.458
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 2423458,
+            "iterations": 1000,
+            "ns_per_operation": 2423.458
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 2433416,
+            "iterations": 1000,
+            "ns_per_operation": 2433.416
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 2401750,
+            "iterations": 1000,
+            "ns_per_operation": 2401.75
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 2446292,
+            "iterations": 1000,
+            "ns_per_operation": 2446.292
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 2398166,
+            "iterations": 1000,
+            "ns_per_operation": 2398.166
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 2550542,
+            "iterations": 1000,
+            "ns_per_operation": 2550.542
+          }
+        ]
+      }
+    },
+    "trace_merkle_root": "c5cfb92eeeb9f44d0be2ed94f1f6c820c198cae3243003ecad69859291dfdd62",
+    "two_leaf_disclosure_reduction": 0.8605482717520858
+  },
+  {
+    "baseline_whole_trace_digest": "aae6fa6066adac73e4a3c422a27d8cc9a373cde970d5f1e887f7a3c9c3883086",
+    "byte_accounting": "stored request/context/root/count and ordinary transaction framing excluded from both; selective proof adds u64 index; two independent paths not multiproof",
+    "complete_leaf_reveal_bytes": 7434,
+    "count": 64,
+    "full_trace_bytes": 8156,
+    "one_leaf_disclosure_reduction": 0.963339872486513,
+    "parent_index": 31,
+    "selected_index": 32,
+    "selective_leaf_bytes": 99,
+    "selective_one_leaf_wire_bytes": 299,
+    "selective_two_leaf_wire_bytes": 598,
+    "sibling_hash_bytes": 192,
+    "source_leaf_bytes": 1191,
+    "timing": {
+      "full_semantic_replay_including_RSA": {
+        "maximum_ns": 2365742.08,
+        "median_ns": 2217035.84,
+        "minimum_ns": 2189694.59,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 223472958,
+            "iterations": 100,
+            "ns_per_operation": 2234729.58
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 223345042,
+            "iterations": 100,
+            "ns_per_operation": 2233450.42
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 218969459,
+            "iterations": 100,
+            "ns_per_operation": 2189694.59
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 220759041,
+            "iterations": 100,
+            "ns_per_operation": 2207590.41
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 221703584,
+            "iterations": 100,
+            "ns_per_operation": 2217035.84
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 219705917,
+            "iterations": 100,
+            "ns_per_operation": 2197059.17
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 236574208,
+            "iterations": 100,
+            "ns_per_operation": 2365742.08
+          }
+        ]
+      },
+      "merkle_one_leaf_inclusion": {
+        "maximum_ns": 12716.625,
+        "median_ns": 12468.916,
+        "minimum_ns": 12418.458,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 12556625,
+            "iterations": 1000,
+            "ns_per_operation": 12556.625
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 12418458,
+            "iterations": 1000,
+            "ns_per_operation": 12418.458
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 12468916,
+            "iterations": 1000,
+            "ns_per_operation": 12468.916
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 12455917,
+            "iterations": 1000,
+            "ns_per_operation": 12455.917
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 12474709,
+            "iterations": 1000,
+            "ns_per_operation": 12474.709
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 12444250,
+            "iterations": 1000,
+            "ns_per_operation": 12444.25
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 12716625,
+            "iterations": 1000,
+            "ns_per_operation": 12716.625
+          }
+        ]
+      },
+      "selective_leaf_canonical_parse": {
+        "maximum_ns": 10048.75,
+        "median_ns": 8352.92,
+        "minimum_ns": 8206.25,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 841167,
+            "iterations": 100,
+            "ns_per_operation": 8411.67
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 835292,
+            "iterations": 100,
+            "ns_per_operation": 8352.92
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 914792,
+            "iterations": 100,
+            "ns_per_operation": 9147.92
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 832084,
+            "iterations": 100,
+            "ns_per_operation": 8320.84
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 820625,
+            "iterations": 100,
+            "ns_per_operation": 8206.25
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 834000,
+            "iterations": 100,
+            "ns_per_operation": 8340.0
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 1004875,
+            "iterations": 100,
+            "ns_per_operation": 10048.75
+          }
+        ]
+      },
+      "two_leaf_local_check": {
+        "maximum_ns": 667900.0,
+        "median_ns": 642935.84,
+        "minimum_ns": 639650.83,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 64452208,
+            "iterations": 100,
+            "ns_per_operation": 644522.08
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 64229208,
+            "iterations": 100,
+            "ns_per_operation": 642292.08
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 66790000,
+            "iterations": 100,
+            "ns_per_operation": 667900.0
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 63996750,
+            "iterations": 100,
+            "ns_per_operation": 639967.5
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 64293584,
+            "iterations": 100,
+            "ns_per_operation": 642935.84
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 63965083,
+            "iterations": 100,
+            "ns_per_operation": 639650.83
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 65373291,
+            "iterations": 100,
+            "ns_per_operation": 653732.91
+          }
+        ]
+      },
+      "whole_trace_canonical_parse": {
+        "maximum_ns": 309296.66,
+        "median_ns": 299101.25,
+        "minimum_ns": 293850.42,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 29385042,
+            "iterations": 100,
+            "ns_per_operation": 293850.42
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 29829750,
+            "iterations": 100,
+            "ns_per_operation": 298297.5
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 29910125,
+            "iterations": 100,
+            "ns_per_operation": 299101.25
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 29559750,
+            "iterations": 100,
+            "ns_per_operation": 295597.5
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 30929666,
+            "iterations": 100,
+            "ns_per_operation": 309296.66
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 29919625,
+            "iterations": 100,
+            "ns_per_operation": 299196.25
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 30171834,
+            "iterations": 100,
+            "ns_per_operation": 301718.34
+          }
+        ]
+      },
+      "whole_trace_hash": {
+        "maximum_ns": 5201.458,
+        "median_ns": 5107.792,
+        "minimum_ns": 5050.042,
+        "raw_batches": [
+          {
+            "batch": 0,
+            "elapsed_ns": 5179333,
+            "iterations": 1000,
+            "ns_per_operation": 5179.333
+          },
+          {
+            "batch": 1,
+            "elapsed_ns": 5107792,
+            "iterations": 1000,
+            "ns_per_operation": 5107.792
+          },
+          {
+            "batch": 2,
+            "elapsed_ns": 5101667,
+            "iterations": 1000,
+            "ns_per_operation": 5101.667
+          },
+          {
+            "batch": 3,
+            "elapsed_ns": 5201458,
+            "iterations": 1000,
+            "ns_per_operation": 5201.458
+          },
+          {
+            "batch": 4,
+            "elapsed_ns": 5058375,
+            "iterations": 1000,
+            "ns_per_operation": 5058.375
+          },
+          {
+            "batch": 5,
+            "elapsed_ns": 5115791,
+            "iterations": 1000,
+            "ns_per_operation": 5115.791
+          },
+          {
+            "batch": 6,
+            "elapsed_ns": 5050042,
+            "iterations": 1000,
+            "ns_per_operation": 5050.042
+          }
+        ]
+      }
+    },
+    "trace_merkle_root": "b075534e88c532b5a4f1b58c137e075e37c3e636cdeafec8de6d9ba78b5d7f8f",
+    "two_leaf_disclosure_reduction": 0.926679744973026
+  }
+]

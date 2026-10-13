@@ -1,0 +1,1142 @@
+\documentclass[10pt]{article}
+
+% --- Page geometry (NeurIPS-style) ---
+\usepackage[letterpaper,left=1.5in,right=1.5in,top=1in,bottom=1in]{geometry}
+
+% --- Fonts: Times-like ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+% --- Math and tables ---
+\usepackage{amsmath,amsfonts,mathtools}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.5em, itemsep=2pt, topsep=4pt, parsep=0pt}
+\setlist[enumerate]{leftmargin=1.6em, itemsep=2pt, topsep=4pt, parsep=0pt}
+
+% --- Colors, graphics, links ---
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage[hidelinks,unicode]{hyperref}
+
+% --- TikZ and figures ---
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{standalone}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns,decorations.pathreplacing}
+\usepackage[font=small, labelfont=bf, labelsep=period]{caption}
+\graphicspath{{output/paper_artifacts/}}
+
+% --- Paragraph and spacing ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+\setlength{\emergencystretch}{2em}
+\frenchspacing
+
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Live Liquidity for LMSR Prediction Markets},
+  pdfauthor={Andrei Savin}
+}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+
+% --- Section formatting (NeurIPS-style) ---
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{4pt plus 1pt minus 1pt}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt minus 2pt}{3pt plus 1pt minus 1pt}
+\titlespacing*{\subsubsection}{0pt}{6pt plus 2pt minus 1pt}{2pt plus 1pt minus 1pt}
+
+% --- Page style: just page numbers ---
+\pagestyle{plain}
+
+% --- Abstract environment (NeurIPS-style) ---
+\renewenvironment{abstract}{%
+  \centerline{\bfseries\normalsize Abstract}%
+  \vspace{0.5ex}%
+  \begin{quote}\small
+}{%
+  \end{quote}%
+}
+
+% --- Helpers ---
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\artifactfigure}[3]{%
+  \begin{figure}[t]
+  \centering
+  \IfFileExists{#1}{%
+    \includegraphics[width=#2\linewidth]{#1}%
+  }{%
+    \fbox{%
+      \parbox{0.8\linewidth}{%
+        \small Figure asset not found at build time: \texttt{#1}%
+      }%
+    }%
+  }
+  \caption{#3}
+  \end{figure}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Live Liquidity for LMSR Prediction Markets\par}
+\vspace{0.4em}
+{\large Fair Fees, Safe Reserves, and Less Entry-Time Bias\par}
+\vspace{1.2em}
+{\normalsize\bfseries Andrei Savin\par}
+\vspace{0.3em}
+{\small question.market\par}
+{\small\href{mailto:andrei@andreisavin.com}{andrei@andreisavin.com}\par}
+\vspace{0.6em}
+{\small October 2026 revision\par}
+\end{center}
+
+\vspace{0.8em}
+
+\begin{abstract}
+Logarithmic Market Scoring Rule (LMSR) prediction markets provide continuous prices and bounded sponsor loss, but usually fix sponsor capital at launch. This paper develops live LP entry with price-preserving depth growth, strictly prospective fees, locked sponsor capital, and reserve-based release of junior residuals around fixed trader claims.
+
+The central economic thesis is that later capital can use information to choose what it underwrites. We prove the value of that entry option and exhibit a strict effect while holding the public entry price, required collateral, and future-state distribution fixed. We also prove that an affine exposure premium moves the signed late-minus-early residual-return gap toward earlier cohorts. These results separate the information advantage from the allocation rule used to compensate early capital.
+
+The evidence combines exact finite-state information experiments, train-selected participation constraints, 96 fresh long trading histories, historical duration calibration, and 44 matched FPMM scenarios under three funding treatments. In the historical test pack, lifetime normalization reduces mean absolute cohort gap from 0.0918 for a reoptimized event-step rule to 0.0375. In the strategic-entry grid, a smaller train-selected correction preserves participation while reducing the ex ante entrant--founder gap. The highly skewed FPMM comparison favors the corrected LMSR in all 12 designed cases under all three funding treatments. Funding and entry selection matter: a positive premium can overcorrect histories where late capital already earns less.
+
+The accounting guarantees are explicit. Outcome claims follow from the underwriting bound; cancellation refunds require an additional executable sell-reserve condition; snapshotted settlement preserves seniority and claim-order invariance. An independently packaged reference, compressed model, and integer implementation test the same final policy. Directed integer quote bounds eliminate a high-skew rounding overpayment. Live LMSR liquidity is therefore a concrete mechanism with provable accounting, a measurable information-timing problem, and an exposure correction whose strength can be chosen against participation.
+\end{abstract}
+
+\vspace{1em}
+{
+\small
+\renewcommand{\contentsname}{}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\vspace{0.5em}
+
+\section{Introduction}
+
+LMSR prediction markets do something unusual. They turn a live book of positions into a continuous probability surface while keeping the market maker's loss bounded. That is why LMSR remains one of the cleanest mechanisms ever proposed for prediction markets \cite{hanson2002}. It gives a market constant liquidity without requiring a matching counterparty for every trade, and it does so in a form that still works for more than two outcomes. In the standard presentation, however, LMSR is backed by a sponsor or creator who funds the market maker up front. Early on-chain implementations such as Gnosis followed that sponsor-centered structure as well \cite{gnosisstandard}. The sponsor bears the market-maker risk, traders take outcome positions, and the fee or residual economics belong to the sponsor side rather than to an open pool of liquidity providers.
+
+This property matters even more in crypto markets because it addresses the bootstrapping problem directly. Order-book prediction markets such as Polymarket's central limit order book (CLOB) can provide excellent price discovery once bids and asks are resting in the book, but they face a cold start: before traders post compatible orders, there is no immediate executable liquidity and no meaningful spread to trade against \cite{polymarketclob}. An AMM solves that by quoting from committed capital from the first trade onward. In prediction markets, that matters because many markets begin thin, event-specific, and informationally sparse.
+
+That framing is mechanically clean, but it has an obvious limitation. Market depth is mostly fixed at launch. If a market later attracts meaningful participation, it is natural to ask whether outside capital should be able to enter and deepen the curve. If that can be done without moving the current price, liquidity can grow in place. In ordinary decentralized-finance (DeFi) markets, this question is comparatively straightforward because LPs deposit against an inventory pool with simple accounting. In LMSR prediction markets, it is not. The market maker does not merely hold assets. It carries contingent liabilities against future winning claims, and those liabilities depend on both the current price vector and the trade path that produced it.
+
+That difference matters for risk as well as for accounting. In a fixed-product AMM, LPs often think in terms of inventory drift and impermanent loss relative to holding the underlying assets outright. That is not the main exposure in the active-LP LMSR studied here. These LPs are not primarily warehousing a token basket that can be withdrawn on demand. They are posting locked sponsor capital against contingent winner claims, earning only prospective fees, and holding a junior claim on whatever residual value remains after senior obligations are fully reserved. The relevant tradeoffs are therefore lockup risk, timing risk, and junior-residual sponsor risk rather than the usual constant-product impermanent-loss story.
+
+This makes live LP entry a mechanism-design problem rather than a simple add-liquidity function. If a late LP enters an already skewed market, what exactly are they buying? A share of future fees is easy to define. A share of terminal residual value is much harder. This is the core intuition the paper takes seriously: later LPs have an informational timing advantage. They are entering after part of the uncertainty has already been resolved by order flow. If the mechanism ignores that, it can leave later capital with an uncompensated entry option; if it overcorrects, it makes late capital unattractive exactly when deeper markets would otherwise be useful. If LP withdrawals are also allowed before settlement, the accounting problem becomes much worse because trader sell rights and winner claims can be impaired by sponsor exit.
+
+The contribution of this paper is practical: a live-entry, no-withdrawal active-LP LMSR can be made coherent enough for implementation if three conditions hold. First, fee fairness must be strict: new LPs should only earn fees collected after they join. Second, winner claims must remain fixed and senior. Third, residual release must use explicit reserve accounting rather than forcing LP capital to wait for every winner to claim.
+
+We establish that thesis with proofs and experiments. The information advantage is real: an LP can use news to enter favorable underwriting opportunities and avoid adverse ones. Its size is measurable without changing the offered price or borrowing a founder's funding surplus. The exposure correction has a provable direction, and its magnitude can be calibrated against both cohort returns and participation. A lifetime-normalized rule travels much better across market durations than a raw event-step rule. Integer arithmetic and cancellation funding receive separate end-to-end tests, because a coherent economic model must survive its accounting.
+
+The paper makes four claims. First, live LP entry can deepen an LMSR without breaking price continuity. Second, prospective fee fairness is straightforward to enforce. Third, residual fairness is the real economic problem, but a mild lifetime-normalized affine rule materially reduces timing bias. Fourth, the mechanism has a funded state machine and a certified numerical domain, including many-outcome stress cases; deployment must enforce that domain and the cancellation reserve condition.
+
+\section{Why Live Liquidity Is Hard}
+
+\subsection{Why LMSR Usually Has a Sponsor}
+
+LMSR is a cost-function market maker. A market-maker state induces a price vector over outcomes, and trades move that state while paying or receiving amounts determined by the cost function. The central parameter controlling local depth is conventionally written as $b$ or $B$. Larger depth reduces slippage but increases the amount of collateral required to support the market-maker's bounded-loss property \cite{hanson2002,chenpennock2007,abernethychenvaughan2013,gnosislmsr}.
+
+In the canonical LMSR framing, this collateral is sponsor capital. The sponsor is not ``just another trader.'' A trader owns outcome claims. A sponsor owns the economics of the market-maker side: fee flow and whatever junior equity remains after trader claims are paid. This distinction is easy to blur in informal discussion because a complete-set trade superficially resembles broad market exposure. Economically, though, it is different. Buying outcome claims does not make the trader the owner of the market maker's fee stream or its contingent liabilities.
+
+Early on-chain LMSR implementations followed this sponsor-centered structure directly. Gnosis' \texttt{StandardMarket} allows creator funding and creator-side fee withdrawal, while its \texttt{Campaign} contract allows multiple contributors to crowdfund a market before launch rather than providing continuous live LP entry during active trading \cite{gnosisstandard,gnosiscampaign}. This is the closest deployed implementation precedent for our work, but it stops short of the active-LP mechanism studied here.
+
+\subsection{Minimal LMSR Definitions}
+
+The standard LMSR cost function is
+
+\[
+C(\mathbf{q}) = B \ln \left(\sum_{i=1}^{N} e^{q_i / B}\right),
+\]
+
+where $\mathbf{q} = (q_1,\dots,q_N)$ is the market-maker inventory state and $B$ is the liquidity parameter. The corresponding instantaneous price of outcome $j$ is
+
+\[
+p_j(\mathbf{q}) = \frac{e^{q_j / B}}{\sum_{i=1}^{N} e^{q_i / B}}.
+\]
+
+These prices always sum to one. A larger $B$ makes the market deeper by reducing local slippage. In the neutral $N$-outcome start state, LMSR's bounded-loss property implies a worst-case sponsor loss of $B \ln N$ \cite{hanson2002,chenpennock2007}. This is why the sponsor role matters: someone must capitalize the market maker whose quotes the traders are interacting with.
+
+The fee side of our mechanism uses a cumulative fee index. If trade $t$ contributes fee flow $F_t$ to LPs and the active sponsor-share supply at that instant is $S_t$, the fee index updates as
+
+\[
+I_t = I_{t-1} + \frac{F_t}{S_t},
+\]
+
+and a cohort with share units $s_k$ that entered when the index was $I_{k,\mathrm{entry}}$ has cumulative earned fees
+
+\[
+\mathrm{fees}_k(t) = s_k \left(I_t - I_{k,\mathrm{entry}}\right).
+\]
+
+If $H_k(t)$ has already been withdrawn, the remaining claim is $\mathrm{fees}_k(t)-H_k(t)$; equivalently the implementation advances a fee checkpoint after crediting an account. This is the formal statement of the prospective-fee rule: a later LP dilutes earlier LPs only on fee flow that occurs after joining.
+
+\subsection{Why live LP entry is hard}
+
+Three problems appear immediately when LPs are allowed to enter after launch.
+
+The first is price continuity at entry. Adding LP capital should deepen the market, but it should not move the current price vector merely because capital arrived. If LP entry itself changes prices, the mechanism creates artificial mark-to-market transfers even before any informational trade occurs.
+
+The second is fee fairness. This problem is comparatively tractable. If a new LP joins at time $t$, it should receive no share of fees collected before $t$ and should dilute earlier LPs only on fees collected after $t$.
+
+The third is residual fairness. This is the hard part. If residual value is distributed by a naive pooled-share rule, later LPs may buy into sponsor equity too cheaply. If residual accounting is too rigidly cohort-isolated, the model becomes difficult to implement and may not even reflect the correct pooled-risk interpretation of the sponsor side. The challenge is to find a rule that preserves winner seniority, prevents obvious extraction, and remains simple enough to implement on-chain.
+
+This challenge is not unique to our model. Othman, Pennock, Reeves, and Sandholm show that no market maker can simultaneously satisfy translation invariance (prices summing to one), path independence, and liquidity sensitivity, and they explicitly warn that naive schemes which feed transaction revenue back into LMSR liquidity can distort prices or break path independence \cite{othmansandholm2010}. The active-LP problem can therefore not be reduced to a generic story of ``just increasing $b$.'' It is a constrained contingent-liability design problem.
+
+The design choice in this paper is explicit. We do not attempt liquidity sensitivity in the Othman-Sandholm sense where liquidity endogenously changes as a function of market evolution or fee recycling. We keep the LMSR pricing rule path-independent between LP events and allow depth to change only through explicit sponsor entry: giving up endogenous liquidity sensitivity in exchange for cleaner accounting around price continuity and settlement seniority.
+
+\subsection{Design Boundaries}
+
+This paper adopts the following design envelope.
+
+\begin{itemize}
+\item LPs may enter during \texttt{ACTIVE}.
+\item Markets must be bootstrapped by an initial sponsor or sponsor pool before active LP entry begins.
+\item LPs may not withdraw during \texttt{ACTIVE}.
+\item Fee rights are strictly prospective.
+\item Full remaining-cost-basis cancellation refunds are funded throughout \texttt{ACTIVE}; sells that would exhaust that reserve do not execute.
+\item Winner claims are fixed and senior rather than parimutuel.
+\item Residual release is reserve-based: the protocol first reserves the amount still required to honor outstanding winner or refund claims, and only the free pool above that reserve can be claimed by LPs.
+\item Markets may have more than two outcomes.
+\item The mechanism is judged by explicit simulation evidence first, not by informal intuition.
+\end{itemize}
+
+These constraints are deliberately narrow. The aim is not to solve every possible LP design for prediction markets, but to identify one design that is economically defensible and operationally plausible enough to justify implementation.
+
+\subsection{Related Work}
+
+There are at least four relevant lines of prior art.
+
+The first is the original market-scoring-rule and LMSR literature. Hanson motivates automated market makers as market scoring rules and argues for the logarithmic rule as a uniquely local way to preserve conditional structure under trading \cite{hanson2002}. Chen and Pennock then place bounded-loss market makers into a broader utility and cost-function framework, while Abernethy, Chen, and Vaughan formalize efficient automated market making through convex optimization and connect it directly to online learning \cite{chenpennock2007,abernethychenvaughan2013}. Together these papers form the theoretical spine for any LMSR-based prediction-market design.
+
+The second is early on-chain LMSR practice. Gnosis' first-generation prediction-market contracts provide a concrete blockchain implementation of creator-funded LMSR markets, with creator-only funding and fee withdrawal in \texttt{StandardMarket}, and a separate \texttt{Campaign} mechanism for crowdfunded market launch rather than continuous live LP entry \cite{gnosisstandard,gnosiscampaign}. This is the closest direct sponsor-funded implementation precedent for our work, but it stops short of the active-LP mechanism studied here.
+
+An adjacent recent design is Gensyn's Delphi LMSR note, which describes an LMSR backed by a liquidity vault, sponsor-provisioned on testnet, and explicitly open to future external passive market makers \cite{gensyndelphi}. This matters because it shows that ``LMSR plus pooled liquidity'' is no longer purely hypothetical. It is still different from the design studied here. Delphi's vault uses deposit-and-redeem shares against pooled value while keeping market depth constant over a market's life. The present paper studies constrained live entry during active trading, no active withdrawal, prospective fees, reserve-based residual release, and cohort weighting around fixed winner claims.
+
+The closest deployed \emph{active-LP} comparator is not LMSR but the Gnosis fixed-product market maker (FPMM) built for conditional tokens. In the Gnosis AMM repository, FPMM is documented as a prediction-market AMM for conditional tokens and implemented concretely in \texttt{FixedProductMarketMaker.sol} \cite{gnosisfpmmrepo,gnosisfpmmcode}. The mechanism supports permissionless funding, share burning, fee withdrawal, and transferable LP shares, while tracking a fee pool explicitly so new shares do not retroactively claim past fees. That makes it an important comparator for our fee-accounting story. It also highlights the main economic difference. FPMM LP shares are claims on the pool's current inventory of conditional tokens and accrued fees. Our mechanism has to allocate a junior residual after fixed winner claims are reserved, which is why entry-time residual fairness becomes a first-class design problem here. FPMM is operationally more permissive; the present design is more restrictive about what late LP capital is entitled to own.
+
+The third is the liquidity-sensitive AMM literature. Othman, Pennock, Reeves, and Sandholm show that there is a structural tension among translation invariance, path independence, and liquidity sensitivity, and discuss why simply recycling fees into $b$ is not a clean solution for LMSR-like market makers \cite{othmansandholm2010}. Their work is highly relevant because the active-LP problem can easily be mistaken for a generic ``just increase liquidity'' problem when it is really a constrained contingent-liability design problem.
+
+The fourth is the recent bridge between prediction markets and DeFi automated market makers (AMMs). Frongillo, Papireddygari, and Waggoner show that constant-function market makers (CFMMs) and cost-function prediction markets are deeply related under a common axiomatic view \cite{frongillo2024}. Bhaskara, Frongillo, Lindgren, and Papireddygari then study liquidity provisioning directly for cost-function prediction markets and frame LPs as running market makers in parallel rather than merely ``buying both sides'' \cite{bhaskara2025}. Their framework already covers parallel cost-function liquidity provisioning and aligned LMSR entry. We use that foundation; our contribution is the combined cash-claim, cancellation-reserve, prospective-fee, and residual-allocation contract, together with direct information and participation experiments. Their general fee impossibility concerns budget balance, trader simplicity, LP decomposability, and nonnegative fees. Our prospective-fee property is the narrower temporal entitlement to fees generated after entry within aligned LMSRs.
+
+There are also adjacent AMM designs that attack a different part of the same problem. Paradigm's pm-AMM work studies outcome-token AMMs whose liquidity schedule shrinks as expiry approaches, precisely because prediction-market LP risk becomes extreme near resolution \cite{paradigmpmamm}. That is useful context for our deployment boundaries. Our underwriting floor grows as the least likely outcome approaches zero, so extreme skew also deserves explicit attention here. pm-AMM and the present paper respond to that boundary differently, but they are reacting to the same underlying pressure.
+
+There is also a competing architectural direction based on conditional-token composability rather than first-generation LMSR event contracts. Gnosis' conditional-tokens system was designed to improve fungibility in deeper combinatorial markets and generalizes earlier buy-all-outcomes and sell-all-outcomes operations into position splitting and merging \cite{gnosisctmotivation,gnosisctguide}. That direction is complementary rather than identical to our work: it provides a richer position graph, whereas this paper focuses on live LP entry into an LMSR-style market maker with explicit sponsor economics.
+
+\subsection{What Is New Here}
+
+\begin{itemize}
+\item It defines a constrained live-entry active-LP LMSR with prospective-fee accounting, no active LP withdrawal, and fixed-claim winner seniority.
+\item It couples that mechanism to reserve-based residual release and cohort weighting, so LP capital can unlock without waiting for every winner to claim and without giving late entrants a naive pro rata claim on pooled sponsor value.
+\item It gives a high-precision aligned-component reference model and shows why the compressed Layer B state matches that reference in high precision.
+\item It proves the optional-entry value of information and the direction of exposure correction, then measures their interaction with collateral funding and endogenous participation.
+\item Relative to deployed pool-share systems such as FPMM, it isolates a different problem: not how to prevent new LP shares from claiming past fees, but how to allocate junior residual value fairly when winner claims remain fixed and senior.
+\end{itemize}
+
+The contribution is this complete contract: live-entry active LPs with prospective fees, funded cancellation, reserve-based residual release, and cohort weighting around fixed winner claims. The parallel pricing construction builds on established cost-function liquidity provisioning.
+
+\section{Mechanism}
+
+\subsection{State separation}
+
+The first architectural requirement is state separation. A live-entry mechanism cannot safely reuse a single quantity as both the pricing state and the trader-claim ledger. The market therefore has at least four conceptually distinct state domains: pricing state, trader state, sponsor state, and reserve state.
+
+The pricing state determines current quotes and local depth. The trader state records positions and claim eligibility. The sponsor state records LP share units, fee snapshots, claimable fees, and residual entitlements. The reserve state records how much value must remain locked for unresolved winner or refund claims. This separation is not cosmetic. It is what prevents LP accounting from corrupting trader accounting.
+
+Formally, let $n_{u,i,t}$ denote trader $u$'s outstanding shares in outcome $i$ at time $t$, and let $c_{u,i,t}$ denote the unrecovered cost basis attached to those shares. Aggregate unresolved outcome claims are
+\[
+N_{i,t} = \sum_u n_{u,i,t}.
+\]
+After resolution to winning outcome $\omega$, the senior winner reserve is
+\[
+W_t^{\mathrm{res}} = N_{\omega,t}.
+\]
+After cancellation, the senior refund reserve is
+\[
+W_t^{\mathrm{can}} = \sum_u \sum_i c_{u,i,t}.
+\]
+The pricing state is $(B_t,\mathbf{q}_t)$, not the claim ledger. Buys, sells, winning claims, and refunds update $(n,c)$; LP entry updates sponsor state and pricing depth; reserve release refers to $W_t$, not directly to $\mathbf{q}_t$. In the research mechanism, trader positions are stored in account state rather than minted as transferable tokens. This makes non-transferability architecturally enforced: the cost basis $c_{u,i,t}$ stays bound to the originating account. Without that binding, cancellation refunds would be ill-defined or gameable.
+
+\subsection{LP entry during \texttt{ACTIVE}}
+
+An LP entering during \texttt{ACTIVE}, meaning the tradable but unresolved market state, contributes additional depth $\Delta b$. This presupposes a market that has already been bootstrapped. The mechanism is not self-starting: an initial sponsor or sponsor pool must create the first funded market state, establish the initial price vector, and supply the starting depth before later LPs can join during active trading. In the simulator and candidate mechanism, sponsor-share issuance is linear in that depth contribution:
+
+\[
+s_k = \Delta b_k.
+\]
+
+The entry is priced against the current market state rather than against a naive share of the existing pool. If the current price vector is $\mathbf{p}$, the required underwriting collateral is
+
+\[
+D_k = \Delta b_k \cdot \alpha(\mathbf{p}), \qquad \alpha(\mathbf{p}) = \max_i \ln \left(\frac{1}{p_i}\right).
+\]
+
+\begin{center}
+\setlength{\fboxsep}{8pt}
+\fbox{\begin{minipage}{0.94\linewidth}
+\textbf{Lemma 1 (Underwriting floor).}
+Among aligned entry components of size $\Delta b$ that preserve the current price vector, $\alpha(\mathbf{p}) = \max_i \ln(1/p_i)$ is the smallest common gauge shift that keeps every component coordinate nonnegative. The corresponding collateral floor is therefore $D_k = \Delta b_k \alpha(\mathbf{p})$.
+\end{minipage}}
+\end{center}
+
+To see this, write the aligned component as $u_i(\Delta b,\mathbf{p}) = \Delta b(\ln p_i + \alpha)$. Nonnegativity requires $\ln p_i + \alpha \ge 0$ for every $i$, so $\alpha \ge \max_i \ln(1/p_i)$. Choosing that smallest admissible shift gives the funding floor used throughout the reference model.
+
+The collateral argument is stronger than a choice of coordinate gauge. Work in the zero-cost gauge $q^k_{i,0}=b_k\ln p^k_{i,0}$, so $C_{b_k}(\mathbf q^k_0)=0$. If $x^k_i=q^k_i-q^k_{i,0}$ is the component's net issued claim and $X_k=C_{b_k}(\mathbf q^k)-C_{b_k}(\mathbf q^k_0)$ its cumulative net trade cash, its residual in outcome $i$ is
+\[
+R_{k,i}=D_k+X_k-x^k_i
+       =D_k+C_{b_k}(\mathbf q^k)-q^k_i+b_k\ln p^k_{i,0}
+       \ge D_k+b_k\ln p^k_{i,0}\ge0.
+\]
+The first inequality uses $C_b(\mathbf q)\ge q_i$. This proves outcome funding for every finite allowed trade history, including routed sells, before settlement payouts. Summing over components gives $A\ge\max_i N_i$. It does not prove cancellation funding: remaining purchase cost basis is a different liability. The additional reserve rule below supplies that guarantee.
+
+This is the same worst-case-loss benchmark used in the reference model's live-entry funding rule. The LP does not receive retroactive fee rights. The LP does not receive an active withdrawal path. The intended effect is to improve future slippage while preserving the current price vector up to bounded numerical tolerance.
+
+\subsection{Why Sponsor Shares Track Depth Rather Than Deposit}
+
+The choice $s_k = \Delta b_k$ is not forced by theorem, but it is the cleanest numeraire for this mechanism. Depth is the thing the LP is actually adding. Deposit is the underwriting price paid for that depth at the current state.
+
+The simplest counterfactual is deposit-denominated sponsor shares, $\tilde s_k = D_k$. For two LPs adding the same depth increment $\Delta b$ at different states $\mathbf{p}^{(a)}$ and $\mathbf{p}^{(b)}$, the counterfactual share ratio would be
+
+\[
+\frac{\tilde s_a}{\tilde s_b} = \frac{D_a}{D_b} = \frac{\alpha(\mathbf{p}^{(a)})}{\alpha(\mathbf{p}^{(b)})}.
+\]
+
+So two LPs who add the same depth would receive different sponsor-share quantities purely because one entered a state with a higher underwriting floor. That is the wrong coupling for the present mechanism. It makes sponsor-share issuance depend on current skew rather than on the depth actually contributed. In the design studied here, collateral determines how much must be posted to support a chosen depth increment; it does not by itself determine the share count.
+
+In the high-precision reference model, each LP entry can be understood as adding a parallel LMSR component aligned to the current price vector. In the compressed protocol candidate, the same effect is represented by an update to a single aggregate pricing state. The crucial research question is whether this compression preserves the economically relevant behavior.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/slippage-curve.tex}}
+\caption{Didactic binary illustration ($N{=}2$, $p_0{=}0.5$). LP entry deepens the market without moving the starting price. The shaded region is the execution-cost reduction for a fixed trade size. The general multi-outcome case has the same qualitative shape.}
+\label{fig:slippage}
+\end{figure}
+
+\subsection{Why No Active Withdrawal}
+
+Disallowing LP withdrawal during \texttt{ACTIVE} is not only an implementation convenience. It is the mechanism's cleanest way to keep trader claims and sponsor claims from colliding. If capital can exit while the market maker is still carrying contingent liabilities, the protocol has to decide whose rights shrink when collateral leaves. The no-withdrawal rule removes this sponsor-exit channel; the cancellation reserve rule separately controls the cash released by trader sells.
+
+The no-withdrawal constraint also blocks the atomic add-and-remove form of just-in-time liquidity. In Uniswap V3, Just-in-Time (JIT) liquidity bots mint concentrated liquidity immediately before a large swap and remove it in the same block, capturing fees during brief inventory exposure, typically hedged on another venue. Over \$2~billion in aggregate JIT liquidity was supplied to executed swaps between May 2021 and July 2022, with over 95\% supplied by a single account \cite{uniswapjit2022}. This is cumulative swap liquidity, not outstanding deposited capital; hedging costs and execution risks remain \cite{jitliquidity2023}. That attack requires atomic add-and-remove. Because this mechanism locks LP capital until settlement, an entrant takes lockup, junior-residual, and resolution risk. Waiting before entry still has option value; the lock removes the atomic exit strategy, not the value of information.
+
+This comes with a clear cost: capital efficiency is lower than in ordinary DeFi LP systems. The paper therefore does not describe active LPs as a generic passive-yield primitive. An LP in this design is underwriting future trading flow and junior residual value until settlement. The participation thesis is narrower. LPs should enter when they expect the combination of prospective fees and residual recovery to compensate them for lockup and junior risk. Markets where that expected return is unattractive should simply fail to attract LP capital. That is a feature of the mechanism, not a contradiction in it.
+
+\subsection{Fee rule}
+
+Fees are the cleanest part of the mechanism. A cumulative fee index tracks LP fee accrual per share unit. When an LP enters, it snapshots the current fee index. Future fees are then split among currently active LP shares. Already accrued fees are not reassigned.
+
+This gives a simple and strong property: later LP entry dilutes earlier LPs only for future fees. That is the first-order fairness guarantee in the mechanism, and it is the cleanest one to preserve in implementation.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/fee-timeline.tex}}
+\caption{Prospective fee accounting. LP\textsubscript{1} earns all fees before LP\textsubscript{2} enters. After entry, fee flow is split by active sponsor shares ($s_k / S_t$). LP\textsubscript{2} snapshots the fee index $I_t$ on entry and receives nothing from the pre-entry period.}
+\label{fig:fees}
+\end{figure}
+
+\subsection{Settlement rule}
+
+The market is fixed-claim rather than parimutuel. A winning share represents a defined claim, typically one unit per winning share. This is what makes reserve-based settlement coherent. At resolution, the protocol asks how much is still owed to unclaimed winning shares. That amount is reserved. Only the remaining free pool can be considered LP residual.
+
+The same logic applies to cancellation, except that the reserve is determined by outstanding refund liability rather than winning-share liability. In the model studied here, cancellation refunds remaining trader cost basis, not previously paid LP or protocol fees. That choice is intentional: those fees compensate liquidity service already provided and are not unwound on cancellation. This means LP capital does not need to wait for every winner to claim before any residual can be released, but LP claims can never reduce the pool below the amount still owed to winners or refund claimants.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/settlement-waterfall.tex}}
+\caption{Reserve-based settlement. Non-fee sponsor assets ($A_{t^\star}$) are decomposed into a senior winner reserve ($W_{t^\star}$) and a junior free residual ($R_{\mathrm{settle}}$). The residual is split across LP cohorts by time-weighted sponsor shares ($w_k = s_k \tau_k$).}
+\label{fig:waterfall}
+\end{figure}
+
+\subsection{Core transitions and reserve invariant}
+
+The mechanism is easier to judge once its central transitions are written explicitly. Let the live LMSR pricing state be $(B_t,\mathbf{q}_t)$ with price vector
+
+\[
+p_i(t) = \frac{e^{q_{i,t}/B_t}}{\sum_j e^{q_{j,t}/B_t}}.
+\]
+
+For a buy of $x$ shares in outcome $j$ by trader $u$, define the LMSR payment
+
+\[
+\Delta C_t = C(\mathbf{q}_t + x \mathbf{e}_j) - C(\mathbf{q}_t).
+\]
+
+Then the pricing and trader ledgers update as
+
+\[
+q_{j,t}^{+} = q_{j,t} + x,
+\qquad
+n_{u,j,t}^{+} = n_{u,j,t} + x,
+\qquad
+c_{u,j,t}^{+} = c_{u,j,t} + \Delta C_t,
+\qquad
+N_{j,t}^{+} = N_{j,t} + x.
+\]
+
+For a sell of $x$ shares in outcome $j$ from a trader with $0 < x \le n_{u,j,t}$, let $\Delta S_t$ be the standard LMSR sell return. The pricing state moves by the inverse LMSR step and the claim ledger contracts proportionally:
+
+\[
+q_{j,t}^{+} = q_{j,t} - x,
+\qquad
+n_{u,j,t}^{+} = n_{u,j,t} - x,
+\qquad
+c_{u,j,t}^{+} = c_{u,j,t}\left(1-\frac{x}{n_{u,j,t}}\right),
+\qquad
+N_{j,t}^{+} = N_{j,t} - x.
+\]
+
+\paragraph{Contingent cancellation reserve.}
+Write $Q_t=\sum_{u,i}c_{u,i,t}$ for total remaining refundable basis and $A_t$ for actual non-fee contract assets. A sale removes basis $d=c_{u,j,t}x/n_{u,j,t}$ and releases gross LMSR cash $\Delta S_t$. It executes only if
+\begin{equation}
+\label{eq:refundguard}
+ A_t-\Delta S_t\ \ge\ Q_t-d.
+\end{equation}
+The quote exposes both the LMSR return and whether this reserve constraint permits execution. A failed check rejects the sale atomically; it does not haircut the trader's quoted proceeds or their remaining refund claim. The guard is a substantive liquidity constraint: full historical-cost refunds and unrestricted profitable exits cannot both be promised from the usual LMSR outcome collateral.
+
+\textbf{Proposition (Cancellation funding).}
+Starting from funded bootstrap with no trader positions, the stated transitions preserve $A_t\ge Q_t$ during \texttt{ACTIVE}. On a buy, both $A$ and $Q$ increase by the same non-fee cost. LP entry increases $A$ and leaves $Q$ unchanged. Fee withdrawals decrease cash and the corresponding fee liability equally, leaving $A$ unchanged. A sell changes slack $A-Q$ by $d-\Delta S$, and Equation~\ref{eq:refundguard} requires the resulting slack to be nonnegative. Induction proves the claim. Cancellation then fixes $W=Q$, and each refund decreases both $A$ and $W$ by the same amount. Combined with the outcome-funding proof, the active-state invariant is
+\[
+A_t\ge\max\!\left\{\max_i N_{i,t},\ Q_t\right\}.
+\]
+This proof assumes exact arithmetic, nonnegative fees with total rate below one, no active withdrawal of non-fee assets, nonnegative trader holdings, and correctly maintained basis. The fixed-point realization must preserve the same inequalities with its actual rounded amounts.
+
+Let $\tau_{\mathrm{LP}}$ and $\tau_{\mathrm{P}}$ denote the LP-fee and protocol-fee rates. On a buy, the fee decomposition is
+
+\[
+F_{t,\mathrm{buy}}^{\mathrm{LP}} = \tau_{\mathrm{LP}} \Delta C_t,
+\qquad
+F_{t,\mathrm{buy}}^{\mathrm{P}} = \tau_{\mathrm{P}} \Delta C_t,
+\qquad
+\mathrm{Cash}_{t,\mathrm{buy}} = \Delta C_t + F_{t,\mathrm{buy}}^{\mathrm{LP}} + F_{t,\mathrm{buy}}^{\mathrm{P}}.
+\]
+
+So total contract funds increase by $\mathrm{Cash}_{t,\mathrm{buy}}$, LP-fee liabilities increase by $F_{t,\mathrm{buy}}^{\mathrm{LP}}$, and protocol-fee liabilities increase by $F_{t,\mathrm{buy}}^{\mathrm{P}}$.
+
+On a sell, the fee decomposition is
+
+\[
+F_{t,\mathrm{sell}}^{\mathrm{LP}} = \tau_{\mathrm{LP}} \Delta S_t,
+\qquad
+F_{t,\mathrm{sell}}^{\mathrm{P}} = \tau_{\mathrm{P}} \Delta S_t,
+\qquad
+\mathrm{Cash}_{t,\mathrm{sell}} = \Delta S_t - F_{t,\mathrm{sell}}^{\mathrm{LP}} - F_{t,\mathrm{sell}}^{\mathrm{P}}.
+\]
+
+So total contract funds decrease by $\mathrm{Cash}_{t,\mathrm{sell}}$, while LP-fee and protocol-fee liabilities increase by $F_{t,\mathrm{sell}}^{\mathrm{LP}}$ and $F_{t,\mathrm{sell}}^{\mathrm{P}}$ respectively. The LP-fee term from either side is the $F_t$ passed into the cumulative fee index in \S2.2. After resolution to winning outcome $\omega$, winner claims burn $n_{u,\omega,t}$ and reduce $W_t^{\mathrm{res}}$ one-for-one. After cancellation, refunds reduce $c_{u,i,t}$ and $W_t^{\mathrm{can}}$ one-for-one.
+
+For active LP entry, let the pre-entry state be $(B_t,\mathbf{q}_t,\mathbf{p}_t)$ and let the entrant add depth $\Delta b > 0$. The aligned entry component is
+
+\[
+u_i(\Delta b,\mathbf{p}_t) = \Delta b \left(\ln p_i(t) + \alpha(\mathbf{p}_t)\right),
+\qquad
+\alpha(\mathbf{p}_t) = \max_j \ln \left(\frac{1}{p_j(t)}\right).
+\]
+
+The compressed Layer B transform is then
+
+\[
+B_t^{+} = B_t + \Delta b,
+\qquad
+q_{i,t}^{+} = q_{i,t} + u_i(\Delta b,\mathbf{p}_t).
+\]
+
+\begin{center}
+\setlength{\fboxsep}{8pt}
+\fbox{\begin{minipage}{0.94\linewidth}
+\textbf{Proposition 1 (Price-preserving LP entry).}
+For any active pre-entry LMSR state $(B_t,\mathbf{q}_t,\mathbf{p}_t)$ and any $\Delta b > 0$, the aligned LP-entry transform preserves the price vector exactly: $\mathbf{p}_t^{+} = \mathbf{p}_t$. With price held fixed and depth increased from $B_t$ to $B_t + \Delta b$, same-direction probe buys become weakly cheaper.
+\end{minipage}}
+\end{center}
+
+This preserves prices by construction up to gauge. Because any LMSR state can be written in the form $q_{i,t} = B_t(\ln p_i(t) + c_t)$ for some common shift $c_t$, and the new component is aligned to the same $\mathbf{p}_t$, there exists another common shift $c_t^{+}$ such that
+
+\[
+q_{i,t}^{+} = (B_t + \Delta b)\left(\ln p_i(t) + c_t^{+}\right),
+\]
+
+which implies $\mathbf{p}_t^{+} = \mathbf{p}_t$. The same transform also weakly improves local slippage for fixed same-direction probe trades, because the post-entry depth parameter is larger while the pre-trade price vector is unchanged.
+
+Layer A makes the same economics explicit in parallel form. Let component $m$ have depth $b_t^{(m)}$ and pricing state $\mathbf{q}_t^{(m)}$, with aggregate
+
+\[
+B_t = \sum_m b_t^{(m)}, \qquad \mathbf{q}_t = \sum_m \mathbf{q}_t^{(m)}.
+\]
+
+For a trade of size $x$ in outcome $j$, the reference router splits the trade in proportion to component depth:
+
+\[
+x^{(m)} = x \cdot \frac{b_t^{(m)}}{B_t},
+\qquad
+\sum_m x^{(m)} = x.
+\]
+
+Each component then updates by the standard LMSR rule
+
+\[
+q_{j,t}^{(m)+} = q_{j,t}^{(m)} + x^{(m)},
+\]
+
+with all other coordinates unchanged. The same proportional router is used for sells. If the components are aligned before the trade, meaning each can be written as
+
+\[
+q_{i,t}^{(m)} = b_t^{(m)}(\ln p_i(t) + c_t^{(m)}),
+\]
+
+then they remain aligned after routed trading, and the aggregate state evolves like a single LMSR with depth $B_t$ under this aligned-component reference construction. This algebraic identity explains the Layer A to Layer B match: the compressed implementation preserves the same update rule in high precision.
+
+The cash side aggregates exactly as well. For a routed buy in outcome $j$, each aligned component charges
+\[
+\Delta C_t^{(m)} = b_t^{(m)} \ln\!\left(1-p_j(t) + p_j(t)e^{x^{(m)}/b_t^{(m)}}\right).
+\]
+Because $x^{(m)}/b_t^{(m)} = x/B_t$ under the proportional router, this becomes
+\[
+\Delta C_t^{(m)} = \frac{b_t^{(m)}}{B_t} \, B_t \ln\!\left(1-p_j(t) + p_j(t)e^{x/B_t}\right)
+= \frac{b_t^{(m)}}{B_t}\Delta C_t.
+\]
+Summing across components gives
+\[
+\sum_m \Delta C_t^{(m)} = \Delta C_t.
+\]
+So not only the aggregate pricing state but also the aggregate trade-cash update, and therefore sponsor NAV accounting, coincide between Layer A and Layer B whenever the components remain aligned.
+
+\begin{center}
+\setlength{\fboxsep}{8pt}
+\fbox{\begin{minipage}{0.94\linewidth}
+\textbf{Proposition 2 (Layer A/B equivalence under aligned components).}
+Relative to the paper's aligned-component reference model, proportional routing by component depth makes the aggregate Layer A pricing state and aggregate trade-cash update match the compressed Layer B state in high precision. This is why Layer B reproduces the chosen reference model to numerical precision rather than merely resembling it heuristically.
+\end{minipage}}
+\end{center}
+
+The local-slippage claim can also be stated more sharply. For a fixed pre-trade outcome price $p_j$ and a buy of $x>0$ shares in that outcome, the LMSR buy cost can be written as
+
+\[
+f_B(x;p_j) = B \ln\!\left(1-p_j + p_j e^{x/B}\right).
+\]
+
+Let $h(y) = \ln(1-p_j + p_j e^y)$ with $y=x/B$. Then
+
+\[
+\frac{\partial f_B}{\partial B} = h(y) - y h'(y).
+\]
+
+Since $h$ is convex and $h(0)=0$, we have $h(y) \le y h'(y)$ for $y \ge 0$, which implies
+
+\[
+\frac{\partial f_B}{\partial B} \le 0.
+\]
+
+So at a fixed pre-trade price, increasing depth weakly lowers the buy cost for the same probe trade. That is the analytic reason the slippage checks in the simulator pass after price-preserving LP entry.
+
+Reserve-based settlement can also be stated as a simple accounting invariant. Let $A_t$ denote non-fee sponsor assets net of previously claimed LP residual, and let $W_t$ denote the outstanding winner or refund reserve. Define the free residual pool as
+
+\[
+L_t = \max(0, A_t - W_t).
+\]
+
+If $K_t$ denotes total contract funds, $P_t$ protocol-fee liabilities, and $G_t$ LP-fee liabilities, then the paper's non-fee sponsor-asset quantity is simply
+
+\[
+A_t = K_t - P_t - G_t.
+\]
+
+Winner or refund claims of size $x$ reduce both sides of the senior book:
+
+\[
+A_t^{+} = A_t - x,
+\qquad
+W_t^{+} = W_t - x,
+\]
+
+so the free residual pool remains unchanged:
+
+\[
+L_t^{+} = \max(0, A_t^{+} - W_t^{+}) = \max(0, A_t - W_t) = L_t.
+\]
+
+LP-fee withdrawals are separate again:
+
+\[
+K_t^{+} = K_t - z,
+\qquad
+G_t^{+} = G_t - z,
+\qquad
+A_t^{+} = A_t,
+\qquad
+W_t^{+} = W_t.
+\]
+
+So fee withdrawals reduce the fee-liability bucket without invading winner reserve collateral.
+
+To make LP claim ordering well-defined, the weighted residual split is snapshotted at settlement rather than recomputed from the shrinking post-claim pool. Let $t^\star$ denote the first settled state before any LP residual claims, and define
+
+\[
+R_{\mathrm{settle}} = \max(0, A_{t^\star} - W_{t^\star}).
+\]
+
+Let the settlement-share weights be
+
+\[
+\pi_k = \frac{w_k}{\sum_j w_j},
+\qquad
+\bar R_k = \pi_k R_{\mathrm{settle}}.
+\]
+
+Let $C_{k,t}$ denote residual already claimed by cohort $k$ after settlement. Then the remaining cohort entitlement is
+
+\[
+E_{k,t} = \bar R_k - C_{k,t},
+\]
+
+and the remaining free residual pool is
+
+\[
+L_t = R_{\mathrm{settle}} - \sum_k C_{k,t} = \sum_k E_{k,t}.
+\]
+
+An LP residual claim by cohort $k$ of size $y_k$ is permitted only if $0 \le y_k \le E_{k,t}$, in which case
+
+\[
+A_t^{+} = A_t - y_k,
+\qquad
+W_t^{+} = W_t,
+\qquad
+C_{k,t}^{+} = C_{k,t} + y_k,
+\qquad
+E_{k,t}^{+} = E_{k,t} - y_k,
+\qquad
+L_t^{+} = L_t - y_k \ge 0.
+\]
+
+This is the clean reason two different properties hold at once. Winner seniority is protected because LP claims can never reduce the pool below $W_t$. Claim-order invariance also holds because the final cohort allocation is determined by the settlement snapshot $\bar R_k$, not by the order in which different cohorts happen to withdraw from the shrinking free pool.
+
+\begin{center}
+\setlength{\fboxsep}{8pt}
+\fbox{\begin{minipage}{0.94\linewidth}
+\textbf{Proposition 3 (Settlement snapshot invariance).}
+Given the funded initial settlement state $A_{t^\star}\ge W_{t^\star}$ established above and fixed nonnegative snapshot weights summing to one, LP residual claims cannot invade winner or refund seniority, and the final residual allocation is independent of LP claim order. Claim order only changes when each cohort is paid, not what each cohort is entitled to receive.
+\end{minipage}}
+\end{center}
+
+\subsection{The value of informed entry}
+
+The information-timing thesis has a precise decision-theoretic core. An LP who must commit before news arrives cannot condition that commitment on the news. An LP who can wait can enter favorable markets and decline unfavorable ones. The object to measure is this opportunity value, including the opportunities declined, rather than only the returns of LPs who happened to participate.
+
+Fix one entry date, public state, deposit, residual rule, and future-state distribution. Let $X$ be terminal residual plus prospective LP fee income, minus posted collateral and the opportunity cost of locked capital, and let $S$ be an informative signal available before the entry decision. Waiting out the opportunity earns zero. For a risk-neutral LP receiving the signal at no acquisition cost, the public-information policy obtains
+\[
+V_{\mathrm{public}}=\max\{0,\mathbb E[X]\},
+\]
+while the LP who observes it obtains
+\[
+V_{\mathrm{informed}}=\mathbb E\!\left[\max\{0,\mathbb E[X\mid S]\}\right].
+\]
+\textbf{Proposition (Information value of optional entry).}
+$V_{\mathrm{informed}}\ge V_{\mathrm{public}}$. The inequality is strict when conditional expected profit is positive for some signals and negative for others, each with positive probability. The proof is Jensen's inequality for the convex function $x\mapsto\max(0,x)$; strictness follows when the conditional means cross its kink. Equivalently, the informed LP can always ignore the signal and reproduce the public policy.
+
+This is the asymmetry live entry introduces: information can improve the decision about \emph{whether to underwrite}. The proof holds the entry opportunity fixed. Moving entry to a later date also changes prices, required collateral, remaining fee flow, and lockup duration, so its net economic effect must be measured separately. We therefore distinguish a same-date information treatment from an early-versus-late commitment comparison in the experiments. A founder's extra collateral is a third effect, not a substitute for either treatment.
+
+\subsection{Residual weighting}
+
+Once reserve-based release is adopted, a second question remains: how should the free residual pool be split across LP cohorts? Later entrants can condition participation on information that early sponsors did not have. Flat depth weights do not compensate early capital for that commitment. An exposure premium supplies that compensation directly; its strength determines how much prospective residual value is transferred. Too much makes attractive late liquidity unprofitable.
+
+The simulator's current affine rule is explicit. Let $t_k$ be cohort $k$'s entry time, let $T$ be the settlement timestamp, and define elapsed exposure
+
+\[
+e_k = \max(1, T - t_k).
+\]
+
+The cohort's time weight is then
+
+\[
+\tau_k^{\mathrm{step}} = 1 + \lambda_{\mathrm{step}} (e_k - 1),
+\]
+
+which is the event-step rule used in the paper's first-stage calibration sweeps. The protocol-facing rule studied later normalizes that exposure by market lifetime:
+
+\[
+a_k =
+\begin{cases}
+0, & T - t_0 \le 1, \\
+\dfrac{e_k - 1}{T - t_0 - 1}, & T - t_0 > 1,
+\end{cases}
+\]
+
+and its time weight is
+
+\[
+\tau_k^{\mathrm{norm}} = 1 + \lambda_{\mathrm{norm}} a_k.
+\]
+
+The corresponding residual weight is
+
+\[
+w_k = s_k \tau_k.
+\]
+
+If the free residual pool at settlement is $R$, the cohort's pre-claim entitlement is
+
+\[
+R_k = R \cdot \frac{w_k}{\sum_j w_j}.
+\]
+
+\textbf{Proposition (Direction of the exposure correction).}
+Fix a terminal history before residual claims, with $R\ge0$, deposits $D_k>0$, depth shares $b_k>0$, and cumulative LP fee wealth $F_k$ (unwithdrawn rights plus any prior fee cash) fixed. Let $e$ and $\ell$ be its earliest and latest cohorts. Set $B=\sum_k b_k$, $H=\sum_k b_k a_k$, and $\bar a=H/B$. For nonnegative $\lambda$, the signed late-minus-early NAV-per-deposit gap satisfies
+\[
+g'(\lambda)=\frac{RB}{(B+\lambda H)^2}
+\left[\frac{b_\ell}{D_\ell}(a_\ell-\bar a)
+      -\frac{b_e}{D_e}(a_e-\bar a)\right]\le0,
+\]
+because $a_\ell\le\bar a\le a_e$. It is strictly negative when $R>0$ and the endpoint exposures differ. Fee rights do not enter the derivative: their prospective allocation is unchanged. The result also covers cancellation after its refund reserve is funded.
+
+This supplies the mechanism behind the correction. A positive timing gap can be reduced by increasing the exposure premium; a sufficiently large premium can overcorrect it. The calibration problem is to choose the amount, not to discover whether the rule moves value in the intended direction. This fixed-history result concerns cohort allocation. The information value of choosing which histories to enter is a separate decision problem, tested separately below.
+
+The calibration target must be explicit. Minimizing a cohort-return gap on forced-entry histories and preserving voluntary participation are different objectives. The historical duration experiment selects $\lambda_{\mathrm{norm}}=0.139227$ for the first; the strategic-entry experiment selects $0.005$ on its tested grid for the second, subject to retaining every publicly profitable training regime and at least half of informed participation. Both use the same affine family. The paper retains $0.15$ as a comparison point from its earlier calibration, not as a coefficient to impose on every market.
+
+Normalized elapsed time is a transparent, inexpensive proxy for how long capital underwrites the market. It is not a complete measure of information risk. The one-time-unit offset in $e_k$ also means the implemented clock is not exactly invariant to every rescaling. The empirical question is whether normalization controls duration sensitivity; the experiments test that directly. Once a market opens, its clock definition, settlement trigger, and coefficient must be fixed so participants know the residual contract they are accepting.
+
+\subsection{Worked example}
+
+The mechanism is easiest to internalize with one stylized example. The purpose of this example is to make the accounting concrete, not to reproduce the full average fairness result of the simulation pack in one toy path. Consider a five-outcome market with one bootstrap sponsor and one late entrant.
+
+\begin{itemize}
+\item The bootstrap sponsor enters first at the uniform start state $\mathbf{p}_0=(0.2,0.2,0.2,0.2,0.2)$. Then $\alpha(\mathbf{p}_0)=\ln 5 \approx 1.609$, so with share units $s_0 = 100$ the required collateral is $D_0 \approx 160.9$.
+\item Before any other LP arrives, trading generates 4 units of LP fees. Those fees belong entirely to the bootstrap sponsor.
+\item The market then moves to a moderately skewed state $\mathbf{p}_1=(0.40,0.20,0.15,0.15,0.10)$. Here $\alpha(\mathbf{p}_1)=\ln 10 \approx 2.303$, so a late LP entering with share units $s_1 = 50$ posts $D_1 \approx 115.1$ of collateral. That late LP receives none of the earlier 4 fee units.
+\item After entry, trading generates 6 more fee units. Those are split by active share units, so the bootstrap sponsor receives 4 and the late LP receives 2.
+\item At settlement, after winner claims are reserved, the free residual pool is 300.
+\end{itemize}
+
+Under flat residual pooling, the residual weights are just 100 and 50, so the residual split is 200 and 100. Under an affine rule with time weights $1.30$ for the early cohort and $1.00$ for the late cohort, the residual weights become 130 and 50, so the residual split is approximately 216.7 and 83.3. The opposite sign, which is the one that motivates the paper's calibration program, is just as easy to see in a one-line micro-example. Consider two equal-depth nonfounding cohorts each allocated 100 units from a larger flat residual pool (the founder and its allocation are omitted), but the earlier cohort entered when the underwriting floor was $\alpha=2.303$ and the later cohort entered when it was $\alpha=1.609$. With $s_0=s_1=50$, the deposits are then approximately $115.1$ and $80.5$, so the residual-only NAV-per-deposit ratios are about $0.869$ and $1.242$. Flat residual pooling therefore gives the later entrant a materially better capital-normalized outcome even though both cohorts receive the same residual amount. The affine rule exists to reduce that kind of timing subsidy, not to rewrite fee fairness.
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Cohort & Flat NAV / deposit & Affine NAV / deposit \\
+\midrule
+Bootstrap LP & $(4 + 4 + 200)/160.9 \approx 1.293$ & $(4 + 4 + 216.7)/160.9 \approx 1.397$ \\
+Late LP & $(2 + 100)/115.1 \approx 0.886$ & $(2 + 83.3)/115.1 \approx 0.741$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The numbers are illustrative rather than taken from a single simulation path, but the mechanics are exact. Fee fairness is strict. The late LP receives no retroactive fees. The correction happens in the residual split, not in the fee rule. In this particular toy path, affine weighting moves additional residual value toward the earlier cohort because it carried the market through more of the active period. The point of the examples is to show where the rule acts and how fee fairness and residual fairness are separated.
+
+\begin{table}[t]
+\centering
+\caption{Mechanism summary.}
+\label{tab:mechanism}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.28\linewidth}YY}
+\toprule
+Component & Rule & Rationale \\
+\midrule
+Initial market funding & Required before \texttt{ACTIVE} & Establishes the first price vector and starting depth. \\
+LP entry & Allowed during \texttt{ACTIVE} & Lets depth grow after launch. \\
+LP withdrawal & Disallowed during \texttt{ACTIVE} & Avoids impairing trader rights and winner claims. \\
+Fee rule & Prospective only & Late LPs do not receive retroactive fees. \\
+Winner payout model & Fixed-claim, senior & Makes reserve-based settlement coherent. \\
+Residual release & Reserve-based & Unlocks LP capital without requiring all winners to claim first. \\
+Residual weighting & Mild affine time premium & Reduces systematic bias in pooled residual distribution. \\
+Numerical domain & Explicit bounds and rejection & Extreme skew cannot silently invalidate quotes. \\
+Calibration & Fix the objective and participation constraint & Different markets need different premium strengths. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Simulation Program}
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/three-layer-architecture.tex}}
+\caption{Three-layer research architecture. The exact reference makes cohort economics explicit; the compressed model preserves aligned pricing; the integer model tests the final reserve and allocation rules with directed arithmetic.}
+\label{fig:layers}
+\end{figure}
+
+\subsection{One mechanism, three implementations}
+
+Layer A routes trades across aligned parallel LMSR components using high-precision Decimal arithmetic. Layer B maintains the aggregate pricing state and the same economic ledgers. Their agreement tests the implementation of the algebra in Section~3; it is not independent evidence for assumptions shared by both models. Layer C implements integer balances, fee accounting, contingent refund reserves, and snapshotted normalized residual entitlements at scale $10^6$. All three exercise the same pooled settlement policy, with normalized $\lambda=0.15$ held fixed in the integer comparison. Numerical pricing and settlement accounting are tested separately so that a quote error cannot be mistaken for an economic counterexample.
+
+The paired integer study uses the same bootstrap amount in all three engines: the greater of the upward-rounded exact funding treatment and C's quantized bootstrap requirement, plus one micro-unit. Actual amounts are recorded. This adjustment prevents a nominally minimal exact bootstrap from falling just below the integer engine's requirement.
+
+The theorem statements use exact arithmetic. Reference transcendental calculations use 80-digit Decimal arithmetic. Information experiments enumerate finite states, use Decimal ledgers with the ambient 28-digit context, and aggregate probabilities and expectations in binary64, with a $10^{-12}$ entry-decision tolerance. Integer settlement floors each cohort's entitlement once at resolution or cancellation and retains the unallocated dust. It never rounds a senior claim down to make a deficient reserve appear solvent. The research implementation is packaged independently of question.market's production contracts; the paper's mechanism and evidence do not depend on the product retaining a particular implementation.
+
+\subsection{Funding and long trading histories}
+
+The founder's contribution is an experimental parameter. A neutral bootstrap requires $b_0\ln N$ of outcome collateral. We compare that floor with a fixed extra 20 units and a 20\% extra contribution. Every later entrant pays the stated underwriting floor. The original experiments used the fixed extra 20; the revised experiments disclose it and vary it while holding requested histories fixed.
+
+The fresh evaluation contains 96 independent histories, with seeds 41000--41095. Each has 40--100 requested trades, 1--4 LP entries, $N\in\{3,5,8\}$, initial depth in $\{80,100,160\}$, LP fees of 50 or 200 basis points, and protocol fees of 0 or 25 basis points. Eight traders request trades of 2\%, 5\%, 10\%, or 20\% of initial depth; the sell-request probability is 0.35. Interarrival gaps are independent integers from one through six, rather than stretched copies of a single clock.
+
+For each history, latent outcome probabilities are the softmax of independent normal draws with standard deviation 0.8. Buy directions mix uniform demand with those probabilities, with the latent weight increasing from 0.15 to 0.85 through the history. The outcome is independently drawn from the same latent probabilities after requests are constructed. This gives an explicit synthetic information process and avoids defining truth to be whatever final market prices predict. All requested histories, realized outcomes, rejections, and cohort-level results are retained. There are 6,894 requested trades, including 2,357 sells. The three funding treatments are paired by history.
+
+The terminal-allocation comparison includes flat depth weights, the original normalized $\lambda=0.15$, and resolved-only component capital accounts $D_k+X_k-x^k_\omega$. The latter isolates contributed collateral and routed trading P\&L instead of pooling them by depth. It is an accounting comparator, with identical fees, rather than a claim that equal realized returns are the uniquely fair LP contract. Cancellation uses the specified aggregate refundable-basis ledger.
+
+\subsection{Calibration and duration portability}
+
+The historical calibration has 64 Monte Carlo training histories (seeds 1100--1163) and 64 test histories (2100--2163). Each is evaluated on clocks of 12, 48, and 168 steps. Each split also contains 96 designed stress rows. The Monte Carlo generator is the published \texttt{paper\_quick} preset: 3/5/8/12 outcomes, depths 80/100/140/180, and 5--10 trades. The stress split uses favorite versus hedge terminal outcomes on related histories. Thus the clock copies are repeated measurements, and the stress split tests a different resolution policy, not independently generated strategy histories.
+
+Both affine families are now optimized over nonnegative $\lambda$ on the training objective $|\overline g|$, using an expanding bracket and 60 bisection steps. This removes the old event-step search's artificial lower bound of 0.025. The signed gap is monotone by the preceding proposition. We report mean absolute gap and duration slices alongside the fitted mean so that positive and negative errors cannot disappear into an average. The same selected parameters are then applied to the original test pack and to its floor-funded sensitivity treatment, without refitting. The fresh 96-history study is kept separate and never used to select these parameters.
+
+\subsection{Information treatments and strategic entry}
+
+The direct information experiment enumerates the joint distribution of a terminal outcome, future trade direction, and private signal in a three-outcome market. Public prices are calibrated to the prescribed outcome distribution before the late entry opportunity. At that opportunity, public and informed LPs face exactly the same prices, collateral requirement, residual rule, and possible future worlds. They differ only in whether they observe the signal. A Bayesian policy enters when conditional expected net profit is positive and otherwise declines. Returns are measured per offered unit of capital, including zero on declined opportunities; conditional returns of successful entrants are not substituted for this estimand.
+
+Two information channels are tested. The first predicts the outcome. The second predicts whether future order flow points toward the eventual winner, which is information about the adverse selection faced by an underwriter. The second channel was specified as a separate extension after the first experiment; its results are not presented as an untouched confirmation of the first design. Opportunity cost is charged at 5\% annually over a 30-day market, with duration, fee, signal-strength, funding, and flow-quality sensitivity cases. The standard founder funding is the outcome floor, so a private-information effect cannot be attributed to the founder's extra 20.
+
+For calibration and portability, each channel also has an explicitly enumerated 27-regime training grid and a disjoint 32-regime evaluation grid. Conditional decision thresholds come from the specified world probabilities, not fitted realized outcomes. Three independent Monte Carlo streams with 20,000 draws each check the enumerated expectations. These repetitions check numerical implementation; finite-state enumeration supplies the model expectation without Monte Carlo sampling error. A separate 80-digit ledger and Decimal-aggregation audit of all 64 confirmation regimes changes none of 6,912 entry decisions; the largest reported return difference is $4\times10^{-16}$. Early commitment and delayed commitment are reported separately, since delaying entry also changes market impact, underwriting cost, fees, and time at risk.
+
+The final 64-regime confirmation freezes the selected correction before a new random draw of market parameters; the full distribution and seeds are specified in Appendix A. A separate stress test gives a greedy LP/trader the current market state and a fixed latent belief, and evaluates waiting, buying, selling, LP entry, and joint buy-plus-entry actions at four decision epochs. Every candidate objective and chosen action is published. Seven additional designed histories cover zero flow, concentrated trading, all 64 outcomes of the low-tail example, 32 small LP cohorts, and the cancellation counterexample. These are attempts to break the accounting and allocation rules, not samples from a population of attacks.
+
+\subsection{Comparator and reported quantities}
+
+The FPMM study reruns all 44 matched resolved scenarios (eight deterministic, 24 designed adversarial, and 12 high-skew) under all three founder-funding treatments. Both mechanisms receive the same share requests, fee rates, entry dates, and LMSR-derived deposit schedule, and both hold LP capital until settlement. The FPMM follows Gnosis-style proportional inventory addition; returned external outcome tokens are included in LP wealth \cite{gnosisfpmmcode}. Equal deposits do not imply equal quote functions or trader expenditures, so this is a controlled comparison of LP allocation outcomes, not an equilibrium ranking of the two markets.
+
+The terminal cohort gap is
+\[
+g=\frac{R_\ell+F_\ell}{D_\ell}-\frac{R_e+F_e}{D_e},
+\]
+measured before any LP residual payout, with $F_k$ including both fee cash already received and unwithdrawn fee rights. We report signed and absolute gaps, fees, total LP profit, tails, and capital-time exposure. Active component marks are bookkeeping diagnostics; they do not by themselves value a pooled entitlement whose future settlement time is unknown. The optional-entry estimand is $V_{\mathrm{informed}}-V_{\mathrm{public}}$, with participation and net profit reported alongside it. Neither quantity is silently substituted for the other.
+
+For the fresh randomized study, 95\% percentile bootstrap intervals use 2,000 resamples of the 96 independent history IDs. Policy and funding contrasts are paired. Intervals are pointwise descriptive estimates, not simultaneous significance tests across every reported comparison. The designed comparator and stress grids have no population confidence intervals. Reserve coverage, conservation, claim ordering, and integer dust are checked as state-machine properties; the proofs supply the safety claims beyond the sampled paths.
+
+
+\section{Results}
+
+\subsection{The information-timing advantage is real}
+
+The direct intervention establishes the paper's central intuition: information can make live entry more valuable even when the entry price does not change. In the 32-regime flow-information evaluation grid, an informed entrant earns an additional 3.5822 percentage points per offered unit of collateral under flat pooling. Public entry earns 0.5061\%; informed optional entry earns 4.0884\%. Both face the same public market state. The difference comes from conditioning the underwriting decision on the signal.
+
+One concrete case makes the mechanism visible. With a 10-share public trade, a 240-share future trade, flow-alignment probability 0.5, and signal accuracy 0.8, the entrant posts 22.6614 units of collateral. Its conditional expected net profit is $+14.3903$ after a favorable signal and $-9.5817$ after an adverse one. The public policy earns 10.6097\%; the informed policy enters half the time and earns 31.7507\% per offered collateral. This is exactly the sign crossing in the information-value proposition. No founder funding excess is present.
+
+Information must predict the economics of underwriting. A signal about the winning outcome alone has a much smaller effect on the same 32-regime grid: 0.2762 percentage points under flat pooling. In the canonical adverse-flow case, even a perfect outcome signal does not make entry profitable. In a high-noise case all public LPs already enter, so extra outcome information has zero option value. These are useful controls: profitability, knowledge of the winner, and the value of choosing whether to enter are different quantities. Uninformative signals produce zero value under both information channels. Delaying a mandatory commitment is a different experiment: on the 32-regime grid, the mean committed late-minus-early return change under flat pooling is $-10.4123$ percentage points. Changed underwriting cost and lost fee exposure can outweigh the benefit of a later date. The positive causal result concerns the ability to use news to accept or decline the same offer.
+
+\subsection{A correction that preserves participation}
+
+The exposure theorem tells us which way the allocation moves. Choosing its strength requires an economic objective. On the 27-regime training grid, we minimize mean information advantage subject to two conditions: preserve every regime with profitable public entry under flat pooling, and retain at least half of baseline informed participation. The expanded grid selects $\lambda=0.005$, which also minimizes the ex ante entrant--founder gap among the feasible candidates. The feasible boundary lies between 0.005 and 0.01; this is a grid choice, not an asserted continuous optimum.
+
+We then freeze that coefficient and evaluate 64 newly sampled regimes. Table~\ref{tab:confirmation} reports the result. The correction reduces the ex ante cohort gap by 0.0831 percentage points, with paired 95\% regime-bootstrap interval $[-0.1057,-0.0612]$. Public and informed participation are unchanged. All nine public-profitable regimes, all 32 informed-profitable regimes, and all 17 regimes with positive expected returns for both founder and informed entrant remain in those categories. The gap improves in 32 regimes and is unchanged in 32; it worsens in none.
+
+\begin{table}[t]
+\centering
+\caption{Frozen-policy confirmation on 64 independently sampled synthetic regimes. Returns are net of deposit and opportunity cost; declined offers earn zero incremental entrant profit. Founder returns include actual no-entry worlds.}
+\label{tab:confirmation}
+\small
+\begin{tabularx}{\linewidth}{Yrr}
+\toprule
+Quantity & Flat pool & Normalized $\lambda=0.005$ \\
+\midrule
+Public return per offered collateral & 2.4939\% & 2.4599\% \\
+Informed return per offered collateral & 8.2575\% & 8.1901\% \\
+Value of information & 5.7636 pp & 5.7302 pp \\
+Founder actual expected return & $-5.7904$\% & $-5.7747$\% \\
+Informed entrant minus founder & 14.0479 pp & 13.9648 pp \\
+Public entry probability & 14.0625\% & 14.0625\% \\
+Informed entry probability & 24.4128\% & 24.4128\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The same-date information advantage falls by 0.0334 percentage points on average, with paired interval $[-0.0491,-0.0182]$. It rises in the nine publicly profitable regimes because the public policy's return falls more than the informed policy's. That does not reverse the cohort allocation result. Correcting the division of residual value and eliminating the value of information are not the same objective.
+
+The small coefficient buys participation preservation. Larger coefficients produce larger allocation changes. In the illustrative profitable case above, $\lambda=0.15$ lowers the entrant--founder ex ante gap from 17.6337 to 12.2420 percentage points while both parties remain profitable and informed participation stays at 50\%. Across the fresh 64 regimes, that larger coefficient lowers the mean gap by 2.3447 points but reduces informed participation from 24.41\% to 22.03\%. Across the earlier 32-regime grid it eliminates public entry. The full frontier is published, including these losses of participation.
+
+The founder's negative average return over the broad confirmation population is also economically meaningful. Live entry does not turn every order-flow environment into a profitable market. The 17 jointly profitable regimes establish positive-participation examples; they do not establish a market-wide equilibrium. The experiments make the tradeoff visible rather than treating an empty market as a successful correction.
+
+\subsection{Funding and forced entry explain different return gaps}
+
+A forced-entry cohort comparison does not isolate the information option. Founder funding and the price of new underwriting can move that comparison even in a market with no private information. At a uniform zero-flow state, flat depth weights give a late entrant a pro rata share of any founder funding above the required floor. With no excess funding, that particular transfer is zero.
+
+Skew can produce the opposite transfer. Consider a single uniform-origin LMSR of depth $B$, in the bootstrap gauge $\mathbf q_0=0$, with current nonnegative outstanding-share state $\mathbf q$, and founder excess $E$. Non-fee assets are $C_B(\mathbf q)+E$. Under the current probability vector $\mathbf p$, expected residual is $BH(\mathbf p)+E$, where $H(\mathbf p)=-\sum_i p_i\ln p_i$. A cash-only entrant of depth $\delta$ posts $\delta\alpha(\mathbf p)$. If trading stops and resolution follows $\mathbf p$, its flat-pool expected profit is
+\[
+\frac{\delta}{B+\delta}\left[B\{H(\mathbf p)-\alpha(\mathbf p)\}+E\right].
+\]
+This follows by subtracting the entrant's deposit from its share of the old residual plus that deposit. At $E=0$ it is nonpositive, and strictly negative for a nonuniform price vector. The underwriting floor funds worst-case liabilities; it is not a pooled-equity NAV price.
+
+The fresh 96-history experiment demonstrates the importance of this distinction. Table~\ref{tab:fresh} compares identical requested histories across funding treatments. With floor funding, every flat-pool endpoint gap is negative. Adding a fixed 20 shifts the mean by $+0.1181$, with paired interval $[0.1082,0.1280]$. Proportional excess funding changes the mean sign. The original $\lambda=0.15$ moves all three means toward earlier cohorts, just as the theorem predicts, but increases the absolute gap where late capital was already disadvantaged. That is a calibration failure of this coefficient on this workload, not evidence against the separately identified information option.
+
+\begin{table}[t]
+\centering
+\caption{Fresh histories: mean late-minus-early NAV/deposit gap and mean absolute gap (MAE). Each row has 96 independent histories. Parentheses give the pointwise 95\% bootstrap interval for the signed mean.}
+\label{tab:fresh}
+\small
+\begin{tabularx}{\linewidth}{llYr}
+\toprule
+Founder funding & Allocation & Mean gap (95\% interval) & MAE \\
+\midrule
+Floor & Flat & $-0.1452$ ($-0.1671$, $-0.1243$) & 0.1452 \\
+Floor & Normalized .15 & $-0.2319$ ($-0.2569$, $-0.2091$) & 0.2319 \\
+Floor & Capital accounts & $-0.0030$ ($-0.0324$, $0.0270$) & 0.1126 \\
+Floor + 20 & Flat & $-0.0271$ ($-0.0497$, $-0.0059$) & 0.0764 \\
+Floor + 20 & Normalized .15 & $-0.1176$ ($-0.1428$, $-0.0942$) & 0.1331 \\
+Floor + 20 & Capital accounts & $-0.0022$ ($-0.0282$, $0.0237$) & 0.0983 \\
+Floor $\times$ 1.2 & Flat & $+0.0340$ ($0.0120$, $0.0546$) & 0.0864 \\
+Floor $\times$ 1.2 & Normalized .15 & $-0.0590$ ($-0.0831$, $-0.0368$) & 0.0915 \\
+Floor $\times$ 1.2 & Capital accounts & $-0.0032$ ($-0.0282$, $0.0217$) & 0.0924 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The allocation rule changes who receives the residual, not the total available. Aggregate LP return is approximately $-0.47$\%, $-0.47$\%, and $-0.40$\% across the three funding treatments and is unchanged across their allocation rules. Component capital accounts substantially reduce the mean endpoint gap, but still have dispersed realized outcomes. Equal realized returns are a diagnostic target, not a proof of equal risk-bearing or welfare.
+
+\subsection{Lifetime normalization survives a fair calibration comparison}
+
+The historical duration result remains strong after giving both families the same unrestricted nonnegative parameter search. Training selects $\lambda_{\mathrm{step}}=0.003636166$ and $\lambda_{\mathrm{norm}}=0.139227126$. On the original 288-row test pack, the mean gaps are $+0.001623$ and $-0.000639$, respectively. Both achieve a near-zero aggregate mean. Normalization's advantage appears in the individual errors and duration slices: mean absolute gap falls from 0.091764 to 0.037479, a 59.2\% reduction.
+
+\begin{table}[t]
+\centering
+\caption{Reoptimized historical calibration under founder funding of floor plus 20. Short, medium, and long are restampings of the same 64 test histories; they are repeated measurements, not 192 independent draws.}
+\label{tab:duration}
+\begin{tabular}{lrr}
+\toprule
+Test slice & Event-step mean gap & Normalized mean gap \\
+\midrule
+Short (12 steps) & $+0.063586$ & $+0.005312$ \\
+Medium (48 steps) & $-0.007213$ & $+0.006934$ \\
+Long (168 steps) & $-0.171739$ & $+0.007298$ \\
+All 288 rows, MAE & $0.091764$ & $0.037479$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This is the reason to normalize the clock. An event-step coefficient multiplies the arbitrary duration scale and can cancel opposite errors in the aggregate. The normalized rule keeps the three duration means close together. The historical $0.15$ result is reproduced (mean gap $-0.006767$, MAE 0.039359), but the old claim that 0.025 was the best event-step alternative does not survive the expanded search. Removing founder excess also changes this calibration: the selected normalized rule produces a mean gap of $-0.100501$ under floor funding. Coefficient choice must follow the funded market and its stated target.
+
+\subsection{The FPMM difference is strongest at high skew}
+
+The matched FPMM comparison uses normalized $\lambda=0.15$ throughout and preserves the strongest comparator result: in all 12 highly skewed scenarios, the corrected LMSR has a smaller absolute cohort gap under every funding treatment. Mean active-LP versus FPMM gaps in this family are $-0.1519$ versus $+0.5552$ at the floor, $-0.1203$ versus $+0.5373$ with the extra 20, and $-0.0553$ versus $+0.5070$ with 20\% extra funding. Returned FPMM outcome tokens are included in those returns.
+
+Over all 44 designed scenarios, the number favoring active LP by absolute gap is 12 at the floor, 29 with the extra 20, and 26 with 20\% extra funding. Thus the strong high-skew result is robust to this funding ablation, while the overall ranking is not. FPMM also offers transfer and active withdrawal that this experiment intentionally does not exercise. This is a comparison of cohort allocation under matched requests and deposits, not a claim of dominance across all LP services.
+
+\subsection{The final accounting survives settlement}
+
+The economic guarantees are supported by direct state-machine checks. The cancellation counterexample is now stopped at the first sell that would underfund remaining refundable basis. The rejected trade offers 99.5732 units of net proceeds; preserving full cancellation refunds has a real execution consequence. None of the 2,357 sell requests in the fresh 96 histories binds the guard under any of the three funding treatments. The smallest recorded refund margin is 86.1190; the smallest all-outcome margin is 54.4645. Stress tests include concentrated flow, zero flow, 32 small cohorts, and every terminal outcome of a 64-outcome market.
+
+The earlier apparent low-tail economic failure disappears when the diagnostic follows the actual claim state. On the representative 64-outcome path, 250 shares are bought in outcome 0, then 500 in outcome 1, then an LP adds depth 20. At resolution to outcome 1, non-fee assets are 668.6428, winner claims are 500, and free residual is 168.6428. Paying the winner reduces assets and its reserve by the same 500; free residual remains 168.6428. Testing a losing-outcome counterfactual after this payment invents an obligation that no longer exists. The revised tests verify actual branches and claim-order permutations instead.
+
+The final-policy comparison completes 309 path/funding runs across the 96 fresh histories and seven stress histories. Each accepted history is settled separately to every outcome and to cancellation, producing 6,381 terminal model runs across A, B, and C. LP residuals are paid first, then senior claims, then fees; separate permutation tests exercise other orders. Every senior claim is paid. All models accept and reject the same requests, including the three funding variants of the cancellation-reserve rejection. The 21,186 integer quote checks have zero one-sided failures against the independent Decimal oracle.
+
+Layer B matches A to Decimal precision: maximum trade-cash difference is $5\times10^{-77}$, maximum price difference $3\times10^{-79}$, and maximum terminal cohort-NAV difference $6.11\times10^{-75}$. Table~\ref{tab:integer} separates integer fidelity from that algebraic identity. Cross-model differences include the quantization of pricing state, LP entry, fees, and settlement; they are not the interval width of a quote at C's own state.
+
+\begin{table}[t]
+\centering
+\caption{Maximum A--C differences under the same normalized reserve-pool policy ($\lambda=0.15$), plus retained integer settlement dust. Prices are probability fractions; cash and NAV are collateral units.}
+\label{tab:integer}
+\small
+\begin{tabularx}{\linewidth}{Yrr}
+\toprule
+Quantity & 96 fresh histories & Seven stress histories \\
+\midrule
+Trade quote, absolute & $0.00002460$ & $0.00006225$ \\
+Recorded price, absolute & $0.00000633$ & $0.00005703$ \\
+Terminal cohort NAV, absolute & $0.00114466$ & $0.03747155$ \\
+Terminal cohort NAV/deposit, absolute & $0.00002206$ & $0.00341071$ \\
+Retained settlement dust & $0.000004$ & $0.000024$ \\
+Terminal model runs & 5,490 & 891 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The largest stress NAV/deposit difference occurs with many small cohorts; the largest price difference occurs on the 64-outcome path. These are measured approximation costs, not failed senior claims. A fixed-point allocation floors each snapshotted cohort entitlement once, leaving dust strictly below one raw unit per cohort. The safety guarantee comes from funded transitions and seniority, while the fidelity table measures how closely the integer realization follows the exact economic model.
+
+
+The integer quote repair is substantive. In a three-outcome market of depth 100 after a 1,000-share buy, the archived helper could quote 100 raw collateral units for selling one raw share unit, when its exact value is below one. Rounding the output of an approximate formula down is not enough to make a sell quote conservative. The replacement encloses the LMSR cost difference in a directed integer interval: buys charge the ceiling of the upper bound and sells pay the floor of the lower bound. Independent 80-digit oracles check direction at the integer engine's own state; closed fixed-depth inventory cycles cannot profit from this rounding.
+
+The accepted numerical domain is $2\le N\le64$, positive uint64 depth, uint64 inventories and trade amounts, inventory spread divided by depth at most 64 before and after the trade, and trade size divided by depth at most 64. Every accepted quote has certificate width below one raw unit at scale $10^6$; otherwise it is rejected. Conservative quote error is less than one unit plus that interval width, not necessarily the correctly rounded exact value. The arithmetic uses large integer intermediates. Porting those intermediates to AVM byte arithmetic and measuring execution resources is an implementation task, separate from the quoted mathematical guarantee.
+
+\section{Interpretation}
+
+Fee fairness and residual fairness are separate problems. The fee index makes a crisp temporal promise: new depth earns new fees. It does not promise that every LP has the same information, bears the same risk, or earns the same return. Residual fairness is harder because the claim is junior, path-dependent, and entered at a chosen moment.
+
+The information-timing thesis now has both a theorem and a direct experiment. Later capital can use information to choose what it underwrites. That option is valuable even with an unchanged public entry price. The exposure rule supplies a deliberate counterweight by moving residual value toward capital committed earlier. Its direction is proven; its strength is an economic choice. Normalizing the clock avoids making that choice depend mainly on the arbitrary number of elapsed simulation steps.
+
+The mechanism is not a passive yield primitive in the ordinary DeFi sense. LPs post locked sponsor capital against contingent trader liabilities. They receive prospective fees and a junior residual. Their relevant risks are lockup, adverse selection, cancellation, and residual allocation. Profitable participation depends on prospective flow and the price of underwriting, not just on the presence of a liquidity button.
+
+The research therefore supports a concrete design rather than a universal return promise: safe senior claims, explicit junior economics, and a measurable allocation--participation frontier. The point is simple: live liquidity works only when the accounting is honest and the underwriting offer is worth accepting.
+
+\section{Protocol Implications}
+
+A deployment should encode the contract proved here. Pricing coordinates, outstanding shares, refundable basis, fee liabilities, and LP entitlements are separate ledgers. Active sells must preserve both outcome coverage and the cancellation reserve. LP principal stays locked until settlement. Fees accrue prospectively. Resolution or cancellation freezes the residual weights once; subsequent claims cannot mint a new share of the shrinking pool.
+
+The clock and exposure coefficient should be chosen before a market opens and remain fixed for that market. Calibration must name its objective: reducing historical cohort-return dispersion, preserving voluntary participation, or a specified compromise. The experiments provide examples of each tradeoff, not a reason to apply 0.15 everywhere. Founder excess funding must also be visible in the offer because it changes the value transferred through flat pooling.
+
+Numerical limits belong in execution checks. The integer model validates quote direction, range limits, and post-transition reserves. Minimum probability, inventory spread relative to depth, trade size, and balance limits must be checked before accepting an operation; a maximum-price gate alone does not characterize many-outcome tail risk. No cost cap or slippage tolerance supplied by a user may be silently relaxed by rounding.
+
+Question.market is well positioned to test the participation thesis because one product can record the offer an LP saw, when it became available, whether it was accepted, and the subsequent fee and settlement path. The next empirical test should include declined offers, funding, signal availability, deployed capital, and lockup duration. A market-level randomized comparison of preannounced exposure rules can identify the effect of the rule on entry and depth. A separately randomized release time for a common, externally available information feed can test the information channel. Market-level assignment and clustered inference are necessary because LP entry changes the environment seen by other participants. The synthetic results supply testable predictions; a live trial must establish how large those effects are in the product.
+
+\section{Scope and Implementation}
+
+The accounting theorems are pathwise under the stated transitions. The economic experiments are synthetic: exogenous trading demand, specified outcome distributions, risk-neutral entry decisions, free signals, and finite participation policies. They establish causal effects inside that model and profitable examples; they do not yet solve competition among many informed LPs or determine equilibrium fee levels. The fresh forced-entry study covers up to four later cohorts; a 32-cohort stress tests bookkeeping, not strategic equilibrium.
+
+Cancellation refunds remaining purchase basis and retains fees for liquidity service already provided. This is a contractual choice with a price: an otherwise affordable sell may be rejected to keep those refunds funded. Either positions remain account-bound, or a transfer must carry its basis. An independently defined oracle and settlement deadline are also required, since the final clock affects residual allocation.
+
+The integer implementation is a numerical research engine with authoritative uint64 balances and larger intermediate integers. It is not a compiled AVM benchmark. Contract work must map the certified calculations to available byte arithmetic, bound state and cohort growth, measure opcode and storage costs, and test atomic failure behavior on the target runtime. Production code may evolve substantially without changing the paper's mechanism or evidence.
+
+\section{Conclusion}
+
+Live liquidity in LMSR prediction markets can be made coherent. The design is price-preserving entry, no active LP withdrawal, strictly prospective fees, funded fixed trader claims, reserve-based residual release, and an explicit exposure premium.
+
+The central thesis survives a stronger test: information creates an entry option, and early capital can be compensated without eliminating late participation. The paper proves the option's value and the correction's direction, measures strict information effects at unchanged public prices, and confirms a small participation-preserving correction on fresh simulated regimes. Lifetime normalization improves duration portability; larger premiums expose a measurable tradeoff between early-cohort compensation and incoming capital. The high-skew comparator result also survives funding ablations.
+
+The implementation target is now precise. Preserve the funded state machine, carry the directed arithmetic into contracts, and use question.market to measure the participation frontier in live markets. The challenge is no longer whether these pieces can fit together. It is choosing an underwriting offer that attracts useful capital while paying early commitment its due.
+
+\appendix
+
+\section{Information Experiment Specification}
+
+There are three outcomes, founder depth 100, and entrant depth 20. Founder funding is $100\ln3$ unless a sensitivity case specifies excess funding. A public buy of $x$ shares occurs at $T/3$, the delayed entry decision at $T/2$, a future buy of $y$ shares at $2T/3$, and resolution at $T$. An early comparison policy enters at time 1. By symmetry the public trade direction is fixed to outcome 0. The true winner distribution is the baseline post-public-trade LMSR price vector; this external distribution stays fixed when an early LP changes the market's depth.
+
+Conditional on winner $W$, the future trade chooses $W$ with probability $\eta$ and each other direction with probability $(1-\eta)/2$. The outcome signal reports $W$ with probability $q$ and each incorrect outcome with probability $(1-q)/2$; its null is $q=1/3$. The flow signal reports the binary event $A=\mathbf1\{F=W\}$ correctly with probability $q$; its null is $q=1/2$. This enumerates nine economic worlds, split into 27 outcome-signal or 18 flow-signal rows. These are probability-weighted states, not independent observations.
+
+The training grid is the Cartesian product $x\in\{10,40,100\}$, $y\in\{20,80,240\}$, and $\eta\in\{1/3,1/2,0.8\}$, with $q=0.8$ and LP fees 100 basis points (27 regimes). The initial evaluation grid uses $x\in\{25,70\}$, $y\in\{50,160\}$, $\eta\in\{0.4,0.65\}$, $q\in\{0.7,0.9\}$, and LP fees 50/200 basis points (32 regimes). Both use 30 days and 5\% annual capital cost. The expanded exposure grid is $0$, $10^{-6}$, $10^{-5}$, $0.0001$, $0.00025$, $0.0005$, $0.001$, $0.0025$, $0.005$, $0.01$, $0.025$, $0.05$, $0.075$, $0.1$, $0.15$, $0.25$, $0.5$, $1$, $2$, and $4$. This expansion followed the first grid's zero selection; its initial 32-regime frontier is descriptive. Selection uses training information value subject to the stated participation constraints. The subsequent 64-regime draw is the fresh confirmation.
+
+For the final confirmation, coefficient 0.005 and comparison arms 0 and 0.15 are fixed before generating 64 regimes using seed 1047293. Independently draw integer $x$ uniformly from 5--110, integer $y$ from 10--300, $\eta$ uniformly from $[0.34,0.85]$, and $q$ from $[0.55,0.95]$. Uniformly choose LP fees from 75/150/250 basis points, durations from 14/45/90 days, and annual opportunity cost from 2\%/8\%. Protocol fees are 25 basis points. The complete realized parameter list is written before payoff evaluation. Paired 95\% percentile intervals resample whole regimes 10,000 times with seed 1047299. Their uncertainty concerns this specified synthetic distribution. This is a locally frozen confirmation, not an externally preregistered field study.
+
+\section{Directed Integer Quotes}
+
+Write the cost in max-shifted form,
+\[
+C_b(\mathbf q)=m+b\ln\!\sum_i\exp((q_i-m)/b),\qquad m=\max_iq_i.
+\]
+The implementation encloses each term using fixed-scale integer intervals at $2^{128}$. Every multiplication and division rounds the lower endpoint down and upper endpoint up. For $z\ge0$, range-reduce $z$ to at most $1/2$, enclose $e^z$ with a Taylor expansion through degree 64 and a geometric bound on the remaining positive terms, invert the interval for $e^{-z}$, and undo the range reduction by directed squaring. The max-shifted sum is at least one.
+
+For its logarithm, reduce the argument by powers of two to $[1,2]$ and use
+\[
+\ln x=2\sum_{j=0}^{63}\frac{u^{2j+1}}{2j+1}+\varepsilon,
+\qquad u=\frac{x-1}{x+1},\quad 0\le u\le\frac13,
+\]
+with $0\le\varepsilon\le2u^{129}/(129(1-u^2))$. The same construction encloses $\ln2$. The implementation's endpoint and finite-tail details are included with the code.
+
+If pre- and post-trade costs lie in intervals $[L_0,U_0]$ and $[L_1,U_1]$, then a buy's exact cost lies in $[L_1-U_0,U_1-L_0]$; a sell uses the corresponding reverse difference. Intersecting with the known single-outcome bound $[0,x]$ is valid. An accepted interval must be narrower than one raw unit. The buy charges $\lceil U\rceil$ and the sell pays $\lfloor L\rfloor$, so both inequalities are conservative. Along a closed inventory cycle at fixed depth with no LP changes, exact cost differences telescope to zero; each directed quote weakly favors the reserve, so quote rounding cannot yield positive trader profit. Nonnegative fees strengthen that result. This argument does not assume that changing depth or trading against new information has zero economic value.
+
+\section{Reproducibility}
+
+The companion repository is \url{https://github.com/qmrkt/research}. This revision adds the editable manuscript, independently installable simulation package, tests, and complete input/output records under \texttt{01-active-lp}. The revision's \texttt{REPRODUCIBILITY.md} maps every reported claim to a command, configuration, raw result, and source-hash manifest. Historical artifacts remain labeled as historical; the new results come from \nolinkurl{publication_validation}, \nolinkurl{historical_calibration}, \nolinkurl{information_timing}, \nolinkurl{fpmm_validation}, \nolinkurl{fixed_point_validation}, and \nolinkurl{safety_validation}.
+
+Install with \texttt{python -m pip install .} from the repository root. Run \nolinkurl{python scripts/check_active_lp.py} for a fresh wheel installation and independent test discovery outside the checkout. The standard-library runtime has no adjacent-contracts dependency. The archived arithmetic helper is vendored with source provenance; certified trade quotes use the new directed implementation. The paper builds from its own directory with \texttt{tectonic active-lp-paper.tex}. A publication release should pin this revision's commit and preserve the manifests alongside the PDF.
+
+\section*{Author Note}
+
+This manuscript was developed with large language model assistance for simulation architecture design, mathematical formalization, literature review, and critical review of drafts. The underlying mechanism design, economic thesis, implementation choices, calibration objectives, and earlier prototypes are the author's own.
+
+\begin{thebibliography}{99}
+
+\bibitem{hanson2002}
+Robin Hanson.
+\newblock \emph{Logarithmic Market Scoring Rules for Modular Combinatorial Information Aggregation}.
+\newblock Working paper, 2002.
+\newblock Available at \url{https://mason.gmu.edu/~rhanson/mktscore.pdf}.
+
+\bibitem{chenpennock2007}
+Yiling Chen and David M. Pennock.
+\newblock \emph{A Utility Framework for Bounded-Loss Market Makers}.
+\newblock In \emph{Proceedings of the 23rd Conference on Uncertainty in Artificial Intelligence}, pages 49--56, 2007.
+\newblock \url{https://dblp.org/rec/conf/uai/ChenP07}.
+
+\bibitem{abernethychenvaughan2013}
+Jacob D. Abernethy, Yiling Chen, and Jennifer Wortman Vaughan.
+\newblock \emph{Efficient Market Making via Convex Optimization, and a Connection to Online Learning}.
+\newblock \emph{ACM Transactions on Economics and Computation}, 1(2):12:1--12:39, 2013.
+\newblock DOI: \url{https://doi.org/10.1145/2465769.2465777}.
+
+\bibitem{gnosislmsr}
+Gnosis.
+\newblock \emph{LMSRMarketMaker --- Gnosis Prediction Market Contracts documentation}.
+\newblock Documentation, accessed April 2026.
+\newblock \url{https://gnosis-pm-contracts.readthedocs.io/en/latest/LMSRMarketMaker.html}.
+
+\bibitem{gnosisstandard}
+Gnosis.
+\newblock \emph{StandardMarket --- Gnosis Prediction Market Contracts documentation}.
+\newblock Documentation, accessed April 2026.
+\newblock \url{https://gnosis-pm-contracts.readthedocs.io/en/latest/StandardMarket.html}.
+
+\bibitem{gnosiscampaign}
+Gnosis.
+\newblock \emph{Campaign --- Gnosis Prediction Market Contracts documentation}.
+\newblock Documentation, accessed April 2026.
+\newblock \url{https://gnosis-pm-contracts.readthedocs.io/en/latest/Campaign.html}.
+
+\bibitem{gensyndelphi}
+Gensyn AI Team.
+\newblock \emph{Overview of LMSR Market Design for Delphi: On-Chain Prediction and Liquidity Provision}.
+\newblock Technical report, 2025.
+\newblock \url{https://blog.gensyn.ai/content/files/2025/12/delphi_lmsr_technical_report.pdf}.
+
+\bibitem{polymarketclob}
+Polymarket.
+\newblock \emph{Prices \& Orderbook}.
+\newblock Documentation, accessed April 2026.
+\newblock \url{https://docs.polymarket.com/concepts/prices-orderbook}.
+
+\bibitem{gnosisfpmmrepo}
+Gnosis.
+\newblock \emph{conditional-tokens-market-makers repository}.
+\newblock GitHub repository, accessed April 2026.
+\newblock \url{https://github.com/gnosis/conditional-tokens-market-makers}.
+
+\bibitem{gnosisfpmmcode}
+Gnosis.
+\newblock \emph{FixedProductMarketMaker.sol --- conditional-tokens-market-makers repository}.
+\newblock GitHub source file, accessed April 2026.
+\newblock \url{https://github.com/gnosis/conditional-tokens-market-makers/blob/master/contracts/FixedProductMarketMaker.sol}.
+
+\bibitem{othmansandholm2010}
+Abraham Othman, David M. Pennock, Daniel M. Reeves, and Tuomas Sandholm.
+\newblock \emph{A Practical Liquidity-Sensitive Automated Market Maker}.
+\newblock \emph{ACM Transactions on Economics and Computation}, 1(3):14:1--14:25, 2013.
+\newblock DOI: \url{https://doi.org/10.1145/2509413.2509414}.
+
+\bibitem{paradigmpmamm}
+Paradigm.
+\newblock \emph{pm-AMM: A Uniform AMM for Prediction Markets}.
+\newblock Research note, 2024.
+\newblock \url{https://www.paradigm.xyz/2024/11/pm-amm}.
+
+\bibitem{frongillo2024}
+Rafael Frongillo, Maneesha Papireddygari, and Bo Waggoner.
+\newblock \emph{An Axiomatic Characterization of CFMMs and Equivalence to Prediction Markets}.
+\newblock arXiv preprint arXiv:2302.00196, 2023.
+\newblock DOI: \url{https://doi.org/10.48550/arXiv.2302.00196}.
+
+\bibitem{bhaskara2025}
+Adithya Bhaskara, Rafael Frongillo, Elias Lindgren, and Maneesha Papireddygari.
+\newblock \emph{A General Theory of Liquidity Provisioning for Prediction Markets}.
+\newblock arXiv:2311.08725v3, July 2026; accepted to ACM EC 2026.
+\newblock DOI: \url{https://arxiv.org/abs/2311.08725v3}.
+
+\bibitem{gnosisctmotivation}
+Gnosis.
+\newblock \emph{Conditional Tokens Motivation}.
+\newblock Documentation, accessed April 2026.
+\newblock \url{https://gnosis-conditional-tokens.readthedocs.io/en/latest/motivation.html}.
+
+\bibitem{gnosisctguide}
+Gnosis.
+\newblock \emph{Conditional Tokens Developer Guide}.
+\newblock Documentation, accessed April 2026.
+\newblock \url{https://conditional-tokens.readthedocs.io/en/latest/developer-guide.html}.
+
+\bibitem{uniswapjit2022}
+Austin Adams and Xin Wan.
+\newblock \emph{Just-In-Time Liquidity on the Uniswap Protocol}.
+\newblock Uniswap blog, September 9, 2022.
+\newblock \url{https://blog.uniswap.org/jit-liquidity}.
+
+\bibitem{jitliquidity2023}
+Xihan Xiong, Zhipeng Wang, William Knottenbelt, and Michael Huth.
+\newblock \emph{Demystifying Just-in-Time (JIT) Liquidity Attacks on Uniswap V3}.
+\newblock Cryptology ePrint Archive, Report 2023/973, 2023.
+\newblock \url{https://eprint.iacr.org/2023/973}.
+
+\end{thebibliography}
+
+\end{document}

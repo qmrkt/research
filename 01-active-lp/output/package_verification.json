@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "wheel": "question_market_research-0.2.0-py3-none-any.whl",
+  "wheel_sha256": "607aba47e8359ab1a9312f0cf4f1ef10e416b9e03a55ede30e6c19e770d4bc87",
+  "source_import_path_injected": false,
+  "checks": [
+    "test_active_lp_package.py",
+    "test_certified_math.py",
+    "test_certified_math_audit.py",
+    "test_decimal_fee_reconciliation.py",
+    "test_fixed_point_validation.py",
+    "test_historical_calibration.py",
+    "test_information_timing.py",
+    "test_layer_c_final_policy.py",
+    "test_publication_validation.py",
+    "test_reference_safety.py",
+    "test_residual_weighting.py",
+    "test_safety_validation.py"
+  ],
+  "scope": "Installed-package test suite. This does not regenerate or validate every historical paper artifact.",
+  "test_count": 51,
+  "evidence": "Clean temporary wheel installation with no source path injection; all tests passed."
+}

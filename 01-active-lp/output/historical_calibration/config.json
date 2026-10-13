@@ -1,0 +1,47 @@
+{
+  "adversarial_split": "original even-index training / odd-index test; terminal policies, not independent strategy histories",
+  "bisection_iterations": 60,
+  "bracket_starts": {
+    "event": "0.005",
+    "normalized": "0.25"
+  },
+  "cache": "replay each unique untimed economic history/funding once; store scalar cohort accounting and exact requested timestamps for each restamp",
+  "diagnostic_parameters": {
+    "event": [
+      "0",
+      "0.0025",
+      "0.025"
+    ],
+    "normalized": [
+      "0",
+      "0.15"
+    ]
+  },
+  "duration_buckets": [
+    [
+      "short",
+      12
+    ],
+    [
+      "medium",
+      48
+    ],
+    [
+      "long",
+      168
+    ]
+  ],
+  "floor_diagnostic": "reuse selected +20-trained parameters on b*ln(N) paths; no floor retuning",
+  "maximum_bracket_doublings": 30,
+  "mc_trials_each": 64,
+  "reporting": "original row weighting; mean, mean absolute gap, quantiles, duration means; no new population inference",
+  "schema": "historical_calibration_v1",
+  "scope": "allocation comparison only; does not identify information timing, establish risk-adjusted fairness, or alter the fresh 96-history diagnostic",
+  "selection_funding": "fixed_20: initial b*ln(N)+20; entrants always meet their own component funding floor",
+  "selection_method": "nonnegative lambda; verify every training-row gap is nonincreasing, bracket mean zero by doubling, then 60 bisections; lambda=0 if mean already nonpositive",
+  "selection_objective": "absolute row-weighted TRAIN mean late-minus-founder terminal NAV/deposit gap; primary objective used by original study",
+  "smoke": false,
+  "status": "retrospective repair of parameter-grid comparison; not fresh validation",
+  "test_mc_seed": 2100,
+  "train_mc_seed": 1100
+}

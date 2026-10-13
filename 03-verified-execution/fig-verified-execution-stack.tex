@@ -1,0 +1,90 @@
+\begin{tikzpicture}[
+  x=1cm, y=1cm,
+  every node/.style={font=\sffamily},
+  >={Stealth[length=2.2mm]},
+  % ── Main stack layers ────────────────────────────────────────────
+  layer/.style={
+    text width=7cm, minimum height=1.2cm,
+    align=left, inner sep=7pt,
+    rounded corners=4pt, line width=0.65pt,
+    font=\sffamily\fontsize{9.5pt}{11.5pt}\selectfont,
+  },
+  qcore/.style={layer, draw=blue!50!black, fill=blue!6},
+  qecon/.style={layer, draw=orange!35!black, fill=orange!5},
+  % ── Side annotations ────────────────────────────────────────────
+  annot/.style={
+    text width=4.4cm, minimum height=1.2cm,
+    align=left, inner sep=7pt,
+    rounded corners=4pt, line width=0.55pt,
+    font=\sffamily\fontsize{8.5pt}{10.5pt}\selectfont,
+  },
+  qadds/.style={annot, draw=teal!50!black, fill=teal!4},
+  qout/.style={annot, draw=black!38, fill=black!3},
+  % ── Misc ─────────────────────────────────────────────────────────
+  note/.style={
+    font=\sffamily\fontsize{7.8pt}{9.5pt}\selectfont,
+    text=black!48, align=left, text width=13cm,
+  },
+  ftitle/.style={
+    font=\sffamily\bfseries\fontsize{13pt}{14.5pt}\selectfont,
+    text=black!78,
+  },
+  flow/.style={->, line width=0.85pt, draw=black!46},
+  conn/.style={->, line width=0.6pt, draw=black!28, dashed},
+]
+
+% ── Title ──────────────────────────────────────────────────────────
+\node[anchor=west, ftitle] at (0, 0.5) {Progressive verification stack};
+
+% ── Stack layers ───────────────────────────────────────────────────
+\node[qcore] (L1) at (3.75, -1.0) {%
+  \textbf{1.\enspace Blueprint commitment}\\[1pt]
+  {\footnotesize Market commits to a declared decision program.}};
+
+\node[qcore] (L2) at (3.75, -2.85) {%
+  \textbf{2.\enspace Merkle trace commitment}\\[1pt]
+  {\footnotesize Proposal pins the claimed run, node-by-node, at proposal time.}};
+
+\node[qcore] (L3) at (3.75, -4.7) {%
+  \textbf{3.\enspace Execution assurance}\\[1pt]
+  {\footnotesize Signatures bind identity; attestation adds a measured environment.}};
+
+\node[qecon] (L4) at (3.75, -6.55) {%
+  \textbf{4.\enspace Economic fallback}\\[1pt]
+  {\footnotesize Bonds, challenges, and adjudication handle everything outside the attestation boundary.}};
+
+% ── Vertical flow ─────────────────────────────────────────────────
+\draw[flow] (L1) -- (L2);
+\draw[flow] (L2) -- (L3);
+\draw[flow] (L3) -- (L4);
+
+% ── Side: what each layer adds ────────────────────────────────────
+\node[qadds] (adds) at (10.7, -2.85) {%
+  \textbf{What each layer adds}\\[2pt]
+  {\footnotesize
+  Declared logic\\
+  Pinned trace contents\\
+  Bound execution identity\\
+  Challengeable residual risk}};
+
+% ── Side: still outside ───────────────────────────────────────────
+\node[qout] (outside) at (10.7, -6.25) {%
+  \textbf{Still outside the boundary}\\[2pt]
+  {\footnotesize
+  External truth and source correctness\\
+  LLM or human judgment quality\\
+  Host availability and liveness\\
+  Registrar and hardware-vendor trust}};
+
+% ── Connecting arrows (split targets to avoid overlap) ────────────
+\draw[conn] (L2.east) -- (adds.172);
+\draw[conn] (L3.east) -- (adds.188);
+\draw[conn] (L4.east) -- (outside.west);
+
+% ── Bottom note ────────────────────────────────────────────────────
+\node[note, anchor=north west] at (0, -8.0) {%
+  Blueprints define the rules. Traces pin the claimed run.
+  Execution assurance narrows fabrication risk.
+  Economic fallback handles the rest.};
+
+\end{tikzpicture}

@@ -1,0 +1,1693 @@
+{
+  "blueprint": {
+    "availability_window": 5,
+    "blueprint_version": 1,
+    "event_id": "event-001",
+    "max_nodes": 16,
+    "max_runs": 2,
+    "nodes": [
+      {
+        "id": "source_a",
+        "params": {
+          "authority": "source_a",
+          "public_key": {
+            "e": 65537,
+            "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+          },
+          "request": {
+            "event": "binary-event-at-fixed-time",
+            "extraction": "Boolean value"
+          }
+        },
+        "parents": [],
+        "type": "api_fetch"
+      },
+      {
+        "id": "source_b",
+        "params": {
+          "authority": "source_b",
+          "public_key": {
+            "e": 65537,
+            "n": "be1fa6b23d5008bbd647179ed0d295f1d04e9d2a4fcb5f57513c46c15316fa34c1d70ab17535c2be4ab9fbc7f9b9a1544461b3df55f918972b9917a1857c4e465bf563224b75479697f942f00452d16ff4b1b372696a14e44a255994efb91c87b213b0cbc7a833d84183c30112308f115264e0a3d0e895dc8d4229d2253fc01fb287e1ac3069249bcf4acb81cbf753fbe62dec9817498c6d23de032a3d8dad699ae3a3bffc41c191aa4c7a159fb2c979b1383cb0a438c68be36417ca0f5e7b8d231c9cf79a6658f5d434a87db9d1eca6bf4fe6768d83e3d4a10826f9990359c61b20335e2b81aad96f24c289db38673ecf21c6e1f98268aea95b22f84e0b5f45"
+          },
+          "request": {
+            "event": "binary-event-at-fixed-time",
+            "extraction": "Boolean value"
+          }
+        },
+        "parents": [],
+        "type": "api_fetch"
+      },
+      {
+        "id": "source_c",
+        "params": {
+          "authority": "source_c",
+          "public_key": {
+            "e": 65537,
+            "n": "e03132451601d1aba7048d36cc8dcb8659a3d35c68035b45c8a8257a4e9f69e25ee3ca3952a1e280551c9c5b95f14a4b86641d1333293c478a3f2b768f16b2d868f24c01d8e884470befc2404ee35246ff01e8c9ddda565342daa27b0b94a301edb1c2508731f2032c8a810ae4ba44dc23de48a79e54ddca89c97a9b184de72cf998928acb5e3abde468db125a38651918c6b65ef4101ead053e653f4171e909896011035908a9a80b23f0c85eb38c1daf4f450008994d6e3ced326b11107b4bf957322c8f30cf90835c4731351f0e8391c86b245c2f286d0b44cd73a00b0d382b5f7d991b73d73e0bce0958858480ac32c2f9b18701b3a2ec673ffc2cf52a89"
+          },
+          "request": {
+            "event": "binary-event-at-fixed-time",
+            "extraction": "Boolean value"
+          }
+        },
+        "parents": [],
+        "type": "api_fetch"
+      },
+      {
+        "id": "submit",
+        "params": {
+          "threshold": 2,
+          "when": "has_quorum"
+        },
+        "parents": [
+          "source_a",
+          "source_b",
+          "source_c"
+        ],
+        "type": "submit_result"
+      },
+      {
+        "id": "cancel",
+        "params": {
+          "threshold": 2,
+          "when": "no_quorum_final"
+        },
+        "parents": [
+          "source_a",
+          "source_b",
+          "source_c"
+        ],
+        "type": "cancel_market"
+      },
+      {
+        "id": "defer",
+        "params": {
+          "threshold": 2,
+          "when": "no_quorum_retry"
+        },
+        "parents": [
+          "source_a",
+          "source_b",
+          "source_c"
+        ],
+        "type": "defer_resolution"
+      }
+    ],
+    "profile": "question.blueprint.boolean.v1",
+    "retry_delay": 20,
+    "source_window": 10
+  },
+  "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+  "external_judgment_fixtures": [
+    {
+      "blueprint": {
+        "availability_window": 5,
+        "blueprint_version": 1,
+        "event_id": "event-001",
+        "max_nodes": 16,
+        "max_runs": 1,
+        "nodes": [
+          {
+            "id": "source_a",
+            "params": {
+              "authority": "source_a",
+              "public_key": {
+                "e": 65537,
+                "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+              },
+              "request": {
+                "event": "binary-event-at-fixed-time",
+                "extraction": "Boolean value"
+              }
+            },
+            "parents": [],
+            "type": "market_evidence"
+          },
+          {
+            "id": "submit",
+            "params": {
+              "threshold": 1,
+              "when": "has_quorum"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "submit_result"
+          },
+          {
+            "id": "cancel",
+            "params": {
+              "threshold": 1,
+              "when": "no_quorum_final"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "cancel_market"
+          },
+          {
+            "id": "defer",
+            "params": {
+              "threshold": 1,
+              "when": "no_quorum_retry"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "defer_resolution"
+          }
+        ],
+        "profile": "question.blueprint.boolean.v1",
+        "retry_delay": 20,
+        "source_window": 10
+      },
+      "declared_type": "market_evidence",
+      "gate": {
+        "status": "resolve",
+        "terminal": {
+          "action": "resolve",
+          "outcome": true
+        },
+        "trace_root": "75f73bbec33e996157101eb0fe55623f5f577ee5928e1d8605fc2e7c6bb7b03b",
+        "verified_at": 115
+      },
+      "interpretation": "Authenticated reported output; correctness of external judgment not established.",
+      "publication_log": {
+        "authority_keys": {
+          "source_a": {
+            "e": 65537,
+            "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+          },
+          "source_b": {
+            "e": 65537,
+            "n": "be1fa6b23d5008bbd647179ed0d295f1d04e9d2a4fcb5f57513c46c15316fa34c1d70ab17535c2be4ab9fbc7f9b9a1544461b3df55f918972b9917a1857c4e465bf563224b75479697f942f00452d16ff4b1b372696a14e44a255994efb91c87b213b0cbc7a833d84183c30112308f115264e0a3d0e895dc8d4229d2253fc01fb287e1ac3069249bcf4acb81cbf753fbe62dec9817498c6d23de032a3d8dad699ae3a3bffc41c191aa4c7a159fb2c979b1383cb0a438c68be36417ca0f5e7b8d231c9cf79a6658f5d434a87db9d1eca6bf4fe6768d83e3d4a10826f9990359c61b20335e2b81aad96f24c289db38673ecf21c6e1f98268aea95b22f84e0b5f45"
+          },
+          "source_c": {
+            "e": 65537,
+            "n": "e03132451601d1aba7048d36cc8dcb8659a3d35c68035b45c8a8257a4e9f69e25ee3ca3952a1e280551c9c5b95f14a4b86641d1333293c478a3f2b768f16b2d868f24c01d8e884470befc2404ee35246ff01e8c9ddda565342daa27b0b94a301edb1c2508731f2032c8a810ae4ba44dc23de48a79e54ddca89c97a9b184de72cf998928acb5e3abde468db125a38651918c6b65ef4101ead053e653f4171e909896011035908a9a80b23f0c85eb38c1daf4f450008994d6e3ced326b11107b4bf957322c8f30cf90835c4731351f0e8391c86b245c2f286d0b44cd73a00b0d382b5f7d991b73d73e0bce0958858480ac32c2f9b18701b3a2ec673ffc2cf52a89"
+          }
+        },
+        "publications": [
+          {
+            "object": {
+              "body": {
+                "authority": "source_a",
+                "blueprint_root": "494f9bff0b98f64f6575aa93f65edf5a66b8946743ceac844daa26430249e5d8",
+                "event_id": "event-001",
+                "market_id": "market-001",
+                "node_id": "source_a",
+                "observed_at": 101,
+                "report_type": "market_evidence",
+                "request_root": "e51d4722b9978ba11d848ac4c576e959c8e1888d02d000a832d6b7f9a44c4e95",
+                "run_id": 1,
+                "schema": "question.evidence.v1",
+                "value": true
+              },
+              "signature": "a4a74d9ea35458af1c5d1b3adfd0b6e82729dd88a77eadcc31ae762d702edaee6caded0df378806d646f55a4ba4e4da56c770f6688a4794a27e82c9934b23b26f641aeba54b49200f3fb7ab56fe49d37401619d810f6158bd0a1761e74ab14e045dc040a552c8b2ac76e6e31d03d6ac2fb882eddd314dd8d295f79c54728f819409730bf3491ffa59298a7140c27e02fa672663fdfb671141bae42d603b8bf3d8b12836fa529c108df0779aaa1d1920bb9eaa6b92101cf955116330ce7807a066aaddd728daa132a97f1514e93279c70edd829676de1f4ed8db8d59ed7c898ed6f5f296caa29a59943948488655deefe81ae9355f1524113180dfb6ecb631ecb"
+            },
+            "published_at": 102,
+            "root": "414f8c7450d5019c09ad27d67a45e24367753aa5aaf6413e84da96146b7fd878"
+          },
+          {
+            "object": {
+              "availability_deadline": 115,
+              "blueprint_root": "494f9bff0b98f64f6575aa93f65edf5a66b8946743ceac844daa26430249e5d8",
+              "blueprint_version": 1,
+              "event_id": "event-001",
+              "market_id": "market-001",
+              "previous_trace_root": null,
+              "run_id": 1,
+              "source_deadline": 110,
+              "started_at": 100,
+              "steps": [
+                {
+                  "evidence_refs": [
+                    "414f8c7450d5019c09ad27d67a45e24367753aa5aaf6413e84da96146b7fd878"
+                  ],
+                  "input": {
+                    "request": {
+                      "event": "binary-event-at-fixed-time",
+                      "extraction": "Boolean value"
+                    },
+                    "source_deadline": 110
+                  },
+                  "node_id": "source_a",
+                  "node_type": "market_evidence",
+                  "output": {
+                    "value": true
+                  },
+                  "status": "reported",
+                  "step_index": 0
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "cancel",
+                  "node_type": "cancel_market",
+                  "output": {},
+                  "status": "skipped",
+                  "step_index": 1
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "defer",
+                  "node_type": "defer_resolution",
+                  "output": {},
+                  "status": "skipped",
+                  "step_index": 2
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "submit",
+                  "node_type": "submit_result",
+                  "output": {
+                    "action": "resolve",
+                    "outcome": true
+                  },
+                  "status": "success",
+                  "step_index": 3
+                }
+              ],
+              "terminal": {
+                "action": "resolve",
+                "outcome": true
+              },
+              "trace_version": "question.trace.v1"
+            },
+            "published_at": 111,
+            "root": "75f73bbec33e996157101eb0fe55623f5f577ee5928e1d8605fc2e7c6bb7b03b"
+          }
+        ],
+        "source_slots": [
+          {
+            "market_id": "market-001",
+            "node_id": "source_a",
+            "root": "414f8c7450d5019c09ad27d67a45e24367753aa5aaf6413e84da96146b7fd878",
+            "run_id": 1
+          }
+        ]
+      },
+      "trace": {
+        "availability_deadline": 115,
+        "blueprint_root": "494f9bff0b98f64f6575aa93f65edf5a66b8946743ceac844daa26430249e5d8",
+        "blueprint_version": 1,
+        "event_id": "event-001",
+        "market_id": "market-001",
+        "previous_trace_root": null,
+        "run_id": 1,
+        "source_deadline": 110,
+        "started_at": 100,
+        "steps": [
+          {
+            "evidence_refs": [
+              "414f8c7450d5019c09ad27d67a45e24367753aa5aaf6413e84da96146b7fd878"
+            ],
+            "input": {
+              "request": {
+                "event": "binary-event-at-fixed-time",
+                "extraction": "Boolean value"
+              },
+              "source_deadline": 110
+            },
+            "node_id": "source_a",
+            "node_type": "market_evidence",
+            "output": {
+              "value": true
+            },
+            "status": "reported",
+            "step_index": 0
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "cancel",
+            "node_type": "cancel_market",
+            "output": {},
+            "status": "skipped",
+            "step_index": 1
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "defer",
+            "node_type": "defer_resolution",
+            "output": {},
+            "status": "skipped",
+            "step_index": 2
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "submit",
+            "node_type": "submit_result",
+            "output": {
+              "action": "resolve",
+              "outcome": true
+            },
+            "status": "success",
+            "step_index": 3
+          }
+        ],
+        "terminal": {
+          "action": "resolve",
+          "outcome": true
+        },
+        "trace_version": "question.trace.v1"
+      },
+      "truth": false
+    },
+    {
+      "blueprint": {
+        "availability_window": 5,
+        "blueprint_version": 1,
+        "event_id": "event-001",
+        "max_nodes": 16,
+        "max_runs": 1,
+        "nodes": [
+          {
+            "id": "source_a",
+            "params": {
+              "authority": "source_a",
+              "public_key": {
+                "e": 65537,
+                "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+              },
+              "request": {
+                "event": "binary-event-at-fixed-time",
+                "extraction": "Boolean value",
+                "model": "fixture-model-v1",
+                "prompt": "Return the Boolean judgment.",
+                "temperature_milli": 0
+              }
+            },
+            "parents": [],
+            "type": "llm_judge"
+          },
+          {
+            "id": "submit",
+            "params": {
+              "threshold": 1,
+              "when": "has_quorum"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "submit_result"
+          },
+          {
+            "id": "cancel",
+            "params": {
+              "threshold": 1,
+              "when": "no_quorum_final"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "cancel_market"
+          },
+          {
+            "id": "defer",
+            "params": {
+              "threshold": 1,
+              "when": "no_quorum_retry"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "defer_resolution"
+          }
+        ],
+        "profile": "question.blueprint.boolean.v1",
+        "retry_delay": 20,
+        "source_window": 10
+      },
+      "declared_type": "llm_judge",
+      "gate": {
+        "status": "resolve",
+        "terminal": {
+          "action": "resolve",
+          "outcome": true
+        },
+        "trace_root": "4bed490ee37035be59642a81b570c1c7c9e4d26c5ba18412ee91be8fbe26f1eb",
+        "verified_at": 115
+      },
+      "interpretation": "Authenticated reported output; correctness of external judgment not established.",
+      "publication_log": {
+        "authority_keys": {
+          "source_a": {
+            "e": 65537,
+            "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+          },
+          "source_b": {
+            "e": 65537,
+            "n": "be1fa6b23d5008bbd647179ed0d295f1d04e9d2a4fcb5f57513c46c15316fa34c1d70ab17535c2be4ab9fbc7f9b9a1544461b3df55f918972b9917a1857c4e465bf563224b75479697f942f00452d16ff4b1b372696a14e44a255994efb91c87b213b0cbc7a833d84183c30112308f115264e0a3d0e895dc8d4229d2253fc01fb287e1ac3069249bcf4acb81cbf753fbe62dec9817498c6d23de032a3d8dad699ae3a3bffc41c191aa4c7a159fb2c979b1383cb0a438c68be36417ca0f5e7b8d231c9cf79a6658f5d434a87db9d1eca6bf4fe6768d83e3d4a10826f9990359c61b20335e2b81aad96f24c289db38673ecf21c6e1f98268aea95b22f84e0b5f45"
+          },
+          "source_c": {
+            "e": 65537,
+            "n": "e03132451601d1aba7048d36cc8dcb8659a3d35c68035b45c8a8257a4e9f69e25ee3ca3952a1e280551c9c5b95f14a4b86641d1333293c478a3f2b768f16b2d868f24c01d8e884470befc2404ee35246ff01e8c9ddda565342daa27b0b94a301edb1c2508731f2032c8a810ae4ba44dc23de48a79e54ddca89c97a9b184de72cf998928acb5e3abde468db125a38651918c6b65ef4101ead053e653f4171e909896011035908a9a80b23f0c85eb38c1daf4f450008994d6e3ced326b11107b4bf957322c8f30cf90835c4731351f0e8391c86b245c2f286d0b44cd73a00b0d382b5f7d991b73d73e0bce0958858480ac32c2f9b18701b3a2ec673ffc2cf52a89"
+          }
+        },
+        "publications": [
+          {
+            "object": {
+              "availability_deadline": 115,
+              "blueprint_root": "0b4b04d281f9b7574c99dc02547ef3d23b6fde7169566c198e1e7f6ae7570ff0",
+              "blueprint_version": 1,
+              "event_id": "event-001",
+              "market_id": "market-001",
+              "previous_trace_root": null,
+              "run_id": 1,
+              "source_deadline": 110,
+              "started_at": 100,
+              "steps": [
+                {
+                  "evidence_refs": [
+                    "fb7a64f1e133bc3e1b13aa816c6b445b3a1c2878cfa266537a9ca55520ef7f69"
+                  ],
+                  "input": {
+                    "request": {
+                      "event": "binary-event-at-fixed-time",
+                      "extraction": "Boolean value",
+                      "model": "fixture-model-v1",
+                      "prompt": "Return the Boolean judgment.",
+                      "temperature_milli": 0
+                    },
+                    "source_deadline": 110
+                  },
+                  "node_id": "source_a",
+                  "node_type": "llm_judge",
+                  "output": {
+                    "value": true
+                  },
+                  "status": "reported",
+                  "step_index": 0
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "cancel",
+                  "node_type": "cancel_market",
+                  "output": {},
+                  "status": "skipped",
+                  "step_index": 1
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "defer",
+                  "node_type": "defer_resolution",
+                  "output": {},
+                  "status": "skipped",
+                  "step_index": 2
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "submit",
+                  "node_type": "submit_result",
+                  "output": {
+                    "action": "resolve",
+                    "outcome": true
+                  },
+                  "status": "success",
+                  "step_index": 3
+                }
+              ],
+              "terminal": {
+                "action": "resolve",
+                "outcome": true
+              },
+              "trace_version": "question.trace.v1"
+            },
+            "published_at": 111,
+            "root": "4bed490ee37035be59642a81b570c1c7c9e4d26c5ba18412ee91be8fbe26f1eb"
+          },
+          {
+            "object": {
+              "body": {
+                "authority": "source_a",
+                "blueprint_root": "0b4b04d281f9b7574c99dc02547ef3d23b6fde7169566c198e1e7f6ae7570ff0",
+                "event_id": "event-001",
+                "market_id": "market-001",
+                "node_id": "source_a",
+                "observed_at": 101,
+                "report_type": "llm_judge",
+                "request_root": "b33b42252f356aa7be45928841d7323d8e839783a247375d63c96b986d8a6297",
+                "run_id": 1,
+                "schema": "question.evidence.v1",
+                "value": true
+              },
+              "signature": "9f91fb189e3914e526c548e629dd32bf535049b45ce867925621704a58d7fbe9b86121631c47be093c64cd48c06cc8f242dbea9ab12fa2512e457d47d500a433b00368bab00b9c494df3176762244a9a59c53dd0c6e835a180e8ffb225dd6bd26abafe949551dc77b25b7137e41e3f302552aa08ef92fa0c296f39783c10672bf3d418f0b467fdb56f8e5525034cc160e7d73bfb20a4beb3e16c04d8c36906621ee4ebd1507955290b5cf268ead8f81a53f9115247b083f9f3b4f6f21bb6567d2e04cf0aab267367d1ee7376cc151bcdd6d307db3cbac95d215cb733e52d934c85e056707187760bd79b1ca86274cfdd49705b102bf6030a83a482e86b016712"
+            },
+            "published_at": 102,
+            "root": "fb7a64f1e133bc3e1b13aa816c6b445b3a1c2878cfa266537a9ca55520ef7f69"
+          }
+        ],
+        "source_slots": [
+          {
+            "market_id": "market-001",
+            "node_id": "source_a",
+            "root": "fb7a64f1e133bc3e1b13aa816c6b445b3a1c2878cfa266537a9ca55520ef7f69",
+            "run_id": 1
+          }
+        ]
+      },
+      "trace": {
+        "availability_deadline": 115,
+        "blueprint_root": "0b4b04d281f9b7574c99dc02547ef3d23b6fde7169566c198e1e7f6ae7570ff0",
+        "blueprint_version": 1,
+        "event_id": "event-001",
+        "market_id": "market-001",
+        "previous_trace_root": null,
+        "run_id": 1,
+        "source_deadline": 110,
+        "started_at": 100,
+        "steps": [
+          {
+            "evidence_refs": [
+              "fb7a64f1e133bc3e1b13aa816c6b445b3a1c2878cfa266537a9ca55520ef7f69"
+            ],
+            "input": {
+              "request": {
+                "event": "binary-event-at-fixed-time",
+                "extraction": "Boolean value",
+                "model": "fixture-model-v1",
+                "prompt": "Return the Boolean judgment.",
+                "temperature_milli": 0
+              },
+              "source_deadline": 110
+            },
+            "node_id": "source_a",
+            "node_type": "llm_judge",
+            "output": {
+              "value": true
+            },
+            "status": "reported",
+            "step_index": 0
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "cancel",
+            "node_type": "cancel_market",
+            "output": {},
+            "status": "skipped",
+            "step_index": 1
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "defer",
+            "node_type": "defer_resolution",
+            "output": {},
+            "status": "skipped",
+            "step_index": 2
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "submit",
+            "node_type": "submit_result",
+            "output": {
+              "action": "resolve",
+              "outcome": true
+            },
+            "status": "success",
+            "step_index": 3
+          }
+        ],
+        "terminal": {
+          "action": "resolve",
+          "outcome": true
+        },
+        "trace_version": "question.trace.v1"
+      },
+      "truth": false
+    },
+    {
+      "blueprint": {
+        "availability_window": 5,
+        "blueprint_version": 1,
+        "event_id": "event-001",
+        "max_nodes": 16,
+        "max_runs": 1,
+        "nodes": [
+          {
+            "id": "source_a",
+            "params": {
+              "authority": "source_a",
+              "public_key": {
+                "e": 65537,
+                "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+              },
+              "request": {
+                "event": "binary-event-at-fixed-time",
+                "extraction": "Boolean value",
+                "panel": "fixture-panel",
+                "rule": "Signed Boolean judgment"
+              }
+            },
+            "parents": [],
+            "type": "human_judge"
+          },
+          {
+            "id": "submit",
+            "params": {
+              "threshold": 1,
+              "when": "has_quorum"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "submit_result"
+          },
+          {
+            "id": "cancel",
+            "params": {
+              "threshold": 1,
+              "when": "no_quorum_final"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "cancel_market"
+          },
+          {
+            "id": "defer",
+            "params": {
+              "threshold": 1,
+              "when": "no_quorum_retry"
+            },
+            "parents": [
+              "source_a"
+            ],
+            "type": "defer_resolution"
+          }
+        ],
+        "profile": "question.blueprint.boolean.v1",
+        "retry_delay": 20,
+        "source_window": 10
+      },
+      "declared_type": "human_judge",
+      "gate": {
+        "status": "resolve",
+        "terminal": {
+          "action": "resolve",
+          "outcome": true
+        },
+        "trace_root": "90330e56c7d75a8b1bc785f3d85bbad5e2fa969267baae8e282d372daeaf0956",
+        "verified_at": 115
+      },
+      "interpretation": "Authenticated reported output; correctness of external judgment not established.",
+      "publication_log": {
+        "authority_keys": {
+          "source_a": {
+            "e": 65537,
+            "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+          },
+          "source_b": {
+            "e": 65537,
+            "n": "be1fa6b23d5008bbd647179ed0d295f1d04e9d2a4fcb5f57513c46c15316fa34c1d70ab17535c2be4ab9fbc7f9b9a1544461b3df55f918972b9917a1857c4e465bf563224b75479697f942f00452d16ff4b1b372696a14e44a255994efb91c87b213b0cbc7a833d84183c30112308f115264e0a3d0e895dc8d4229d2253fc01fb287e1ac3069249bcf4acb81cbf753fbe62dec9817498c6d23de032a3d8dad699ae3a3bffc41c191aa4c7a159fb2c979b1383cb0a438c68be36417ca0f5e7b8d231c9cf79a6658f5d434a87db9d1eca6bf4fe6768d83e3d4a10826f9990359c61b20335e2b81aad96f24c289db38673ecf21c6e1f98268aea95b22f84e0b5f45"
+          },
+          "source_c": {
+            "e": 65537,
+            "n": "e03132451601d1aba7048d36cc8dcb8659a3d35c68035b45c8a8257a4e9f69e25ee3ca3952a1e280551c9c5b95f14a4b86641d1333293c478a3f2b768f16b2d868f24c01d8e884470befc2404ee35246ff01e8c9ddda565342daa27b0b94a301edb1c2508731f2032c8a810ae4ba44dc23de48a79e54ddca89c97a9b184de72cf998928acb5e3abde468db125a38651918c6b65ef4101ead053e653f4171e909896011035908a9a80b23f0c85eb38c1daf4f450008994d6e3ced326b11107b4bf957322c8f30cf90835c4731351f0e8391c86b245c2f286d0b44cd73a00b0d382b5f7d991b73d73e0bce0958858480ac32c2f9b18701b3a2ec673ffc2cf52a89"
+          }
+        },
+        "publications": [
+          {
+            "object": {
+              "body": {
+                "authority": "source_a",
+                "blueprint_root": "726843e56acc4041cbecc91820670b94bf14a5118155231d8de219a9d967204b",
+                "event_id": "event-001",
+                "market_id": "market-001",
+                "node_id": "source_a",
+                "observed_at": 101,
+                "report_type": "human_judge",
+                "request_root": "b7ee8b0e511e826eca79ee7790e52dea4a5f6f25d61b2303bd0df92b68d99741",
+                "run_id": 1,
+                "schema": "question.evidence.v1",
+                "value": true
+              },
+              "signature": "211a3f5b2e74e42c69057fb691e8986a9a9313799c89b7d65d7fc06f03d00db583b710f99761cb768e50257501de7b6b77d3a52fa98bc8b4f7a457996fcfcb5f8a98af169e2dff8d24de5a195d6b843b06ed6ca061ddb4d66d61e59b6f4f756c94b84c6eb22be75689d4cc46873567c6cef10f3262592fc795859020a7b3fcff4ee1397faf11aaff35bc0cf5194c339fcc5d3c8b5d6b4986d17da808897bbc449cef86445c09c0370ecff8dd1449e2f1fb7dfc9175e93afc2a6014b907e679178327a4ecc7e0982bd0d4596fe94126f51df7451d43cac0dfa1b2425ea972cd85d3b452555aef953537e871a88aa7b0e3be6fbb2473e935590a2c3d34a42a28e7"
+            },
+            "published_at": 102,
+            "root": "7656e2a58f4c8f3acbe172fd28f12d432287f0c70db6bd172ef2453829c60e1b"
+          },
+          {
+            "object": {
+              "availability_deadline": 115,
+              "blueprint_root": "726843e56acc4041cbecc91820670b94bf14a5118155231d8de219a9d967204b",
+              "blueprint_version": 1,
+              "event_id": "event-001",
+              "market_id": "market-001",
+              "previous_trace_root": null,
+              "run_id": 1,
+              "source_deadline": 110,
+              "started_at": 100,
+              "steps": [
+                {
+                  "evidence_refs": [
+                    "7656e2a58f4c8f3acbe172fd28f12d432287f0c70db6bd172ef2453829c60e1b"
+                  ],
+                  "input": {
+                    "request": {
+                      "event": "binary-event-at-fixed-time",
+                      "extraction": "Boolean value",
+                      "panel": "fixture-panel",
+                      "rule": "Signed Boolean judgment"
+                    },
+                    "source_deadline": 110
+                  },
+                  "node_id": "source_a",
+                  "node_type": "human_judge",
+                  "output": {
+                    "value": true
+                  },
+                  "status": "reported",
+                  "step_index": 0
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "cancel",
+                  "node_type": "cancel_market",
+                  "output": {},
+                  "status": "skipped",
+                  "step_index": 1
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "defer",
+                  "node_type": "defer_resolution",
+                  "output": {},
+                  "status": "skipped",
+                  "step_index": 2
+                },
+                {
+                  "evidence_refs": [],
+                  "input": {
+                    "source_a": {
+                      "value": true
+                    }
+                  },
+                  "node_id": "submit",
+                  "node_type": "submit_result",
+                  "output": {
+                    "action": "resolve",
+                    "outcome": true
+                  },
+                  "status": "success",
+                  "step_index": 3
+                }
+              ],
+              "terminal": {
+                "action": "resolve",
+                "outcome": true
+              },
+              "trace_version": "question.trace.v1"
+            },
+            "published_at": 111,
+            "root": "90330e56c7d75a8b1bc785f3d85bbad5e2fa969267baae8e282d372daeaf0956"
+          }
+        ],
+        "source_slots": [
+          {
+            "market_id": "market-001",
+            "node_id": "source_a",
+            "root": "7656e2a58f4c8f3acbe172fd28f12d432287f0c70db6bd172ef2453829c60e1b",
+            "run_id": 1
+          }
+        ]
+      },
+      "trace": {
+        "availability_deadline": 115,
+        "blueprint_root": "726843e56acc4041cbecc91820670b94bf14a5118155231d8de219a9d967204b",
+        "blueprint_version": 1,
+        "event_id": "event-001",
+        "market_id": "market-001",
+        "previous_trace_root": null,
+        "run_id": 1,
+        "source_deadline": 110,
+        "started_at": 100,
+        "steps": [
+          {
+            "evidence_refs": [
+              "7656e2a58f4c8f3acbe172fd28f12d432287f0c70db6bd172ef2453829c60e1b"
+            ],
+            "input": {
+              "request": {
+                "event": "binary-event-at-fixed-time",
+                "extraction": "Boolean value",
+                "panel": "fixture-panel",
+                "rule": "Signed Boolean judgment"
+              },
+              "source_deadline": 110
+            },
+            "node_id": "source_a",
+            "node_type": "human_judge",
+            "output": {
+              "value": true
+            },
+            "status": "reported",
+            "step_index": 0
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "cancel",
+            "node_type": "cancel_market",
+            "output": {},
+            "status": "skipped",
+            "step_index": 1
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "defer",
+            "node_type": "defer_resolution",
+            "output": {},
+            "status": "skipped",
+            "step_index": 2
+          },
+          {
+            "evidence_refs": [],
+            "input": {
+              "source_a": {
+                "value": true
+              }
+            },
+            "node_id": "submit",
+            "node_type": "submit_result",
+            "output": {
+              "action": "resolve",
+              "outcome": true
+            },
+            "status": "success",
+            "step_index": 3
+          }
+        ],
+        "terminal": {
+          "action": "resolve",
+          "outcome": true
+        },
+        "trace_version": "question.trace.v1"
+      },
+      "truth": false
+    }
+  ],
+  "gates": [
+    {
+      "status": "defer",
+      "terminal": {
+        "action": "defer",
+        "next_start": 120
+      },
+      "trace_root": "b7979604cc0219ce4304aedde344a99113a31bd498b7af0c6b6846ef27113d58",
+      "verified_at": 115
+    },
+    {
+      "status": "resolve",
+      "terminal": {
+        "action": "resolve",
+        "outcome": false
+      },
+      "trace_root": "911f959aab58e2e36cc77698d2265b4a03c10763bd577c39ffcb02859cf624e2",
+      "verified_at": 135
+    }
+  ],
+  "market": {
+    "final_state": {
+      "action": "resolve",
+      "outcome": false
+    },
+    "hard_deadline": 136,
+    "initial_start": 100,
+    "market_id": "market-001"
+  },
+  "publication_log": {
+    "authority_keys": {
+      "source_a": {
+        "e": 65537,
+        "n": "b5a9de98d1a32fa93ede2ef431b0a8046337a511baac2edea179b61ab5535b553bb0b862e1bd1f6173609c9ce619821818a85bf868138e758bacf72c198b63f9a8a9fedae0f13af8095c1844c3c9f7c38891500b1e980b90923500bbe1335a549a1e10872b528718673276746d9a8e6d2b6c73177c32913588066d5fa69cb0396bcd660716f3423221698024280b4a2b992f1346c27d7d0f438aa617a6d35ac348497f22b765234449e94619fb1d0b208c41d0248ff070d13748c876596d43203d0e8a4d26418af2897a8c830a61dff730b6e4e586aec55a72bae5ce55b7a833dc8728a9fe0c6e0c25bfb02bf9d77749074e54d33f336ef1f6df9c65877fa77d"
+      },
+      "source_b": {
+        "e": 65537,
+        "n": "be1fa6b23d5008bbd647179ed0d295f1d04e9d2a4fcb5f57513c46c15316fa34c1d70ab17535c2be4ab9fbc7f9b9a1544461b3df55f918972b9917a1857c4e465bf563224b75479697f942f00452d16ff4b1b372696a14e44a255994efb91c87b213b0cbc7a833d84183c30112308f115264e0a3d0e895dc8d4229d2253fc01fb287e1ac3069249bcf4acb81cbf753fbe62dec9817498c6d23de032a3d8dad699ae3a3bffc41c191aa4c7a159fb2c979b1383cb0a438c68be36417ca0f5e7b8d231c9cf79a6658f5d434a87db9d1eca6bf4fe6768d83e3d4a10826f9990359c61b20335e2b81aad96f24c289db38673ecf21c6e1f98268aea95b22f84e0b5f45"
+      },
+      "source_c": {
+        "e": 65537,
+        "n": "e03132451601d1aba7048d36cc8dcb8659a3d35c68035b45c8a8257a4e9f69e25ee3ca3952a1e280551c9c5b95f14a4b86641d1333293c478a3f2b768f16b2d868f24c01d8e884470befc2404ee35246ff01e8c9ddda565342daa27b0b94a301edb1c2508731f2032c8a810ae4ba44dc23de48a79e54ddca89c97a9b184de72cf998928acb5e3abde468db125a38651918c6b65ef4101ead053e653f4171e909896011035908a9a80b23f0c85eb38c1daf4f450008994d6e3ced326b11107b4bf957322c8f30cf90835c4731351f0e8391c86b245c2f286d0b44cd73a00b0d382b5f7d991b73d73e0bce0958858480ac32c2f9b18701b3a2ec673ffc2cf52a89"
+      }
+    },
+    "publications": [
+      {
+        "object": {
+          "body": {
+            "authority": "source_a",
+            "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+            "event_id": "event-001",
+            "market_id": "market-001",
+            "node_id": "source_a",
+            "observed_at": 121,
+            "report_type": "api_fetch",
+            "request_root": "e51d4722b9978ba11d848ac4c576e959c8e1888d02d000a832d6b7f9a44c4e95",
+            "run_id": 2,
+            "schema": "question.evidence.v1",
+            "value": false
+          },
+          "signature": "28ba5f48935eb0b7989ba937a60ef86972867845627210e93d02d4c1d82907884da7e1ae42031c03b93e08a1dbd19970de19224b10b864dd53507a5e1f040a3b142f87851d0db7cc40d219d2160b3d3a7581f7288f1cb7f8008c1e8fd3cc60a9a20cd95a00212d22c2c2d87d05afccbe51a12e7f04b010a887787fffb2d2b3b895a08c0285fe6b83abcccced277a7abe161fd86e08a4cba0a6cf2af9675ce8084fbf561ba4aa296aedc347981f5ccf037ba07978e8355420a17281667e1f6274d801d30d9af3c858affdea40e6347f7a0e787c9abfd39f5ca0f1d4e01e12caba61ad419552d117175b375b1dff8e94c0d53122eafc2aab7acf7c545c4b6b0f9c"
+        },
+        "published_at": 122,
+        "root": "637afa8cf23c71fa3ddeab73848c8d5403e51e0ec9de68cb8f8d68cec26ada3d"
+      },
+      {
+        "object": {
+          "body": {
+            "authority": "source_a",
+            "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+            "event_id": "event-001",
+            "market_id": "market-001",
+            "node_id": "source_a",
+            "observed_at": 101,
+            "report_type": "api_fetch",
+            "request_root": "e51d4722b9978ba11d848ac4c576e959c8e1888d02d000a832d6b7f9a44c4e95",
+            "run_id": 1,
+            "schema": "question.evidence.v1",
+            "value": false
+          },
+          "signature": "581599a5fc9a5e23820b26e40e19456f9621036857abf827d0da5f4e5233fb7d1893b31a00e582c5aa576433e3e7f90383ca25b92bbfdc9777e085f50bfba4f02d9a3965240f008b9859158cccb3b49f538efd1f3da2942b6a64ee2d99c939dd3acd5d816f00e4f0c1ebb6ea57fc8ab326062b184817242d200735bf9de927afb754da1e0702317758514bb55cc4a673d78831b39b16779c2e45ac1d90a41dc59ee6a6a9861352db8257f9a0073b8193ea96288af302798b7668bec8b447e0dddc6580d5729a6672834b1b0c80f92fb7248aa919e7a307b12832ece315a09f551fb235dff0987b7bd066367d261285990ab45d85819e38940969a8f9a33237d7"
+        },
+        "published_at": 102,
+        "root": "6afb1748d3644f0de420904105047ee140434ced636da6a540eaed39c35892bc"
+      },
+      {
+        "object": {
+          "availability_deadline": 135,
+          "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+          "blueprint_version": 1,
+          "event_id": "event-001",
+          "market_id": "market-001",
+          "previous_trace_root": "b7979604cc0219ce4304aedde344a99113a31bd498b7af0c6b6846ef27113d58",
+          "run_id": 2,
+          "source_deadline": 130,
+          "started_at": 120,
+          "steps": [
+            {
+              "evidence_refs": [
+                "637afa8cf23c71fa3ddeab73848c8d5403e51e0ec9de68cb8f8d68cec26ada3d"
+              ],
+              "input": {
+                "request": {
+                  "event": "binary-event-at-fixed-time",
+                  "extraction": "Boolean value"
+                },
+                "source_deadline": 130
+              },
+              "node_id": "source_a",
+              "node_type": "api_fetch",
+              "output": {
+                "value": false
+              },
+              "status": "reported",
+              "step_index": 0
+            },
+            {
+              "evidence_refs": [
+                "b0876f7f36e949f046ec7c4b22f36bc4ce0b8200efc17cae61c36e0c8a3606fc"
+              ],
+              "input": {
+                "request": {
+                  "event": "binary-event-at-fixed-time",
+                  "extraction": "Boolean value"
+                },
+                "source_deadline": 130
+              },
+              "node_id": "source_b",
+              "node_type": "api_fetch",
+              "output": {
+                "value": false
+              },
+              "status": "reported",
+              "step_index": 1
+            },
+            {
+              "evidence_refs": [
+                "99df166fd1b539bd31d38d0cf2544815cc6ce79b363464f298cda8669010efd7"
+              ],
+              "input": {
+                "request": {
+                  "event": "binary-event-at-fixed-time",
+                  "extraction": "Boolean value"
+                },
+                "source_deadline": 130
+              },
+              "node_id": "source_c",
+              "node_type": "api_fetch",
+              "output": {
+                "value": true
+              },
+              "status": "reported",
+              "step_index": 2
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "source_a": {
+                  "value": false
+                },
+                "source_b": {
+                  "value": false
+                },
+                "source_c": {
+                  "value": true
+                }
+              },
+              "node_id": "cancel",
+              "node_type": "cancel_market",
+              "output": {},
+              "status": "skipped",
+              "step_index": 3
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "source_a": {
+                  "value": false
+                },
+                "source_b": {
+                  "value": false
+                },
+                "source_c": {
+                  "value": true
+                }
+              },
+              "node_id": "defer",
+              "node_type": "defer_resolution",
+              "output": {},
+              "status": "skipped",
+              "step_index": 4
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "source_a": {
+                  "value": false
+                },
+                "source_b": {
+                  "value": false
+                },
+                "source_c": {
+                  "value": true
+                }
+              },
+              "node_id": "submit",
+              "node_type": "submit_result",
+              "output": {
+                "action": "resolve",
+                "outcome": false
+              },
+              "status": "success",
+              "step_index": 5
+            }
+          ],
+          "terminal": {
+            "action": "resolve",
+            "outcome": false
+          },
+          "trace_version": "question.trace.v1"
+        },
+        "published_at": 131,
+        "root": "911f959aab58e2e36cc77698d2265b4a03c10763bd577c39ffcb02859cf624e2"
+      },
+      {
+        "object": {
+          "body": {
+            "authority": "source_c",
+            "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+            "event_id": "event-001",
+            "market_id": "market-001",
+            "node_id": "source_c",
+            "observed_at": 121,
+            "report_type": "api_fetch",
+            "request_root": "e51d4722b9978ba11d848ac4c576e959c8e1888d02d000a832d6b7f9a44c4e95",
+            "run_id": 2,
+            "schema": "question.evidence.v1",
+            "value": true
+          },
+          "signature": "8038bc69018780ef53c8241f340b048f36aacf4047b6e36277d4251e00c25b0a289a0e298656eb9a8d04cded41dd2131ef3ab3088b1d01bcb39f9482e6e0439b49ebe4eacd1f4ff28c7a16f790091fd61edbbc0902659364bd0ed11dabdd253ee959034d1762eee571993e67f3b4cc411bb462a3237ad0dffb238eff2a62216107853b25a44af15c37176d5e623b7997bd94b7983f66becbf76263c7672a5c4d70c510c931e3420b396c60587b848d7ab2f664fce85130886af4caa478dab3c558ad9a76b3b94c532d7c4e797ee44e8a44337407897058c1a11f7e0bcf305eff2ff3a100637ba2552579c4dcc9496fb675ac761ef6310d8253330f6950717f51"
+        },
+        "published_at": 122,
+        "root": "99df166fd1b539bd31d38d0cf2544815cc6ce79b363464f298cda8669010efd7"
+      },
+      {
+        "object": {
+          "body": {
+            "authority": "source_b",
+            "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+            "event_id": "event-001",
+            "market_id": "market-001",
+            "node_id": "source_b",
+            "observed_at": 121,
+            "report_type": "api_fetch",
+            "request_root": "e51d4722b9978ba11d848ac4c576e959c8e1888d02d000a832d6b7f9a44c4e95",
+            "run_id": 2,
+            "schema": "question.evidence.v1",
+            "value": false
+          },
+          "signature": "b3eff8867e418cecba7f44f65045d0bb17d02978484b4e4e89b08bdf07bb3fea655a1a95c5f8ed3f5a635f244c7029950e01f0341beffa662f5f3722fc522c98334eacfe739a5f256ecea80bee748f4a9839cfea5f82438cd6db513f5f3b27debad13e4c54a465cff34d42cc92c47ddab38a3196860794636c164826260591a9dca6c126dc0d0387b3a4b4bf0d3ac21d064a235c51555ab0ec2fe017f925308ab24f42a01d1690b3414b173708ef912071e0d56bcf6c6659c438ba8a7a5abab8a2c54fed181876fddec3d4948b96d52253fede666dea6b7bb3ce2436f0acd1493b9eb8a9355db0871c3d83496b6425d4f31590690899cc1560abcb20537931bc"
+        },
+        "published_at": 122,
+        "root": "b0876f7f36e949f046ec7c4b22f36bc4ce0b8200efc17cae61c36e0c8a3606fc"
+      },
+      {
+        "object": {
+          "availability_deadline": 115,
+          "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+          "blueprint_version": 1,
+          "event_id": "event-001",
+          "market_id": "market-001",
+          "previous_trace_root": null,
+          "run_id": 1,
+          "source_deadline": 110,
+          "started_at": 100,
+          "steps": [
+            {
+              "evidence_refs": [
+                "6afb1748d3644f0de420904105047ee140434ced636da6a540eaed39c35892bc"
+              ],
+              "input": {
+                "request": {
+                  "event": "binary-event-at-fixed-time",
+                  "extraction": "Boolean value"
+                },
+                "source_deadline": 110
+              },
+              "node_id": "source_a",
+              "node_type": "api_fetch",
+              "output": {
+                "value": false
+              },
+              "status": "reported",
+              "step_index": 0
+            },
+            {
+              "evidence_refs": [
+                "eaab51f26fcabd6deb7b8cd456d3de40c104fca6399010322b0d27c53ed12260"
+              ],
+              "input": {
+                "request": {
+                  "event": "binary-event-at-fixed-time",
+                  "extraction": "Boolean value"
+                },
+                "source_deadline": 110
+              },
+              "node_id": "source_b",
+              "node_type": "api_fetch",
+              "output": {
+                "value": true
+              },
+              "status": "reported",
+              "step_index": 1
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "request": {
+                  "event": "binary-event-at-fixed-time",
+                  "extraction": "Boolean value"
+                },
+                "source_deadline": 110
+              },
+              "node_id": "source_c",
+              "node_type": "api_fetch",
+              "output": {
+                "value": null
+              },
+              "status": "unavailable",
+              "step_index": 2
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "source_a": {
+                  "value": false
+                },
+                "source_b": {
+                  "value": true
+                },
+                "source_c": {
+                  "value": null
+                }
+              },
+              "node_id": "cancel",
+              "node_type": "cancel_market",
+              "output": {},
+              "status": "skipped",
+              "step_index": 3
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "source_a": {
+                  "value": false
+                },
+                "source_b": {
+                  "value": true
+                },
+                "source_c": {
+                  "value": null
+                }
+              },
+              "node_id": "defer",
+              "node_type": "defer_resolution",
+              "output": {
+                "action": "defer",
+                "next_start": 120
+              },
+              "status": "success",
+              "step_index": 4
+            },
+            {
+              "evidence_refs": [],
+              "input": {
+                "source_a": {
+                  "value": false
+                },
+                "source_b": {
+                  "value": true
+                },
+                "source_c": {
+                  "value": null
+                }
+              },
+              "node_id": "submit",
+              "node_type": "submit_result",
+              "output": {},
+              "status": "skipped",
+              "step_index": 5
+            }
+          ],
+          "terminal": {
+            "action": "defer",
+            "next_start": 120
+          },
+          "trace_version": "question.trace.v1"
+        },
+        "published_at": 111,
+        "root": "b7979604cc0219ce4304aedde344a99113a31bd498b7af0c6b6846ef27113d58"
+      },
+      {
+        "object": {
+          "body": {
+            "authority": "source_b",
+            "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+            "event_id": "event-001",
+            "market_id": "market-001",
+            "node_id": "source_b",
+            "observed_at": 101,
+            "report_type": "api_fetch",
+            "request_root": "e51d4722b9978ba11d848ac4c576e959c8e1888d02d000a832d6b7f9a44c4e95",
+            "run_id": 1,
+            "schema": "question.evidence.v1",
+            "value": true
+          },
+          "signature": "6322dbc508280caf246b8ff25452cf34962c50d4d4d147e20c2498349301aa0a5ee30fc1480d42791ca35be588ced46d0aa41cab9f334ff4bc2e5dc2153dff361a3c260e427734e8b52e9332da5d8a11c5e307e61348c7e556ba760a5f84698e4cb09b526ba731cc33de072dcba9ffbc008c6a5e0b9386f4f832bebf3b6b9ba10d6b8401fcc52cce25af4a95a6b9f01bd0e611ffd0e59b2cd2ca702b48380ca62a0f3fcadfe414c678334bd7283dcaade6d97c57b34f513e034189c7ed22600d6d9919a35556a16ed2ff2dfa73029c21790a8da91405c2f375bb7fdd322fc9d18f0a67e313c991ba6ba191e6bf7fe1d57f9e9e098fbf8b96e6cade646b814bab"
+        },
+        "published_at": 102,
+        "root": "eaab51f26fcabd6deb7b8cd456d3de40c104fca6399010322b0d27c53ed12260"
+      }
+    ],
+    "source_slots": [
+      {
+        "market_id": "market-001",
+        "node_id": "source_a",
+        "root": "6afb1748d3644f0de420904105047ee140434ced636da6a540eaed39c35892bc",
+        "run_id": 1
+      },
+      {
+        "market_id": "market-001",
+        "node_id": "source_b",
+        "root": "eaab51f26fcabd6deb7b8cd456d3de40c104fca6399010322b0d27c53ed12260",
+        "run_id": 1
+      },
+      {
+        "market_id": "market-001",
+        "node_id": "source_a",
+        "root": "637afa8cf23c71fa3ddeab73848c8d5403e51e0ec9de68cb8f8d68cec26ada3d",
+        "run_id": 2
+      },
+      {
+        "market_id": "market-001",
+        "node_id": "source_b",
+        "root": "b0876f7f36e949f046ec7c4b22f36bc4ce0b8200efc17cae61c36e0c8a3606fc",
+        "run_id": 2
+      },
+      {
+        "market_id": "market-001",
+        "node_id": "source_c",
+        "root": "99df166fd1b539bd31d38d0cf2544815cc6ce79b363464f298cda8669010efd7",
+        "run_id": 2
+      }
+    ]
+  },
+  "runs": [
+    {
+      "availability_deadline": 115,
+      "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+      "blueprint_version": 1,
+      "event_id": "event-001",
+      "market_id": "market-001",
+      "previous_trace_root": null,
+      "run_id": 1,
+      "source_deadline": 110,
+      "started_at": 100,
+      "steps": [
+        {
+          "evidence_refs": [
+            "6afb1748d3644f0de420904105047ee140434ced636da6a540eaed39c35892bc"
+          ],
+          "input": {
+            "request": {
+              "event": "binary-event-at-fixed-time",
+              "extraction": "Boolean value"
+            },
+            "source_deadline": 110
+          },
+          "node_id": "source_a",
+          "node_type": "api_fetch",
+          "output": {
+            "value": false
+          },
+          "status": "reported",
+          "step_index": 0
+        },
+        {
+          "evidence_refs": [
+            "eaab51f26fcabd6deb7b8cd456d3de40c104fca6399010322b0d27c53ed12260"
+          ],
+          "input": {
+            "request": {
+              "event": "binary-event-at-fixed-time",
+              "extraction": "Boolean value"
+            },
+            "source_deadline": 110
+          },
+          "node_id": "source_b",
+          "node_type": "api_fetch",
+          "output": {
+            "value": true
+          },
+          "status": "reported",
+          "step_index": 1
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "request": {
+              "event": "binary-event-at-fixed-time",
+              "extraction": "Boolean value"
+            },
+            "source_deadline": 110
+          },
+          "node_id": "source_c",
+          "node_type": "api_fetch",
+          "output": {
+            "value": null
+          },
+          "status": "unavailable",
+          "step_index": 2
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "source_a": {
+              "value": false
+            },
+            "source_b": {
+              "value": true
+            },
+            "source_c": {
+              "value": null
+            }
+          },
+          "node_id": "cancel",
+          "node_type": "cancel_market",
+          "output": {},
+          "status": "skipped",
+          "step_index": 3
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "source_a": {
+              "value": false
+            },
+            "source_b": {
+              "value": true
+            },
+            "source_c": {
+              "value": null
+            }
+          },
+          "node_id": "defer",
+          "node_type": "defer_resolution",
+          "output": {
+            "action": "defer",
+            "next_start": 120
+          },
+          "status": "success",
+          "step_index": 4
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "source_a": {
+              "value": false
+            },
+            "source_b": {
+              "value": true
+            },
+            "source_c": {
+              "value": null
+            }
+          },
+          "node_id": "submit",
+          "node_type": "submit_result",
+          "output": {},
+          "status": "skipped",
+          "step_index": 5
+        }
+      ],
+      "terminal": {
+        "action": "defer",
+        "next_start": 120
+      },
+      "trace_version": "question.trace.v1"
+    },
+    {
+      "availability_deadline": 135,
+      "blueprint_root": "a40b632490b163ece4ca8c192c59cead20d38765e44ae880514c69d9583e313c",
+      "blueprint_version": 1,
+      "event_id": "event-001",
+      "market_id": "market-001",
+      "previous_trace_root": "b7979604cc0219ce4304aedde344a99113a31bd498b7af0c6b6846ef27113d58",
+      "run_id": 2,
+      "source_deadline": 130,
+      "started_at": 120,
+      "steps": [
+        {
+          "evidence_refs": [
+            "637afa8cf23c71fa3ddeab73848c8d5403e51e0ec9de68cb8f8d68cec26ada3d"
+          ],
+          "input": {
+            "request": {
+              "event": "binary-event-at-fixed-time",
+              "extraction": "Boolean value"
+            },
+            "source_deadline": 130
+          },
+          "node_id": "source_a",
+          "node_type": "api_fetch",
+          "output": {
+            "value": false
+          },
+          "status": "reported",
+          "step_index": 0
+        },
+        {
+          "evidence_refs": [
+            "b0876f7f36e949f046ec7c4b22f36bc4ce0b8200efc17cae61c36e0c8a3606fc"
+          ],
+          "input": {
+            "request": {
+              "event": "binary-event-at-fixed-time",
+              "extraction": "Boolean value"
+            },
+            "source_deadline": 130
+          },
+          "node_id": "source_b",
+          "node_type": "api_fetch",
+          "output": {
+            "value": false
+          },
+          "status": "reported",
+          "step_index": 1
+        },
+        {
+          "evidence_refs": [
+            "99df166fd1b539bd31d38d0cf2544815cc6ce79b363464f298cda8669010efd7"
+          ],
+          "input": {
+            "request": {
+              "event": "binary-event-at-fixed-time",
+              "extraction": "Boolean value"
+            },
+            "source_deadline": 130
+          },
+          "node_id": "source_c",
+          "node_type": "api_fetch",
+          "output": {
+            "value": true
+          },
+          "status": "reported",
+          "step_index": 2
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "source_a": {
+              "value": false
+            },
+            "source_b": {
+              "value": false
+            },
+            "source_c": {
+              "value": true
+            }
+          },
+          "node_id": "cancel",
+          "node_type": "cancel_market",
+          "output": {},
+          "status": "skipped",
+          "step_index": 3
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "source_a": {
+              "value": false
+            },
+            "source_b": {
+              "value": false
+            },
+            "source_c": {
+              "value": true
+            }
+          },
+          "node_id": "defer",
+          "node_type": "defer_resolution",
+          "output": {},
+          "status": "skipped",
+          "step_index": 4
+        },
+        {
+          "evidence_refs": [],
+          "input": {
+            "source_a": {
+              "value": false
+            },
+            "source_b": {
+              "value": false
+            },
+            "source_c": {
+              "value": true
+            }
+          },
+          "node_id": "submit",
+          "node_type": "submit_result",
+          "output": {
+            "action": "resolve",
+            "outcome": false
+          },
+          "status": "success",
+          "step_index": 5
+        }
+      ],
+      "terminal": {
+        "action": "resolve",
+        "outcome": false
+      },
+      "trace_version": "question.trace.v1"
+    }
+  ]
+}

@@ -1,0 +1,1970 @@
+[
+  {
+    "all_majority_exact": 0.01,
+    "attempts": 1,
+    "best_of_m_exact": 0.01,
+    "best_of_m_wilson95": [
+      0.008991741299296096,
+      0.011796338814052773
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.008991741299296096,
+      0.011796338814052773
+    ],
+    "fixed_all_majority": 0.0103,
+    "fixed_first_slot": 0.0103,
+    "p": 0.01,
+    "per_seed": [
+      {
+        "best": 16,
+        "first": 16,
+        "seed": 73000
+      },
+      {
+        "best": 8,
+        "first": 8,
+        "seed": 73001
+      },
+      {
+        "best": 14,
+        "first": 14,
+        "seed": 73002
+      },
+      {
+        "best": 14,
+        "first": 14,
+        "seed": 73003
+      },
+      {
+        "best": 9,
+        "first": 9,
+        "seed": 73004
+      },
+      {
+        "best": 9,
+        "first": 9,
+        "seed": 73005
+      },
+      {
+        "best": 8,
+        "first": 8,
+        "seed": 73006
+      },
+      {
+        "best": 5,
+        "first": 5,
+        "seed": 73007
+      },
+      {
+        "best": 20,
+        "first": 20,
+        "seed": 73008
+      },
+      {
+        "best": 12,
+        "first": 12,
+        "seed": 73009
+      },
+      {
+        "best": 6,
+        "first": 6,
+        "seed": 73010
+      },
+      {
+        "best": 8,
+        "first": 8,
+        "seed": 73011
+      },
+      {
+        "best": 12,
+        "first": 12,
+        "seed": 73012
+      },
+      {
+        "best": 10,
+        "first": 10,
+        "seed": 73013
+      },
+      {
+        "best": 14,
+        "first": 14,
+        "seed": 73014
+      },
+      {
+        "best": 8,
+        "first": 8,
+        "seed": 73015
+      },
+      {
+        "best": 5,
+        "first": 5,
+        "seed": 73016
+      },
+      {
+        "best": 9,
+        "first": 9,
+        "seed": 73017
+      },
+      {
+        "best": 9,
+        "first": 9,
+        "seed": 73018
+      },
+      {
+        "best": 10,
+        "first": 10,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.0103,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.0103,
+    "unrestricted_best_of_m": 0.0103
+  },
+  {
+    "all_majority_exact": 0.00029800000000000003,
+    "attempts": 3,
+    "best_of_m_exact": 0.029701,
+    "best_of_m_wilson95": [
+      0.02782075645949143,
+      0.03255971902603569
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.008898482144734479,
+      0.011689636375825612
+    ],
+    "fixed_all_majority": 0.00015,
+    "fixed_first_slot": 0.0102,
+    "p": 0.01,
+    "per_seed": [
+      {
+        "best": 34,
+        "first": 9,
+        "seed": 73000
+      },
+      {
+        "best": 36,
+        "first": 14,
+        "seed": 73001
+      },
+      {
+        "best": 26,
+        "first": 10,
+        "seed": 73002
+      },
+      {
+        "best": 26,
+        "first": 8,
+        "seed": 73003
+      },
+      {
+        "best": 39,
+        "first": 14,
+        "seed": 73004
+      },
+      {
+        "best": 29,
+        "first": 11,
+        "seed": 73005
+      },
+      {
+        "best": 29,
+        "first": 9,
+        "seed": 73006
+      },
+      {
+        "best": 28,
+        "first": 11,
+        "seed": 73007
+      },
+      {
+        "best": 29,
+        "first": 9,
+        "seed": 73008
+      },
+      {
+        "best": 34,
+        "first": 8,
+        "seed": 73009
+      },
+      {
+        "best": 22,
+        "first": 9,
+        "seed": 73010
+      },
+      {
+        "best": 32,
+        "first": 9,
+        "seed": 73011
+      },
+      {
+        "best": 19,
+        "first": 3,
+        "seed": 73012
+      },
+      {
+        "best": 36,
+        "first": 10,
+        "seed": 73013
+      },
+      {
+        "best": 45,
+        "first": 17,
+        "seed": 73014
+      },
+      {
+        "best": 29,
+        "first": 14,
+        "seed": 73015
+      },
+      {
+        "best": 32,
+        "first": 9,
+        "seed": 73016
+      },
+      {
+        "best": 25,
+        "first": 9,
+        "seed": 73017
+      },
+      {
+        "best": 27,
+        "first": 11,
+        "seed": 73018
+      },
+      {
+        "best": 25,
+        "first": 10,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.0102,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.0102,
+    "unrestricted_best_of_m": 0.0301
+  },
+  {
+    "all_majority_exact": 2.0289394126000003e-10,
+    "attempts": 10,
+    "best_of_m_exact": 0.09561792499119551,
+    "best_of_m_wilson95": [
+      0.09174928773652642,
+      0.09990597341483416
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.009692218792159675,
+      0.01259557326710504
+    ],
+    "fixed_all_majority": 0.0,
+    "fixed_first_slot": 0.01105,
+    "p": 0.01,
+    "per_seed": [
+      {
+        "best": 72,
+        "first": 6,
+        "seed": 73000
+      },
+      {
+        "best": 105,
+        "first": 12,
+        "seed": 73001
+      },
+      {
+        "best": 93,
+        "first": 11,
+        "seed": 73002
+      },
+      {
+        "best": 86,
+        "first": 12,
+        "seed": 73003
+      },
+      {
+        "best": 84,
+        "first": 7,
+        "seed": 73004
+      },
+      {
+        "best": 95,
+        "first": 12,
+        "seed": 73005
+      },
+      {
+        "best": 93,
+        "first": 12,
+        "seed": 73006
+      },
+      {
+        "best": 94,
+        "first": 12,
+        "seed": 73007
+      },
+      {
+        "best": 94,
+        "first": 10,
+        "seed": 73008
+      },
+      {
+        "best": 111,
+        "first": 16,
+        "seed": 73009
+      },
+      {
+        "best": 109,
+        "first": 18,
+        "seed": 73010
+      },
+      {
+        "best": 108,
+        "first": 13,
+        "seed": 73011
+      },
+      {
+        "best": 98,
+        "first": 14,
+        "seed": 73012
+      },
+      {
+        "best": 95,
+        "first": 12,
+        "seed": 73013
+      },
+      {
+        "best": 88,
+        "first": 11,
+        "seed": 73014
+      },
+      {
+        "best": 101,
+        "first": 9,
+        "seed": 73015
+      },
+      {
+        "best": 95,
+        "first": 7,
+        "seed": 73016
+      },
+      {
+        "best": 108,
+        "first": 6,
+        "seed": 73017
+      },
+      {
+        "best": 89,
+        "first": 7,
+        "seed": 73018
+      },
+      {
+        "best": 97,
+        "first": 14,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.01105,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.01105,
+    "unrestricted_best_of_m": 0.09575
+  },
+  {
+    "all_majority_exact": 1.2739397366033618e-24,
+    "attempts": 30,
+    "best_of_m_exact": 0.26029962661171957,
+    "best_of_m_wilson95": [
+      0.2561504481128476,
+      0.2683408842354358
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.008805256903734543,
+      0.01158290002403677
+    ],
+    "fixed_all_majority": 0.0,
+    "fixed_first_slot": 0.0101,
+    "p": 0.01,
+    "per_seed": [
+      {
+        "best": 264,
+        "first": 9,
+        "seed": 73000
+      },
+      {
+        "best": 268,
+        "first": 14,
+        "seed": 73001
+      },
+      {
+        "best": 270,
+        "first": 12,
+        "seed": 73002
+      },
+      {
+        "best": 250,
+        "first": 7,
+        "seed": 73003
+      },
+      {
+        "best": 250,
+        "first": 7,
+        "seed": 73004
+      },
+      {
+        "best": 274,
+        "first": 10,
+        "seed": 73005
+      },
+      {
+        "best": 247,
+        "first": 6,
+        "seed": 73006
+      },
+      {
+        "best": 271,
+        "first": 16,
+        "seed": 73007
+      },
+      {
+        "best": 281,
+        "first": 10,
+        "seed": 73008
+      },
+      {
+        "best": 268,
+        "first": 10,
+        "seed": 73009
+      },
+      {
+        "best": 274,
+        "first": 12,
+        "seed": 73010
+      },
+      {
+        "best": 247,
+        "first": 7,
+        "seed": 73011
+      },
+      {
+        "best": 255,
+        "first": 18,
+        "seed": 73012
+      },
+      {
+        "best": 253,
+        "first": 12,
+        "seed": 73013
+      },
+      {
+        "best": 264,
+        "first": 10,
+        "seed": 73014
+      },
+      {
+        "best": 268,
+        "first": 9,
+        "seed": 73015
+      },
+      {
+        "best": 256,
+        "first": 10,
+        "seed": 73016
+      },
+      {
+        "best": 268,
+        "first": 9,
+        "seed": 73017
+      },
+      {
+        "best": 255,
+        "first": 6,
+        "seed": 73018
+      },
+      {
+        "best": 261,
+        "first": 8,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.0101,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.0101,
+    "unrestricted_best_of_m": 0.2622
+  },
+  {
+    "all_majority_exact": 0.1,
+    "attempts": 1,
+    "best_of_m_exact": 0.1,
+    "best_of_m_wilson95": [
+      0.09307345944950716,
+      0.10128128320450196
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.09307345944950716,
+      0.10128128320450196
+    ],
+    "fixed_all_majority": 0.0971,
+    "fixed_first_slot": 0.0971,
+    "p": 0.1,
+    "per_seed": [
+      {
+        "best": 90,
+        "first": 90,
+        "seed": 73000
+      },
+      {
+        "best": 95,
+        "first": 95,
+        "seed": 73001
+      },
+      {
+        "best": 85,
+        "first": 85,
+        "seed": 73002
+      },
+      {
+        "best": 122,
+        "first": 122,
+        "seed": 73003
+      },
+      {
+        "best": 97,
+        "first": 97,
+        "seed": 73004
+      },
+      {
+        "best": 78,
+        "first": 78,
+        "seed": 73005
+      },
+      {
+        "best": 99,
+        "first": 99,
+        "seed": 73006
+      },
+      {
+        "best": 85,
+        "first": 85,
+        "seed": 73007
+      },
+      {
+        "best": 105,
+        "first": 105,
+        "seed": 73008
+      },
+      {
+        "best": 77,
+        "first": 77,
+        "seed": 73009
+      },
+      {
+        "best": 93,
+        "first": 93,
+        "seed": 73010
+      },
+      {
+        "best": 107,
+        "first": 107,
+        "seed": 73011
+      },
+      {
+        "best": 105,
+        "first": 105,
+        "seed": 73012
+      },
+      {
+        "best": 85,
+        "first": 85,
+        "seed": 73013
+      },
+      {
+        "best": 108,
+        "first": 108,
+        "seed": 73014
+      },
+      {
+        "best": 95,
+        "first": 95,
+        "seed": 73015
+      },
+      {
+        "best": 117,
+        "first": 117,
+        "seed": 73016
+      },
+      {
+        "best": 105,
+        "first": 105,
+        "seed": 73017
+      },
+      {
+        "best": 92,
+        "first": 92,
+        "seed": 73018
+      },
+      {
+        "best": 102,
+        "first": 102,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.0971,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.0971,
+    "unrestricted_best_of_m": 0.0971
+  },
+  {
+    "all_majority_exact": 0.028000000000000008,
+    "attempts": 3,
+    "best_of_m_exact": 0.271,
+    "best_of_m_wilson95": [
+      0.26825970410851063,
+      0.28062694256000376
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.09744001904077917,
+      0.1058130144923306
+    ],
+    "fixed_all_majority": 0.0266,
+    "fixed_first_slot": 0.10155,
+    "p": 0.1,
+    "per_seed": [
+      {
+        "best": 284,
+        "first": 108,
+        "seed": 73000
+      },
+      {
+        "best": 263,
+        "first": 107,
+        "seed": 73001
+      },
+      {
+        "best": 260,
+        "first": 90,
+        "seed": 73002
+      },
+      {
+        "best": 268,
+        "first": 91,
+        "seed": 73003
+      },
+      {
+        "best": 279,
+        "first": 102,
+        "seed": 73004
+      },
+      {
+        "best": 276,
+        "first": 106,
+        "seed": 73005
+      },
+      {
+        "best": 280,
+        "first": 108,
+        "seed": 73006
+      },
+      {
+        "best": 274,
+        "first": 102,
+        "seed": 73007
+      },
+      {
+        "best": 289,
+        "first": 111,
+        "seed": 73008
+      },
+      {
+        "best": 277,
+        "first": 101,
+        "seed": 73009
+      },
+      {
+        "best": 296,
+        "first": 111,
+        "seed": 73010
+      },
+      {
+        "best": 286,
+        "first": 109,
+        "seed": 73011
+      },
+      {
+        "best": 241,
+        "first": 76,
+        "seed": 73012
+      },
+      {
+        "best": 283,
+        "first": 90,
+        "seed": 73013
+      },
+      {
+        "best": 266,
+        "first": 106,
+        "seed": 73014
+      },
+      {
+        "best": 271,
+        "first": 87,
+        "seed": 73015
+      },
+      {
+        "best": 273,
+        "first": 93,
+        "seed": 73016
+      },
+      {
+        "best": 263,
+        "first": 120,
+        "seed": 73017
+      },
+      {
+        "best": 266,
+        "first": 101,
+        "seed": 73018
+      },
+      {
+        "best": 293,
+        "first": 112,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.10155,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.10155,
+    "unrestricted_best_of_m": 0.2744
+  },
+  {
+    "all_majority_exact": 0.00014690260000000007,
+    "attempts": 10,
+    "best_of_m_exact": 0.6513215599,
+    "best_of_m_wilson95": [
+      0.6440643500464499,
+      0.6572777702862401
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.09734186622531585,
+      0.10571120571500514
+    ],
+    "fixed_all_majority": 0.0,
+    "fixed_first_slot": 0.10145,
+    "p": 0.1,
+    "per_seed": [
+      {
+        "best": 673,
+        "first": 114,
+        "seed": 73000
+      },
+      {
+        "best": 663,
+        "first": 97,
+        "seed": 73001
+      },
+      {
+        "best": 651,
+        "first": 102,
+        "seed": 73002
+      },
+      {
+        "best": 626,
+        "first": 91,
+        "seed": 73003
+      },
+      {
+        "best": 671,
+        "first": 114,
+        "seed": 73004
+      },
+      {
+        "best": 625,
+        "first": 81,
+        "seed": 73005
+      },
+      {
+        "best": 665,
+        "first": 105,
+        "seed": 73006
+      },
+      {
+        "best": 644,
+        "first": 92,
+        "seed": 73007
+      },
+      {
+        "best": 647,
+        "first": 98,
+        "seed": 73008
+      },
+      {
+        "best": 651,
+        "first": 106,
+        "seed": 73009
+      },
+      {
+        "best": 663,
+        "first": 121,
+        "seed": 73010
+      },
+      {
+        "best": 665,
+        "first": 105,
+        "seed": 73011
+      },
+      {
+        "best": 650,
+        "first": 92,
+        "seed": 73012
+      },
+      {
+        "best": 661,
+        "first": 90,
+        "seed": 73013
+      },
+      {
+        "best": 664,
+        "first": 109,
+        "seed": 73014
+      },
+      {
+        "best": 665,
+        "first": 112,
+        "seed": 73015
+      },
+      {
+        "best": 629,
+        "first": 104,
+        "seed": 73016
+      },
+      {
+        "best": 645,
+        "first": 96,
+        "seed": 73017
+      },
+      {
+        "best": 617,
+        "first": 96,
+        "seed": 73018
+      },
+      {
+        "best": 639,
+        "first": 104,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.10145,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.10145,
+    "unrestricted_best_of_m": 0.6507
+  },
+  {
+    "all_majority_exact": 3.6574708939273636e-09,
+    "attempts": 30,
+    "best_of_m_exact": 0.9576088417247838,
+    "best_of_m_wilson95": [
+      0.9533781324898459,
+      0.9590466154053531
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.09562439705775269,
+      0.10392934700876466
+    ],
+    "fixed_all_majority": 0.0,
+    "fixed_first_slot": 0.0997,
+    "p": 0.1,
+    "per_seed": [
+      {
+        "best": 955,
+        "first": 84,
+        "seed": 73000
+      },
+      {
+        "best": 952,
+        "first": 100,
+        "seed": 73001
+      },
+      {
+        "best": 956,
+        "first": 110,
+        "seed": 73002
+      },
+      {
+        "best": 960,
+        "first": 82,
+        "seed": 73003
+      },
+      {
+        "best": 963,
+        "first": 92,
+        "seed": 73004
+      },
+      {
+        "best": 958,
+        "first": 119,
+        "seed": 73005
+      },
+      {
+        "best": 952,
+        "first": 102,
+        "seed": 73006
+      },
+      {
+        "best": 956,
+        "first": 106,
+        "seed": 73007
+      },
+      {
+        "best": 962,
+        "first": 99,
+        "seed": 73008
+      },
+      {
+        "best": 967,
+        "first": 105,
+        "seed": 73009
+      },
+      {
+        "best": 950,
+        "first": 107,
+        "seed": 73010
+      },
+      {
+        "best": 955,
+        "first": 95,
+        "seed": 73011
+      },
+      {
+        "best": 955,
+        "first": 99,
+        "seed": 73012
+      },
+      {
+        "best": 952,
+        "first": 92,
+        "seed": 73013
+      },
+      {
+        "best": 963,
+        "first": 110,
+        "seed": 73014
+      },
+      {
+        "best": 956,
+        "first": 108,
+        "seed": 73015
+      },
+      {
+        "best": 954,
+        "first": 105,
+        "seed": 73016
+      },
+      {
+        "best": 958,
+        "first": 108,
+        "seed": 73017
+      },
+      {
+        "best": 948,
+        "first": 85,
+        "seed": 73018
+      },
+      {
+        "best": 954,
+        "first": 86,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.0997,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.0997,
+    "unrestricted_best_of_m": 0.9563
+  },
+  {
+    "all_majority_exact": 0.3,
+    "attempts": 1,
+    "best_of_m_exact": 0.3,
+    "best_of_m_wilson95": [
+      0.29045835838054146,
+      0.3031197042762651
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.29045835838054146,
+      0.3031197042762651
+    ],
+    "fixed_all_majority": 0.29675,
+    "fixed_first_slot": 0.29675,
+    "p": 0.3,
+    "per_seed": [
+      {
+        "best": 279,
+        "first": 279,
+        "seed": 73000
+      },
+      {
+        "best": 333,
+        "first": 333,
+        "seed": 73001
+      },
+      {
+        "best": 277,
+        "first": 277,
+        "seed": 73002
+      },
+      {
+        "best": 295,
+        "first": 295,
+        "seed": 73003
+      },
+      {
+        "best": 345,
+        "first": 345,
+        "seed": 73004
+      },
+      {
+        "best": 286,
+        "first": 286,
+        "seed": 73005
+      },
+      {
+        "best": 281,
+        "first": 281,
+        "seed": 73006
+      },
+      {
+        "best": 287,
+        "first": 287,
+        "seed": 73007
+      },
+      {
+        "best": 329,
+        "first": 329,
+        "seed": 73008
+      },
+      {
+        "best": 267,
+        "first": 267,
+        "seed": 73009
+      },
+      {
+        "best": 284,
+        "first": 284,
+        "seed": 73010
+      },
+      {
+        "best": 308,
+        "first": 308,
+        "seed": 73011
+      },
+      {
+        "best": 309,
+        "first": 309,
+        "seed": 73012
+      },
+      {
+        "best": 312,
+        "first": 312,
+        "seed": 73013
+      },
+      {
+        "best": 317,
+        "first": 317,
+        "seed": 73014
+      },
+      {
+        "best": 291,
+        "first": 291,
+        "seed": 73015
+      },
+      {
+        "best": 278,
+        "first": 278,
+        "seed": 73016
+      },
+      {
+        "best": 282,
+        "first": 282,
+        "seed": 73017
+      },
+      {
+        "best": 293,
+        "first": 293,
+        "seed": 73018
+      },
+      {
+        "best": 282,
+        "first": 282,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.29675,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.29675,
+    "unrestricted_best_of_m": 0.29675
+  },
+  {
+    "all_majority_exact": 0.216,
+    "attempts": 3,
+    "best_of_m_exact": 0.657,
+    "best_of_m_wilson95": [
+      0.6502909294202938,
+      0.6634488096653007
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.2922469758235472,
+      0.30493039550345735
+    ],
+    "fixed_all_majority": 0.2168,
+    "fixed_first_slot": 0.29855,
+    "p": 0.3,
+    "per_seed": [
+      {
+        "best": 639,
+        "first": 253,
+        "seed": 73000
+      },
+      {
+        "best": 654,
+        "first": 298,
+        "seed": 73001
+      },
+      {
+        "best": 661,
+        "first": 305,
+        "seed": 73002
+      },
+      {
+        "best": 671,
+        "first": 289,
+        "seed": 73003
+      },
+      {
+        "best": 657,
+        "first": 308,
+        "seed": 73004
+      },
+      {
+        "best": 639,
+        "first": 292,
+        "seed": 73005
+      },
+      {
+        "best": 661,
+        "first": 298,
+        "seed": 73006
+      },
+      {
+        "best": 637,
+        "first": 275,
+        "seed": 73007
+      },
+      {
+        "best": 664,
+        "first": 298,
+        "seed": 73008
+      },
+      {
+        "best": 652,
+        "first": 269,
+        "seed": 73009
+      },
+      {
+        "best": 652,
+        "first": 308,
+        "seed": 73010
+      },
+      {
+        "best": 675,
+        "first": 318,
+        "seed": 73011
+      },
+      {
+        "best": 641,
+        "first": 295,
+        "seed": 73012
+      },
+      {
+        "best": 663,
+        "first": 314,
+        "seed": 73013
+      },
+      {
+        "best": 627,
+        "first": 290,
+        "seed": 73014
+      },
+      {
+        "best": 632,
+        "first": 304,
+        "seed": 73015
+      },
+      {
+        "best": 692,
+        "first": 306,
+        "seed": 73016
+      },
+      {
+        "best": 700,
+        "first": 329,
+        "seed": 73017
+      },
+      {
+        "best": 667,
+        "first": 305,
+        "seed": 73018
+      },
+      {
+        "best": 654,
+        "first": 317,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.29855,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.29855,
+    "unrestricted_best_of_m": 0.6569
+  },
+  {
+    "all_majority_exact": 0.04734898739999999,
+    "attempts": 10,
+    "best_of_m_exact": 0.9717524751,
+    "best_of_m_wilson95": [
+      0.9683746613129399,
+      0.9730445175366319
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.2912036013786326,
+      0.30387417322408977
+    ],
+    "fixed_all_majority": 0.04745,
+    "fixed_first_slot": 0.2975,
+    "p": 0.3,
+    "per_seed": [
+      {
+        "best": 967,
+        "first": 329,
+        "seed": 73000
+      },
+      {
+        "best": 969,
+        "first": 286,
+        "seed": 73001
+      },
+      {
+        "best": 970,
+        "first": 312,
+        "seed": 73002
+      },
+      {
+        "best": 966,
+        "first": 274,
+        "seed": 73003
+      },
+      {
+        "best": 971,
+        "first": 304,
+        "seed": 73004
+      },
+      {
+        "best": 971,
+        "first": 317,
+        "seed": 73005
+      },
+      {
+        "best": 973,
+        "first": 297,
+        "seed": 73006
+      },
+      {
+        "best": 963,
+        "first": 254,
+        "seed": 73007
+      },
+      {
+        "best": 979,
+        "first": 313,
+        "seed": 73008
+      },
+      {
+        "best": 968,
+        "first": 313,
+        "seed": 73009
+      },
+      {
+        "best": 961,
+        "first": 302,
+        "seed": 73010
+      },
+      {
+        "best": 974,
+        "first": 294,
+        "seed": 73011
+      },
+      {
+        "best": 970,
+        "first": 281,
+        "seed": 73012
+      },
+      {
+        "best": 978,
+        "first": 287,
+        "seed": 73013
+      },
+      {
+        "best": 968,
+        "first": 276,
+        "seed": 73014
+      },
+      {
+        "best": 972,
+        "first": 298,
+        "seed": 73015
+      },
+      {
+        "best": 969,
+        "first": 311,
+        "seed": 73016
+      },
+      {
+        "best": 981,
+        "first": 298,
+        "seed": 73017
+      },
+      {
+        "best": 969,
+        "first": 298,
+        "seed": 73018
+      },
+      {
+        "best": 977,
+        "first": 306,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.2975,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.2975,
+    "unrestricted_best_of_m": 0.9708
+  },
+  {
+    "all_majority_exact": 0.006370346377312179,
+    "attempts": 30,
+    "best_of_m_exact": 0.9999774606597093,
+    "best_of_m_wilson95": [
+      0.9998079639438954,
+      0.9999999999999999
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.29478105084066336,
+      0.3074953411024551
+    ],
+    "fixed_all_majority": 0.0061,
+    "fixed_first_slot": 0.3011,
+    "p": 0.3,
+    "per_seed": [
+      {
+        "best": 1000,
+        "first": 298,
+        "seed": 73000
+      },
+      {
+        "best": 1000,
+        "first": 297,
+        "seed": 73001
+      },
+      {
+        "best": 1000,
+        "first": 283,
+        "seed": 73002
+      },
+      {
+        "best": 1000,
+        "first": 298,
+        "seed": 73003
+      },
+      {
+        "best": 1000,
+        "first": 318,
+        "seed": 73004
+      },
+      {
+        "best": 1000,
+        "first": 277,
+        "seed": 73005
+      },
+      {
+        "best": 1000,
+        "first": 332,
+        "seed": 73006
+      },
+      {
+        "best": 1000,
+        "first": 300,
+        "seed": 73007
+      },
+      {
+        "best": 1000,
+        "first": 304,
+        "seed": 73008
+      },
+      {
+        "best": 1000,
+        "first": 318,
+        "seed": 73009
+      },
+      {
+        "best": 1000,
+        "first": 299,
+        "seed": 73010
+      },
+      {
+        "best": 1000,
+        "first": 293,
+        "seed": 73011
+      },
+      {
+        "best": 1000,
+        "first": 314,
+        "seed": 73012
+      },
+      {
+        "best": 1000,
+        "first": 315,
+        "seed": 73013
+      },
+      {
+        "best": 1000,
+        "first": 302,
+        "seed": 73014
+      },
+      {
+        "best": 1000,
+        "first": 291,
+        "seed": 73015
+      },
+      {
+        "best": 1000,
+        "first": 289,
+        "seed": 73016
+      },
+      {
+        "best": 1000,
+        "first": 304,
+        "seed": 73017
+      },
+      {
+        "best": 1000,
+        "first": 296,
+        "seed": 73018
+      },
+      {
+        "best": 1000,
+        "first": 294,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.3011,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.3011,
+    "unrestricted_best_of_m": 1.0
+  },
+  {
+    "all_majority_exact": 0.5,
+    "attempts": 1,
+    "best_of_m_exact": 0.5,
+    "best_of_m_wilson95": [
+      0.4894220317868769,
+      0.5032793700763326
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.4894220317868769,
+      0.5032793700763326
+    ],
+    "fixed_all_majority": 0.49635,
+    "fixed_first_slot": 0.49635,
+    "p": 0.5,
+    "per_seed": [
+      {
+        "best": 491,
+        "first": 491,
+        "seed": 73000
+      },
+      {
+        "best": 504,
+        "first": 504,
+        "seed": 73001
+      },
+      {
+        "best": 521,
+        "first": 521,
+        "seed": 73002
+      },
+      {
+        "best": 482,
+        "first": 482,
+        "seed": 73003
+      },
+      {
+        "best": 469,
+        "first": 469,
+        "seed": 73004
+      },
+      {
+        "best": 492,
+        "first": 492,
+        "seed": 73005
+      },
+      {
+        "best": 492,
+        "first": 492,
+        "seed": 73006
+      },
+      {
+        "best": 504,
+        "first": 504,
+        "seed": 73007
+      },
+      {
+        "best": 496,
+        "first": 496,
+        "seed": 73008
+      },
+      {
+        "best": 489,
+        "first": 489,
+        "seed": 73009
+      },
+      {
+        "best": 512,
+        "first": 512,
+        "seed": 73010
+      },
+      {
+        "best": 496,
+        "first": 496,
+        "seed": 73011
+      },
+      {
+        "best": 507,
+        "first": 507,
+        "seed": 73012
+      },
+      {
+        "best": 501,
+        "first": 501,
+        "seed": 73013
+      },
+      {
+        "best": 508,
+        "first": 508,
+        "seed": 73014
+      },
+      {
+        "best": 500,
+        "first": 500,
+        "seed": 73015
+      },
+      {
+        "best": 510,
+        "first": 510,
+        "seed": 73016
+      },
+      {
+        "best": 490,
+        "first": 490,
+        "seed": 73017
+      },
+      {
+        "best": 481,
+        "first": 481,
+        "seed": 73018
+      },
+      {
+        "best": 482,
+        "first": 482,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.49635,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.49635,
+    "unrestricted_best_of_m": 0.49635
+  },
+  {
+    "all_majority_exact": 0.5,
+    "attempts": 3,
+    "best_of_m_exact": 0.875,
+    "best_of_m_wilson95": [
+      0.866283105569331,
+      0.8755744036770394
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.4898219167316135,
+      0.5036793315027511
+    ],
+    "fixed_all_majority": 0.49355,
+    "fixed_first_slot": 0.49675,
+    "p": 0.5,
+    "per_seed": [
+      {
+        "best": 866,
+        "first": 514,
+        "seed": 73000
+      },
+      {
+        "best": 874,
+        "first": 509,
+        "seed": 73001
+      },
+      {
+        "best": 864,
+        "first": 487,
+        "seed": 73002
+      },
+      {
+        "best": 893,
+        "first": 518,
+        "seed": 73003
+      },
+      {
+        "best": 866,
+        "first": 477,
+        "seed": 73004
+      },
+      {
+        "best": 865,
+        "first": 504,
+        "seed": 73005
+      },
+      {
+        "best": 884,
+        "first": 477,
+        "seed": 73006
+      },
+      {
+        "best": 900,
+        "first": 495,
+        "seed": 73007
+      },
+      {
+        "best": 861,
+        "first": 494,
+        "seed": 73008
+      },
+      {
+        "best": 869,
+        "first": 513,
+        "seed": 73009
+      },
+      {
+        "best": 871,
+        "first": 503,
+        "seed": 73010
+      },
+      {
+        "best": 863,
+        "first": 516,
+        "seed": 73011
+      },
+      {
+        "best": 870,
+        "first": 470,
+        "seed": 73012
+      },
+      {
+        "best": 877,
+        "first": 494,
+        "seed": 73013
+      },
+      {
+        "best": 863,
+        "first": 498,
+        "seed": 73014
+      },
+      {
+        "best": 861,
+        "first": 491,
+        "seed": 73015
+      },
+      {
+        "best": 869,
+        "first": 483,
+        "seed": 73016
+      },
+      {
+        "best": 880,
+        "first": 506,
+        "seed": 73017
+      },
+      {
+        "best": 851,
+        "first": 496,
+        "seed": 73018
+      },
+      {
+        "best": 873,
+        "first": 490,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.49675,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.49675,
+    "unrestricted_best_of_m": 0.871
+  },
+  {
+    "all_majority_exact": 0.376953125,
+    "attempts": 10,
+    "best_of_m_exact": 0.9990234375,
+    "best_of_m_wilson95": [
+      0.9982748651476752,
+      0.9992335404791493
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.4911215734232825,
+      0.5049791755173363
+    ],
+    "fixed_all_majority": 0.3784,
+    "fixed_first_slot": 0.49805,
+    "p": 0.5,
+    "per_seed": [
+      {
+        "best": 1000,
+        "first": 504,
+        "seed": 73000
+      },
+      {
+        "best": 999,
+        "first": 488,
+        "seed": 73001
+      },
+      {
+        "best": 998,
+        "first": 511,
+        "seed": 73002
+      },
+      {
+        "best": 999,
+        "first": 486,
+        "seed": 73003
+      },
+      {
+        "best": 1000,
+        "first": 511,
+        "seed": 73004
+      },
+      {
+        "best": 995,
+        "first": 478,
+        "seed": 73005
+      },
+      {
+        "best": 1000,
+        "first": 505,
+        "seed": 73006
+      },
+      {
+        "best": 1000,
+        "first": 521,
+        "seed": 73007
+      },
+      {
+        "best": 998,
+        "first": 497,
+        "seed": 73008
+      },
+      {
+        "best": 999,
+        "first": 486,
+        "seed": 73009
+      },
+      {
+        "best": 999,
+        "first": 484,
+        "seed": 73010
+      },
+      {
+        "best": 998,
+        "first": 476,
+        "seed": 73011
+      },
+      {
+        "best": 1000,
+        "first": 504,
+        "seed": 73012
+      },
+      {
+        "best": 1000,
+        "first": 508,
+        "seed": 73013
+      },
+      {
+        "best": 999,
+        "first": 502,
+        "seed": 73014
+      },
+      {
+        "best": 999,
+        "first": 493,
+        "seed": 73015
+      },
+      {
+        "best": 998,
+        "first": 514,
+        "seed": 73016
+      },
+      {
+        "best": 999,
+        "first": 506,
+        "seed": 73017
+      },
+      {
+        "best": 997,
+        "first": 493,
+        "seed": 73018
+      },
+      {
+        "best": 1000,
+        "first": 494,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.49805,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.49805,
+    "unrestricted_best_of_m": 0.99885
+  },
+  {
+    "all_majority_exact": 0.427767775952816,
+    "attempts": 30,
+    "best_of_m_exact": 0.9999999990686774,
+    "best_of_m_wilson95": [
+      0.9998079639438954,
+      0.9999999999999999
+    ],
+    "episodes": 20000,
+    "first_slot_wilson95": [
+      0.48992188866059666,
+      0.5037793211665568
+    ],
+    "fixed_all_majority": 0.4279,
+    "fixed_first_slot": 0.49685,
+    "p": 0.5,
+    "per_seed": [
+      {
+        "best": 1000,
+        "first": 469,
+        "seed": 73000
+      },
+      {
+        "best": 1000,
+        "first": 484,
+        "seed": 73001
+      },
+      {
+        "best": 1000,
+        "first": 500,
+        "seed": 73002
+      },
+      {
+        "best": 1000,
+        "first": 520,
+        "seed": 73003
+      },
+      {
+        "best": 1000,
+        "first": 511,
+        "seed": 73004
+      },
+      {
+        "best": 1000,
+        "first": 492,
+        "seed": 73005
+      },
+      {
+        "best": 1000,
+        "first": 510,
+        "seed": 73006
+      },
+      {
+        "best": 1000,
+        "first": 524,
+        "seed": 73007
+      },
+      {
+        "best": 1000,
+        "first": 492,
+        "seed": 73008
+      },
+      {
+        "best": 1000,
+        "first": 491,
+        "seed": 73009
+      },
+      {
+        "best": 1000,
+        "first": 477,
+        "seed": 73010
+      },
+      {
+        "best": 1000,
+        "first": 498,
+        "seed": 73011
+      },
+      {
+        "best": 1000,
+        "first": 460,
+        "seed": 73012
+      },
+      {
+        "best": 1000,
+        "first": 498,
+        "seed": 73013
+      },
+      {
+        "best": 1000,
+        "first": 526,
+        "seed": 73014
+      },
+      {
+        "best": 1000,
+        "first": 509,
+        "seed": 73015
+      },
+      {
+        "best": 1000,
+        "first": 500,
+        "seed": 73016
+      },
+      {
+        "best": 1000,
+        "first": 508,
+        "seed": 73017
+      },
+      {
+        "best": 1000,
+        "first": 488,
+        "seed": 73018
+      },
+      {
+        "best": 1000,
+        "first": 480,
+        "seed": 73019
+      }
+    ],
+    "selective_abort_completion": 0.49685,
+    "selective_abort_favorable_given_finalized": 1.0,
+    "selective_abort_favorable_per_authorization": 0.49685,
+    "unrestricted_best_of_m": 1.0
+  }
+]

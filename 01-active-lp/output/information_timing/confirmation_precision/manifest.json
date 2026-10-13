@@ -1,0 +1,11 @@
+{
+  "decision_checks": 6912,
+  "changed_decisions": 0,
+  "minimum_conditional_or_public_profit_distance_from_threshold": "0.0130780548372749489660840935832967528062684465058459013605322814678377027669146",
+  "maximum_absolute_probability_mass_discrepancy_before_normalization": "1.30E-16",
+  "maximum_absolute_reported_metric_difference": "4.000000000000000000000000000000000000000000000000000000000000000E-16",
+  "engine_sha256": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd",
+  "module_sha256": "5aa083e97937be4d1232e198fd12d43ddf7206470fcaef099b3aefb295984f05",
+  "design_sha256": "d3f02af98a5c8d6a475cdf879c4c05ecf08d9af86f192fd5ea01bd96fdbc3611",
+  "comparison_rows": 1344
+}

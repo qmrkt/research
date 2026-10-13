@@ -1,0 +1,21 @@
+{
+  "config_sha256": "efa4eb8a7830c86721802a02ef15ef557741a293e01fe316f315686b277d7da0",
+  "generator_plan_sha256": "0d9c84aa3bb6f958ddc551589e875ffc7c8182e9793318e7e5982eb74f183592",
+  "git_head": "00101010963451cb5067317f37de87a72b69efeb",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "sources": {
+    "_vendor/lmsr_math.py": "54b3d202473b771d455febbf173d964108cbb70c77cab0bbc12aac4d26029c74",
+    "_vendor/provenance.json": "3d824752549e4e6e25c83048e572a86d9bd21ebb77a7b416cafcb17dba4496de",
+    "candidate_global_state.py": "6b75a3f2580d6d553e55d602d3c6cd3af672d887f5b6f9987f94214f0cbd0131",
+    "certified_math.py": "834b61662ce96e61aebbdb8364c27510268492b743c440938c9a9c9fc84e338c",
+    "events.py": "155797ba276d07f29175ce855c876f89e37cd1d1f94ef1187109658fe2f641fa",
+    "fixed_point_validation.py": "3c565e477dbc13938db0f9024edc41b83bbc359f352ded76afb0aec4e17de44a",
+    "layer_c_fixed_point.py": "87a6dae2847e1a836d63cbff9c2c46f3ce1a6eba6e3467ff4fca45540bfdbfcf",
+    "precision.py": "af59ad487b66b446e973b3cfeb34272b6902feb084f84ea18fcdf7b38404aa90",
+    "publication_validation.py": "d7f0683cd62a8b654282b0e9ae6dbc77283df135534d437cd9cbe02923668733",
+    "reference_math.py": "c7b87587bbe33619efae57c44f6a0d76fc1274c024964b2ec9291897af6c1470",
+    "reference_parallel_lmsr.py": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd",
+    "state.py": "1b30111b3188f65612cec53159f65e63fc17df9e3a695a514ea52b5ddf9e6993"
+  }
+}

@@ -1,48 +1,12 @@
-Every protocol decision starts here.
+# question.market research
 
-For a high-level overview, see [the whitepaper](whitepaper.pdf).
+[Overview whitepaper](whitepaper.pdf)
 
-## Implemented
+| Paper | Code and results |
+|---|---|
+| [Live Liquidity for LMSR Prediction Markets](01-active-lp/active-lp-paper.pdf) | [Simulations](01-active-lp/) |
+| [Trust-Explicit Resolution for Prediction Markets](02-trust-explicit-resolution/trust-explicit-resolution.pdf) | [Simulations](02-trust-explicit-resolution/) |
+| [Verified Execution for Trust-Explicit Resolution](03-verified-execution/verified-execution.pdf) | [Experiments](03-verified-execution/) |
+| [An Unbiased Benchmark for General Intelligence](04-general-intelligence-benchmark/general-intelligence-benchmark.pdf) | Draft |
 
-<table>
-<tr>
-<td width="120"><img src="01-active-lp/thumb.png" width="108" alt=""></td>
-<td>
-<a href="01-active-lp"><strong>Live Liquidity for LMSR Prediction Markets</strong></a><br>
-<sub>LMSR markets typically lock liquidity to a single sponsor. This paper opens them to live LP entry with prospective fees, reserve-based settlement, and calibrated residual weighting that narrows late-entry advantage to near zero across comprehensive simulations.</sub>
-</td>
-</tr>
-<tr>
-<td width="120"><img src="02-trust-explicit-resolution/thumb.svg" width="108" alt=""></td>
-<td>
-<a href="02-trust-explicit-resolution"><strong>Trust-Explicit Resolution for Prediction Markets</strong></a><br>
-<sub>Most prediction markets resolve outcomes opaquely. This paper commits each market to an executable resolution blueprint at creation, producing challengeable evidence traces, with dispute economics where bonds scale with pool value and verification coverage matters more than adjudicator quality.</sub>
-</td>
-</tr>
-</table>
-
-## Drafts
-
-<table>
-<tr>
-<td width="120"><img src="03-verified-execution/thumb.svg" width="108" alt=""></td>
-<td>
-<a href="03-verified-execution"><strong>Verified Execution for Trust-Explicit Resolution</strong></a><br>
-<sub>A resolver can claim they ran a declared blueprint without actually doing so. Progressive verification narrows that gap: Merkle-pinned traces that make fabrication detectable, hardware-attested runners that bind execution to measured code, and a two-axis model separating resolution type from execution assurance.</sub>
-</td>
-</tr>
-<tr>
-<td width="120"><img src="04-general-intelligence-benchmark/thumb.svg" width="108" alt=""></td>
-<td>
-<a href="04-general-intelligence-benchmark"><strong>An Unbiased Benchmark for General Intelligence</strong></a><br>
-<sub>Static benchmarks get gamed once they matter: agents memorize, overfit, and saturate fixed test sets. This paper argues that prediction markets are a stronger evaluation surface, where the target is future reality, bluffing costs capital, and the test evolves as participants discover new questions.</sub>
-</td>
-</tr>
-</table>
-
-## Licensing
-
-- Unless otherwise noted, software and code in this repository are licensed under the Apache License 2.0. See [LICENSE](LICENSE).
-- Paper materials are licensed separately in their respective paper directories.
-- In particular, the paper text, figures, thumbnails, diagrams, and generated PDFs in `01-active-lp/`, `02-trust-explicit-resolution/`, `03-verified-execution/`, and `04-general-intelligence-benchmark/` are licensed under CC BY 4.0 unless otherwise noted.
-- Third-party materials, if any, remain under their original licenses.
+Code: [Apache 2.0](LICENSE). Papers and figures: CC BY 4.0 unless otherwise noted. Third-party materials retain their original licenses.

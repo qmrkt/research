@@ -1,0 +1,80 @@
+{
+  "abort_enumeration_population": 8,
+  "analysis": "exact probabilities primary; paired seeded Bernoulli Monte Carlo as implementation check",
+  "attempt_counts": [
+    1,
+    3,
+    10,
+    30
+  ],
+  "authentication": "public test-secret HMAC; no claim of public-key or hardware attestation",
+  "episodes_per_seed_cell": 1000,
+  "excluded": [
+    "real LLM accuracy",
+    "real TEE compromise rates",
+    "network latency",
+    "economic attacker costs"
+  ],
+  "frozen_before_run": true,
+  "probabilities": [
+    [
+      1,
+      100
+    ],
+    [
+      1,
+      10
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "purpose": "mechanism conformance and model counterexamples, not deployed TEE validation",
+  "quorum_committee_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "raw_schema": [
+    "p_numerator",
+    "p_denominator",
+    "attempts",
+    "seed",
+    "episode",
+    "outcome_bitmask"
+  ],
+  "seeds": [
+    73000,
+    73001,
+    73002,
+    73003,
+    73004,
+    73005,
+    73006,
+    73007,
+    73008,
+    73009,
+    73010,
+    73011,
+    73012,
+    73013,
+    73014,
+    73015,
+    73016,
+    73017,
+    73018,
+    73019
+  ],
+  "toy_seeded_requests": 10000,
+  "version": 1
+}

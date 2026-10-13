@@ -1,0 +1,13 @@
+{
+  "counterexample": {
+    "completion": 0.1,
+    "favorable_given_finalized": 1.0,
+    "favorable_per_authorization": 0.1,
+    "p": 0.1
+  },
+  "event_selection_pairs": 65280,
+  "lower_bound_equalities": 12610,
+  "population": 8,
+  "upper_bound_equalities": 12610,
+  "violations": 0
+}

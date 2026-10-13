@@ -1,0 +1,41 @@
+{
+  "selected_lambda": 0.005,
+  "selection": {
+    "split": "train",
+    "lambda": 0.005,
+    "mean_information_value": 0.036678250543232906,
+    "mean_public_return": 0.029032934649329507,
+    "mean_private_return": 0.06571118519256242,
+    "public_entry_rate": 0.18518518518518517,
+    "private_entry_rate": 0.23111111111111113,
+    "baseline_profitable_train_preserved": 5,
+    "strict_train_feasible": true,
+    "late_committed_founder_unconditional_return": -0.020412584451647432,
+    "late_committed_offered_entrant_minus_actual_founder_gap": -0.14591534342695708,
+    "late_committed_active_regimes": 27,
+    "late_committed_conditional_gap_among_active_regimes": -0.14591534342695708,
+    "late_public_optional_founder_unconditional_return": -0.050064605973846245,
+    "late_public_optional_offered_entrant_minus_actual_founder_gap": 0.07909754062317575,
+    "late_public_optional_active_regimes": 5,
+    "late_public_optional_conditional_gap_among_active_regimes": -0.0865853008071287,
+    "late_private_optional_founder_unconditional_return": -0.05860011840681784,
+    "late_private_optional_offered_entrant_minus_actual_founder_gap": 0.12431130359938025,
+    "late_private_optional_active_regimes": 12,
+    "late_private_optional_conditional_gap_among_active_regimes": -0.16230333888670578
+  },
+  "strict_feasible_lambdas": [
+    0,
+    1e-06,
+    1e-05,
+    0.0001,
+    0.00025,
+    0.0005,
+    0.001,
+    0.0025,
+    0.005
+  ],
+  "module_sha256": "ab8c4db63547e8ce037c04ac47bb44b92d2d08c5e590a65d12416a6741aec078",
+  "design_sha256": "f9d3c4fce1b8e1ed14105b9c850d3a83d8c17ee44a195266537dda5b04978be3",
+  "world_rows": 22104,
+  "reference_engine_sha256": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd"
+}

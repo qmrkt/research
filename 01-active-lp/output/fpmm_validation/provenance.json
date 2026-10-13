@@ -1,0 +1,11 @@
+{
+  "python": "3.12.1 (main, Dec  8 2023, 18:57:37) [Clang 14.0.3 (clang-1403.0.22.14.1)]",
+  "sources": {
+    "experiments.py": "716c4f095e39f4b3cfb7c835508b4049c86bdf45aa92f4c6ae96872147e969ba",
+    "fpmm_baseline.py": "2c6c0f91b1d559f54aebd54c163fa5f2fb8a44a30690da8d281447e9d247dab8",
+    "fpmm_comparison.py": "773718f288eb0ae5b38dbcc8a99b67bbb3dc62be3462d51a28971e2780ebb7fc",
+    "fpmm_validation.py": "629765ee333715490e3384aefe19c99baff44193dcf7929f6133372ec58b38a3",
+    "reference_parallel_lmsr.py": "553f1ce17c5d7cbefd3bbc492aec7519cb7da6ac518e320a6c68f04f85ca32fd",
+    "scenarios.py": "4054cb1b4176ad426306b92d4bb4f8f7a4993a025b214fef536d9478134eb9b8"
+  }
+}

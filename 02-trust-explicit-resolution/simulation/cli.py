@@ -9,7 +9,7 @@ from research.resolution_trust.metrics import print_summary, write_results_csv, 
 from research.resolution_trust.scenarios import SCENARIO_FAMILIES, all_scenarios
 from research.resolution_trust.simulation import run_parameter_sweep
 
-DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parent / "output"
+DEFAULT_OUTPUT_DIR = Path("output") / "resolution_compatibility"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -61,6 +61,9 @@ def main(argv: list[str] | None = None) -> None:
     parser = build_parser()
     args = parser.parse_args(argv)
 
+    if args.command != "list":
+        print("Compatibility sweeps use the revised funded game. Publication evidence: python -m research.resolution_trust.economy_validation")
+
     if args.command == "list":
         print("Available scenario families:")
         for name, fn in SCENARIO_FAMILIES.items():
@@ -100,6 +103,8 @@ def main(argv: list[str] | None = None) -> None:
             write_results_csv(results, out_dir / f"{name}.csv")
 
         if args.command == "paper-artifacts":
+            from research.resolution_trust import figures
+            figures.ARTIFACTS_DIR = args.output_dir / "paper_artifacts"
             from research.resolution_trust.figures import write_overview_json, write_paper_tables
             write_paper_tables(all_results)
             write_overview_json(all_results)

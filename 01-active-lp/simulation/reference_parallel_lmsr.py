@@ -40,6 +40,19 @@ STRICT_ALL_CLAIMED = "strict_all_claimed"
 RESERVE_POOL = "reserve_pool"
 
 
+class RefundReserveViolation(ValueError):
+    """A sell would spend collateral promised to possible cancellation refunds."""
+
+    def __init__(self, available_assets: Decimal, required_refunds: Decimal) -> None:
+        self.available_assets = available_assets
+        self.required_refunds = required_refunds
+        self.shortfall = required_refunds - available_assets
+        super().__init__(
+            "sell would underfund cancellation refunds: "
+            f"available={available_assets}, required={required_refunds}, shortfall={self.shortfall}"
+        )
+
+
 def _zero_vector(length: int) -> tuple[Decimal, ...]:
     return tuple(DECIMAL_ZERO for _ in range(length))
 
@@ -131,10 +144,13 @@ def _available_non_fee_assets(sponsor: SponsorPosition) -> Decimal:
 
 
 def _total_non_fee_assets(state: SimulationState) -> Decimal:
-    total = DECIMAL_ZERO
-    for sponsor in _all_sponsors(state):
-        total += _available_non_fee_assets(sponsor)
-    return total
+    # Cohort cash attribution can become negative after a pooled residual claim.
+    # Clamping each cohort separately invents assets; only the treasury is spendable.
+    return (
+        to_decimal(state.treasury.contract_funds)
+        - to_decimal(state.treasury.lp_fee_balance)
+        - to_decimal(state.treasury.protocol_fee_balance)
+    )
 
 
 def _total_residual_claimed(state: SimulationState) -> Decimal:
@@ -161,11 +177,52 @@ def _refund_reserve_requirement(state: SimulationState) -> Decimal:
     return reserve
 
 
+def refund_reserve_margin(state: SimulationState) -> Decimal:
+    """Contingent cancellation slack, including while the market is ACTIVE."""
+    return _total_non_fee_assets(state) - _refund_reserve_requirement(state)
+
+
+def _require_refund_reserve(state: SimulationState) -> None:
+    available = _total_non_fee_assets(state)
+    required = _refund_reserve_requirement(state)
+    if available < required:
+        raise RefundReserveViolation(available, required)
+
+
+def _sell_execution_quote(
+    state: SimulationState, trader_id: ActorId, outcome_index: int,
+    shares: Numeric, gross_return: Decimal,
+) -> dict[str, Decimal | bool]:
+    if state.pricing.status is not MarketStatus.ACTIVE:
+        raise ValueError("sell requires ACTIVE market")
+    shares = to_decimal(shares)
+    if shares <= 0:
+        raise ValueError("shares must be positive")
+    held = to_decimal(state.traders.positions_by_trader.get(trader_id, _zero_vector(state.pricing.num_outcomes))[outcome_index])
+    if shares > held:
+        raise ValueError("insufficient shares")
+    basis = to_decimal(state.traders.cost_basis_by_trader[trader_id][outcome_index])
+    basis_reduction = _basis_reduction(held, basis, shares)
+    available_after = _total_non_fee_assets(state) - gross_return
+    required_after = _refund_reserve_requirement(state) - basis_reduction
+    return {
+        "gross_return": gross_return,
+        "basis_reduction": basis_reduction,
+        "available_assets_after": available_after,
+        "required_refunds_after": required_after,
+        "cancellation_reserve_margin": available_after - required_after,
+        "executable": available_after >= required_after,
+    }
+
+
 def _winner_reserve_requirement(state: SimulationState) -> Decimal:
     if state.pricing.status is MarketStatus.RESOLVED and state.winning_outcome is not None:
         return _aggregate_outstanding(state)[state.winning_outcome]
     if state.pricing.status is MarketStatus.CANCELLED:
         return _refund_reserve_requirement(state)
+    if state.pricing.status is MarketStatus.ACTIVE:
+        # Only one terminal state can occur: reserve the largest possible liability.
+        return max(_refund_reserve_requirement(state), max(_aggregate_outstanding(state), default=DECIMAL_ZERO))
     return DECIMAL_ZERO
 
 
@@ -345,6 +402,8 @@ def _reduce_component_outcome_claims(state: SimulationState, outcome_index: int,
 def _debit_sponsor_assets(state: SimulationState, amount: Decimal) -> dict[str, Decimal]:
     if amount <= 0:
         return {}
+    if amount > _total_non_fee_assets(state) + PRICE_TOLERANCE:
+        raise ValueError("insufficient aggregate non-fee assets")
     available_rows: list[tuple[str, Decimal]] = []
     total_available = DECIMAL_ZERO
     for key in _sponsor_keys(state):
@@ -428,6 +487,8 @@ class ReferenceParallelLmsrEngine:
     ) -> None:
         self.lp_fee_bps = to_decimal(lp_fee_bps)
         self.protocol_fee_bps = to_decimal(protocol_fee_bps)
+        if min(self.lp_fee_bps, self.protocol_fee_bps) < 0 or self.lp_fee_bps + self.protocol_fee_bps >= BPS_DENOMINATOR:
+            raise ValueError("fee rates must be nonnegative and total less than 10000 bps")
         self.residual_policy = residual_policy
         self.residual_weight_scheme = residual_weight_scheme
         self.residual_linear_lambda = to_decimal(residual_linear_lambda)
@@ -456,6 +517,19 @@ class ReferenceParallelLmsrEngine:
 
     def route_trade(self, state: SimulationState, event: BuyOutcome | SellOutcome) -> dict[str, Decimal]:
         return _route_by_depth(state, to_decimal(event.shares))
+
+    def sell_execution_quote(
+        self, state: SimulationState, trader_id: ActorId, outcome_index: int, shares: Numeric,
+    ) -> dict[str, Decimal | bool]:
+        """Quote the curve and report the separate cancellation-reserve constraint.
+
+        A curve quote alone is not a promise that the sell can execute. State may
+        change after this quote; apply_event always rechecks the actual transition.
+        """
+        return _sell_execution_quote(
+            state, trader_id, outcome_index, shares,
+            self.sell_return(state.pricing, outcome_index, shares),
+        )
 
     def apply_lp_entry(self, state: SimulationState, event: LpEnterActive) -> dict[str, Decimal | SimulationState]:
         working = self.clone_state(state)
@@ -653,6 +727,11 @@ class ReferenceParallelLmsrEngine:
             working.treasury.contract_funds -= net_return
             working.treasury.protocol_fee_balance += protocol_fee
             _allocate_lp_fees(working, lp_fee)
+            # Buys add the same quote cost to assets and refundable basis. A sell
+            # spends its gross return but removes historical basis, so it is the
+            # only trading transition that can exhaust contingent refund backing.
+            # Reject atomically (working is a clone), without reducing the payout.
+            _require_refund_reserve(working)
             working.event_index += 1
             working.pricing.timestamp = event.timestamp
             return _sync_state(working)
@@ -676,6 +755,8 @@ class ReferenceParallelLmsrEngine:
                 raise ValueError("only winning outcome may be claimed")
             _ensure_trader(working, event.trader_id)
             shares = to_decimal(event.shares)
+            if shares <= 0:
+                raise ValueError("shares must be positive")
             positions = tuple(map(to_decimal, working.traders.positions_by_trader[event.trader_id]))
             basis = tuple(map(to_decimal, working.traders.cost_basis_by_trader[event.trader_id]))
             current_shares = positions[event.outcome_index]
@@ -707,6 +788,8 @@ class ReferenceParallelLmsrEngine:
         if isinstance(event, CancelMarket):
             if working.pricing.status is not MarketStatus.ACTIVE:
                 raise ValueError("cancel requires ACTIVE market")
+            if refund_reserve_margin(working) < -PRICE_TOLERANCE:
+                raise ValueError("cancellation refunds are underfunded")
             working.pricing.status = MarketStatus.CANCELLED
             working.settlement_timestamp = event.timestamp
             working.pricing.timestamp = event.timestamp
@@ -770,19 +853,22 @@ class ReferenceParallelLmsrEngine:
             if not cohort_keys:
                 raise ValueError("unknown sponsor_id")
             total_withdrawable = sum(to_decimal(working.sponsors[key].withdrawable_fee_surplus) for key in cohort_keys)
-            if total_withdrawable < amount:
+            if amount - total_withdrawable > PRICE_TOLERANCE:
                 raise ValueError("insufficient withdrawable LP fees")
-            if to_decimal(working.treasury.lp_fee_balance) < amount:
+            nominal_claim = min(amount, total_withdrawable)
+            fee_assets = to_decimal(working.treasury.lp_fee_balance)
+            if fee_assets < 0 or nominal_claim - fee_assets > PRICE_TOLERANCE:
                 raise ValueError("LP fee balance underfunded")
-            remaining = amount
+            # Decimal pro-rata allocation can leave a sub-tolerance entitlement
+            # excess. Discharge that nominal claim but pay only the actual fee
+            # bucket; never use trader/residual reserves for numerical residue.
+            amount = min(nominal_claim, fee_assets)
+            remaining = nominal_claim
             for idx, key in enumerate(cohort_keys):
                 sponsor = working.sponsors[key]
                 available = to_decimal(sponsor.withdrawable_fee_surplus)
-                if idx == len(cohort_keys) - 1:
-                    deduction = remaining
-                else:
-                    deduction = min(available, remaining)
-                    remaining -= deduction
+                deduction = min(available, remaining)
+                remaining -= deduction
                 working.sponsors[key] = replace(sponsor, withdrawable_fee_surplus=available - deduction)
             working.treasury.contract_funds -= amount
             working.treasury.lp_fee_balance -= amount
@@ -866,12 +952,26 @@ class ReferenceInvariantChecker:
         )
 
     def check_sponsor_solvency(self, state: SimulationState) -> InvariantCheckResult:
+        if self.residual_policy == RESERVE_POOL or state.pricing.status is MarketStatus.CANCELLED:
+            # Pooled settlement promises no isolated cohort balance sheet; cancelled
+            # refunds likewise have an aggregate basis ledger, not outcome payouts.
+            margin = _total_non_fee_assets(state) - _winner_reserve_requirement(state)
+            return InvariantCheckResult(
+                name="sponsor_solvency", passed=margin >= -PRICE_TOLERANCE,
+                severity="error", details=f"scope=aggregate, min_margin={margin}",
+                event_index=state.event_index,
+            )
         min_margin = None
         for sponsor in _all_sponsors(state):
             residuals = sponsor.residual_basis_by_outcome or _component_residuals(sponsor)
             if not residuals:
                 continue
-            sponsor_min = min(residuals)
+            if state.pricing.status is MarketStatus.RESOLVED:
+                if state.winning_outcome is None:
+                    raise ValueError("resolved market has no winning outcome")
+                sponsor_min = residuals[state.winning_outcome]
+            else:
+                sponsor_min = min(residuals)
             min_margin = sponsor_min if min_margin is None else min(min_margin, sponsor_min)
         passed = min_margin is None or min_margin >= -PRICE_TOLERANCE
         return InvariantCheckResult(
@@ -951,10 +1051,9 @@ class ReferenceInvariantChecker:
                 event_index=state.event_index,
             ),
             self.check_settlement_conservation(state),
+            self.check_winner_reserve_coverage(state),
         ]
-        if self.residual_policy == RESERVE_POOL:
-            checks.append(self.check_winner_reserve_coverage(state))
-        else:
+        if self.residual_policy != RESERVE_POOL:
             checks.append(self.check_sponsor_solvency(state))
         if state.pricing.status is MarketStatus.ACTIVE:
             component_prices = [
